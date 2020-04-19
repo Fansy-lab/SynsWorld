@@ -53,3 +53,6 @@ TagManager:
   - name: OverCharacters
     uniqueID: 1022080411
     locked: 0
+  - name: HPBars
+    uniqueID: 3679803341
+    locked: 0

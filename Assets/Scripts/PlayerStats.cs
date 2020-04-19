@@ -7,12 +7,17 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     public int maxHealth = 100;
     public int currentHealth;
+    public int Gold;
+    public int Experience;
+
+
     public HealthBar hpBar;
-    PlayerMovement playerMovement;
+    PlayerInput playerInput;
 
     void Start()
     {
-        playerMovement = GetComponentInChildren<PlayerMovement>();
+        CombatEvents.OnEnemyDeath += EnemyDied;
+        playerInput = GetComponentInChildren<PlayerInput>();
         currentHealth = maxHealth;
         hpBar.SetMaxHealth(maxHealth);
     }
@@ -20,10 +25,8 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            TakeDamage(5);
-        }
+
+
     }
 
     public void TakeDamage(int damage)
@@ -34,11 +37,16 @@ public class PlayerStats : MonoBehaviour
 
     public void EnableShooting()
     {
-        playerMovement.learnedToShoot = true;
+        playerInput.learnedToShoot = true;
     }
     public void DisableShooting()
     {
-        playerMovement.learnedToShoot = false;
+        playerInput.learnedToShoot = false;
 
+    }
+    public void EnemyDied(IEnemy enemy)
+    {
+        Gold += enemy.GoldReward;
+        Experience += enemy.Experience;
     }
 }

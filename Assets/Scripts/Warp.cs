@@ -8,6 +8,7 @@ public class Warp : MonoBehaviour
 
     public Vector2 to;
     SceneManager sceneManager;
+    
   
     void Start()
     {
@@ -25,19 +26,21 @@ public class Warp : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            StartCoroutine(StartAnimation(collision));
-           
-           
 
+            
+            StartCoroutine(StartAnimation(collision));
         }
 
     }
-
+  
+  
     IEnumerator StartAnimation(Collider2D collision)
     {
         sceneManager.CallEndAnimation(); //call the animation    
         yield return new WaitForSeconds(1);
-        Camera.main.transform.position = to;
+        Camera.main.transform.position = collision.transform.position;
+        
+
         collision.gameObject.transform.position = to; // move the object(player) to the position
 
     }

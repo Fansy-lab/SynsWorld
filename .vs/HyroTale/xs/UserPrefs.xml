@@ -1,20 +1,24 @@
 ﻿<Properties StartupConfiguration="{DA0B1CB3-1881-26F6-AA5E-A17CD1FA5E85}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Questing/Quests/Kill3Skeletons.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InteractPoint.cs">
     <Files>
-      <File FileName="Assets/Scripts/Skeleton.cs" Line="62" Column="1" />
-      <File FileName="Assets/Scripts/IEnemy.cs" Line="12" Column="5" />
-      <File FileName="Assets/Scripts/GM.cs" />
-      <File FileName="Assets/Scripts/SceneManager.cs" />
-      <File FileName="Assets/Scripts/InteractPoint.cs" />
-      <File FileName="Assets/Scripts/Warp.cs" />
-      <File FileName="Assets/Scripts/PlayerStats.cs" Line="18" Column="1" />
-      <File FileName="Assets/Scripts/CombatEvents.cs" Line="22" Column="1" />
-      <File FileName="Assets/Scripts/Spawner.cs" />
-      <File FileName="Assets/Scripts/Questing/Quests/Kill3Zombies.cs" Line="21" Column="6" />
-      <File FileName="Assets/Scripts/Questing/Quest.cs" Line="12" Column="26" />
-      <File FileName="Assets/Scripts/Questing/KillGoal.cs" Line="17" Column="1" />
-      <File FileName="Assets/Scripts/Questing/Goal.cs" Line="5" Column="14" />
-      <File FileName="Assets/Scripts/DamagePopUp.cs" Line="18" Column="1" />
+      <File FileName="Assets/Scripts/Questing/Quest.cs" Line="39" Column="32" />
+      <File FileName="Assets/Scripts/Questing/Quests/Kill3Skeletons.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/InteractPoint.cs" Line="28" Column="48" />
+      <File FileName="Assets/Scripts/CombatEvents.cs" Line="19" Column="24" />
+      <File FileName="Assets/UIManager.cs" Line="55" Column="40" />
+      <File FileName="Assets/Scripts/Interactable.cs" Line="32" Column="1" />
+      <File FileName="Assets/Scripts/GM.cs" Line="96" Column="32" />
+      <File FileName="Assets/Scripts/Questing/PlayersQuests.cs" Line="19" Column="45" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="28" Column="1" />
+      <File FileName="Assets/EmoteManager.cs" Line="23" Column="1" />
+      <File FileName="Assets/Scripts/Warp.cs" Line="23" Column="1" />
+      <File FileName="Assets/Scripts/PlayerStats.cs" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/PlayerInput.cs" Line="32" Column="1" />
+      <File FileName="Assets/Scripts/Spawner.cs" Line="23" Column="1" />
+      <File FileName="Assets/Scripts/SceneManager.cs" Line="18" Column="1" />
+      <File FileName="Assets/Scripts/Questing/KillGoal.cs" Line="21" Column="30" />
+      <File FileName="Assets/Scripts/Skeleton.cs" Line="50" Column="36" />
+      <File FileName="Assets/Scripts/DamagePopUp.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,10 +27,9 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="Questing" expanded="True">
-                  <Node name="Quests" expanded="True">
-                    <Node name="Kill3Skeletons.cs" selected="True" />
-                  </Node>
+                  <Node name="Quests" expanded="True" />
                 </Node>
+                <Node name="InteractPoint.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -36,17 +39,12 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ac774265-5b1f-4594-85d8-c993079ac095" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fe67e44e-4ab5-4923-91f1-49df8e3f98df" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/InteractPoint.cs" relfile="Assets/Scripts/InteractPoint.cs" line="124" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/Quests/Kill3Skeletons.cs" relfile="Assets/Scripts/Questing/Quests/Kill3Skeletons.cs" line="16" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/KillGoal.cs" relfile="Assets/Scripts/Questing/KillGoal.cs" line="11" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/Goal.cs" relfile="Assets/Scripts/Questing/Goal.cs" line="28" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/KillGoal.cs" relfile="Assets/Scripts/Questing/KillGoal.cs" line="26" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/KillGoal.cs" relfile="Assets/Scripts/Questing/KillGoal.cs" line="21" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Skeleton.cs" relfile="Assets/Scripts/Skeleton.cs" line="50" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/CombatEvents.cs" relfile="Assets/Scripts/CombatEvents.cs" line="21" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/UIManager.cs" relfile="Assets/Scripts/UIManager.cs" line="52" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/InteractPoint.cs" relfile="Assets/Scripts/InteractPoint.cs" line="160" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/InteractPoint.cs" relfile="Assets/Scripts/InteractPoint.cs" line="154" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class Quest : MonoBehaviour
 {
-    public List<Goal> goals { get; set; } = new List<Goal>();
-    public string QuestName { get; set; }
-    public string QuestDescription { get; set; }
-    public int ExpReward { get; set; }
-    public int GoldReward { get; set; }
-    public string ItemReward { get; set; }
-    public bool IsCompleted { get; set; }
+    public int QuestID;
+    public List<Goal> goals = new List<Goal>();
+    public string QuestName;
+    public string QuestDescription;
+    public int ExpReward;
+    public int GoldReward;
+    public string ItemReward;
+    public bool IsCompleted;
 
     public void CheckGoals()
     {
@@ -25,20 +26,23 @@ public class Quest : MonoBehaviour
                     return;
                 }
             }
-            CompleteQuest();
+            CompleteQuest(this);
         }
    
         
     }
 
-    private void CompleteQuest()
+    private void CompleteQuest(Quest quest)
     {
         IsCompleted = true;
         GiveReward();
+        GM.Instance.CompletedQuest(quest);
+        Destroy(gameObject);
     }
 
     private void GiveReward()
     {
         print("QUEST:Completed");
+        EmoteManager.Instance.ShowCompletedQuestEmote();
     }
 } 

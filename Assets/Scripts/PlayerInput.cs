@@ -7,34 +7,46 @@ public class PlayerInput : MonoBehaviour
 {
 
     public float moveSpeed = 5f;
-    public Rigidbody2D rb;
-    public Transform firePosition;
     public GameObject arrowPrefab;
     public float arrowForce = 20f;
-    public GameObject interactPoint;
-
     public enum lookingAt{ left,right,up,down,none}
     public lookingAt currentlyLookingAt;
-    public Vector2 lastLookingDirection;
-    public Animator animator;
+    public float shootRate = 1f;
+    public bool learnedToShoot = false;
+
+    [SerializeField] GameObject interactPoint;
+    [SerializeField] Transform firePosition;
 
 
+    float lastShot = 0f;
+    bool canShoot = true;
+    Rigidbody2D rb;
+    Animator animator;
     Vector2 movement;
     Vector2 shootingDirectionAtTheMomentOfShooting;
+    Vector2 lastLookingDirection;
 
-    public bool learnedToShoot = false;
-    
-    public float shootRate = 1f;
-    private float lastShot = 0f;
-    private bool canShoot = true;
+
     // Update is called once per frame
     void Update()
     {
+        CheckKeys();
         CheckMovement();
         CheckAttack();
     }
+
+    private void CheckKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            GM.Instance.ToggleQuests();
+        }
+    }
+
     private void Start()
     {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         currentlyLookingAt = lookingAt.down;
         lastLookingDirection= new Vector2(0, -1); 
     }

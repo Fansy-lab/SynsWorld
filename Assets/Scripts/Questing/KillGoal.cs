@@ -23,10 +23,14 @@ public class KillGoal : Goal
 
     void EnemyDied(IEnemy enemy)
     {
-        if(enemy.ID == this.EnemyID)
+        if (!Completed)
         {
-            this.CurrentAmmount++;
-            Evaluate(); //from goal
+            if (enemy.ID == this.EnemyID)
+            {
+                this.CurrentAmmount++;
+                Evaluate(); //from goal
+            }
         }
+     
     }
 }

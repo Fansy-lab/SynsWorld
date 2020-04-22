@@ -8,17 +8,15 @@ using UnityEngine.Tilemaps;
 public class InteractPoint : MonoBehaviour
 {
     bool sittingOverAnotherInteractableObject = false;
+    
     public LayerMask interactableLayer;
-    Interactable currentInteractableObjectScript;
-
+    public static Interactable currentInteractableObjectScript;
     Tile emptyTile;
-
     Collider2D currentCollision;
 
 
     private void Update()
     {
-
         if (sittingOverAnotherInteractableObject)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -26,7 +24,11 @@ public class InteractPoint : MonoBehaviour
                 if (currentInteractableObjectScript != null && currentInteractableObjectScript.ThisInteractableTriggersDialogue &&
                     (currentInteractableObjectScript.alreadyInteracted == false || currentInteractableObjectScript.interactableMultipleTimes))
                 {
-                   
+
+                    if (currentInteractableObjectScript.popUpToDisplayOverPlayer!=null)
+                    {
+                        EmoteManager.Instance.DisplayPopUp(currentInteractableObjectScript.popUpToDisplayOverPlayer);
+                    }
                     bool dialogIsUp = DialogueInstance.Instance.GetComponent<DialogueManager>().currentlyADialogIsOn;
 
                     if (!dialogIsUp)
@@ -43,7 +45,7 @@ public class InteractPoint : MonoBehaviour
                 CheckInteractableProperties();
 
             }
-              
+
 
         }
         else
@@ -53,7 +55,10 @@ public class InteractPoint : MonoBehaviour
                 //dialog stuff
                 bool dialogIsUp = DialogueInstance.Instance.GetComponent<DialogueManager>().currentlyADialogIsOn;
                 if (dialogIsUp)
-                    DialogueInstance.Instance.GetComponent<DialogueManager>().DisplayNextSentence();
+                {
+                    DialogueInstance.Instance.GetComponent<DialogueManager>().DisplayNextSentence(currentInteractableObjectScript.ShowQuestTEXTPopUp);
+
+                }
 
 
             }
@@ -68,15 +73,16 @@ public class InteractPoint : MonoBehaviour
 
         if (currentInteractableObjectScript)
         {
-            if ((currentInteractableObjectScript.interactableMultipleTimes) )
+            if ((currentInteractableObjectScript.interactableMultipleTimes))
             {
                 DoInteractEvents();
-            
-            } else if (currentInteractableObjectScript.alreadyInteracted == false)
+
+            }
+            else if (currentInteractableObjectScript.alreadyInteracted == false)
             {
                 DoInteractEvents();
             }
-            
+
 
             currentInteractableObjectScript.alreadyInteracted = true;
         }
@@ -99,7 +105,7 @@ public class InteractPoint : MonoBehaviour
             Destroy(go);
         }
 
-        else if (currentInteractableObjectScript.replaceTileWith1Tile)
+        else if (currentInteractableObjectScript.replaceTile)
         {
             //map.SetTile(currentCell, currentInteractableObjectScript.SpriteToReplace);
             currentCollision.gameObject.GetComponent<SpriteRenderer>().sprite = currentInteractableObjectScript.SpriteToReplace;
@@ -110,15 +116,22 @@ public class InteractPoint : MonoBehaviour
 
 
         //check if has to do something
-        if (currentInteractableObjectScript.hasSomeKindOfEvent)
+        if (currentInteractableObjectScript.methodToCallInGm !="")
         {
-            GM.Instance.CallMethod(currentInteractableObjectScript.methodToCallInGm);
+            GM.Instance.CallMethod(currentInteractableObjectScript.methodToCallInGm,currentInteractableObjectScript.parameters);
         }
+
+        //check if prepare quest question
+        if (currentInteractableObjectScript.questToStart !=null)
+        {
+           GM.Instance.questToStart =currentInteractableObjectScript.questToStart;
+        }
+    
     }
 
     private bool IsNewDialog()
     {
-        if (DialogueInstance.Instance.GetComponent<DialogueManager>().currentGuid == currentInteractableObjectScript.dialogue.idDialogue)
+        if (DialogueInstance.Instance.GetComponent<DialogueManager>().currentGuid == currentInteractableObjectScript.startDialogue.idDialogue)
         {
             return false;
         }
@@ -132,11 +145,12 @@ public class InteractPoint : MonoBehaviour
     {
 
 
-         bool touchingInteractable =GetComponent<BoxCollider2D>().IsTouchingLayers(interactableLayer);
-        
+        bool touchingInteractable = GetComponent<BoxCollider2D>().IsTouchingLayers(interactableLayer);
+
 
         if (touchingInteractable)
         {
+         
             currentCollision = collision;
             currentInteractableObjectScript = collision.GetComponent<Interactable>();
             sittingOverAnotherInteractableObject = true;
@@ -146,8 +160,8 @@ public class InteractPoint : MonoBehaviour
             sittingOverAnotherInteractableObject = false;
         }
 
-     
-       
+
+
 
     }
     private void OnTriggerExit2D(Collider2D collision)

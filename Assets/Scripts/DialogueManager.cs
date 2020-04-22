@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public bool currentlyADialogIsOn = false;
     public Guid? currentGuid = null;
+    public GameObject YesNo;
 
     Queue<string> sentences;
     void Start()
@@ -38,19 +39,32 @@ public class DialogueManager : MonoBehaviour
         }
 
 
-        DisplayNextSentence();
+        DisplayNextSentence(false);
     }
 
-    public void DisplayNextSentence()
+    public void DisplayNextSentence(bool showYesNo)
     {
         if(sentences.Count==0) //its end of queue
         {
-            EndDialogue();
+            if (showYesNo)
+            {
+                ShowPopUpYesNo();
+            }
+            else
+            {
+                EndDialogue();
+
+            }
             return;
         }
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+    }
+
+    private void ShowPopUpYesNo()
+    {
+        YesNo.SetActive(true);
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -63,8 +77,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void EndDialogue()
+    public void EndDialogue()
     {
+        YesNo.SetActive(false);
         animator.SetBool("IsOpen", false);
         currentlyADialogIsOn = false;
     }

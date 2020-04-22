@@ -1,15 +1,24 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GM : MonoBehaviour
 {
-    private static GM instance;
-    private static int m_referenceCount = 0;
+ 
     private PlayerInput playerMovement;
     private PlayerStats playerStats;
+    private PlayersQuests playerQuests;
+
+    public GameObject questsUI;
+
+    private static GM instance;
+    private static int m_referenceCount = 0;
+
+    public Quest questToStart;
 
     public static GM Instance
     {
@@ -48,23 +57,53 @@ public class GM : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         playerMovement = player.GetComponent<PlayerInput>();
         playerStats = player.GetComponent<PlayerStats>();
+        playerQuests = player.GetComponentInChildren<PlayersQuests>();
 
+    }
+
+
+    public void DeclineQuest()
+    {
+        DialogueInstance.Instance.GetComponent<DialogueManager>().EndDialogue();
+  
     }
 
     public void EnableShooting()
     {
         playerStats.EnableShooting();
     }
+
+    
+
     public void DisableShooting()
     {
         playerStats.DisableShooting();
 
     }
+    public void ToggleQuests()
+    {
+        bool a = questsUI.activeInHierarchy;
+        questsUI.SetActive(!a);
+    }
 
-    internal void CallMethod(string methodToCallInGm)
+    public void StartQuest()
+    {
+       if(questToStart !=null)
+         playerQuests.AddNewQuest(questToStart);
+    }
+    public void CompletedQuest(Quest quest)
+    {
+        playerQuests.CompleteQuest(quest);
+
+    }
+
+    internal void CallMethod(string methodToCallInGm,List<string> parameters)
     {
         Type thisType = this.GetType();
         MethodInfo theMethodToCall = thisType.GetMethod(methodToCallInGm);
-        theMethodToCall.Invoke(this, null);
+        object[] objects;
+        objects = parameters.Cast<object>().ToArray();
+
+        theMethodToCall.Invoke(this,objects);
     }
 }

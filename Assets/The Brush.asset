@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Brush
   m_EditorClassIdentifier: 
   m_Cells:
-  - m_Tile: {fileID: 11400000, guid: b441b2485c176e948a2241dbb660d57c, type: 2}
+  - m_Tile: {fileID: 0}
     m_Matrix:
       e00: 1
       e01: 0
@@ -36,6 +36,6 @@ MonoBehaviour:
   m_Pivot: {x: 0, y: 0, z: 0}
   m_CanChangeZPosition: 0
   m_Anchor: {x: 0.5, y: 0.5, z: 0.5}
-  m_Prefab: {fileID: 1175573365578821002, guid: e23e8b0bd856f4e2aa1f51effe1f34e5,
+  m_Prefab: {fileID: 6137502537857824216, guid: 9a3606247e421436f950851d4ec52865,
     type: 3}
   m_ForceDelete: 0

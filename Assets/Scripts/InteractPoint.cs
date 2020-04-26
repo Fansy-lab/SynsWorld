@@ -7,12 +7,12 @@ using UnityEngine.Tilemaps;
 
 public class InteractPoint : MonoBehaviour
 {
-    bool sittingOverAnotherInteractableObject = false;
+    public static bool sittingOverAnotherInteractableObject = false;
     
     public LayerMask interactableLayer;
     public static Interactable currentInteractableObjectScript;
     Tile emptyTile;
-    Collider2D currentCollision;
+    public static Collider2D currentCollision;
 
 
     private void Update()
@@ -21,7 +21,7 @@ public class InteractPoint : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (currentInteractableObjectScript != null && currentInteractableObjectScript.ThisInteractableTriggersDialogue &&
+                if (currentInteractableObjectScript != null && currentInteractableObjectScript.TriggersDialogue &&
                     (currentInteractableObjectScript.alreadyInteracted == false || currentInteractableObjectScript.interactableMultipleTimes))
                 {
 
@@ -38,6 +38,11 @@ public class InteractPoint : MonoBehaviour
                     if (dialogIsUp && IsNewDialog())
                     {
                         currentInteractableObjectScript.TriggerDialogue();
+
+                    }
+                    if(dialogIsUp && !IsNewDialog())
+                    {
+                        DialogueInstance.Instance.GetComponent<DialogueManager>().DisplayNextSentence(currentInteractableObjectScript.ShowQuestTEXTPopUp);
 
                     }
 
@@ -92,23 +97,20 @@ public class InteractPoint : MonoBehaviour
 
     private void DoInteractEvents()
     {
-        Tilemap map = currentCollision.transform.parent.GetComponent<Tilemap>();
-        Vector3Int currentCell = map.WorldToCell(transform.position);
+        
 
 
 
-        map.layoutGrid.CellToWorld(currentCell);
         if (currentInteractableObjectScript.replaceTileWithEmpty)
         {
-            map.SetTile(currentCell, emptyTile);
-            GameObject go = GameObject.Find(currentCollision.name);
-            Destroy(go);
+         
+            Destroy(currentCollision.gameObject);
         }
 
         else if (currentInteractableObjectScript.replaceTile)
         {
             //map.SetTile(currentCell, currentInteractableObjectScript.SpriteToReplace);
-            currentCollision.gameObject.GetComponent<SpriteRenderer>().sprite = currentInteractableObjectScript.SpriteToReplace;
+            currentInteractableObjectScript.gameObject.GetComponent<SpriteRenderer>().sprite = currentInteractableObjectScript.SpriteToReplace;
 
         }
 
@@ -145,20 +147,23 @@ public class InteractPoint : MonoBehaviour
     {
 
 
-        bool touchingInteractable = GetComponent<BoxCollider2D>().IsTouchingLayers(interactableLayer);
+        //bool touchingInteractable = GetComponent<BoxCollider2D>().IsTouchingLayers(interactableLayer);
 
 
-        if (touchingInteractable)
-        {
-         
-            currentCollision = collision;
-            currentInteractableObjectScript = collision.GetComponent<Interactable>();
-            sittingOverAnotherInteractableObject = true;
-        }
-        else
-        {
-            sittingOverAnotherInteractableObject = false;
-        }
+        //if (touchingInteractable)
+        //{
+        //    currentInteractableObjectScript = collision.GetComponent<Interactable>();
+        //    if (currentInteractableObjectScript != null)
+        //    {
+        //        currentCollision = collision;
+        //        sittingOverAnotherInteractableObject = true;
+        //    }
+          
+        //}
+        //else
+        //{
+        //    sittingOverAnotherInteractableObject = false;
+        //}
 
 
 
@@ -166,6 +171,7 @@ public class InteractPoint : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        sittingOverAnotherInteractableObject = false;
+     
+        //    sittingOverAnotherInteractableObject = false;
     }
 }

@@ -13,7 +13,7 @@ public class Kill3Skeletons : Quest
         ExpReward = 15;
         GoldReward = 20;
 
-        goals.Add(new KillGoal(this,0, "Kill 3 skeletons, it's all you have to do!", false, 0, 3));
+        goals.Add(new KillGoal(this,1, "Kill 3 skeletons, it's all you have to do!", false, 0, 3));
         foreach (var item in goals)
         {
             item.Init();

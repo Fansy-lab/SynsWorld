@@ -40,6 +40,8 @@ public class Quest : MonoBehaviour
         Destroy(gameObject);
     }
 
+ 
+
     private void GiveReward()
     {
         print("QUEST:Completed");

@@ -93,8 +93,12 @@ public class GM : MonoBehaviour
     }
     public void CompletedQuest(Quest quest)
     {
-        playerQuests.CompleteQuest(quest);
+        playerQuests.AddQuestToCompletedQuestsAndRemoveQuestFromUI(quest);
 
+    }
+    public void AbandonQuest(Quest quest)
+    {
+        playerQuests.AbandonQuest(quest);
     }
 
     internal void CallMethod(string methodToCallInGm,List<string> parameters)

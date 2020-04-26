@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     public GameObject questInfo;
     private static UIManager instance;
     private static int m_referenceCount = 0;
-
+    private Quest currentQuestsInfoBeingShown;
     public static UIManager Instance
     {
         get
@@ -67,8 +67,20 @@ public class UIManager : MonoBehaviour
         gO.name = quest.QuestID.ToString();
         gO.GetComponent<Button>().onClick.AddListener(() => ShowQuestInfo(quest));
     }
+
+    public void AbandonQuest()
+    {
+        if (currentQuestsInfoBeingShown != null)
+        {
+            RemoveQuestScrollFromUI(currentQuestsInfoBeingShown);
+            GM.Instance.AbandonQuest(currentQuestsInfoBeingShown);
+            ToggleQuestInfo();
+            currentQuestsInfoBeingShown = null;
+        }
+    }
     void ShowQuestInfo(Quest quest)
     {
+        currentQuestsInfoBeingShown = quest;
         ToggleQuestInfo();
         foreach (Transform child in questInfo.transform)
         {

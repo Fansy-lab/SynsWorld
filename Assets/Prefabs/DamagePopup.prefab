@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 1
+  randomizeIntesity: {x: 0.15, y: 0, z: 0}
   damageAmmount: 0
 --- !u!95 &1260999540
 Animator:
@@ -229,7 +230,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5912054388377173815}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 92e773aea1d66c34c8bdc4c6c6f72cdb, type: 2}
   m_CullingMode: 0

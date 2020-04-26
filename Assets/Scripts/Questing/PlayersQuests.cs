@@ -20,10 +20,25 @@ public class PlayersQuests : MonoBehaviour
 
         
     }
-    public void CompleteQuest(Quest quest)
+    public void AddQuestToCompletedQuestsAndRemoveQuestFromUI(Quest quest)
     {
         completedQuests.Add(quest);
         UIManager.Instance.RemoveQuestScrollFromUI(quest);
 
+    }
+
+    internal void AbandonQuest(Quest quest)
+    {
+        foreach (Transform item in gameObject.transform)
+        {
+            Quest questFound = item.GetComponent<Quest>();
+            if (questFound != null)
+            {
+                if (quest.QuestID == questFound.QuestID)
+                {
+                    Destroy(item.gameObject);
+                }
+            }
+        }
     }
 }

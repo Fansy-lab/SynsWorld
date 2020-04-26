@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DummyEnemy.cs" />
+    <Compile Include="Assets\NPC.cs" />
     <Compile Include="Assets\Scripts\CombatEvents.cs" />
     <Compile Include="Assets\Scripts\DamagePopUp.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
@@ -82,6 +84,7 @@
     <Compile Include="Assets\Scripts\Questing\PlayersQuests.cs" />
     <Compile Include="Assets\Scripts\Questing\Quest.cs" />
     <Compile Include="Assets\Scripts\Questing\Quests\Kill3Skeletons.cs" />
+    <Compile Include="Assets\Scripts\Questing\Quests\LearnToShootQuest.cs" />
     <Compile Include="Assets\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Scripts\SelfDestroyAfterSeconds.cs" />
     <Compile Include="Assets\Scripts\Skeleton.cs" />

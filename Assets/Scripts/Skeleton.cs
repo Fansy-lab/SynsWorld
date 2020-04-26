@@ -25,7 +25,7 @@ public class Skeleton : MonoBehaviour,IEnemy
 
     void Start()
     {
-        ID = 0;
+        ID = 1;
         Name ="Skeleton";
         GoldReward = 1;
         Experience = 2;
@@ -73,7 +73,12 @@ public class Skeleton : MonoBehaviour,IEnemy
 
     private void ShowFloatingTextDamage(int damage)
     {
-        GameObject gO = Instantiate(damagePopUp, transform.position, Quaternion.identity, transform) as GameObject;
+        Vector3 position = gameObject.transform.position;
+        position.y = gameObject.transform.position.y + 1f;
+        Vector3 randomizeIntesity = new Vector3(0.15f, 0.0f, 0);
+        position += new Vector3(UnityEngine.Random.Range(-randomizeIntesity.x, randomizeIntesity.x), UnityEngine.Random.Range(-randomizeIntesity.y, randomizeIntesity.y), UnityEngine.Random.Range(-randomizeIntesity.z, randomizeIntesity.z));
+
+        GameObject gO = Instantiate(damagePopUp, position, Quaternion.identity) as GameObject;
         gO.GetComponentInChildren<DamagePopUp>().damageAmmount = damage;
     }
 

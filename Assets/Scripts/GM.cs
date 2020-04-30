@@ -11,9 +11,9 @@ public class GM : MonoBehaviour
  
     private PlayerInput playerMovement;
     private PlayerStats playerStats;
-    private PlayersQuests playerQuests;
-
+    private QuestsService questsService;
     public GameObject questsUI;
+    public GameObject inventoryUI;
 
     private static GM instance;
     private static int m_referenceCount = 0;
@@ -57,10 +57,15 @@ public class GM : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         playerMovement = player.GetComponent<PlayerInput>();
         playerStats = player.GetComponent<PlayerStats>();
-        playerQuests = player.GetComponentInChildren<PlayersQuests>();
+        questsService = player.GetComponentInChildren<QuestsService>();
 
     }
 
+    internal void ToggleInventoryPanel()
+    {
+        bool a = inventoryUI.activeInHierarchy;
+        inventoryUI.SetActive(!a);
+    }
 
     public void DeclineQuest()
     {
@@ -88,17 +93,47 @@ public class GM : MonoBehaviour
 
     public void StartQuest()
     {
-       if(questToStart !=null)
-         playerQuests.AddNewQuest(questToStart);
+        if(questToStart != null)
+        {
+            Quest newQuest = ScriptableObject.CreateInstance("Quest") as Quest;
+            newQuest.Init(questToStart.QuestID, questToStart.KillGoals, questToStart.QuestName, questToStart.QuestDescription, questToStart.ExpReward, questToStart.GoldReward, questToStart.ItemReward, questToStart.IsCompleted);
+
+            
+            questsService.AddNewQuest(newQuest);
+
+        }
     }
     public void CompletedQuest(Quest quest)
     {
-        playerQuests.AddQuestToCompletedQuestsAndRemoveQuestFromUI(quest);
 
+        questsService.AddQuestToCompletedQuestsAndRemoveQuestFromUI(quest);
+        questsService.RemoveFromCurrentQuests(quest);
+       
     }
     public void AbandonQuest(Quest quest)
     {
-        playerQuests.AbandonQuest(quest);
+
+        questsService.RemoveFromCurrentQuests(quest);
+        Quest[] questInstances = GameObject.FindObjectsOfType<Quest>();
+        foreach (var questFound in questInstances)
+        {
+            if(questFound.QuestID==quest.QuestID)
+              questsService.AbandonQuest(questFound);
+
+        }
+
+    }
+
+    public void UseItem(InventoryItem itemToUse)
+    {
+        Debug.Log("Using Item" + itemToUse.itemName);
+        Debug.Log("Voy a recuperar: " + itemToUse.usableStats.HPRestoreAmmount + "puntos de vida");
+
+    }
+    public void EquipItem(InventoryItem itemToEquip)
+    {
+        Debug.Log("Equiping Item" + itemToEquip.itemName);
+
     }
 
     internal void CallMethod(string methodToCallInGm,List<string> parameters)

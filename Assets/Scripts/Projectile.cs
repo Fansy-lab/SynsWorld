@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     // Start is called before the first frame update
     public int damageAmmount;
+    public GameObject specialEffect;
     void Start()
     {
         Destroy(gameObject, 2f);
@@ -20,7 +21,7 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-     
-            Destroy(gameObject);
+        Instantiate(specialEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

@@ -11,28 +11,40 @@ public class PlayerInput : MonoBehaviour
     public float arrowForce = 20f;
     public enum lookingAt{ left,right,up,down,none}
     public lookingAt currentlyLookingAt;
-    public float shootRate = 1f;
+    public float shootRate;
+    public float dashRate;
+    public float dashDistance;
     public bool learnedToShoot = false;
+
 
     [SerializeField] GameObject interactPoint;
     [SerializeField] Transform firePosition;
 
+    [SerializeField] GameObject dashEffect;
 
     float lastShot = 0f;
+    float lastDashed = 0f;
     bool canShoot = true;
+    bool canDash = true;
     Rigidbody2D rb;
     Animator animator;
     Vector2 movement;
     Vector2 shootingDirectionAtTheMomentOfShooting;
     Vector2 lastLookingDirection;
 
+    
 
     // Update is called once per frame
     void Update()
     {
+        CheckCanDash();
+        CheckCanShoot();
+
         CheckKeys();
         CheckMovement();
         CheckAttack();
+
+
     }
 
     private void CheckKeys()
@@ -41,10 +53,65 @@ public class PlayerInput : MonoBehaviour
         {
             GM.Instance.ToggleQuests();
         }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            GM.Instance.ToggleInventoryPanel();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+
+            Dash();
+        }
     }
+
+    private void Dash()
+    {
+        bool canDashToLocation = CanDashToLocation(new Vector3(lastLookingDirection.x, lastLookingDirection.y, 0),dashDistance);
+        if (canDashToLocation)
+        {
+            Instantiate(dashEffect, transform.position, Quaternion.identity);
+
+            transform.position += new Vector3(lastLookingDirection.x, lastLookingDirection.y, 0) * dashDistance;
+            lastDashed = 0;
+        }
+    }
+    private bool CanDashToLocation(Vector3 dir,float distance)
+    {
+        RaycastHit2D[] cllisions = Physics2D.RaycastAll(transform.position, dir, distance);
+
+    
+        if (cllisions.Length==1 )//always hits the player
+        {
+            return true;
+        }
+        if (cllisions.Length > 2)//hits the player,the interactPoint and something else
+        {
+            return false;
+        }
+        if (cllisions.Length == 2)//hits the player and something else, might be the interactPoint
+        {
+            InteractPoint interactPoint =null;
+            foreach (var col in cllisions)
+            {
+                interactPoint= col.collider.GetComponent<InteractPoint>();
+            }
+            if(interactPoint == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+        return false;
+    }
+  
 
     private void Start()
     {
+        lastDashed = dashRate+1;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         currentlyLookingAt = lookingAt.down;
@@ -53,14 +120,28 @@ public class PlayerInput : MonoBehaviour
 
     private void CheckAttack()
     {
-        checkCanShoot();
         if (Input.GetKeyDown(KeyCode.Space) && learnedToShoot && canShoot )
         {
             Shoot();
         }
     }
 
-    public void checkCanShoot()
+    public void CheckCanDash()
+    {
+        if (lastDashed < dashRate)
+            lastDashed += Time.deltaTime;
+        if (lastDashed > dashRate)
+        {
+            canDash = true;
+
+        }
+        else
+        {
+            canDash = false;
+        }
+
+    }
+    public void CheckCanShoot()
     {
         if(lastShot<shootRate)
             lastShot += Time.deltaTime;
@@ -171,7 +252,8 @@ public class PlayerInput : MonoBehaviour
 
             animator.SetInteger("lookingAt", 3);
             currentlyLookingAt = lookingAt.right;
-            lastLookingDirection = new Vector2(1, 0);
+            lastLookingDirection = Vector2.right;
+            
         }
         if (movement.x < 0)
         {
@@ -179,7 +261,7 @@ public class PlayerInput : MonoBehaviour
 
             animator.SetInteger("lookingAt", 1);
             currentlyLookingAt = lookingAt.left;
-            lastLookingDirection = new Vector2(-1, 0);
+            lastLookingDirection =  Vector2.left;
 
         }
         if (movement.y > 0.01)
@@ -188,7 +270,7 @@ public class PlayerInput : MonoBehaviour
 
             animator.SetInteger("lookingAt", 2);
             currentlyLookingAt = lookingAt.up;
-            lastLookingDirection = new Vector2(0, 1);
+            lastLookingDirection = Vector2.up;
 
         }
         if (movement.y<0)
@@ -198,7 +280,7 @@ public class PlayerInput : MonoBehaviour
 
             animator.SetInteger("lookingAt", 0);
             currentlyLookingAt = lookingAt.down;
-            lastLookingDirection = new Vector2(0, -1);
+            lastLookingDirection = Vector2.down;
 
         }
 

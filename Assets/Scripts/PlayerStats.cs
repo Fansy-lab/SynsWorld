@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        CombatEvents.OnEnemyDeath += EnemyDied;
+        GlobalEvents.OnEnemyDeath += EnemyDied;
         playerInput = GetComponentInChildren<PlayerInput>();
         currentHealth = maxHealth;
         hpBar.SetMaxHealth(maxHealth);

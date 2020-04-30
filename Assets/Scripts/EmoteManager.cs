@@ -39,8 +39,6 @@ public class EmoteManager : MonoBehaviour
         }
 
         instance = this;
-        // Use this line if you need the object to persist across scenes
-        DontDestroyOnLoad(this.gameObject);
     }
 
     void OnDestroy()

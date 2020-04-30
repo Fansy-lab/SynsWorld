@@ -2,24 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillGoal : Goal
+[CreateAssetMenu(fileName = "Quest", menuName = "Questing/New Goal")]
+public class KillGoal:ScriptableObject
 {
-    public int EnemyID { get; set; }
+    public int idKillGoal;
+    public string Description;
+    public bool Completed;
+    public int CurrentAmmount;
+    public int RequiredAmmount;
 
-    public KillGoal(Quest quest,int enemyID,string description,bool completed,int currentAmmount,int requieredAmmount)
+    public int EnemyID;
+
+    public void Init()
     {
-        this.quest = quest;
-        this.EnemyID = enemyID;
-        this.Description = description;
-        this.Completed = completed;
-        this.CurrentAmmount = currentAmmount;
-        this.RequiredAmmount = requieredAmmount;
+        GlobalEvents.OnEnemyDeath += EnemyDied;
+
     }
-    public override void Init()
+
+    private void OnDestroy()
     {
-        base.Init();
-        CombatEvents.OnEnemyDeath += EnemyDied;
+      GlobalEvents.OnEnemyDeath -= EnemyDied;
+
     }
+
 
     void EnemyDied(IEnemy enemy)
     {
@@ -28,9 +33,24 @@ public class KillGoal : Goal
             if (enemy.ID == this.EnemyID)
             {
                 this.CurrentAmmount++;
-                Evaluate(); //from goal
+                Evaluate(); 
             }
         }
-     
+
     }
+    public void Evaluate()
+    {
+        if (CurrentAmmount >= RequiredAmmount)
+        {
+            Complete();
+
+        }
+    }
+    public void Complete()
+    {
+        Completed = true;
+        GlobalEvents.KillGoalCompleted(this);
+        
+    }
+
 }

@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
     public float respawnCheck;
     void Start()
     {
-        InvokeRepeating("CheckIfHasToSpawn", respawnCheck, respawnCheck);
+        InvokeRepeating("CheckIfHasToSpawn",0,respawnCheck);
     }
 
     // Update is called once per frame

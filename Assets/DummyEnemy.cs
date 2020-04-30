@@ -68,7 +68,7 @@ public class DummyEnemy : MonoBehaviour, IEnemy
                 GetComponent<BoxCollider2D>().enabled = false;
                 if(animator!=null)
                     animator.SetTrigger("death");
-                CombatEvents.EnemyDied(this);//event happened
+                GlobalEvents.EnemyDied(this);//event happened
                 Die();
             }
             else

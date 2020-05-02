@@ -9,6 +9,7 @@ public class Quest : ScriptableObject
     public int QuestID;
     public List<KillGoal> KillGoals = new List<KillGoal>();
     public string QuestName;
+    public Sprite spriteQuestPopUp;
     public string QuestDescription;
     public int ExpReward;
     public int GoldReward;

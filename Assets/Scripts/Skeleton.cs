@@ -18,10 +18,13 @@ public class Skeleton : MonoBehaviour,IEnemy
     public int MaxHealth { get; set; }
     public int GoldReward { get; set; }
     public int Experience { get; set; }
-
-
-
-
+    [SerializeField]
+    public LootTable MylootTable;
+    public LootTable lootTable
+    {
+        get { return MylootTable; }
+        set { MylootTable = value; }
+    }
 
     void Start()
     {
@@ -68,7 +71,23 @@ public class Skeleton : MonoBehaviour,IEnemy
     }
 
 
-
+    void DropLoot()
+    {
+        int numberOfItemsToDrop = UnityEngine.Random.Range(0, 5);
+        if (lootTable!=null)
+        {
+            for (int i = 0; i < numberOfItemsToDrop; i++)
+            {
+                PhysicalInventoryItem item = lootTable.LootItem();
+                if (item != null)
+                {
+                    Vector2 position =new Vector2(transform.position.x+(float)(UnityEngine.Random.Range(-0.35f,0.35f)),transform.position.y+(float)(UnityEngine.Random.Range(-0.35f,0.35f)));
+                    Instantiate(item.gameObject, position, Quaternion.identity);
+                }
+            }
+        
+        }
+    }
 
 
     private void ShowFloatingTextDamage(int damage)
@@ -85,7 +104,7 @@ public class Skeleton : MonoBehaviour,IEnemy
     public void Die()
     {
 
-      
+        DropLoot();
         Destroy(gameObject);
     }
 

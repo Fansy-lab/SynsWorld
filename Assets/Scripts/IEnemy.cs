@@ -10,6 +10,7 @@ public interface IEnemy
     int MaxHealth { get; set; }
     int Experience { get; set; }
     int GoldReward { get; set; }
+    LootTable lootTable { get; set; }
     void Die();
     void TakeDamage(int damage);
  

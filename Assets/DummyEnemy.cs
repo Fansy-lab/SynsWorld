@@ -10,6 +10,7 @@ public class DummyEnemy : MonoBehaviour, IEnemy
     public int MaxHealth { get; set; }
     public int Experience { get; set; }
     public int GoldReward { get; set; }
+    public LootTable lootTable { get; set; }
 
     public Animator animator;
     public HealthBar hp;

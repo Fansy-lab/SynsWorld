@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviour
     public List<string> parameters;
     [Header("Quest")]
     public Quest questToStart;
-    public GameObject popUpToDisplayOverPlayer;
+    public Sprite popUpToDisplayOverPlayer;
     public int EndsQuestID;
     public Dialogue EndQuestDialogue;
 

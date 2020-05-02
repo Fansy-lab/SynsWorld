@@ -7,9 +7,12 @@ public class EmoteManager : MonoBehaviour
 {
     private static EmoteManager instance;
     private static int m_referenceCount = 0;
+    [Header("stuff you should not touch")]
     [SerializeField] Transform popUpPosition;
-    [SerializeField] GameObject newQuestEmote;
-    [SerializeField] GameObject CompletedQuestEmote;
+    [SerializeField] Sprite NewQuestSprite;
+    [SerializeField] Sprite CompletedQuestSprite;
+    [SerializeField] GameObject EmotePrefab;
+
     public static EmoteManager Instance
     {
         get
@@ -20,12 +23,15 @@ public class EmoteManager : MonoBehaviour
 
     internal void ShowNewQuestEmote()
     {
-        GameObject gOSpawned = Instantiate(newQuestEmote, popUpPosition.position, Quaternion.identity) as GameObject;
+        EmotePrefab.GetComponentInChildren<SpriteRenderer>().sprite = NewQuestSprite;
+        GameObject gOSpawned = Instantiate(EmotePrefab, popUpPosition.position, Quaternion.identity) as GameObject;
         gOSpawned.transform.parent = gameObject.transform;
     }
     internal void ShowCompletedQuestEmote()
     {
-        GameObject gOSpawned = Instantiate(CompletedQuestEmote, popUpPosition.position, Quaternion.identity) as GameObject;
+        EmotePrefab.GetComponentInChildren<SpriteRenderer>().sprite = CompletedQuestSprite;
+
+        GameObject gOSpawned = Instantiate(EmotePrefab, popUpPosition.position, Quaternion.identity) as GameObject;
         gOSpawned.transform.parent = gameObject.transform;
     }
 
@@ -54,9 +60,10 @@ public class EmoteManager : MonoBehaviour
     {
 
     }
-    public void DisplayPopUp(GameObject gO)
+    public void DisplayPopUp(Sprite sprite)
     {
-        GameObject gOSpawned = Instantiate(gO, popUpPosition.position, Quaternion.identity) as GameObject;
+        EmotePrefab.GetComponentInChildren<SpriteRenderer>().sprite = sprite;
+        GameObject gOSpawned = Instantiate(EmotePrefab, popUpPosition.position, Quaternion.identity) as GameObject;
         gOSpawned.transform.parent = gameObject.transform;
     }
 }

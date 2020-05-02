@@ -127,7 +127,6 @@ public class GM : MonoBehaviour
     public void UseItem(InventoryItem itemToUse)
     {
         Debug.Log("Using Item" + itemToUse.itemName);
-        Debug.Log("Voy a recuperar: " + itemToUse.usableStats.HPRestoreAmmount + "puntos de vida");
 
     }
     public void EquipItem(InventoryItem itemToEquip)

@@ -82,6 +82,8 @@
     <Compile Include="Assets\Scripts\Inventory\ItemProperties\Equipables\Armory\EquipableArmoryStats.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemProperties\Equipables\Weaponry\EquipableWeaponryStats.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemProperties\Usables\UsableStats.cs" />
+    <Compile Include="Assets\Scripts\Inventory\LootTable.cs" />
+    <Compile Include="Assets\Scripts\Inventory\PhysicalInventoryItem.cs" />
     <Compile Include="Assets\Scripts\Inventory\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />

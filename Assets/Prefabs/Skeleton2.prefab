@@ -149,7 +149,7 @@ MonoBehaviour:
   hp: {fileID: 2812372576318989015}
   damagePopUp: {fileID: 7679418662773342743, guid: 7fd747da3f2d7484ab4ea141051b5fcf,
     type: 3}
-  _name: 
+  MylootTable: {fileID: 11400000, guid: 3bf656ac968d34ddab6668e640e8d940, type: 2}
 --- !u!1001 &1648145152
 PrefabInstance:
   m_ObjectHideFlags: 0

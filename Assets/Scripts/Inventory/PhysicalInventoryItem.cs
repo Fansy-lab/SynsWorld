@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -13,7 +14,9 @@ public class PhysicalInventoryItem : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
+
             AddItemToInventory();
+
             Destroy(gameObject);
 
         }
@@ -27,38 +30,62 @@ public class PhysicalInventoryItem : MonoBehaviour
 
             if (thisItem.equipable)
             {
+                Guid guid = Guid.NewGuid();
+
                 InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
-                inventoryItemInstance.Init(new EquipableArmoryStats() { ArmorAmmount = Random.Range(1, 6), HealthAmmount = Random.Range(5, 10) },
-                    null, null, "SimpleArmor", "Simple armor", thisItem.itemImage, 1, false, true, false);
+                if (thisItem.slot == InventoryItem.Slot.weapon)
+                {
+                    inventoryItemInstance.Init(null,RNGGod.GetRandonWeaponStats(),
+                       null, thisItem.slot, thisItem.itemName,
+                      thisItem.itemDescription, thisItem.itemImage,
+                      1, false, true, false, guid);
+                }
+                else
+                {
+                    inventoryItemInstance.Init(RNGGod.GetRandomArmoryStats(),null,
+                    null, thisItem.slot, thisItem.itemName,
+                    thisItem.itemDescription, thisItem.itemImage,
+                    1, false, true, false, guid);
+                }
 
 
                 playerInventory.inventoryItems.Add(inventoryItemInstance);
+                GlobalEvents.PickedItem(inventoryItemInstance);//event happened
+
+                Debug.Log("Added to inventory: " + guid);
             }
             else if (thisItem.usable)
             {
                 //check if player has that consumable
                 bool hasConsumable = false;
+                InventoryItem consumable = null;
                 foreach (var item in playerInventory.inventoryItems)
                 {
                     if (item.itemName == thisItem.itemName)
                     {
                         hasConsumable = true;
+                        consumable = item;
                         item.numberHeld++;
+
                     }
                 }
                 if(hasConsumable ==false)
                 {
+                    Guid guid = Guid.NewGuid();
                     InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
-                    inventoryItemInstance.Init(null, null, new UsableStats() { HPRestoreAmmount = 25 }, "HP Potion", "Health potion", thisItem.itemImage, 1, true, false, false);
+                    inventoryItemInstance.Init(null, null, new UsableStats() { HPRestoreAmmount = 25 }, null,thisItem.itemName,
+                        thisItem.itemDescription, thisItem.itemImage, 1, true, false, false, guid);
                     playerInventory.inventoryItems.Add(inventoryItemInstance);
+                    GlobalEvents.PickedItem(inventoryItemInstance);//event happened
+
+                    Debug.Log("Added to inventory: " + guid);
+                }
+                else
+                {
+                    GlobalEvents.PickedItem(consumable);//event happened
+
                 }
             }
-
-            
-
-
-
-
 
 
             EmoteManager.Instance.DisplayPopUp(thisItem.itemImage);

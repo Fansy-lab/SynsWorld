@@ -13,18 +13,21 @@ MonoBehaviour:
   m_Name: Health Potion
   m_EditorClassIdentifier: 
   itemName: HP Potion
-  itemDescription: Restores health
+  itemDescription: Restores 25% of max health
   itemImage: {fileID: -5084268029357557464, guid: fe8fa90c1d4913141a7504ddfbda4db6,
     type: 3}
   numberHeld: 0
+  slot: 0
   usable: 1
   equipable: 0
   unique: 0
   equipableArmoryStats:
     ArmorAmmount: 0
     HealthAmmount: 0
+    EvasionAmmount: 0
   equipableWeaponryStats:
-    PlusDamage: 0
+    Attack: 0
+    AttackSpeed: 0
   usableStats:
     HPRestoreAmmount: 25
   thisEvent:

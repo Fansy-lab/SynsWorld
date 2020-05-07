@@ -7,4 +7,5 @@ public class EquipableArmoryStats
 {
     public int ArmorAmmount;
     public int HealthAmmount;
+    public int EvasionAmmount;
 }

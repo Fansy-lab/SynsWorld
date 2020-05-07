@@ -124,17 +124,7 @@ public class GM : MonoBehaviour
 
     }
 
-    public void UseItem(InventoryItem itemToUse)
-    {
-        Debug.Log("Using Item" + itemToUse.itemName);
-
-    }
-    public void EquipItem(InventoryItem itemToEquip)
-    {
-        Debug.Log("Equiping Item" + itemToEquip.itemName);
-
-    }
-
+   
     internal void CallMethod(string methodToCallInGm,List<string> parameters)
     {
         Type thisType = this.GetType();

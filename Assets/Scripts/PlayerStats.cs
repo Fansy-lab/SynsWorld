@@ -1,16 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int maxHealth = 100;
-    public int currentHealth;
-    public int Gold;
-    public int Experience;
 
-
+    public PlayerData playerData;
+        
     public HealthBar hpBar;
     PlayerInput playerInput;
 
@@ -18,21 +16,29 @@ public class PlayerStats : MonoBehaviour
     {
         GlobalEvents.OnEnemyDeath += EnemyDied;
         playerInput = GetComponentInChildren<PlayerInput>();
-        currentHealth = maxHealth;
-        hpBar.SetMaxHealth(maxHealth);
+        playerData.currentHealth = playerData.maxHealth;
+        SetMaxHealth();
+    }
+
+    public void SetMaxHealth()
+    {
+        hpBar.SetMaxHealth(playerData.maxHealth);
     }
 
     // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-
-
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeDamage(10);
+        }   
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        hpBar.SetHealth(currentHealth);
+        playerData.currentHealth -= damage;
+        hpBar.SetHealth(playerData.currentHealth);
     }
 
     public void EnableShooting()
@@ -44,9 +50,18 @@ public class PlayerStats : MonoBehaviour
         playerInput.learnedToShoot = false;
 
     }
+    public void DrinkPotion()
+    {
+        float hpToRecover = playerData.maxHealth * 0.25f;
+        playerData.currentHealth += Convert.ToInt32(hpToRecover);
+        if (playerData.currentHealth > playerData.maxHealth)
+            playerData.currentHealth = playerData.maxHealth;
+        hpBar.SetHealth(playerData.currentHealth);
+
+    }
     public void EnemyDied(IEnemy enemy)
     {
-        Gold += enemy.GoldReward;
-        Experience += enemy.Experience;
+        playerData.gold += enemy.GoldReward;
+        LevelSystem.AddExp(enemy.Experience);
     }
 }

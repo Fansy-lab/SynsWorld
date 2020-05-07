@@ -57,7 +57,8 @@ public class PlayerInput : MonoBehaviour
         {
             GM.Instance.ToggleInventoryPanel();
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+       
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
 
             Dash();

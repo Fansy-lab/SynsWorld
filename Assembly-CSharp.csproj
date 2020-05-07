@@ -85,6 +85,10 @@
     <Compile Include="Assets\Scripts\Inventory\LootTable.cs" />
     <Compile Include="Assets\Scripts\Inventory\PhysicalInventoryItem.cs" />
     <Compile Include="Assets\Scripts\Inventory\PlayerInventory.cs" />
+    <Compile Include="Assets\Scripts\Inventory\RNGGod.cs" />
+    <Compile Include="Assets\Scripts\LevelSystem.cs" />
+    <Compile Include="Assets\Scripts\Levels.cs" />
+    <Compile Include="Assets\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />

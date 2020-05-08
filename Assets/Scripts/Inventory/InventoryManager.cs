@@ -22,6 +22,7 @@ public class InventoryManager : MonoBehaviour
 
 [Header("Inventory Information")]
     public PlayerInventory playerInventory;
+    public ToolTip toolTip;
 
     [SerializeField] private GameObject headSlot;
     [SerializeField] private GameObject chestSlot;
@@ -42,6 +43,7 @@ public class InventoryManager : MonoBehaviour
     public InventoryItem currentItemSelectedInInventory;
     public InventoryItem currentItemSelectedInEquipment;
 
+    
 
     private void Start()
     {
@@ -52,9 +54,40 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    public void SetTextAndButton(string description,bool active)
+    internal void SetupDescription(string description,InventoryItem newItem)
     {
         descriptionText.text = description;
+       
+       
+        if (newItem.equipable)
+        {
+            if (newItem.equipableArmoryStats != null)
+            {
+                descriptionText.text += "\r\n Armor: +" +
+                    newItem.equipableArmoryStats.ArmorAmmount + "\r\n HP: +" +
+                    newItem.equipableArmoryStats.HealthAmmount + "\r\n Evasion: +" +
+                    newItem.equipableArmoryStats.EvasionAmmount;
+
+            }
+            if (newItem.equipableWeaponryStats != null)
+            {
+                descriptionText.text += "\r\n  Damage: +" + newItem.equipableWeaponryStats.Attack;
+                descriptionText.text += "\r\n  Att.Speed: +" + newItem.equipableWeaponryStats.AttackSpeed;
+
+
+            }
+           
+
+        }
+    }
+
+    internal void CleanDescription()
+    {
+        descriptionText.text = "";
+    }
+
+    public void SetButtonTexts(bool active)
+    {
         if (active)
         {
             useButton.SetActive(true);
@@ -87,7 +120,7 @@ public class InventoryManager : MonoBehaviour
 
         UpdateInventoryUI();
 
-        SetTextAndButton("", false);
+        SetButtonTexts(false);
 
         UpdateEquipmentUI();
       
@@ -307,32 +340,33 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void SetupDescriptionAndButton(string description,bool isUsable,bool isEquipable,InventoryItem newItem)
+    public void SetupDifferences(InventoryItem newItem)
     {
-        descriptionText.text = description;
+      
         
         useButton.SetActive(true);
         destroyButton.SetActive(true);
 
         currentItemSelectedInInventory = newItem;
-        if (isUsable)
+        if (newItem.usable)
         {
             useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Use";
         }
-        else if (isEquipable)
+        else if (!newItem.usable)
         {
             if(newItem.equipableArmoryStats != null)
             {
-                descriptionText.text +=  "\r\n Armor: +" + newItem.equipableArmoryStats.ArmorAmmount + "\r\n HP: +" + newItem.equipableArmoryStats.HealthAmmount;
 
+                descriptionText.text = "If equipped:";
             }
             if(newItem.equipableWeaponryStats != null)
             {
-                descriptionText.text += "\r\n + Damage: +" + newItem.equipableWeaponryStats.Attack;
+                descriptionText.text = "If equipped:";
+
 
             }
 
-           bool slotIsTaken = CheckIfSlotIsTaken(newItem);
+            bool slotIsTaken = CheckIfSlotIsTaken(newItem);
 
             if (slotIsTaken)
             {
@@ -406,14 +440,14 @@ public class InventoryManager : MonoBehaviour
             if (currentItemSelectedInInventory.equipable)
             {
                 currentItemSelectedInInventory.Equip(playerInventory);
-                SetTextAndButton("", false);
+                SetButtonTexts( false);
             }
             else if (currentItemSelectedInInventory.usable)
             {
                 currentItemSelectedInInventory.Use(playerInventory);
 
                 if (currentItemSelectedInInventory.numberHeld == 0)
-                    SetTextAndButton("", false);
+                    SetButtonTexts( false);
             }
             UpdateInventoryUI();
             UpdateEquipmentUI();
@@ -430,7 +464,7 @@ public class InventoryManager : MonoBehaviour
             playerInventory.inventoryItems.Remove(currentItemSelectedInInventory);
             UpdateInventoryUI();
 
-            SetTextAndButton("", false);
+            SetButtonTexts( false);
         }
     }
 

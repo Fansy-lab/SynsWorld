@@ -170,10 +170,31 @@ public class InventoryItem : ScriptableObject
         if (playerInventory)
         {
             InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
-            inventoryItemInstance.Init(new EquipableArmoryStats() { ArmorAmmount = itemToUnEquip.equipableArmoryStats.ArmorAmmount,
-                HealthAmmount = itemToUnEquip.equipableArmoryStats.HealthAmmount },
-                null, null, itemToUnEquip.slot, itemToUnEquip.itemName, itemToUnEquip.itemDescription,
-                itemToUnEquip.itemImage, 1, false, true, false, itemToUnEquip.guid);
+            if (itemToUnEquip.slot == Slot.weapon)
+            {
+                inventoryItemInstance.Init(null,
+                    new EquipableWeaponryStats()
+                {
+                    Attack = itemToUnEquip.equipableWeaponryStats.Attack,
+                    AttackSpeed = itemToUnEquip.equipableWeaponryStats.AttackSpeed
+
+                },
+                null, itemToUnEquip.slot, itemToUnEquip.itemName, itemToUnEquip.itemDescription,
+                  itemToUnEquip.itemImage, 1, false, true, false, itemToUnEquip.guid);
+            }
+            else
+            {
+                inventoryItemInstance.Init(new EquipableArmoryStats()
+                {
+                    ArmorAmmount = itemToUnEquip.equipableArmoryStats.ArmorAmmount,
+                    HealthAmmount = itemToUnEquip.equipableArmoryStats.HealthAmmount,
+                    EvasionAmmount = itemToUnEquip.equipableArmoryStats.EvasionAmmount
+
+                },
+                    null, null, itemToUnEquip.slot, itemToUnEquip.itemName, itemToUnEquip.itemDescription,
+                    itemToUnEquip.itemImage, 1, false, true, false, itemToUnEquip.guid);
+            }
+
 
 
             playerInventory.inventoryItems.Add(inventoryItemInstance);
@@ -184,4 +205,6 @@ public class InventoryItem : ScriptableObject
         
 
     }
+
+  
 }

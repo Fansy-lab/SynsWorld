@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BoundedNPC.cs" />
+    <Compile Include="Assets\CameraShaking.cs" />
     <Compile Include="Assets\DummyEnemy.cs" />
     <Compile Include="Assets\Scripts\DamagePopUp.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Assets\SpecialEffects\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
     <Compile Include="Assets\SpecialEffects\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\SpecialEffects\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+    <Compile Include="Assets\ToolTip.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\SpecialEffects\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />

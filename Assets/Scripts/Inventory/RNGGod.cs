@@ -19,7 +19,7 @@ public class RNGGod
     {
         EquipableArmoryStats toReturn = new EquipableArmoryStats();
 
-        toReturn.ArmorAmmount = Random.Range(0, 15);
+        toReturn.ArmorAmmount = Random.Range(1, 15);
         toReturn.HealthAmmount = Random.Range(5, 20);
         toReturn.EvasionAmmount = Random.Range(1, 10);
 

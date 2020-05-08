@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-public class InventorySlot : MonoBehaviour
+using UnityEngine.EventSystems;
+using System;
+
+public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler
 {
     [Header("UI stuff to change")]
     [SerializeField] TextMeshProUGUI itemNameText;
@@ -14,9 +17,13 @@ public class InventorySlot : MonoBehaviour
     public InventoryItem thisItem;
     public InventoryManager thisManager;
 
+    [SerializeField]private ToolTip toolTip;
+
+    
 
     public void Setup(InventoryItem newItem,InventoryManager newManager)
     {
+        toolTip = newManager.toolTip;
         thisItem = newItem;
         thisManager = newManager;
         if (thisItem != null)
@@ -31,7 +38,7 @@ public class InventorySlot : MonoBehaviour
     {
         if (thisItem)
         {
-            thisManager.SetupDescriptionAndButton(thisItem.itemDescription,thisItem.usable,thisItem.equipable,thisItem);
+            thisManager.SetupDifferences(thisItem);
         }
     }
     public void ClickedOnInEquipment()
@@ -42,6 +49,64 @@ public class InventorySlot : MonoBehaviour
         }
     }
 
-  
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (toolTip)
+        {
+            if (thisItem)
+            {
 
+
+                if (thisItem.equipable)
+                {
+                    string descriptionToDisplay = "";
+
+
+                    if (thisItem.equipable)
+                    {
+                        if (thisItem.equipableArmoryStats != null)
+                        {
+                            descriptionToDisplay += "\r\n Armor: +" +
+                                thisItem.equipableArmoryStats.ArmorAmmount + "\r\n HP: +" +
+                                thisItem.equipableArmoryStats.HealthAmmount + "\r\n Evasion: +" +
+                                thisItem.equipableArmoryStats.EvasionAmmount;
+
+                        }
+                        if (thisItem.equipableWeaponryStats != null)
+                        {
+                            descriptionToDisplay += "\r\n  Damage: +" + thisItem.equipableWeaponryStats.Attack;
+                            descriptionToDisplay += "\r\n  Att.Speed: +" + thisItem.equipableWeaponryStats.AttackSpeed;
+
+
+                        }
+
+
+                    }
+                    if (thisItem.slot == InventoryItem.Slot.weapon || thisItem.slot == InventoryItem.Slot.gloves)
+                    {
+                        toolTip.GetComponent<RectTransform>().pivot = new Vector2(0, 0);
+                    }
+                    else
+                    {
+                        toolTip.GetComponent<RectTransform>().pivot = new Vector2(1, 0);
+
+                    }
+                    toolTip.ShowTooltip(descriptionToDisplay, transform.position);
+
+                }
+
+            }
+        }
+    
+    }
+
+
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if(toolTip)
+        toolTip.HideTooltip();
+
+       // thisManager.CleanDescription();
+    }
 }

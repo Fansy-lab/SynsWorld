@@ -64,19 +64,32 @@ public class InventoryItem : ScriptableObject
         if (thisEvent != null)
             thisEvent.Invoke();
         InventoryItem itemSustituido = playerInventory.EquipItem(this);
+        int index = playerInventory.inventoryItems.FindIndex(a => a.guid == this.guid);
+
         playerInventory.inventoryItems.Remove(this);
         if (itemSustituido)
         {
-
-
             InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
-            inventoryItemInstance.Init(new EquipableArmoryStats() { ArmorAmmount = itemSustituido.equipableArmoryStats.ArmorAmmount, HealthAmmount = itemSustituido.equipableArmoryStats.HealthAmmount },
-                null, null, itemSustituido.slot, itemSustituido.itemName, itemSustituido.itemDescription,
-                itemSustituido.itemImage, 1, false, true, false, itemSustituido.guid);
 
 
-            playerInventory.inventoryItems.Add(inventoryItemInstance);
-            Debug.Log("Item EQUIPED: " + guid + "    Item in inventory: " + itemSustituido.guid);
+            if (itemSustituido.slot == Slot.weapon)
+            {
+               inventoryItemInstance.Init(null,
+               new EquipableWeaponryStats() {Attack=itemSustituido.equipableWeaponryStats.Attack,AttackSpeed =itemSustituido.equipableWeaponryStats.AttackSpeed }, null, itemSustituido.slot, itemSustituido.itemName, itemSustituido.itemDescription,
+               itemSustituido.itemImage, 1, false, true, false, itemSustituido.guid);
+
+            }
+            else
+            {
+               inventoryItemInstance.Init(new EquipableArmoryStats() { ArmorAmmount = itemSustituido.equipableArmoryStats.ArmorAmmount, HealthAmmount = itemSustituido.equipableArmoryStats.HealthAmmount },
+               null, null, itemSustituido.slot, itemSustituido.itemName, itemSustituido.itemDescription,
+               itemSustituido.itemImage, 1, false, true, false, itemSustituido.guid);
+
+            }
+
+
+
+            playerInventory.inventoryItems.Insert(index,inventoryItemInstance);
         }
 
         RecalculateStats(playerInventory.equipedItems);

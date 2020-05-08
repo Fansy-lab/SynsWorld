@@ -114,6 +114,7 @@ public class InventoryManager : MonoBehaviour
 
     void OnEnable() //everytime it gets active in the scene
     {
+        CleanDescription();
         UpdatePlayerData();
 
         SetExperienceSlider();
@@ -351,38 +352,91 @@ public class InventoryManager : MonoBehaviour
         if (newItem.usable)
         {
             useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Use";
+            descriptionText.text = "Restores 25% of Max HP ";
+
         }
         else if (!newItem.usable)
         {
-            if(newItem.equipableArmoryStats != null)
-            {
+         
 
-                descriptionText.text = "If equipped:";
-            }
-            if(newItem.equipableWeaponryStats != null)
-            {
-                descriptionText.text = "If equipped:";
+            InventoryItem itemInTheSlot = CheckIfSlotIsTaken(newItem);
 
-
-            }
-
-            bool slotIsTaken = CheckIfSlotIsTaken(newItem);
-
-            if (slotIsTaken)
+            if (itemInTheSlot)
             {
                 useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Replace";
 
+                if (newItem.equipableArmoryStats != null)
+                {
+                    int evasionDifference = itemInTheSlot.equipableArmoryStats.EvasionAmmount - newItem.equipableArmoryStats.EvasionAmmount;
+                    int amorDiference = itemInTheSlot.equipableArmoryStats.ArmorAmmount - newItem.equipableArmoryStats.ArmorAmmount;
+                    int healthDiference = itemInTheSlot.equipableArmoryStats.HealthAmmount - newItem.equipableArmoryStats.HealthAmmount; ;
+
+                    descriptionText.text = "If equipped:";
+                    if (amorDiference <= 0)
+                        descriptionText.text += "\r\n Armor: +" + Mathf.Abs(amorDiference);
+                    else
+                        descriptionText.text += "\r\n Armor: -" + amorDiference;
+
+                    if (healthDiference <= 0)
+                        descriptionText.text += "\r\n HP: +" + Mathf.Abs(healthDiference);
+                    else
+                        descriptionText.text += "\r\n HP: -" + healthDiference;
+
+                    if (evasionDifference <= 0)
+                        descriptionText.text += "\r\n Evasion HP: +" + Mathf.Abs(evasionDifference);
+                    else
+                        descriptionText.text += "\r\n Evasion HP: -" + evasionDifference;
+
+
+
+                }
+                if (newItem.equipableWeaponryStats != null)
+                {
+                    int attack = itemInTheSlot.equipableWeaponryStats.Attack - newItem.equipableWeaponryStats.Attack;
+                    int attackSpeed = itemInTheSlot.equipableWeaponryStats.AttackSpeed - newItem.equipableWeaponryStats.AttackSpeed;
+                    descriptionText.text = "If equipped:";
+
+                    if (attack <= 0)
+                        descriptionText.text += "\r\n Attack: +" + Mathf.Abs(attack);
+                    else
+                        descriptionText.text += "\r\n Attack: -" + attack;
+
+                    if (attackSpeed <= 0)
+                        descriptionText.text += "\r\n Att.Speed: +" + Mathf.Abs(attackSpeed);
+                    else
+                        descriptionText.text += "\r\n Att.Speed: -" + attackSpeed;
+
+                }
             }
             else
             {
-                useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equip";
 
+                useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equip";
+                if (newItem.equipableArmoryStats != null)
+                {
+                    descriptionText.text = "If equipped:";
+                    descriptionText.text += "\r\n Armor: +" + newItem.equipableArmoryStats.ArmorAmmount;
+                    descriptionText.text += "\r\n HP: +" + newItem.equipableArmoryStats.HealthAmmount;
+                    descriptionText.text += "\r\n Evasion: +" + newItem.equipableArmoryStats.EvasionAmmount;
+
+
+
+                }
+                else if(newItem.equipableWeaponryStats != null)
+                {
+                    descriptionText.text = "If equipped:";
+                    descriptionText.text += "\r\n Attack: +" + newItem.equipableWeaponryStats.Attack;
+                    descriptionText.text += "\r\n Att.Speed: +" + newItem.equipableWeaponryStats.AttackSpeed;
+
+                }
             }
+
+          
 
         }
     }
 
-    private bool CheckIfSlotIsTaken(InventoryItem newItem)
+    private InventoryItem CheckIfSlotIsTaken(InventoryItem newItem)
     {
         if (playerInventory)
         {
@@ -391,11 +445,11 @@ public class InventoryManager : MonoBehaviour
 
 
             if (itemEquiped==null)
-                return false;
+                return itemEquiped;
             else
-                return true;
+                return itemEquiped;
         }
-        return false;
+        return null;
     }
 
     void ClearInventorySlots()
@@ -441,13 +495,19 @@ public class InventoryManager : MonoBehaviour
             {
                 currentItemSelectedInInventory.Equip(playerInventory);
                 SetButtonTexts( false);
+                CleanDescription();
             }
             else if (currentItemSelectedInInventory.usable)
             {
                 currentItemSelectedInInventory.Use(playerInventory);
 
                 if (currentItemSelectedInInventory.numberHeld == 0)
-                    SetButtonTexts( false);
+                {
+                    SetButtonTexts(false);
+                    CleanDescription();
+                }
+
+
             }
             UpdateInventoryUI();
             UpdateEquipmentUI();
@@ -465,6 +525,7 @@ public class InventoryManager : MonoBehaviour
             UpdateInventoryUI();
 
             SetButtonTexts( false);
+            CleanDescription();
         }
     }
 

@@ -9,7 +9,7 @@ public class GlobalEvents : MonoBehaviour
     public static event Action<KillGoal> OnKillGoalCompleted;
     public static event Action<InventoryItem> OnPickedItem;
     public static event Action<int> OnGainedExperience;
-    public static event Action<int> OnLevelUp;
+    public static event Action<int?> OnLevelUp;
 
     public static void PickedItem(InventoryItem inventoryItem)
     {

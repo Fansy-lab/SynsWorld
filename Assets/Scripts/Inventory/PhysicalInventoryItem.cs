@@ -93,8 +93,9 @@ public class PhysicalInventoryItem : MonoBehaviour
             {
                 PlayerStats playerStats = GameObject.FindObjectOfType<PlayerStats>();
                 playerStats.playerData.gold += RNGGod.GetGoldAmmount();
+                #if UNITY_EDITOR
                 EditorUtility.SetDirty(playerStats.playerData);
-
+                #endif
                 GlobalEvents.PickedItem(thisItem);//event happened
 
             }

@@ -69,6 +69,7 @@ public class InventoryManager : MonoBehaviour
         GlobalEvents.OnPickedItem += PlayPopUpAndRefreshUI;
         GlobalEvents.OnGainedExperience += UpdateExperienceBar;
         GlobalEvents.OnLevelUp += ResetExpBar;
+        GlobalEvents.OnLevelUp += UpdatePlayerData;
 
 
     }
@@ -134,7 +135,7 @@ public class InventoryManager : MonoBehaviour
     void OnEnable() //everytime it gets active in the scene
     {
         CleanDescription();
-        UpdatePlayerData();
+        UpdatePlayerData(null);
 
         SetExperienceSlider();
 
@@ -174,15 +175,15 @@ public class InventoryManager : MonoBehaviour
     {
         expSlider.value += gainedExperience;
     }
-    private void ResetExpBar(int expForLevelUp)
+    private void ResetExpBar(int? expForLevelUp)
     {
         expSlider.value = 0;
-        expSlider.maxValue = expForLevelUp;
+        expSlider.maxValue = expForLevelUp.Value;
 
         SetLevelText();
     }
 
-    private void UpdatePlayerData()
+    private void UpdatePlayerData(int? exp)
     {
         InventoryItem.RecalculateStats(playerInventory.equipedItems);
         PlayerStats plyerStats = GameObject.FindObjectOfType<PlayerStats>();
@@ -511,7 +512,7 @@ public class InventoryManager : MonoBehaviour
             unEquipButton.GetComponent<Button>().interactable = false;
             currentItemSelectedInEquipment = null;
         }
-        UpdatePlayerData();
+        UpdatePlayerData(null);
     }
 
     public void UseButtonPressed()
@@ -539,7 +540,7 @@ public class InventoryManager : MonoBehaviour
             }
             UpdateInventoryUI();
             UpdateEquipmentUI();
-            UpdatePlayerData();
+            UpdatePlayerData(null);
 
         }
 

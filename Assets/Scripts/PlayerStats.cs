@@ -12,10 +12,13 @@ public class PlayerStats : MonoBehaviour
         
     public HealthBar hpBar;
     PlayerInput playerInput;
+    [SerializeField] GameObject levelUpEffect;
 
     void Start()
     {
         GlobalEvents.OnEnemyDeath += EnemyDied;
+        GlobalEvents.OnLevelUp += PlayerLeveledUp;
+
         playerInput = GetComponentInChildren<PlayerInput>();
         playerData.currentHealth = playerData.maxHealth;
         SetMaxHealth();
@@ -60,10 +63,19 @@ public class PlayerStats : MonoBehaviour
         hpBar.SetHealth(playerData.currentHealth);
 
     }
+    public void PlayerLeveledUp(int? level)
+    {
+       GameObject effect = Instantiate(levelUpEffect, transform.position, Quaternion.identity) as GameObject;
+        effect.transform.SetParent(gameObject.transform);
+
+
+    }
     public void EnemyDied(IEnemy enemy)
     {
         LevelSystem.AddExp(enemy.Experience);
+        #if UNITY_EDITOR
         EditorUtility.SetDirty(playerData);
+        #endif
 
     }
 }

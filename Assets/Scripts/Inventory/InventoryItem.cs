@@ -107,7 +107,7 @@ public class InventoryItem : ScriptableObject
         {
             int totalAttack = 0;
             int totalArmor = 0;
-            int totalMaxHP = 0;
+            int totalMaxHP = LevelSystem.currentLevel * 2;
             int totalEvasion = 0;
             int totalAttackSpeed = 0;
             foreach (KeyValuePair<Slot, InventoryItem> entry in equipedItems)

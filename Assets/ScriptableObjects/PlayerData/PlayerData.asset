@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 0
   attackSpeed: 0
-  maxHealth: 100
+  maxHealth: 104
   armor: 0
   evasion: 0
-  currentHealth: 100
-  gold: 221
-  experience: 309
+  currentHealth: 102
+  gold: 597
+  experience: 9

@@ -35,7 +35,9 @@ public class KillGoal:ScriptableObject
             if (enemy.ID == this.EnemyID)
             {
                 this.CurrentAmmount++;
+                #if UNITY_EDITOR
                 EditorUtility.SetDirty(this);
+                #endif
                 Evaluate(); 
             }
         }

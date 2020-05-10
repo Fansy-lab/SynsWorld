@@ -168,14 +168,14 @@ public class PlayerInput : MonoBehaviour
         }
         else if (currentlyLookingAt == lookingAt.left)
         {
-            firePosition.localPosition = new Vector2(-0.77f, -0.37f);
+            firePosition.localPosition = new Vector2(-0.77f, -0.1f);
             firePosition.localRotation = Quaternion.Euler(0f, 0f, 90f);
             animator.SetTrigger("attackLeft");
 
         }
         else if (currentlyLookingAt == lookingAt.right)
         {
-            firePosition.localPosition = new Vector2(0.77f, -0.37f);
+            firePosition.localPosition = new Vector2(0.77f, -0.1f);
             firePosition.localRotation = Quaternion.Euler(0f, 0f, -90f);
 
             animator.SetTrigger("attackRight");
@@ -234,14 +234,14 @@ public class PlayerInput : MonoBehaviour
 
     private void CheckMovement()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        Vector3 Movement = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("speed", movement.sqrMagnitude);
+        animator.SetFloat("Horizontal", Movement.x);
+        animator.SetFloat("Vertical", Movement.y);
+        animator.SetFloat("Magnitute", Movement.magnitude);
 
-        SetLookingPosition(movement);
+        transform.position = transform.position + Movement.normalized * Time.deltaTime * moveSpeed;
+        SetLookingPosition(Movement);
     }
     private void SetLookingPosition(Vector2 movement)
     {

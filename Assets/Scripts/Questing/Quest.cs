@@ -76,7 +76,9 @@ public class Quest : ScriptableObject
     private void CompleteQuest(Quest quest)
     {
         quest.IsCompleted = true;
+        #if UNITY_EDITOR
         EditorUtility.SetDirty(this);
+        #endif
         GiveReward();
         UIManager.Instance.questsService.CompletedQuest(quest);
     }

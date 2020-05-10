@@ -8,6 +8,10 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager instance;
+    private static int m_referenceCount = 0;
+
+
     [Header("Player Stats")]
     public TextMeshProUGUI attack;
     public TextMeshProUGUI attackSpeed;
@@ -31,6 +35,9 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject glovesSlot;
     [SerializeField] private GameObject bootsSlot;
 
+    [SerializeField] private TextMeshProUGUI GoldText;
+
+
 
     [SerializeField] private GameObject blankInventorySlot;
     [SerializeField] private GameObject inventoryPanel;
@@ -43,7 +50,19 @@ public class InventoryManager : MonoBehaviour
     public InventoryItem currentItemSelectedInInventory;
     public InventoryItem currentItemSelectedInEquipment;
 
-    
+    private void Awake()
+    {
+
+        m_referenceCount++;
+        if (m_referenceCount > 1)
+        {
+            DestroyImmediate(this.gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     private void Start()
     {
@@ -123,10 +142,19 @@ public class InventoryManager : MonoBehaviour
 
         SetButtonTexts(false);
 
+        UpdateGoldUI();
+
         UpdateEquipmentUI();
       
       
 
+    }
+
+    private void UpdateGoldUI()
+    {
+        PlayerStats plyerStats = GameObject.FindObjectOfType<PlayerStats>();
+        if (plyerStats)
+            GoldText.text = plyerStats.playerData.gold.ToString();
     }
 
     private void SetExperienceSlider()
@@ -533,8 +561,6 @@ public class InventoryManager : MonoBehaviour
     {
         UpdateInventoryUI();
 
-
-
     }
 
 
@@ -546,6 +572,8 @@ public class InventoryManager : MonoBehaviour
         ClearInventorySlots();
         //and refill invenotry slots with new numbers
         MakeInventorySlots();
+
+        UpdateGoldUI();
 
     }
 }

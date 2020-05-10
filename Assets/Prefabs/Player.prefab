@@ -28,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2388800576428419373}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &356526352
 GameObject:
@@ -59,7 +59,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2388800576428419373}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &356526354
 MonoBehaviour:
@@ -74,9 +74,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpPosition: {fileID: 196240635}
-  newQuestEmote: {fileID: 5518303802404616626, guid: d235250ba98d14f7b8252c2f72f4e1ac,
-    type: 3}
-  CompletedQuestEmote: {fileID: 0}
+  NewQuestSprite: {fileID: 0}
+  CompletedQuestSprite: {fileID: 0}
+  EmotePrefab: {fileID: 0}
 --- !u!1 &496467350
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,50 +150,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44358826, y: 0.49629784}
   m_EdgeRadius: 0
---- !u!1 &516753969
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 516753970}
-  - component: {fileID: 516753971}
-  m_Layer: 0
-  m_Name: PlayerQuests
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &516753970
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516753969}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.560389, y: -5.7878456, z: -6.643456}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2388800576428419373}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &516753971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516753969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0519a6b6a04824a27bee35bde579dc45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  completedQuests: 
 --- !u!1 &2388800575328538762
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +216,6 @@ Transform:
   - {fileID: 2388800575328538763}
   - {fileID: 1578191562}
   - {fileID: 496467351}
-  - {fileID: 516753970}
   - {fileID: 196240635}
   - {fileID: 356526353}
   m_Father: {fileID: 0}
@@ -355,9 +310,12 @@ MonoBehaviour:
   arrowForce: 15
   currentlyLookingAt: 0
   shootRate: 0.5
+  dashRate: 0
+  dashDistance: 0
   learnedToShoot: 0
   interactPoint: {fileID: 496467350}
   firePosition: {fileID: 2388800575328538763}
+  dashEffect: {fileID: 0}
 --- !u!95 &2388800576428419374
 Animator:
   serializedVersion: 3
@@ -405,10 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f29415bd811674bb14b177a9053f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  Gold: 0
-  Experience: 0
+  playerData: {fileID: 0}
   hpBar: {fileID: 1840891256}
 --- !u!1001 &2812372576461804719
 PrefabInstance:

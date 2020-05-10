@@ -73,9 +73,12 @@ public class Skeleton : MonoBehaviour,IEnemy
 
     void DropLoot()
     {
-        int numberOfItemsToDrop = UnityEngine.Random.Range(0, 5);
+        int numberOfItemsToDrop = UnityEngine.Random.Range(UnityEngine.Random.Range(1, 2), 3);
+        int numberOfGoldec = UnityEngine.Random.Range(UnityEngine.Random.Range(1, 2), 6);
+
         if (lootTable!=null)
         {
+            //items loot
             for (int i = 0; i < numberOfItemsToDrop; i++)
             {
                 PhysicalInventoryItem item = lootTable.LootItem();
@@ -85,7 +88,21 @@ public class Skeleton : MonoBehaviour,IEnemy
                     Instantiate(item.gameObject, position, Quaternion.identity);
                 }
             }
-        
+
+            //gold loot
+            for (int i = 0; i < numberOfGoldec; i++)
+            {
+                PhysicalInventoryItem gold = lootTable.LootGold();
+                if (gold != null)
+                {
+                    
+                        Vector2 position = new Vector2(transform.position.x + (float)(UnityEngine.Random.Range(-0.35f, 0.35f)), transform.position.y + (float)(UnityEngine.Random.Range(-0.35f, 0.35f)));
+                        Instantiate(gold.gameObject, position, Quaternion.identity);
+                    
+                  
+                }
+            }
+
         }
     }
 

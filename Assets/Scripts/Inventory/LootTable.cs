@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,10 +15,10 @@ public class LootTable : ScriptableObject
 {
     public Loot[] loots;
 
-    public PhysicalInventoryItem LootItem()
+    public PhysicalInventoryItem CumulativeLootItem()
     {
         float cumulativeProb = 0;
-        float currentProb = Random.Range(0.0f, 100f);
+        float currentProb = UnityEngine.Random.Range(0.0f, 100f);
         for (int i = 0; i < loots.Length; i++)
         {
             cumulativeProb += loots[i].lootChance;
@@ -25,6 +26,38 @@ public class LootTable : ScriptableObject
             {
                 return loots[i].thisLoot;
             }
+        }
+        return null;
+    }
+    public PhysicalInventoryItem LootItem()
+    {
+        for (int i = 0; i < loots.Length; i++)
+        {
+            float currentProb = UnityEngine.Random.Range(0.0f, 100f);
+
+            if (currentProb <= loots[i].lootChance)
+            {
+                return loots[i].thisLoot;
+            }
+        }
+        return null;
+    }
+
+    internal PhysicalInventoryItem LootGold()
+    {
+        foreach (var item in loots)
+        {
+            if (item.thisLoot.thisItem.isCurrency)
+            {
+                float currentProb = UnityEngine.Random.Range(0.0f, 100f);
+
+                if (currentProb <= item.lootChance)
+                {
+                    return item.thisLoot;
+                }
+
+            }
+           
         }
         return null;
     }

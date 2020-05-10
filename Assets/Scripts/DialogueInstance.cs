@@ -18,5 +18,6 @@ public class DialogueInstance : MonoBehaviour
         {
             _instance = this;
         }
+        DontDestroyOnLoad(this.gameObject);
     }
 }

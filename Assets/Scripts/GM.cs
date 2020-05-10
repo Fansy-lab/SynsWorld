@@ -10,16 +10,15 @@ using UnityEngine.EventSystems;
 public class GM : MonoBehaviour
 {
  
-    private PlayerInput playerMovement;
-    private PlayerStats playerStats;
-    private QuestsService questsService;
-    public GameObject questsUI;
-    public GameObject inventoryUI;
+
+
+   [SerializeField] private GameObject questsUI;
+   [SerializeField] private GameObject inventoryUI;
+   [SerializeField] private GameObject mainMenuUI;
 
     private static GM instance;
     private static int m_referenceCount = 0;
 
-    public Quest questToStart;
 
     public static GM Instance
     {
@@ -56,11 +55,20 @@ public class GM : MonoBehaviour
 
     private void Start()
     {
-        GameObject player = GameObject.Find("Player");
-        playerMovement = player.GetComponent<PlayerInput>();
-        playerStats = player.GetComponent<PlayerStats>();
-        questsService = player.GetComponentInChildren<QuestsService>();
+        mainMenuUI.SetActive(true);
+        inventoryUI.SetActive(false);
+        questsUI.SetActive(false);
 
+     
+
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            bool a = mainMenuUI.activeSelf;
+            mainMenuUI.SetActive(!a);
+        }
     }
 
     internal void ToggleInventoryPanel()
@@ -69,64 +77,22 @@ public class GM : MonoBehaviour
         inventoryUI.SetActive(!a);
     }
 
-    public void DeclineQuest()
-    {
-        DialogueInstance.Instance.GetComponent<DialogueManager>().EndDialogue();
-  
-    }
 
-    public void EnableShooting()
-    {
-        playerStats.EnableShooting();
-    }
 
-    
-
-    public void DisableShooting()
-    {
-        playerStats.DisableShooting();
-
-    }
+   
     public void ToggleQuests()
     {
         bool a = questsUI.activeInHierarchy;
         questsUI.SetActive(!a);
     }
 
-    public void StartQuest()
+    public void PrintHi()
     {
-        if(questToStart != null)
-        {
-            Quest newQuest = ScriptableObject.CreateInstance("Quest") as Quest;
-            newQuest.Init(questToStart.QuestID, questToStart.KillGoals, questToStart.QuestName, questToStart.QuestDescription, questToStart.ExpReward, questToStart.GoldReward, questToStart.ItemReward, questToStart.IsCompleted);
-
-            
-            questsService.AddNewQuest(newQuest);
-
-        }
-    }
-    public void CompletedQuest(Quest quest)
-    {
-
-        questsService.AddQuestToCompletedQuestsAndRemoveQuestFromUI(quest);
-        questsService.RemoveFromCurrentQuests(quest);
-       
-    }
-    public void AbandonQuest(Quest quest)
-    {
-
-        questsService.RemoveFromCurrentQuests(quest);
-        Quest[] questInstances = GameObject.FindObjectsOfType<Quest>();
-        foreach (var questFound in questInstances)
-        {
-            if(questFound.QuestID==quest.QuestID)
-              questsService.AbandonQuest(questFound);
-
-        }
-
+        print("hi");
     }
 
-   
+
+
     internal void CallMethod(string methodToCallInGm,List<string> parameters)
     {
         Type thisType = this.GetType();

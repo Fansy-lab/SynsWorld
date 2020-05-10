@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\SelfDestroyAfterSeconds.cs" />
     <Compile Include="Assets\Scripts\Skeleton.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\StartMenu.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\Warp.cs" />
     <Compile Include="Assets\SpecialEffects\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />

@@ -16,8 +16,9 @@ MonoBehaviour:
   KillGoals:
   - {fileID: 11400000, guid: 476fe8e2b55e54a218212b678abeb147, type: 2}
   QuestName: Kill 3 skeletons
+  spriteQuestPopUp: {fileID: 0}
   QuestDescription: Kill the 3 skeletons outside the village
   ExpReward: 10
   GoldReward: 15
   ItemReward: 
-  IsCompleted: 1
+  IsCompleted: 0

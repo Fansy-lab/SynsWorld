@@ -29,7 +29,6 @@ public class Spawner : MonoBehaviour
 
         if (gOsFound.Length == 0)
         {
-            print("About to spawn " + totalToSpawn + " because gOsfound is 0");
             SpawnEnemies(spawnPositions.Length);
         }
         else

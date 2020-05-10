@@ -19,3 +19,21 @@ MonoBehaviour:
   - thisLoot: {fileID: 1515481280724945223, guid: d8261f19f40c34ec3a449d8e5efe973e,
       type: 3}
     lootChance: 5
+  - thisLoot: {fileID: 1515481280724945223, guid: d039e7d2ba6534b9aa2b091fb93bd620,
+      type: 3}
+    lootChance: 6
+  - thisLoot: {fileID: 1515481280724945223, guid: 80d69e9c8e6b44d74875d95b75cbeda0,
+      type: 3}
+    lootChance: 3
+  - thisLoot: {fileID: 1515481280724945223, guid: 85027697abfb1434f80b73a9a8b829e6,
+      type: 3}
+    lootChance: 4
+  - thisLoot: {fileID: 1515481280724945223, guid: 61820bbf291de4f76bfa116101678503,
+      type: 3}
+    lootChance: 8
+  - thisLoot: {fileID: 1515481280724945223, guid: 25da7aa4f1b634b0e8b862432eab1691,
+      type: 3}
+    lootChance: 7
+  - thisLoot: {fileID: 1515481280724945223, guid: 348f793fa6274471bb1adb4eb0bedded,
+      type: 3}
+    lootChance: 25

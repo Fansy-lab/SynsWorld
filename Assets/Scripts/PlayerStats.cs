@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public PlayerData playerData;
+  public PlayerData playerData;
         
     public HealthBar hpBar;
     PlayerInput playerInput;
@@ -61,7 +62,8 @@ public class PlayerStats : MonoBehaviour
     }
     public void EnemyDied(IEnemy enemy)
     {
-        playerData.gold += enemy.GoldReward;
         LevelSystem.AddExp(enemy.Experience);
+        EditorUtility.SetDirty(playerData);
+
     }
 }

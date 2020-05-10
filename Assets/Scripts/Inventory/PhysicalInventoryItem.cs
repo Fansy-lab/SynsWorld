@@ -7,8 +7,12 @@ using UnityEngine;
 public class PhysicalInventoryItem : MonoBehaviour
 {
     [SerializeField] PlayerInventory playerInventory;
-    [SerializeField] InventoryItem thisItem;
-    
+    [SerializeField] public InventoryItem thisItem;
+
+    private void Start()
+    {
+        Destroy(gameObject, 30);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -52,7 +56,6 @@ public class PhysicalInventoryItem : MonoBehaviour
                 playerInventory.inventoryItems.Add(inventoryItemInstance);
                 GlobalEvents.PickedItem(inventoryItemInstance);//event happened
 
-                Debug.Log("Added to inventory: " + guid);
             }
             else if (thisItem.usable)
             {
@@ -85,6 +88,15 @@ public class PhysicalInventoryItem : MonoBehaviour
                     GlobalEvents.PickedItem(consumable);//event happened
 
                 }
+            }
+            else if (thisItem.isCurrency)
+            {
+                PlayerStats playerStats = GameObject.FindObjectOfType<PlayerStats>();
+                playerStats.playerData.gold += RNGGod.GetGoldAmmount();
+                EditorUtility.SetDirty(playerStats.playerData);
+
+                GlobalEvents.PickedItem(thisItem);//event happened
+
             }
 
 

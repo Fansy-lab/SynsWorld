@@ -24,6 +24,8 @@ public class InventoryItem : ScriptableObject
     public bool equipable;
     public bool unique;
 
+    public bool isCurrency;
+    public int currencyAmmount;
 
     public EquipableArmoryStats equipableArmoryStats;
     public EquipableWeaponryStats equipableWeaponryStats;

@@ -43,6 +43,7 @@ public class LevelSystem: MonoBehaviour
 
     private void CalculateVariables()
     {
+        currentLevel = 0;
         playerStats = GetComponent<PlayerStats>();
         experience = playerStats.playerData.experience;
 

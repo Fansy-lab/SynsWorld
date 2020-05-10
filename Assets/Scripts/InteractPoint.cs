@@ -126,7 +126,9 @@ public class InteractPoint : MonoBehaviour
         //check if prepare quest question
         if (currentInteractableObjectScript.questToStart !=null)
         {
-           GM.Instance.questToStart =currentInteractableObjectScript.questToStart;
+            UIManager.Instance.questsService.questToStart = currentInteractableObjectScript.questToStart; ;
+
+
         }
     
     }

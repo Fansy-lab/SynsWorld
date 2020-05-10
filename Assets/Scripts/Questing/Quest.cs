@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="Quest",menuName = "Questing/New Quest")]
@@ -74,9 +75,10 @@ public class Quest : ScriptableObject
 
     private void CompleteQuest(Quest quest)
     {
-        IsCompleted = true;
+        quest.IsCompleted = true;
+        EditorUtility.SetDirty(this);
         GiveReward();
-        GM.Instance.CompletedQuest(quest);
+        UIManager.Instance.questsService.CompletedQuest(quest);
     }
 
  

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Quest", menuName = "Questing/New Goal")]
@@ -12,6 +13,7 @@ public class KillGoal:ScriptableObject
     public int RequiredAmmount;
 
     public int EnemyID;
+    public string EnemyName;
 
     public void Init()
     {
@@ -33,6 +35,7 @@ public class KillGoal:ScriptableObject
             if (enemy.ID == this.EnemyID)
             {
                 this.CurrentAmmount++;
+                EditorUtility.SetDirty(this);
                 Evaluate(); 
             }
         }

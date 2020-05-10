@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     private static UIManager instance;
     private static int m_referenceCount = 0;
     private Quest currentQuestsInfoBeingShown;
+    public QuestsService questsService;
+
     public static UIManager Instance
     {
         get
@@ -73,7 +75,9 @@ public class UIManager : MonoBehaviour
         if (currentQuestsInfoBeingShown != null)
         {
             RemoveQuestScrollFromUI(currentQuestsInfoBeingShown);
-            GM.Instance.AbandonQuest(currentQuestsInfoBeingShown);
+            QuestsService questsService = GameObject.FindObjectOfType<QuestsService>();
+
+            questsService.AbandonQuest(currentQuestsInfoBeingShown);
             ToggleQuestInfo();
             currentQuestsInfoBeingShown = null;
         }
@@ -91,6 +95,16 @@ public class UIManager : MonoBehaviour
             if (child.name == "QuestDescription")
             {
                 child.GetComponentInChildren<TextMeshProUGUI>().text = quest.QuestDescription;
+
+            }
+            if(child.name == "QuestProgress")
+            {
+                child.GetComponentInChildren<TextMeshProUGUI>().text = "";
+                foreach (var goal in quest.KillGoals)
+                {
+                    child.GetComponentInChildren<TextMeshProUGUI>().text +=goal.EnemyName+": " + goal.CurrentAmmount + "/" +goal.RequiredAmmount +"\r\n";
+
+                }
 
             }
             if (child.name == "RewardsPanel")

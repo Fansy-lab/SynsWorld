@@ -6,11 +6,11 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     public int attack;
-    public int attackSpeed;
+     public int attackSpeed;
     public int maxHealth;
     public int armor;
     public int evasion;
-   
+
     public int currentHealth;
 
     public int gold;

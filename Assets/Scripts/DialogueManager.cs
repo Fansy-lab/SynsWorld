@@ -15,7 +15,6 @@ public class DialogueManager : MonoBehaviour
     public bool currentlyADialogIsOn = false;
     public Guid? currentGuid = null;
     public GameObject YesNo;
-
     Queue<string> sentences;
     void Start()
     {

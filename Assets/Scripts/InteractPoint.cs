@@ -14,6 +14,7 @@ public class InteractPoint : MonoBehaviour
     Tile emptyTile;
     public static Collider2D currentCollision;
 
+    string temporaryPopUpText;
 
     private void Update()
     {
@@ -29,22 +30,8 @@ public class InteractPoint : MonoBehaviour
                     {
                         EmoteManager.Instance.DisplayPopUp(currentInteractableObjectScript.popUpToDisplayOverPlayer);
                     }
-                    bool dialogIsUp = DialogueInstance.Instance.GetComponent<DialogueManager>().currentlyADialogIsOn;
-
-                    if (!dialogIsUp)
-                    {
-                        currentInteractableObjectScript.TriggerDialogue();
-                    }
-                    if (dialogIsUp && IsNewDialog())
-                    {
-                        currentInteractableObjectScript.TriggerDialogue();
-
-                    }
-                    if(dialogIsUp && !IsNewDialog())
-                    {
-                        DialogueInstance.Instance.GetComponent<DialogueManager>().DisplayNextSentence(currentInteractableObjectScript.ShowQuestTEXTPopUp);
-
-                    }
+                 
+                   
 
                 }
                 CheckInteractableProperties();
@@ -53,21 +40,7 @@ public class InteractPoint : MonoBehaviour
 
 
         }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                //dialog stuff
-                bool dialogIsUp = DialogueInstance.Instance.GetComponent<DialogueManager>().currentlyADialogIsOn;
-                if (dialogIsUp)
-                {
-                    DialogueInstance.Instance.GetComponent<DialogueManager>().DisplayNextSentence(currentInteractableObjectScript.ShowQuestTEXTPopUp);
-
-                }
-
-
-            }
-        }
+      
 
 
 
@@ -123,25 +96,11 @@ public class InteractPoint : MonoBehaviour
             GM.Instance.CallMethod(currentInteractableObjectScript.methodToCallInGm,currentInteractableObjectScript.parameters);
         }
 
-        //check if prepare quest question
-        if (currentInteractableObjectScript.questToStart !=null)
-        {
-            UIManager.Instance.questsService.questToStart = currentInteractableObjectScript.questToStart; ;
-
-
-        }
+        
     
     }
 
-    private bool IsNewDialog()
-    {
-        if (DialogueInstance.Instance.GetComponent<DialogueManager>().currentGuid == currentInteractableObjectScript.startDialogue.idDialogue)
-        {
-            return false;
-        }
-        return true;
-
-    }
+   
 
 
 
@@ -149,23 +108,36 @@ public class InteractPoint : MonoBehaviour
     {
 
 
-        //bool touchingInteractable = GetComponent<BoxCollider2D>().IsTouchingLayers(interactableLayer);
+        bool touchingInteractable = GetComponent<BoxCollider2D>().IsTouchingLayers(interactableLayer);
 
 
-        //if (touchingInteractable)
-        //{
-        //    currentInteractableObjectScript = collision.GetComponent<Interactable>();
-        //    if (currentInteractableObjectScript != null)
-        //    {
-        //        currentCollision = collision;
-        //        sittingOverAnotherInteractableObject = true;
-        //    }
-          
-        //}
-        //else
-        //{
-        //    sittingOverAnotherInteractableObject = false;
-        //}
+        if (touchingInteractable)
+        {
+            currentInteractableObjectScript = collision.GetComponent<Interactable>();
+            if (currentInteractableObjectScript != null)
+            {
+                currentCollision = collision;
+                sittingOverAnotherInteractableObject = true;
+                if (currentInteractableObjectScript.TriggersDialogue)
+                {
+
+                    List<string> sentences = new List<string>();
+                    foreach (var item in currentInteractableObjectScript.DialogueText)
+                    {
+                        sentences.Add(item);
+                    }
+
+                    temporaryPopUpText = DialogueManager.instance.InstantiateBubble(transform.position,
+                        new Dialogue() { NPCName = gameObject.name, sentences = sentences, quest = currentInteractableObjectScript.questToStart });
+
+                }
+            }
+
+        }
+        else
+        {
+            sittingOverAnotherInteractableObject = false;
+        }
 
 
 
@@ -174,6 +146,14 @@ public class InteractPoint : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
      
-        //    sittingOverAnotherInteractableObject = false;
+            sittingOverAnotherInteractableObject = false;
+        if (!String.IsNullOrEmpty(temporaryPopUpText))
+        {
+           
+                Destroy(GameObject.Find(temporaryPopUpText));
+                temporaryPopUpText = "";
+            
+        }
+     
     }
 }

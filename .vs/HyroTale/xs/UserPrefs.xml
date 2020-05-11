@@ -1,32 +1,15 @@
 ﻿<Properties StartupConfiguration="{DA0B1CB3-1881-26F6-AA5E-A17CD1FA5E85}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Projectile.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DamagePopUp.cs">
     <Files>
-      <File FileName="Assets/Scripts/Skeleton.cs" Line="93" Column="1" IsPinned="True" />
-      <File FileName="Assets/Scripts/StartMenu.cs" />
-      <File FileName="Assets/Scripts/GM.cs" />
-      <File FileName="Assets/Scripts/PlayerData.cs" />
-      <File FileName="Assets/Scripts/PlayerStats.cs" Line="68" Column="1" />
-      <File FileName="Assets/Scripts/Inventory/InventoryManager.cs" />
-      <File FileName="Assets/Scripts/UIManager.cs" />
-      <File FileName="Assets/Scripts/PlayerInput.cs" Line="240" Column="32" />
-      <File FileName="Assets/Scripts/Inventory/InventorySlot.cs" />
-      <File FileName="Assets/Scripts/Inventory/InventoryItem.cs" />
-      <File FileName="Assets/Scripts/DialogueInstance.cs" />
-      <File FileName="Assets/Scripts/Questing/QuestsService.cs" />
-      <File FileName="Assets/Scripts/InteractPoint.cs" />
-      <File FileName="Assets/Scripts/Questing/Quest.cs" />
+      <File FileName="Assets/Scripts/Inventory/InventorySlot.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Dialogue.cs" Line="46" Column="38" />
       <File FileName="Assets/Scripts/DialogueManager.cs" />
-      <File FileName="Assets/Scripts/Questing/KillGoal.cs" />
-      <File FileName="Assets/Scripts/GlobalEvents.cs" Line="12" Column="37" />
-      <File FileName="Assets/Scripts/DamagePopUp.cs" />
-      <File FileName="Assets/Scripts/Levels.cs" />
-      <File FileName="Assets/Scripts/LevelSystem.cs" Line="33" Column="1" />
-      <File FileName="Assets/Scripts/Spawner.cs" />
-      <File FileName="Assets/Scripts/Inventory/PhysicalInventoryItem.cs" Line="69" Column="46" />
-      <File FileName="Assets/Scripts/Inventory/PlayerInventory.cs" />
-      <File FileName="Assets/Scripts/Inventory/RNGGod.cs" />
-      <File FileName="Assets/Scripts/Inventory/LootTable.cs" Line="50" Column="1" />
-      <File FileName="Assets/Scripts/Projectile.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/Interactable.cs" />
+      <File FileName="Assets/Scripts/InteractPoint.cs" />
+      <File FileName="Assets/Scripts/Questing/QuestsService.cs" />
+      <File FileName="Assets/Scripts/EmoteManager.cs" />
+      <File FileName="Assets/Scripts/GM.cs" />
+      <File FileName="Assets/Scripts/DamagePopUp.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -45,7 +28,7 @@
                   </Node>
                 </Node>
                 <Node name="Questing" expanded="True" />
-                <Node name="Projectile.cs" selected="True" />
+                <Node name="DamagePopUp.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -55,7 +38,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="55e0f5b0-b6b2-423d-bfb3-a9a288b46f96" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="87f0aae5-6694-49b9-b213-36224e16a168" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/KillGoal.cs" relfile="Assets/Scripts/Questing/KillGoal.cs" line="56" column="1" />
@@ -64,11 +47,17 @@
       <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/KillGoal.cs" relfile="Assets/Scripts/Questing/KillGoal.cs" line="33" column="1" />
       <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/CameraShaking.cs" relfile="Assets/CameraShaking.cs" line="24" column="1" />
       <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Inventory/LootTable.cs" relfile="Assets/Scripts/Inventory/LootTable.cs" line="22" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/InteractPoint.cs" relfile="Assets/Scripts/InteractPoint.cs" line="127" column="1" />
       <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/Quest.cs" relfile="Assets/Scripts/Questing/Quest.cs" line="78" column="1" />
       <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/GM.cs" relfile="Assets/Scripts/GM.cs" line="103" column="1" />
       <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/LevelSystem.cs" relfile="Assets/Scripts/LevelSystem.cs" line="27" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/LevelSystem.cs" relfile="Assets/Scripts/LevelSystem.cs" line="26" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Dialogue.cs" relfile="Assets/Scripts/Dialogue.cs" line="68" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Dialogue.cs" relfile="Assets/Scripts/Dialogue.cs" line="80" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Dialogue.cs" relfile="Assets/Scripts/Dialogue.cs" line="104" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Dialogue.cs" relfile="Assets/Scripts/Dialogue.cs" line="112" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/QuestsService.cs" relfile="Assets/Scripts/Questing/QuestsService.cs" line="85" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/EmoteManager.cs" relfile="Assets/Scripts/EmoteManager.cs" line="26" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/DialogueManager.cs" relfile="Assets/Scripts/DialogueManager.cs" line="33" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Dialogue.cs" relfile="Assets/Scripts/Dialogue.cs" line="31" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

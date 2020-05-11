@@ -9,77 +9,41 @@ public class DialogueManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Animator animator;
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
-    public bool currentlyADialogIsOn = false;
-    public Guid? currentGuid = null;
-    public GameObject YesNo;
-    Queue<string> sentences;
-    void Start()
+    public static DialogueManager instance;
+    private static int m_referenceCount = 0;
+    private void Awake()
     {
-        sentences = new Queue<string>();
-    }
-
-
-    public void StartDialogue(Dialogue dialogue)
-    {
-        currentlyADialogIsOn = true;
-        currentGuid = dialogue.idDialogue;
-        animator.SetBool("IsOpen", true);
-
-        nameText.text = dialogue.name;
-
-        sentences.Clear();
-
-        foreach (string sentecen in dialogue.sentences)
+        m_referenceCount++;
+        if (m_referenceCount > 1)
         {
-            sentences.Enqueue(sentecen);
-        }
-
-
-        DisplayNextSentence(false);
-    }
-
-    public void DisplayNextSentence(bool showYesNo)
-    {
-        if(sentences.Count==0) //its end of queue
-        {
-            if (showYesNo)
-            {
-                ShowPopUpYesNo();
-            }
-            else
-            {
-                EndDialogue();
-
-            }
+            DestroyImmediate(this.gameObject);
             return;
         }
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+
+        instance = this;
+        // Use this line if you need the object to persist across scenes
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    private void ShowPopUpYesNo()
+    public  GameObject bubbleToDisplay;
+
+
+    public string InstantiateBubble(Vector3 position,Dialogue dialogueInfo)
     {
-        YesNo.SetActive(true);
+        GameObject go = Instantiate(bubbleToDisplay,new Vector3(position.x,position.y+1f), Quaternion.identity) as GameObject;
+        go.name =  Guid.NewGuid().ToString();
+        Dialogue dialogue = go.GetComponent<Dialogue>();
+        dialogue.sentences = dialogueInfo.sentences;
+        dialogue.NPCName = dialogueInfo.NPCName;
+        dialogue.quest = dialogueInfo.quest;
+
+
+        dialogue.StartDialogue();
+
+        return go.name;
+
     }
 
-    IEnumerator TypeSentence(string sentence)
-    {
-        dialogueText.text = "";
-        foreach (char letter in sentence.ToCharArray())
-        {
-            dialogueText.text += letter;
-            yield return null;
-        }
-    }
 
-    public void EndDialogue()
-    {
-        YesNo.SetActive(false);
-        animator.SetBool("IsOpen", false);
-        currentlyADialogIsOn = false;
-    }
+
 }

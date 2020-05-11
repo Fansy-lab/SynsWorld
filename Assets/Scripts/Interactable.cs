@@ -5,8 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class Interactable : MonoBehaviour
 {
-    [Header("Dialogue")]
-    public Dialogue startDialogue;
+  
     [Header("Tile replacement")]
     public Sprite SpriteToReplace;
     public bool justDestroyTile=false;
@@ -23,14 +22,10 @@ public class Interactable : MonoBehaviour
     [Header("Quest")]
     public Quest questToStart;
     public Sprite popUpToDisplayOverPlayer;
-    public int EndsQuestID;
-    public Dialogue EndQuestDialogue;
 
+    [TextArea(3, 5)]
+    public string[] DialogueText;
 
-    public void TriggerDialogue()
-    {
-         DialogueInstance.Instance.GetComponent<DialogueManager>().StartDialogue(startDialogue);
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,6 +36,7 @@ public class Interactable : MonoBehaviour
             InteractPoint.sittingOverAnotherInteractableObject = true;
             InteractPoint.currentCollision = collision;
 
+          
 
         }
     }
@@ -50,6 +46,8 @@ public class Interactable : MonoBehaviour
 
         InteractPoint.sittingOverAnotherInteractableObject = false;
         InteractPoint.currentCollision = null;
+
+     
     }
 
 }

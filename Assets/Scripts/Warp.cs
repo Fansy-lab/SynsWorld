@@ -7,12 +7,11 @@ public class Warp : MonoBehaviour
     // Start is called before the first frame update
 
     public Vector2 to;
-    SceneManager sceneManager;
+    
     
   
     void Start()
     {
-        sceneManager = GameObject.Find("SceneManager").GetComponent<SceneManager>();
 
     }
 
@@ -27,22 +26,13 @@ public class Warp : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
 
-            
-            StartCoroutine(StartAnimation(collision));
+
+            Camera.main.transform.position = collision.transform.position;
+
+
+            collision.gameObject.transform.position = to; // move the object(player) to the position        }
+
         }
 
     }
-  
-  
-    IEnumerator StartAnimation(Collider2D collision)
-    {
-        sceneManager.CallEndAnimation(); //call the animation    
-        yield return new WaitForSeconds(1);
-        Camera.main.transform.position = collision.transform.position;
-        
-
-        collision.gameObject.transform.position = to; // move the object(player) to the position
-
-    }
-
 }

@@ -9,7 +9,6 @@ public class QuestsService : MonoBehaviour
     public List<Quest> completedQuests;
     public List<Quest> currentQuests;
 
-    public Quest questToStart;
 
     private PlayerStats playerStats;
 
@@ -19,7 +18,6 @@ public class QuestsService : MonoBehaviour
     public void AddNewQuest(Quest quest)
     {
 
-        DialogueInstance.Instance.GetComponent<DialogueManager>().EndDialogue();
         InteractPoint.currentInteractableObjectScript.interactableMultipleTimes = false;
 
         EmoteManager.Instance.ShowNewQuestEmote();
@@ -79,11 +77,10 @@ public class QuestsService : MonoBehaviour
 
     public void DeclineQuest()
     {
-        DialogueInstance.Instance.GetComponent<DialogueManager>().EndDialogue();
 
     }
 
-    public void StartQuest()
+    public void StartQuest(Quest questToStart)
     {
         if (questToStart != null)
         {

@@ -68,7 +68,6 @@
     <Compile Include="Assets\DummyEnemy.cs" />
     <Compile Include="Assets\Scripts\DamagePopUp.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
-    <Compile Include="Assets\Scripts\DialogueInstance.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\EmoteManager.cs" />
     <Compile Include="Assets\Scripts\GM.cs" />
@@ -96,7 +95,6 @@
     <Compile Include="Assets\Scripts\Questing\KillGoal.cs" />
     <Compile Include="Assets\Scripts\Questing\Quest.cs" />
     <Compile Include="Assets\Scripts\Questing\QuestsService.cs" />
-    <Compile Include="Assets\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Scripts\SelfDestroyAfterSeconds.cs" />
     <Compile Include="Assets\Scripts\Skeleton.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />

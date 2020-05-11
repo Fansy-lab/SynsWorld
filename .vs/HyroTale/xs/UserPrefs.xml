@@ -1,15 +1,14 @@
 ﻿<Properties StartupConfiguration="{DA0B1CB3-1881-26F6-AA5E-A17CD1FA5E85}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DamagePopUp.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InteractPoint.cs">
     <Files>
-      <File FileName="Assets/Scripts/Inventory/InventorySlot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Dialogue.cs" Line="46" Column="38" />
-      <File FileName="Assets/Scripts/DialogueManager.cs" />
-      <File FileName="Assets/Scripts/Interactable.cs" />
-      <File FileName="Assets/Scripts/InteractPoint.cs" />
-      <File FileName="Assets/Scripts/Questing/QuestsService.cs" />
-      <File FileName="Assets/Scripts/EmoteManager.cs" />
+      <File FileName="Assets/Scripts/InteractPoint.cs" Line="126" Column="1" />
+      <File FileName="Assets/Scripts/Questing/QuestsService.cs" Line="26" Column="1" />
+      <File FileName="Assets/Scripts/EmoteManager.cs" Line="26" Column="1" />
       <File FileName="Assets/Scripts/GM.cs" />
       <File FileName="Assets/Scripts/DamagePopUp.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Dialogue.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="31" Column="19" />
+      <File FileName="Assets/Scripts/Interactable.cs" Line="15" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,7 +27,7 @@
                   </Node>
                 </Node>
                 <Node name="Questing" expanded="True" />
-                <Node name="DamagePopUp.cs" selected="True" />
+                <Node name="InteractPoint.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -50,14 +49,7 @@
       <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/Quest.cs" relfile="Assets/Scripts/Questing/Quest.cs" line="78" column="1" />
       <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/GM.cs" relfile="Assets/Scripts/GM.cs" line="103" column="1" />
       <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/LevelSystem.cs" relfile="Assets/Scripts/LevelSystem.cs" line="27" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Dialogue.cs" relfile="Assets/Scripts/Dialogue.cs" line="68" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Dialogue.cs" relfile="Assets/Scripts/Dialogue.cs" line="80" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Dialogue.cs" relfile="Assets/Scripts/Dialogue.cs" line="104" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Dialogue.cs" relfile="Assets/Scripts/Dialogue.cs" line="112" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/QuestsService.cs" relfile="Assets/Scripts/Questing/QuestsService.cs" line="85" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/EmoteManager.cs" relfile="Assets/Scripts/EmoteManager.cs" line="26" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/DialogueManager.cs" relfile="Assets/Scripts/DialogueManager.cs" line="33" column="1" />
-      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Dialogue.cs" relfile="Assets/Scripts/Dialogue.cs" line="31" column="1" />
+      <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/InteractPoint.cs" relfile="Assets/Scripts/InteractPoint.cs" line="95" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

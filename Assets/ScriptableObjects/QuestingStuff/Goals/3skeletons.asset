@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idKillGoal: 1
   Description: 3 skeletons
-  Completed: 1
-  CurrentAmmount: 3
+  Completed: 0
+  CurrentAmmount: 2
   RequiredAmmount: 3
   EnemyID: 1
   EnemyName: Skeletons

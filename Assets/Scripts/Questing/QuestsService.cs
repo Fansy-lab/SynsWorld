@@ -18,7 +18,6 @@ public class QuestsService : MonoBehaviour
     public void AddNewQuest(Quest quest)
     {
 
-        InteractPoint.currentInteractableObjectScript.interactableMultipleTimes = false;
 
         EmoteManager.Instance.ShowNewQuestEmote();
         UIManager.Instance.AddNewQuestToTheUIList(quest);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -22,8 +23,8 @@ public class InteractPoint : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (currentInteractableObjectScript != null && currentInteractableObjectScript.TriggersDialogue &&
-                    (currentInteractableObjectScript.alreadyInteracted == false || currentInteractableObjectScript.interactableMultipleTimes))
+                if (currentInteractableObjectScript != null && currentInteractableObjectScript.TriggersDialogueOnClick &&
+                    (currentInteractableObjectScript.alreadyInteracted == false))
                 {
 
                     if (currentInteractableObjectScript.popUpToDisplayOverPlayer!=null)
@@ -51,12 +52,10 @@ public class InteractPoint : MonoBehaviour
 
         if (currentInteractableObjectScript)
         {
-            if ((currentInteractableObjectScript.interactableMultipleTimes))
-            {
-                DoInteractEvents();
+            
 
-            }
-            else if (currentInteractableObjectScript.alreadyInteracted == false)
+            
+            if (currentInteractableObjectScript.alreadyInteracted == false)
             {
                 DoInteractEvents();
             }
@@ -87,17 +86,21 @@ public class InteractPoint : MonoBehaviour
 
         }
 
-
-
-
         //check if has to do something
         if (currentInteractableObjectScript.methodToCallInGm !="")
         {
             GM.Instance.CallMethod(currentInteractableObjectScript.methodToCallInGm,currentInteractableObjectScript.parameters);
         }
 
-        
-    
+        if (currentInteractableObjectScript.TriggersDialogueOnClick && currentInteractableObjectScript.alreadyInteracted==false
+            && currentInteractableObjectScript.DialogueText.Length>0)
+        {
+            temporaryPopUpText= DialogueManager.instance.InstantiateBubble(gameObject.transform.parent.position, new Dialogue() {
+                NPCName=currentInteractableObjectScript.tileName,sentences=currentInteractableObjectScript.DialogueText.ToList()});
+        }
+
+
+
     }
 
    
@@ -118,7 +121,7 @@ public class InteractPoint : MonoBehaviour
             {
                 currentCollision = collision;
                 sittingOverAnotherInteractableObject = true;
-                if (currentInteractableObjectScript.TriggersDialogue)
+                if (currentInteractableObjectScript.TriggersDialogueOnLook)
                 {
 
                     List<string> sentences = new List<string>();
@@ -128,7 +131,7 @@ public class InteractPoint : MonoBehaviour
                     }
 
                     temporaryPopUpText = DialogueManager.instance.InstantiateBubble(transform.position,
-                        new Dialogue() { NPCName = gameObject.name, sentences = sentences, quest = currentInteractableObjectScript.questToStart });
+                        new Dialogue() { NPCName = currentInteractableObjectScript.tileName, sentences = sentences, quest = currentInteractableObjectScript.questToStart });
 
                 }
             }
@@ -147,6 +150,10 @@ public class InteractPoint : MonoBehaviour
     {
      
             sittingOverAnotherInteractableObject = false;
+        if (currentInteractableObjectScript)
+        {
+            currentInteractableObjectScript.alreadyInteracted = false;
+        }
         if (!String.IsNullOrEmpty(temporaryPopUpText))
         {
            

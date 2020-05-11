@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0bef51c193c4ddc959c1f337d2331a, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  attack: 14
-  attackSpeed: 14
-  maxHealth: 155
-  armor: 37
-  evasion: 14
-  currentHealth: 155
-  gold: 674
-  experience: 37
+  attack: 0
+  attackSpeed: 0
+  maxHealth: 106
+  armor: 0
+  evasion: 0
+  currentHealth: 106
+  gold: 706
+  experience: 45

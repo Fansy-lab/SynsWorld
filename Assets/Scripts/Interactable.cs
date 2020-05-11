@@ -12,9 +12,10 @@ public class Interactable : MonoBehaviour
     public bool replaceTileWithEmpty = false;
     public bool replaceTile = false;
     [Header("Tile properties")]
-    public bool interactableMultipleTimes = false;
     public bool alreadyInteracted = false;
-    public bool TriggersDialogue;
+    public bool TriggersDialogueOnLook;
+    public bool TriggersDialogueOnClick;
+
     public bool ShowQuestTEXTPopUp;
     [Header("Call method in GM")]
     public string methodToCallInGm;
@@ -22,6 +23,7 @@ public class Interactable : MonoBehaviour
     [Header("Quest")]
     public Quest questToStart;
     public Sprite popUpToDisplayOverPlayer;
+    public string tileName;
 
     [TextArea(3, 5)]
     public string[] DialogueText;

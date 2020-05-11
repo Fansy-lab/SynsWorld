@@ -114,8 +114,20 @@ public class Dialogue: MonoBehaviour
 
     private void ShowPopUpYesNo()
     {
-        accept.SetActive(true);
-        decline.SetActive(true);
+
+        if( !UIManager.Instance.questsService.currentQuests.Any(x=>x.QuestID==quest.QuestID))
+          
+        {
+            if (!UIManager.Instance.questsService.completedQuests.Any(x => x.QuestID == quest.QuestID))
+            {
+                accept.SetActive(true);
+                decline.SetActive(true);
+
+            }
+            
+        }
+
+      
 
     }
     private void HidePopUpYesNo()

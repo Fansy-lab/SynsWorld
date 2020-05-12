@@ -30,12 +30,16 @@ public class DialogueManager : MonoBehaviour
 
     public string InstantiateBubble(Vector3 position,Dialogue dialogueInfo)
     {
-        GameObject go = Instantiate(bubbleToDisplay,new Vector3(position.x,position.y+1f), Quaternion.identity) as GameObject;
+        GameObject go = Instantiate(bubbleToDisplay,new Vector3(position.x,position.y+1.25f), Quaternion.identity) as GameObject;
         go.name =  Guid.NewGuid().ToString();
         Dialogue dialogue = go.GetComponent<Dialogue>();
         dialogue.sentences = dialogueInfo.sentences;
         dialogue.NPCName = dialogueInfo.NPCName;
-        dialogue.quest = dialogueInfo.quest;
+        dialogue.Quest = dialogueInfo.Quest;
+        if(dialogueInfo.options != null)
+        {
+            dialogue.options = dialogueInfo.options;
+        }
 
 
         dialogue.StartDialogue();

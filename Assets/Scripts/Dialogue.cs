@@ -4,6 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
+[Serializable]
+public enum buttonType
+{
+    introduction,shop,quest
+}
+
+[Serializable]
+public class DisplayOption
+{
+    public string buttonText;
+    public buttonType buttonType;
+    public Quest quest;
+   
+}
 
 public class Dialogue: MonoBehaviour
 {
@@ -15,12 +31,19 @@ public class Dialogue: MonoBehaviour
     public GameObject accept;
     public GameObject decline;
 
+    public Canvas canvas;
+
     public GameObject next;
     public GameObject last;
 
+    public List<DisplayOption> options;
+
+    public GameObject UIdisplayOptions;
+    public GameObject uiOption;
+
     public int indexOfSentence;
 
-    public Quest quest;
+    public Quest Quest;
 
     private void Update()
     {
@@ -69,8 +92,47 @@ public class Dialogue: MonoBehaviour
             next.SetActive(true);
         else
             next.SetActive(false);
-      
+
+        if (options.Count > 0)//display clickable options
+        {
+            UIdisplayOptions.SetActive(true);
+            int counter = 0;
+            foreach (var option in options)
+            {
+                 counter++;
+                GameObject ui  =Instantiate(uiOption, transform.position,Quaternion.identity) as GameObject;
+                ui.GetComponentInChildren<TextMeshProUGUI>().text =counter+". "+option.buttonText;
+                ui.transform.SetParent(UIdisplayOptions.transform);
+                if (option.quest != null)
+                {
+                      ui.GetComponent<Button>().onClick.AddListener(() => DisplayQuest(option.quest));
+
+                }
+                if (counter > 3)
+                {
+                    Vector2 actualPositionOfCanvas = canvas.GetComponent<RectTransform>().sizeDelta;
+                    canvas.GetComponent<RectTransform>().sizeDelta = new Vector2(actualPositionOfCanvas.x, actualPositionOfCanvas.y + 0.7f);
+                   
+                    Vector2 actualPositionOfBackGround= gameObject.GetComponent<SpriteRenderer>().size;
+                    gameObject.GetComponent<SpriteRenderer>().size = new Vector2(actualPositionOfBackGround.x, actualPositionOfBackGround.y+0.4f);
+                }
+            }
+        }
+        else
+        {
+            DisplayFirstSentence();
+
+        }
+    }
+
+    private void DisplayQuest(Quest quest)
+    {
+        UIdisplayOptions.SetActive(false);
+        sentences = quest.StartQuestDialogue;
+        Quest = quest;
+        next.SetActive(true);
         DisplayFirstSentence();
+
     }
 
     private void DisplayFirstSentence()
@@ -105,7 +167,7 @@ public class Dialogue: MonoBehaviour
         if (indexOfSentence+1 == sentences.Count) //end of lines
         {
             next.SetActive(false);
-            if(quest!=null)
+            if(Quest!=null)
             ShowPopUpYesNo();
         }
       
@@ -115,10 +177,10 @@ public class Dialogue: MonoBehaviour
     private void ShowPopUpYesNo()
     {
 
-        if( !UIManager.Instance.questsService.currentQuests.Any(x=>x.QuestID==quest.QuestID))
+        if( !UIManager.Instance.questsService.currentQuests.Any(x=>x.QuestID==Quest.QuestID))
           
         {
-            if (!UIManager.Instance.questsService.completedQuests.Any(x => x.QuestID == quest.QuestID))
+            if (!UIManager.Instance.questsService.completedQuests.Any(x => x.QuestID == Quest.QuestID))
             {
                 accept.SetActive(true);
                 decline.SetActive(true);
@@ -150,9 +212,9 @@ public class Dialogue: MonoBehaviour
 
     public void AcceptQuest()
     {
-        if (quest)
+        if (Quest)
         {
-            UIManager.Instance.questsService.StartQuest(quest);
+            UIManager.Instance.questsService.StartQuest(Quest);
         }
         Destroy(gameObject);
     }

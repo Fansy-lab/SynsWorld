@@ -93,10 +93,10 @@ public class InteractPoint : MonoBehaviour
         }
 
         if (currentInteractableObjectScript.TriggersDialogueOnClick && currentInteractableObjectScript.alreadyInteracted==false
-            && currentInteractableObjectScript.DialogueText.Length>0)
+            && (currentInteractableObjectScript.DialogueText.Length>0 || currentInteractableObjectScript.displayOptions.Count>0))
         {
-            temporaryPopUpText= DialogueManager.instance.InstantiateBubble(gameObject.transform.parent.position, new Dialogue() {
-                NPCName=currentInteractableObjectScript.tileName,sentences=currentInteractableObjectScript.DialogueText.ToList()});
+            temporaryPopUpText= DialogueManager.instance.InstantiateBubble(new Vector2(currentCollision.bounds.max.x,currentCollision.bounds.max.y), new Dialogue() {
+                NPCName=currentInteractableObjectScript.tileName,sentences=currentInteractableObjectScript.DialogueText.ToList(),options=currentInteractableObjectScript.displayOptions});
         }
 
 
@@ -130,8 +130,10 @@ public class InteractPoint : MonoBehaviour
                         sentences.Add(item);
                     }
 
+                    if (currentInteractableObjectScript.Quests.Count == 1) currentInteractableObjectScript.selectedQuest = currentInteractableObjectScript.Quests[0];
+
                     temporaryPopUpText = DialogueManager.instance.InstantiateBubble(transform.position,
-                        new Dialogue() { NPCName = currentInteractableObjectScript.tileName, sentences = sentences, quest = currentInteractableObjectScript.questToStart });
+                        new Dialogue() { NPCName = currentInteractableObjectScript.tileName, sentences = sentences, Quest = currentInteractableObjectScript.selectedQuest });
 
                 }
             }

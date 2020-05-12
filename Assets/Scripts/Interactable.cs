@@ -16,17 +16,19 @@ public class Interactable : MonoBehaviour
     public bool TriggersDialogueOnLook;
     public bool TriggersDialogueOnClick;
 
-    public bool ShowQuestTEXTPopUp;
     [Header("Call method in GM")]
     public string methodToCallInGm;
     public List<string> parameters;
     [Header("Quest")]
-    public Quest questToStart;
+    public List<Quest> Quests;
+    public Quest selectedQuest;
     public Sprite popUpToDisplayOverPlayer;
     public string tileName;
 
     [TextArea(3, 5)]
     public string[] DialogueText;
+    public bool isNPC;
+    public List<DisplayOption> displayOptions;
 
 
     private void OnTriggerEnter2D(Collider2D collision)

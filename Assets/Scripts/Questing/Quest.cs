@@ -17,7 +17,13 @@ public class Quest : ScriptableObject
     public string ItemReward;
     public bool IsCompleted;
 
-    
+    public List<string> StartQuestDialogue;
+    public List<string> WhileOnQuestDialogue;
+    public List<string> FinishedQuestDialogue;
+
+
+
+
     public void Init(int questId, List<KillGoal> killGoals,string questName,string questDescription,int expReward,int goldReward,string itemReward,bool isCompleted)
     {
         QuestID = questId;

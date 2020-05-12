@@ -22,3 +22,8 @@ MonoBehaviour:
   GoldReward: 15
   ItemReward: 
   IsCompleted: 0
+  StartQuestDialogue:
+  - I need someting done
+  - Kill those 3 stupid skeletons outside. Thanks
+  WhileOnQuestDialogue: []
+  FinishedQuestDialogue: []

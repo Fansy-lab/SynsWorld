@@ -26,7 +26,10 @@ public class Interactable : MonoBehaviour
     public string tileName;
 
     [TextArea(3, 5)]
-    public string[] DialogueText;
+    public string[] SimplePopUpTEXT;
+
+
+
     public bool isNPC;
     public List<DisplayOption> displayOptions;
 

@@ -45,6 +45,13 @@ public class Dialogue: MonoBehaviour
 
     public Quest Quest;
 
+
+    Vector2 initialSizeOfCanvas;
+    Vector2 initialSizeOfBackGround;
+
+
+
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -84,6 +91,8 @@ public class Dialogue: MonoBehaviour
     public void StartDialogue()
     {
 
+        initialSizeOfCanvas = canvas.GetComponent<RectTransform>().sizeDelta;
+        initialSizeOfBackGround = gameObject.GetComponent<SpriteRenderer>().size;
 
         NpcNameText.text = NPCName;
         indexOfSentence = 0;
@@ -97,6 +106,7 @@ public class Dialogue: MonoBehaviour
         {
             UIdisplayOptions.SetActive(true);
             int counter = 0;
+           
             foreach (var option in options)
             {
                  counter++;
@@ -108,7 +118,7 @@ public class Dialogue: MonoBehaviour
                       ui.GetComponent<Button>().onClick.AddListener(() => DisplayQuest(option.quest));
 
                 }
-                if (counter > 3)
+                if (counter > 2)
                 {
                     Vector2 actualPositionOfCanvas = canvas.GetComponent<RectTransform>().sizeDelta;
                     canvas.GetComponent<RectTransform>().sizeDelta = new Vector2(actualPositionOfCanvas.x, actualPositionOfCanvas.y + 0.7f);
@@ -137,6 +147,10 @@ public class Dialogue: MonoBehaviour
 
     private void DisplayFirstSentence()
     {
+        gameObject.GetComponent<SpriteRenderer>().size = new Vector2(initialSizeOfBackGround.x, initialSizeOfBackGround.y);
+        canvas.GetComponent<RectTransform>().sizeDelta = new Vector2(initialSizeOfCanvas.x, initialSizeOfCanvas.y);
+
+
         string sentence = sentences[indexOfSentence];
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
@@ -214,6 +228,8 @@ public class Dialogue: MonoBehaviour
     {
         if (Quest)
         {
+          
+
             UIManager.Instance.questsService.StartQuest(Quest);
         }
         Destroy(gameObject);

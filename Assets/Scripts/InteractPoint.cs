@@ -23,18 +23,7 @@ public class InteractPoint : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (currentInteractableObjectScript != null && currentInteractableObjectScript.TriggersDialogueOnClick &&
-                    (currentInteractableObjectScript.alreadyInteracted == false))
-                {
-
-                    if (currentInteractableObjectScript.popUpToDisplayOverPlayer!=null)
-                    {
-                        EmoteManager.Instance.DisplayPopUp(currentInteractableObjectScript.popUpToDisplayOverPlayer);
-                    }
-                 
-                   
-
-                }
+             
                 CheckInteractableProperties();
 
             }
@@ -93,10 +82,10 @@ public class InteractPoint : MonoBehaviour
         }
 
         if (currentInteractableObjectScript.TriggersDialogueOnClick && currentInteractableObjectScript.alreadyInteracted==false
-            && (currentInteractableObjectScript.DialogueText.Length>0 || currentInteractableObjectScript.displayOptions.Count>0))
+            && (currentInteractableObjectScript.SimplePopUpTEXT.Length>0 || currentInteractableObjectScript.displayOptions.Count>0))
         {
             temporaryPopUpText= DialogueManager.instance.InstantiateBubble(new Vector2(currentCollision.bounds.max.x,currentCollision.bounds.max.y), new Dialogue() {
-                NPCName=currentInteractableObjectScript.tileName,sentences=currentInteractableObjectScript.DialogueText.ToList(),options=currentInteractableObjectScript.displayOptions});
+                NPCName=currentInteractableObjectScript.tileName,sentences=currentInteractableObjectScript.SimplePopUpTEXT.ToList(),options=currentInteractableObjectScript.displayOptions});
         }
 
 
@@ -116,7 +105,11 @@ public class InteractPoint : MonoBehaviour
 
         if (touchingInteractable)
         {
+
+         
+
             currentInteractableObjectScript = collision.GetComponent<Interactable>();
+          
             if (currentInteractableObjectScript != null)
             {
                 currentCollision = collision;
@@ -125,12 +118,22 @@ public class InteractPoint : MonoBehaviour
                 {
 
                     List<string> sentences = new List<string>();
-                    foreach (var item in currentInteractableObjectScript.DialogueText)
+                    if (currentInteractableObjectScript.SimplePopUpTEXT.Length > 0)
                     {
-                        sentences.Add(item);
+                        foreach (var item in currentInteractableObjectScript.SimplePopUpTEXT)
+                        {
+                            sentences.Add(item);
+                        }
                     }
+                    else if (currentInteractableObjectScript.Quests.Count == 1)
+                    {
+                        foreach (var item in currentInteractableObjectScript.Quests[0].StartQuestDialogue)
+                        {
+                            sentences.Add(item);
+                        }
+                        currentInteractableObjectScript.selectedQuest = currentInteractableObjectScript.Quests[0];
 
-                    if (currentInteractableObjectScript.Quests.Count == 1) currentInteractableObjectScript.selectedQuest = currentInteractableObjectScript.Quests[0];
+                    }
 
                     temporaryPopUpText = DialogueManager.instance.InstantiateBubble(transform.position,
                         new Dialogue() { NPCName = currentInteractableObjectScript.tileName, sentences = sentences, Quest = currentInteractableObjectScript.selectedQuest });

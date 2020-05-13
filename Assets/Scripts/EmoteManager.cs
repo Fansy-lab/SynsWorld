@@ -20,6 +20,7 @@ public class EmoteManager : MonoBehaviour
             return instance;
         }
     }
+    
 
     internal void ShowNewQuestEmote()
     {
@@ -27,6 +28,19 @@ public class EmoteManager : MonoBehaviour
         GameObject gOSpawned = Instantiate(EmotePrefab, popUpPosition.position, Quaternion.identity) as GameObject;
         gOSpawned.transform.parent = gameObject.transform;
     }
+
+    internal string DisplayCloseByPopUp(Sprite popUpToDisplayOverPlayer,GameObject gO)
+    {
+        EmotePrefab.GetComponentInChildren<SpriteRenderer>().sprite = popUpToDisplayOverPlayer;
+      
+        GameObject gOSpawned = Instantiate(EmotePrefab, gO.transform.position, Quaternion.identity,gO.transform) as GameObject;
+
+        gOSpawned.GetComponent<Animator>().Play("PopUpStationary");
+        gOSpawned.GetComponent<SelfDestroyAfterSeconds>().enabled = false;
+        gOSpawned.name = Guid.NewGuid().ToString();
+        return gOSpawned.name;
+    }
+
     internal void ShowCompletedQuestEmote()
     {
         EmotePrefab.GetComponentInChildren<SpriteRenderer>().sprite = CompletedQuestSprite;
@@ -45,6 +59,8 @@ public class EmoteManager : MonoBehaviour
         }
 
         instance = this;
+        // Use this line if you need the object to persist across scenes
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void OnDestroy()

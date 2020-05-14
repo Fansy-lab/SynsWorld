@@ -15,7 +15,7 @@ public class NPC : MonoBehaviour
     BoxCollider2D boxCollider;
     public GameObject popUpLocation;
 
-    string popUpOverPlayerName;
+    string popUpOverPlayerNameToDestroy;
 
     void Start()
     {
@@ -34,7 +34,7 @@ public class NPC : MonoBehaviour
         {
             playerInCLOSERange = true;
             Vector2 position = boxCollider.bounds.max;
-            popUpOverPlayerName= EmoteManager.Instance.DisplayCloseByPopUp(interactable.popUpToDisplayOverPlayer, popUpLocation);
+            popUpOverPlayerNameToDestroy= EmoteManager.Instance.DisplayCloseByPopUp(interactable.popUpToDisplayOverPlayer, popUpLocation);
 
         }
     }
@@ -43,10 +43,10 @@ public class NPC : MonoBehaviour
         if (collision.GetComponent<PlayerInput>() != false)
         {
             playerInCLOSERange = false;
-            if (!string.IsNullOrEmpty(popUpOverPlayerName))
+            if (!string.IsNullOrEmpty(popUpOverPlayerNameToDestroy))
             {
-                Destroy(GameObject.Find(popUpOverPlayerName));
-                popUpOverPlayerName = "";
+                Destroy(GameObject.Find(popUpOverPlayerNameToDestroy));
+                popUpOverPlayerNameToDestroy = "";
             }
         }
     }

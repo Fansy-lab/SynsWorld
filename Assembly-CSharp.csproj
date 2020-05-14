@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\CameraShaking.cs" />
     <Compile Include="Assets\DummyEnemy.cs" />
+    <Compile Include="Assets\KeyButton.cs" />
     <Compile Include="Assets\NPC.cs" />
     <Compile Include="Assets\Scripts\DamagePopUp.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />

@@ -15,6 +15,8 @@ public class GM : MonoBehaviour
    [SerializeField] private GameObject questsUI;
    [SerializeField] private GameObject inventoryUI;
    [SerializeField] private GameObject mainMenuUI;
+   [SerializeField] private GameObject settingsUI;
+
 
     private static GM instance;
     private static int m_referenceCount = 0;
@@ -55,19 +57,46 @@ public class GM : MonoBehaviour
 
     private void Start()
     {
+        InitialSetup();
+
+    }
+
+    public void InitialSetup()
+    {
         mainMenuUI.SetActive(true);
         inventoryUI.SetActive(false);
         questsUI.SetActive(false);
-
-     
-
+        settingsUI.SetActive(false);
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            bool a = mainMenuUI.activeSelf;
-            mainMenuUI.SetActive(!a);
+            if (questsUI.activeInHierarchy)
+            {
+                questsUI.SetActive(false);
+                return;
+            }
+          
+
+
+            if (inventoryUI.activeInHierarchy)
+            {
+                inventoryUI.SetActive(false);
+                return;
+            }
+
+            if (settingsUI.activeInHierarchy)
+            {
+                settingsUI.SetActive(false);
+                return;
+            }
+    
+
+
+            bool mainMenuStatus = mainMenuUI.activeSelf;
+            mainMenuUI.SetActive(!mainMenuStatus);
         }
     }
 
@@ -84,6 +113,12 @@ public class GM : MonoBehaviour
     {
         bool a = questsUI.activeInHierarchy;
         questsUI.SetActive(!a);
+    }
+    public void ToggleSettings()
+    {
+        mainMenuUI.SetActive(false);
+        bool a = settingsUI.activeInHierarchy;
+        settingsUI.SetActive(!a);
     }
 
     public void PrintHi()

@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Instantiate(specialEffect, transform.position, Quaternion.identity);
+        SoundEffectsManager.instance.PlayHitSound();
         Destroy(gameObject);
     }
 }

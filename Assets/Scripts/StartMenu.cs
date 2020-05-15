@@ -38,4 +38,8 @@ public class StartMenu : MonoBehaviour
     public void LoadGame()
     {
     }
+    public void Settings()
+    {
+        GM.Instance.ToggleSettings();
+    }
 }

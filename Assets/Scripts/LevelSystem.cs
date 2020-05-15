@@ -31,7 +31,7 @@ public class LevelSystem: MonoBehaviour
             currentLevel++;
             experienceForNextLevel = levelsPerExp[currentLevel];
             GlobalEvents.LeveledUp(experienceForNextLevel);
-
+            SoundEffectsManager.instance.PlayLevelUpSound();
         }
         else
         {

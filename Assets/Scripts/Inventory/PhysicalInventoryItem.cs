@@ -55,6 +55,8 @@ public class PhysicalInventoryItem : MonoBehaviour
 
                 playerInventory.inventoryItems.Add(inventoryItemInstance);
                 GlobalEvents.PickedItem(inventoryItemInstance);//event happened
+                SoundEffectsManager.instance.PlayPickedUpItemSound();
+
 
             }
             else if (thisItem.usable)
@@ -88,6 +90,7 @@ public class PhysicalInventoryItem : MonoBehaviour
                     GlobalEvents.PickedItem(consumable);//event happened
 
                 }
+                SoundEffectsManager.instance.PlayPickedMiscItemSound();
             }
             else if (thisItem.isCurrency)
             {
@@ -97,6 +100,7 @@ public class PhysicalInventoryItem : MonoBehaviour
                 EditorUtility.SetDirty(playerStats.playerData);
                 #endif
                 GlobalEvents.PickedItem(thisItem);//event happened
+                SoundEffectsManager.instance.PlayGoldPickedUpSound();
 
             }
 

@@ -45,7 +45,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
     {
         if (thisItem)
         {
-            thisManager.SetupUnEquipButton(thisItem);
+            thisManager.SetupUnEquipButton(thisItem,this);
         }
     }
 

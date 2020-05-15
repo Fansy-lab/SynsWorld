@@ -58,7 +58,7 @@ public class PlayerInput : MonoBehaviour
             GM.Instance.ToggleInventoryPanel();
         }
        
-            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
 
             Dash();
@@ -74,6 +74,7 @@ public class PlayerInput : MonoBehaviour
 
             transform.position += new Vector3(lastLookingDirection.x, lastLookingDirection.y, 0) * dashDistance;
             lastDashed = 0;
+            SoundEffectsManager.instance.PlayDashSound();
         }
     }
     private bool CanDashToLocation(Vector3 dir,float distance)
@@ -225,6 +226,7 @@ public class PlayerInput : MonoBehaviour
             shootingDirectionAtTheMomentOfShooting = lastLookingDirection;
         }
         rbArrow.AddForce(shootingDirectionAtTheMomentOfShooting * arrowForce, ForceMode2D.Impulse);
+        SoundEffectsManager.instance.PlayReleaseArrowSound();
     }
 
     private int SetDamageAmmount()

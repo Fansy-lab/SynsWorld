@@ -31,4 +31,9 @@ public class RNGGod
     {
         return UnityEngine.Random.Range(1, 5);
     }
+
+    internal static float GetRandomPitch()
+    {
+        return UnityEngine.Random.Range(0.9f, 1.1f); 
+    }
 }

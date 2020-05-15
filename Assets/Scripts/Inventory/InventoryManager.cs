@@ -123,12 +123,13 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    internal void SetupUnEquipButton(InventoryItem thisItem)
+    internal void SetupUnEquipButton(InventoryItem thisItem,InventorySlot slot)
     {
         if (thisItem)
         {
             currentItemSelectedInEquipment = thisItem;
             unEquipButton.GetComponent<Button>().interactable = true;
+            unEquipButton.GetComponent<Button>().onClick.AddListener(() => UnEquipButtonPressed(slot));
         }
     }
 
@@ -490,15 +491,14 @@ public class InventoryManager : MonoBehaviour
     }
 
 
-    public void UnEquipButtonPressed()
+    public void UnEquipButtonPressed(InventorySlot slot)
     {
         if (currentItemSelectedInEquipment)
         {
             currentItemSelectedInEquipment.UnEquip(playerInventory,currentItemSelectedInEquipment);
-
             UpdateEquipmentUI();
             UpdateInventoryUI();
-
+            slot.thisItem = null;
             foreach (Transform item in inventoryPanel.transform)
             {
                 if(item.name == currentItemSelectedInEquipment.guid.ToString())

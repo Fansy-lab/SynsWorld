@@ -96,6 +96,7 @@ public class InventoryItem : ScriptableObject
 
         RecalculateStats(playerInventory.equipedItems);
         PlayAnimationInEquipmentInventory();
+        SoundEffectsManager.instance.PlayEquippedItemSound();
 
     }
 
@@ -217,7 +218,7 @@ public class InventoryItem : ScriptableObject
           
         }
         RecalculateStats(playerInventory.equipedItems);
-        
+        SoundEffectsManager.instance.PlayUnEquippedItemSound();
 
     }
 

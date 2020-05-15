@@ -1,21 +1,16 @@
 ﻿<Properties StartupConfiguration="{DA0B1CB3-1881-26F6-AA5E-A17CD1FA5E85}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Dialogue.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerInput.cs">
     <Files>
-      <File FileName="Assets/Scripts/InteractPoint.cs" Line="87" Column="1" />
-      <File FileName="Assets/Scripts/Questing/QuestsService.cs" />
-      <File FileName="Assets/Scripts/EmoteManager.cs" />
-      <File FileName="Assets/Scripts/GM.cs" />
-      <File FileName="Assets/Scripts/DamagePopUp.cs" Line="27" Column="1" />
-      <File FileName="Assets/Scripts/Dialogue.cs" Line="196" Column="34" />
-      <File FileName="Assets/Scripts/DialogueManager.cs" />
+      <File FileName="Assets/Scripts/Inventory/InventoryManager.cs" Line="498" Column="1" />
+      <File FileName="Assets/Scripts/Inventory/InventorySlot.cs" />
       <File FileName="Assets/Scripts/Interactable.cs" />
-      <File FileName="Assets/Scripts/Questing/Quest.cs" />
-      <File FileName="Assets/NPC.cs" />
-      <File FileName="Assets/Scripts/PlayerStats.cs" />
-      <File FileName="Assets/Scripts/SelfDestroyAfterSeconds.cs" />
-      <File FileName="Assets/Scripts/Skeleton.cs" />
-      <File FileName="Assets/KeyButton.cs" Line="24" Column="1" />
-      <File FileName="Assets/Scripts/PlayerInput.cs" Line="292" Column="1" />
+      <File FileName="Assets/Scripts/Dialogue.cs" />
+      <File FileName="Assets/SoundEffectsManager.cs" Line="109" Column="40" />
+      <File FileName="Assets/Scripts/Inventory/PhysicalInventoryItem.cs" />
+      <File FileName="Assets/Scripts/Inventory/RNGGod.cs" />
+      <File FileName="Assets/Scripts/GlobalEvents.cs" />
+      <File FileName="Assets/Scripts/LevelSystem.cs" />
+      <File FileName="Assets/Scripts/PlayerInput.cs" Line="229" Column="62" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -34,7 +29,7 @@
                   </Node>
                 </Node>
                 <Node name="Questing" expanded="True" />
-                <Node name="Dialogue.cs" selected="True" />
+                <Node name="PlayerInput.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -44,7 +39,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ec873000-5fc5-49ea-b033-7714281eb62a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="716d0f92-2993-44ee-93cf-458c6d9f0dda" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/neventsankov/Projects/HyroRepository/HyroTale/Assets/Scripts/Questing/KillGoal.cs" relfile="Assets/Scripts/Questing/KillGoal.cs" line="56" column="1" />

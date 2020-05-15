@@ -39,24 +39,23 @@ public class SettingsManager : MonoBehaviour
     }
     void Start()
     {
-        resolutions= Screen.resolutions;
+        Screen.fullScreen = true;
+
+        resolutions = Screen.resolutions;
         resolutionUI.ClearOptions();
-        int currentREs = 0;
-  
         List<string> options = new List<string>();
+        int currentResolutionIndex = 0;
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
-            if(!options.Contains(option))
-                options.Add(option);
-            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
+            string option = resolutions[i].width + " x " + resolutions[i].height + " " + resolutions[i].refreshRate + "Hz";
+            options.Add(option);
+            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height && resolutions[i].refreshRate == Screen.currentResolution.refreshRate)
             {
-                currentREs = i;
+                currentResolutionIndex = i;
             }
-
         }
         resolutionUI.AddOptions(options);
-        resolutionUI.value = currentREs;
+        resolutionUI.value = currentResolutionIndex;
         resolutionUI.RefreshShownValue();
     }
 

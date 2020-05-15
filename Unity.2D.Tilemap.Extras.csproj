@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{66B204B2-9F89-7F9C-BC2C-6CCC165E7C00}</ProjectGuid>
+    <ProjectGuid>{1E32D367-0835-2840-9434-F05FC4689C19}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.2D.Tilemap.Extras</AssemblyName>
@@ -77,10 +77,10 @@
     <Compile Include="Assets\2d-extras-master\Runtime\Tiles\WeightedRandomTile\WeightedRandomTile.cs" />
     <None Include="Assets\2d-extras-master\Runtime\Brushes\TintedTilemap.shader" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -272,7 +272,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="JMOAssets_CartoonFXFreeWelcome">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Assets/SpecialEffects/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Assets/SpecialEffects/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{49957542-8EDB-A000-27BE-245C93DBF31B}</ProjectGuid>
+    <ProjectGuid>{D039248D-2AB2-FE69-BA56-D729FDB6E4B1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -65,49 +65,49 @@
   <ItemGroup>
     <Compile Include="Assets\SpecialEffects\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -299,10 +299,10 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="JMOAssets_CartoonFXFreeWelcome">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Assets/SpecialEffects/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Assets/SpecialEffects/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Users/fansy/Documents/UnityProjects/HyroTale/HyroTale/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynWorld/SynWorld/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -661,15 +661,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{DA0B1CB3-1881-26F6-AA5E-A17CD1FA5E85}</Project>
+      <Project>{CE54D17C-D386-6715-3D62-9DAC12458A64}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
-      <Project>{B801331B-9009-C2C8-9D70-591CAC153FFF}</Project>
+      <Project>{C1808BAD-25EF-5A6C-B309-30E3A1C3C0BE}</Project>
       <Name>Unity.2D.Tilemap.Extras.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
-      <Project>{66B204B2-9F89-7F9C-BC2C-6CCC165E7C00}</Project>
+      <Project>{1E32D367-0835-2840-9434-F05FC4689C19}</Project>
       <Name>Unity.2D.Tilemap.Extras</Name>
     </ProjectReference>
   </ItemGroup>

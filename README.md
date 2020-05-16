@@ -1,2 +1,2 @@
-# HyroTale
+# SynsWorld
 Unity Project!!

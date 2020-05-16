@@ -25,5 +25,8 @@ MonoBehaviour:
   StartQuestDialogue:
   - I need someting done
   - Kill those 3 stupid skeletons outside. Thanks
-  WhileOnQuestDialogue: []
-  FinishedQuestDialogue: []
+  WhileOnQuestDialogue:
+  - How is the killing going?
+  FinishedQuestDialogue:
+  - Thank you for killing those bastards.
+  - They won't bother us anymore. HA!

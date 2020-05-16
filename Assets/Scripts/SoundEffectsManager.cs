@@ -19,6 +19,7 @@ public class SoundEffectsManager : MonoBehaviour
     public AudioClip releaseArrowSound;
     public AudioClip hitSound;
     public AudioClip levelUpSound;
+    public AudioClip letterType;
 
     AudioSource source;
 
@@ -116,5 +117,12 @@ public class SoundEffectsManager : MonoBehaviour
 
         source.PlayOneShot(hitSound);
         Invoke("ResetPitch", 0.5f);
+    }
+    public void PlayLetter()
+    {
+        if (!source.isPlaying)
+            source.pitch = RNGGod.GetRandomPitch();
+
+        source.PlayOneShot(letterType);
     }
 }

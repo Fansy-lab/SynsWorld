@@ -157,11 +157,26 @@ public class Dialogue: MonoBehaviour
     {
         indexOfSentence = 0;
         UIdisplayOptions.SetActive(false);
-        sentences = quest.StartQuestDialogue;
-        Quest = quest;
-       
+        bool youAreOnThisQuest = UIManager.Instance.questsService.currentQuests.Any(x=>x.QuestID==quest.QuestID);
+        bool youHaveFinishedThisQuest = UIManager.Instance.questsService.completedQuests.Any(x => x.QuestID == quest.QuestID);
+
+        if (youAreOnThisQuest)
+        {
+            sentences = quest.WhileOnQuestDialogue;
+        }
+        else if (youHaveFinishedThisQuest)
+        {
+            sentences = quest.FinishedQuestDialogue;
+        }
+        else
+        {
+            sentences = quest.StartQuestDialogue;
+            Quest = quest;
+
+        }
+
         next.SetActive(true);
-        DisplayFirstSentence(quest.StartQuestDialogue);
+        DisplayFirstSentence(sentences);
 
     }
 
@@ -307,11 +322,20 @@ public class Dialogue: MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
+        float waitFrames = Time.deltaTime * 1.3f;
         DisplayText.text = "";
+        bool a=true;
         foreach (char letter in sentence.ToCharArray())
         {
             DisplayText.text += letter;
-            yield return null;
+            if (a)
+            {
+                SoundEffectsManager.instance.PlayLetter();
+            
+
+            }
+            a = !a;
+            yield return new WaitForSeconds(waitFrames);
         }
     }
 

@@ -17,14 +17,20 @@ MonoBehaviour:
   itemImage: {fileID: 7774829997883845066, guid: fe8fa90c1d4913141a7504ddfbda4db6,
     type: 3}
   numberHeld: 0
+  slot: 4
   usable: 0
   equipable: 1
   unique: 1
+  isTrash: 0
+  isCurrency: 0
+  currencyAmmount: 0
   equipableArmoryStats:
     ArmorAmmount: 0
     HealthAmmount: 0
+    EvasionAmmount: 0
   equipableWeaponryStats:
-    PlusDamage: 2
+    Attack: 0
+    AttackSpeed: 0
   usableStats:
     HPRestoreAmmount: 0
   thisEvent:

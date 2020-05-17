@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour
   public PlayerData playerData;
         
     public HealthBar hpBar;
+    public bool insideALocation=true;
     PlayerInput playerInput;
     [SerializeField] GameObject levelUpEffect;
 

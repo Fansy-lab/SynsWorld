@@ -373,10 +373,13 @@ public class InventoryManager : MonoBehaviour
 
     public void SetupDifferences(InventoryItem newItem)
     {
-      
-        
-        useButton.SetActive(true);
-        destroyButton.SetActive(true);
+
+        if (!newItem.isTrash)
+        {
+            useButton.SetActive(true);
+            destroyButton.SetActive(true);
+        }
+   
 
         currentItemSelectedInInventory = newItem;
         if (newItem.usable)
@@ -384,6 +387,10 @@ public class InventoryManager : MonoBehaviour
             useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Use";
             descriptionText.text = "Restores 25% of Max HP ";
 
+        }
+        else if (newItem.isTrash)
+        {
+            descriptionText.text = newItem.itemDescription;
         }
         else if (!newItem.usable)
         {

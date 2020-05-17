@@ -28,9 +28,9 @@ public class DialogueManager : MonoBehaviour
     public  GameObject bubbleToDisplay;
 
 
-    public string InstantiateBubble(Vector3 position,Dialogue dialogueInfo)
+    public GameObject InstantiateBubble(Vector3 position,Dialogue dialogueInfo)
     {
-        GameObject go = Instantiate(bubbleToDisplay,new Vector3(position.x,position.y+1.25f), Quaternion.identity) as GameObject;
+        GameObject go = Instantiate(bubbleToDisplay,new Vector3(position.x,position.y), Quaternion.identity) as GameObject;
         go.name =  Guid.NewGuid().ToString();
         Dialogue dialogue = go.GetComponent<Dialogue>();
         dialogue.sentences = dialogueInfo.sentences;
@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogue.StartDialogue();
 
-        return go.name;
+        return go;
 
     }
 

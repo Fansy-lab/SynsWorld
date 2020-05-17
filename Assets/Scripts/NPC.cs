@@ -14,6 +14,7 @@ public class NPC : MonoBehaviour
 
     BoxCollider2D boxCollider;
     public GameObject popUpLocation;
+    public GameObject popUpDialogueLocation;
 
     string popUpOverPlayerNameToDestroy;
 
@@ -26,7 +27,7 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -34,7 +35,7 @@ public class NPC : MonoBehaviour
         {
             playerInCLOSERange = true;
             Vector2 position = boxCollider.bounds.max;
-            popUpOverPlayerNameToDestroy= EmoteManager.Instance.DisplayCloseByPopUp(interactable.popUpToDisplayOverPlayer, popUpLocation);
+            popUpOverPlayerNameToDestroy = EmoteManager.Instance.DisplayCloseByPopUp(interactable.popUpToDisplayOverPlayer, popUpLocation);
 
         }
     }
@@ -43,11 +44,18 @@ public class NPC : MonoBehaviour
         if (collision.GetComponent<PlayerInput>() != false)
         {
             playerInCLOSERange = false;
-            if (!string.IsNullOrEmpty(popUpOverPlayerNameToDestroy))
-            {
-                Destroy(GameObject.Find(popUpOverPlayerNameToDestroy));
-                popUpOverPlayerNameToDestroy = "";
-            }
+
+            RemoveSmallPopUp();
+
+        }
+    }
+
+    public void RemoveSmallPopUp()
+    {
+        if (!string.IsNullOrEmpty(popUpOverPlayerNameToDestroy))
+        {
+            Destroy(GameObject.Find(popUpOverPlayerNameToDestroy));
+            popUpOverPlayerNameToDestroy = "";
         }
     }
 }

@@ -34,6 +34,10 @@ public class QuestsService : MonoBehaviour
         {
             goal.Init();
         }
+        foreach (var goal in quest.PickGoals)
+        {
+            goal.Init();
+        }
     }
 
     public void EnableShooting()
@@ -84,7 +88,7 @@ public class QuestsService : MonoBehaviour
         if (questToStart != null)
         {
             Quest newQuest = ScriptableObject.CreateInstance("Quest") as Quest;
-            newQuest.Init(questToStart.QuestID, questToStart.KillGoals, questToStart.QuestName, questToStart.QuestDescription, questToStart.ExpReward, questToStart.GoldReward, questToStart.ItemReward, questToStart.IsCompleted);
+            newQuest.Init(questToStart.QuestID, questToStart.KillGoals,questToStart.PickGoals, questToStart.QuestName, questToStart.QuestDescription, questToStart.ExpReward, questToStart.GoldReward, questToStart.ItemReward, questToStart.IsCompleted);
 
 
             AddNewQuest(newQuest);

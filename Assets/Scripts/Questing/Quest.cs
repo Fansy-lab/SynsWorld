@@ -9,6 +9,8 @@ public class Quest : ScriptableObject
 {
     public int QuestID;
     public List<KillGoal> KillGoals = new List<KillGoal>();
+    public List<PickGoal> PickGoals = new List<PickGoal>();
+
     public string QuestName;
     public Sprite spriteQuestPopUp;
     public string QuestDescription;
@@ -24,10 +26,11 @@ public class Quest : ScriptableObject
 
 
 
-    public void Init(int questId, List<KillGoal> killGoals,string questName,string questDescription,int expReward,int goldReward,string itemReward,bool isCompleted)
+    public void Init(int questId, List<KillGoal> killGoals, List<PickGoal> pickGoals, string questName,string questDescription,int expReward,int goldReward,string itemReward,bool isCompleted)
     {
         QuestID = questId;
         KillGoals = killGoals;
+        PickGoals = pickGoals;
         QuestName =questName;
         QuestDescription =questDescription;
         ExpReward =expReward;
@@ -39,16 +42,21 @@ public class Quest : ScriptableObject
     }
     private void OnDestroy()
     {
-       GlobalEvents.OnKillGoalCompleted -= KillGoalCompleted;
+        if(KillGoals!=null && KillGoals.Count>0)
+            GlobalEvents.OnKillGoalCompleted -= KillGoalCompleted;
+
+        if (PickGoals != null && PickGoals.Count > 0)
+            GlobalEvents.OnPickedGoalCompleted -= PickGoalCompleted;
 
     }
 
     private void SubscribeEvents()
     {
         GlobalEvents.OnKillGoalCompleted += KillGoalCompleted;
+        GlobalEvents.OnPickedGoalCompleted += PickGoalCompleted;
     }
 
-    public void CheckGoals(KillGoal completedKillGoal)
+    public void CheckKillGoals(KillGoal completedKillGoal)
     {
         bool isFromThisQuest = false;
         foreach (var goal in KillGoals)
@@ -74,10 +82,41 @@ public class Quest : ScriptableObject
         }
         
     }
+    private void CheckPickGoals(PickGoal goalComplted)
+    {
+        bool isFromThisQuest = false;
+        foreach (var goal in PickGoals)
+        {
+            if (goal.idPickGoal == goalComplted.idPickGoal)
+            {
+                isFromThisQuest = true;
+                break;
+            }
+        }
+
+        if (isFromThisQuest)
+        {
+            foreach (var goal in PickGoals)
+            {
+                if (goal.Completed == false)
+                {
+
+                    return;
+                }
+            }
+            CompleteQuest(this);
+        }
+    }
     private void KillGoalCompleted(KillGoal goal)
     {
-        CheckGoals(goal);
+        CheckKillGoals(goal);
     }
+    private void PickGoalCompleted(PickGoal goal)
+    {
+        CheckPickGoals(goal);
+    }
+
+   
 
     private void CompleteQuest(Quest quest)
     {

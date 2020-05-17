@@ -125,7 +125,19 @@ public class Dialogue: MonoBehaviour
         {
             counter++;
             GameObject ui = Instantiate(uiOption, transform.position, Quaternion.identity) as GameObject;
-            ui.GetComponentInChildren<TextMeshProUGUI>().text = "[" + counter + "] " + option.buttonText;
+            foreach (var item in ui.GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                if (item.transform.name == "KeyNumber")
+                {
+                    item.text = "[" + counter + "] ";
+                }
+                if (item.transform.name == "OptionText")
+                {
+                    item.text = option.buttonText;
+
+                }
+            }
+           
             ui.transform.SetParent(UIdisplayOptions.transform);
 
 
@@ -322,7 +334,7 @@ public class Dialogue: MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
-        float waitFrames = Time.deltaTime * 1.3f;
+      //  float waitFrames = Time.deltaTime * 1.3f;
         DisplayText.text = "";
         bool a=true;
         foreach (char letter in sentence.ToCharArray())
@@ -335,8 +347,9 @@ public class Dialogue: MonoBehaviour
 
             }
             a = !a;
-            yield return new WaitForSeconds(waitFrames);
+            yield return new WaitForSeconds(0.02f);
         }
+   
     }
 
 

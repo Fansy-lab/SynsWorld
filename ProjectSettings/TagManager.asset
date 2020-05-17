@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - FxTemporaire
   - ItemSlot
+  - speechBubble
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Enemies
   - NPCs
   - WorldGrid
-  - 
+  - WaterTile
   - 
   - 
   - 

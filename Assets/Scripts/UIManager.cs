@@ -105,6 +105,11 @@ public class UIManager : MonoBehaviour
                     child.GetComponentInChildren<TextMeshProUGUI>().text +=goal.EnemyName+": " + goal.CurrentAmmount + "/" +goal.RequiredAmmount +"\r\n";
 
                 }
+                foreach (var goal in quest.PickGoals)
+                {
+                    child.GetComponentInChildren<TextMeshProUGUI>().text += goal.ItemName + ": " + goal.CurrentAmmount + "/" + goal.RequiredAmmount + "\r\n";
+
+                }
 
             }
             if (child.name == "RewardsPanel")

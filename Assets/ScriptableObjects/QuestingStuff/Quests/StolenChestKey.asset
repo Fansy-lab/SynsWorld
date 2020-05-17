@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213f690ab5052442b9847aace40baa75, type: 3}
+  m_Name: StolenChestKey
+  m_EditorClassIdentifier: 
+  QuestID: 2
+  KillGoals: []
+  PickGoals:
+  - {fileID: 11400000, guid: 4cedca7a7775ca24981d07cab9fc9951, type: 2}
+  QuestName: Find Stolen Key
+  spriteQuestPopUp: {fileID: 0}
+  QuestDescription: Find the stolen key.
+  ExpReward: 25
+  GoldReward: 25
+  ItemReward: 
+  IsCompleted: 0
+  StartQuestDialogue:
+  - If anyone reads this...
+  - '... find the bastard that stole my golden key. '
+  - If you find him. Kill him for me.
+  WhileOnQuestDialogue:
+  - If anyone reads this...
+  - '... find the bastard that stole my golden key. '
+  - If you find him. Kill him for me.
+  FinishedQuestDialogue:
+  - If anyone reads this...
+  - '... find the bastard that stole my golden key. '
+  - If you find him. Kill him for me.

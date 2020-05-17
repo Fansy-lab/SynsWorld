@@ -7,6 +7,8 @@ public class GlobalEvents : MonoBehaviour
 {
     public static event Action<IEnemy> OnEnemyDeath;
     public static event Action<KillGoal> OnKillGoalCompleted;
+    public static event Action<PickGoal> OnPickedGoalCompleted;
+
     public static event Action<InventoryItem> OnPickedItem;
     public static event Action<int> OnGainedExperience;
     public static event Action<int?> OnLevelUp;
@@ -19,7 +21,10 @@ public class GlobalEvents : MonoBehaviour
     {
         OnEnemyDeath?.Invoke(enemy); // if onenemydeath is not null
     }
-
+    public static void PickedGoalCompleted(PickGoal pickGoal)
+    {
+        OnPickedGoalCompleted?.Invoke(pickGoal);
+    }
     public static void KillGoalCompleted(KillGoal killGoal)
     {
         OnKillGoalCompleted?.Invoke(killGoal); 

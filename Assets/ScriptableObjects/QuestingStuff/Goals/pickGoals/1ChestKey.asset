@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9abd79259c05f4ca4ac464fdd1b34b3e, type: 3}
-  m_Name: 3skeletons
+  m_Script: {fileID: 11500000, guid: 39248c49bd3363b43820d6b0ff12000e, type: 3}
+  m_Name: 1ChestKey
   m_EditorClassIdentifier: 
-  idKillGoal: 1
-  Description: 3 skeletons
-  Completed: 1
-  CurrentAmmount: 3
-  RequiredAmmount: 3
-  EnemyID: 1
-  EnemyName: Skeletons
+  idPickGoal: 1
+  Description: Chest Key Needed
+  Completed: 0
+  CurrentAmmount: 0
+  RequiredAmmount: 1
+  ItemID: 0
+  ItemName: Chest key

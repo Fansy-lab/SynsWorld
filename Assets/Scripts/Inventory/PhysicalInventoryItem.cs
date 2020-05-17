@@ -42,14 +42,14 @@ public class PhysicalInventoryItem : MonoBehaviour
                     inventoryItemInstance.Init(null,RNGGod.GetRandonWeaponStats(),
                        null, thisItem.slot, thisItem.itemName,
                       thisItem.itemDescription, thisItem.itemImage,
-                      1, false, true, false, guid);
+                      1, false, true, false,false, guid);
                 }
                 else
                 {
                     inventoryItemInstance.Init(RNGGod.GetRandomArmoryStats(),null,
                     null, thisItem.slot, thisItem.itemName,
                     thisItem.itemDescription, thisItem.itemImage,
-                    1, false, true, false, guid);
+                    1, false, true, false,false, guid);
                 }
 
 
@@ -79,7 +79,7 @@ public class PhysicalInventoryItem : MonoBehaviour
                     Guid guid = Guid.NewGuid();
                     InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
                     inventoryItemInstance.Init(null, null, new UsableStats() { HPRestoreAmmount = 25 }, null,thisItem.itemName,
-                        thisItem.itemDescription, thisItem.itemImage, 1, true, false, false, guid);
+                        thisItem.itemDescription, thisItem.itemImage, 1, true, false, false,false, guid);
                     playerInventory.inventoryItems.Add(inventoryItemInstance);
                     GlobalEvents.PickedItem(inventoryItemInstance);//event happened
 
@@ -101,6 +101,17 @@ public class PhysicalInventoryItem : MonoBehaviour
                 #endif
                 GlobalEvents.PickedItem(thisItem);//event happened
                 SoundEffectsManager.instance.PlayGoldPickedUpSound();
+
+            }
+            else if (thisItem.isTrash)
+            {
+                Guid guid = Guid.NewGuid();
+                InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
+                inventoryItemInstance.Init(null, null, null, null, thisItem.itemName,
+                    thisItem.itemDescription, thisItem.itemImage, 1,false, false, false, true, guid);
+                playerInventory.inventoryItems.Add(inventoryItemInstance);
+                GlobalEvents.PickedItem(inventoryItemInstance);//event happened
+                SoundEffectsManager.instance.PlayPickedMiscItemSound();
 
             }
 

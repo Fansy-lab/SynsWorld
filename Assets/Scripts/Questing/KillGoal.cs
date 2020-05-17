@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Quest", menuName = "Questing/New Goal")]
+[CreateAssetMenu(fileName = "Quest", menuName = "Questing/New Kill Goal")]
 public class KillGoal:ScriptableObject
 {
     public int idKillGoal;

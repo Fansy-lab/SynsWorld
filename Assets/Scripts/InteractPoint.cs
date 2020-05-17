@@ -84,8 +84,16 @@ public class InteractPoint : MonoBehaviour
         if (currentInteractableObjectScript.TriggersDialogueOnClick && currentInteractableObjectScript.alreadyInteracted==false
             && (currentInteractableObjectScript.SimplePopUpTEXT.Length>0 || currentInteractableObjectScript.displayOptions.Count>0))
         {
-            temporaryPopUpText= DialogueManager.instance.InstantiateBubble(new Vector2(currentCollision.bounds.max.x,currentCollision.bounds.max.y), new Dialogue() {
-                NPCName=currentInteractableObjectScript.tileName,sentences=currentInteractableObjectScript.SimplePopUpTEXT.ToList(),options=currentInteractableObjectScript.displayOptions});
+            Vector2 targetLocationForDialoguePopUp = new Vector2(currentCollision.bounds.max.x, currentCollision.bounds.max.y);
+            if (currentInteractableObjectScript.GetComponent<NPC>() != null)
+            {
+                targetLocationForDialoguePopUp = currentInteractableObjectScript.GetComponent<NPC>().popUpDialogueLocation.transform.position;
+                currentInteractableObjectScript.GetComponent<NPC>().RemoveSmallPopUp();
+            }
+            GameObject gODialogue= DialogueManager.instance.InstantiateBubble(targetLocationForDialoguePopUp, new Dialogue() {
+                NPCName=currentInteractableObjectScript.tileName,sentences=currentInteractableObjectScript.SimplePopUpTEXT.ToList(),
+                options=currentInteractableObjectScript.displayOptions});
+            temporaryPopUpText = gODialogue.name;
         }
 
 
@@ -102,7 +110,7 @@ public class InteractPoint : MonoBehaviour
 
         bool touchingInteractable = GetComponent<BoxCollider2D>().IsTouchingLayers(interactableLayer);
 
-
+        if (currentInteractableObjectScript) return;
         if (touchingInteractable)
         {
 
@@ -135,8 +143,11 @@ public class InteractPoint : MonoBehaviour
 
                     }
 
-                    temporaryPopUpText = DialogueManager.instance.InstantiateBubble(transform.position,
+                    Vector2 dialogueLocation = new Vector2(currentInteractableObjectScript.transform.position.x, currentInteractableObjectScript.transform.position.y + 0.5f);
+                    GameObject gODialogue = DialogueManager.instance.InstantiateBubble(dialogueLocation,
                         new Dialogue() { NPCName = currentInteractableObjectScript.tileName, sentences = sentences, Quest = currentInteractableObjectScript.selectedQuest });
+
+                    temporaryPopUpText = gODialogue.name;
 
                 }
             }
@@ -154,18 +165,20 @@ public class InteractPoint : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
      
-            sittingOverAnotherInteractableObject = false;
+        sittingOverAnotherInteractableObject = false;
         if (currentInteractableObjectScript)
         {
             currentInteractableObjectScript.alreadyInteracted = false;
+            currentInteractableObjectScript = null;
         }
         if (!String.IsNullOrEmpty(temporaryPopUpText))
         {
-           
-                Destroy(GameObject.Find(temporaryPopUpText));
-                temporaryPopUpText = "";
-            
+            Destroy(GameObject.Find(temporaryPopUpText));
+            temporaryPopUpText = "";
+
         }
-     
+
     }
+
+   
 }

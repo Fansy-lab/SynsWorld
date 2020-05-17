@@ -24,6 +24,8 @@ public class InventoryItem : ScriptableObject
     public bool equipable;
     public bool unique;
 
+    public bool isTrash;
+
     public bool isCurrency;
     public int currencyAmmount;
 
@@ -35,7 +37,7 @@ public class InventoryItem : ScriptableObject
 
     public void Init(EquipableArmoryStats armoryStats,EquipableWeaponryStats
         weaponryStats, UsableStats usableStats,Slot? slot,string itemName,string itemDescription,Sprite itemImage,int numberHeld,
-        bool usable,bool equipable,bool unique,Guid guid)
+        bool usable,bool equipable,bool unique,bool isTrash,Guid guid)
     {
         this.guid = guid;
         this.itemDescription = itemDescription;
@@ -45,6 +47,7 @@ public class InventoryItem : ScriptableObject
         this.usable = usable;
         this.equipable = equipable;
         this.unique = unique;
+        this.isTrash = isTrash;
         if(slot !=null)
             this.slot = slot.Value;
         if (armoryStats != null)
@@ -78,14 +81,14 @@ public class InventoryItem : ScriptableObject
             {
                inventoryItemInstance.Init(null,
                new EquipableWeaponryStats() {Attack=itemSustituido.equipableWeaponryStats.Attack,AttackSpeed =itemSustituido.equipableWeaponryStats.AttackSpeed }, null, itemSustituido.slot, itemSustituido.itemName, itemSustituido.itemDescription,
-               itemSustituido.itemImage, 1, false, true, false, itemSustituido.guid);
+               itemSustituido.itemImage, 1, false, true, false,false, itemSustituido.guid);
 
             }
             else
             {
                inventoryItemInstance.Init(new EquipableArmoryStats() { ArmorAmmount = itemSustituido.equipableArmoryStats.ArmorAmmount, HealthAmmount = itemSustituido.equipableArmoryStats.HealthAmmount },
                null, null, itemSustituido.slot, itemSustituido.itemName, itemSustituido.itemDescription,
-               itemSustituido.itemImage, 1, false, true, false, itemSustituido.guid);
+               itemSustituido.itemImage, 1, false, true, false,false, itemSustituido.guid);
 
             }
 
@@ -196,7 +199,7 @@ public class InventoryItem : ScriptableObject
 
                 },
                 null, itemToUnEquip.slot, itemToUnEquip.itemName, itemToUnEquip.itemDescription,
-                  itemToUnEquip.itemImage, 1, false, true, false, itemToUnEquip.guid);
+                  itemToUnEquip.itemImage, 1, false, true, false,false, itemToUnEquip.guid);
             }
             else
             {
@@ -208,7 +211,7 @@ public class InventoryItem : ScriptableObject
 
                 },
                     null, null, itemToUnEquip.slot, itemToUnEquip.itemName, itemToUnEquip.itemDescription,
-                    itemToUnEquip.itemImage, 1, false, true, false, itemToUnEquip.guid);
+                    itemToUnEquip.itemImage, 1, false, true, false,false, itemToUnEquip.guid);
             }
 
 

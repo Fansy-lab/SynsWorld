@@ -298,6 +298,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
     <Reference Include="JMOAssets_CartoonFXFreeWelcome">
       <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Assets/SpecialEffects/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
@@ -664,9 +667,21 @@
       <Project>{118437C0-603B-6136-C431-658490B42C3F}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{B0C8F95E-9E56-BA5D-0BCE-5D6F5B1D1A33}</Project>
+      <Name>AstarPathfindingProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{B985526E-2BD3-D539-0EB5-0951E114FB19}</Project>
+      <Name>PackageToolsEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
       <Project>{6F05D633-7B80-4103-CB76-C97D157F2F73}</Project>
       <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{99838CFD-A2BD-00A0-A2B8-9269515D258C}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
       <Project>{C3C0693C-F585-164E-6964-83AA274D23C3}</Project>

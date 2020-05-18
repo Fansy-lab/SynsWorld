@@ -116,6 +116,14 @@ public class GM : MonoBehaviour
     public void ToggleQuests()
     {
         bool a = questsUI.activeInHierarchy;
+        if (a)
+        {
+            SoundEffectsManager.instance.PlayCloseQuestSound();
+        }
+        else
+        {
+            SoundEffectsManager.instance.PlayOpenQuestSound();
+        }
         questsUI.SetActive(!a);
     }
     public void ToggleSettings()

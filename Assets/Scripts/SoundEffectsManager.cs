@@ -12,6 +12,7 @@ public class SoundEffectsManager : MonoBehaviour
     public AudioClip[] equippedItemSounds;
     public AudioClip[] unEquippedItemSounds;
 
+
     public AudioClip pickUpItemSound;
     public AudioClip goldPickUpSound;
     public AudioClip miscPickedUpSound;
@@ -20,6 +21,11 @@ public class SoundEffectsManager : MonoBehaviour
     public AudioClip hitSound;
     public AudioClip levelUpSound;
     public AudioClip letterType;
+    public AudioClip openQuestSound;
+    public AudioClip closeQuestSound;
+    public AudioClip newQuestSound;
+    public AudioClip doneQuestSound;
+
 
     AudioSource source;
 
@@ -50,6 +56,14 @@ public class SoundEffectsManager : MonoBehaviour
     {
         int random = UnityEngine.Random.Range(0, equippedItemSounds.Length);
         source.PlayOneShot(equippedItemSounds[random]);
+    }
+
+    internal void PlayOpenQuestSound()
+    {
+        if (!source.isPlaying)
+            source.pitch = RNGGod.GetRandomPitch();
+        source.PlayOneShot(openQuestSound);
+        Invoke("ResetPitch", 0.5f);
     }
 
     internal void PlayUnEquippedItemSound()
@@ -84,6 +98,15 @@ public class SoundEffectsManager : MonoBehaviour
         source.PlayOneShot(miscPickedUpSound);
         Invoke("ResetPitch", 0.5f);
     }
+
+    internal void PlayCloseQuestSound()
+    {
+        if (!source.isPlaying)
+            source.pitch = RNGGod.GetRandomPitch();
+        source.PlayOneShot(closeQuestSound);
+        Invoke("ResetPitch", 0.5f);
+    }
+
     public void ResetPitch()
     {
         source.pitch = 1;
@@ -118,6 +141,20 @@ public class SoundEffectsManager : MonoBehaviour
         source.PlayOneShot(hitSound);
         Invoke("ResetPitch", 0.5f);
     }
+    public void PlayNewQuestSound()
+    {
+  
+
+        source.PlayOneShot(newQuestSound);
+    
+    }
+    public void PlayDoneQuestSound()
+    {
+      
+
+        source.PlayOneShot(doneQuestSound);
+   
+    }
     public void PlayLetter()
     {
         if (!source.isPlaying)
@@ -125,4 +162,6 @@ public class SoundEffectsManager : MonoBehaviour
 
         source.PlayOneShot(letterType);
     }
+
+ 
 }

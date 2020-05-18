@@ -126,6 +126,7 @@ public class Quest : ScriptableObject
         #endif
         GiveReward();
         UIManager.Instance.questsService.CompletedQuest(quest);
+
     }
 
  

@@ -8907,6 +8907,12 @@ MonoBehaviour:
   unEquippedItemSounds:
   - {fileID: 8300000, guid: 86e381a754cd7467dbad0c7dd104889f, type: 3}
   - {fileID: 8300000, guid: 1f664f692d52c45e280448943f7a0782, type: 3}
+  footSteps:
+  - {fileID: 8300000, guid: f09377ebf7a2cd849a07eae2011680c3, type: 3}
+  - {fileID: 8300000, guid: 087f3cc809a7efc4d964b68025a40fe9, type: 3}
+  - {fileID: 8300000, guid: 3ac000a331ca1714ebc7b9f52bed27c1, type: 3}
+  - {fileID: 8300000, guid: b9b1630e7465aea4e9d4b04eaed84f13, type: 3}
+  - {fileID: 8300000, guid: 9aed75763aec41143b1dcce22c5074e5, type: 3}
   pickUpItemSound: {fileID: 8300000, guid: a6591f1a5a48345858858dc87330174f, type: 3}
   goldPickUpSound: {fileID: 8300000, guid: b4b25c62ff90b4c30b5983333cc6c0c4, type: 3}
   miscPickedUpSound: {fileID: 8300000, guid: be105209d255a4f109fd2a0b479f15a1, type: 3}
@@ -8915,6 +8921,10 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: ff63948bed65135489785d7f9e084079, type: 3}
   levelUpSound: {fileID: 8300000, guid: 03be7f4588ca048a5bedc31b37166717, type: 3}
   letterType: {fileID: 8300000, guid: 64391736a565f6e4f9a626eba652fe7e, type: 3}
+  openQuestSound: {fileID: 8300000, guid: 534ee158afb3342379f60c249755b9e4, type: 3}
+  closeQuestSound: {fileID: 8300000, guid: f1c975f3979834a9a89ba6100c6cfefa, type: 3}
+  newQuestSound: {fileID: 8300000, guid: 34c76b119d63f484bb1e21912aca5935, type: 3}
+  doneQuestSound: {fileID: 8300000, guid: fea31647fbbc4f04aadba740712c6cb4, type: 3}
 --- !u!4 &1257612992
 Transform:
   m_ObjectHideFlags: 0

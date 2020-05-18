@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idPickGoal: 1
   Description: Chest Key Needed
-  Completed: 0
-  CurrentAmmount: 0
+  Completed: 1
+  CurrentAmmount: 1
   RequiredAmmount: 1
   ItemID: 0
   ItemName: Chest key

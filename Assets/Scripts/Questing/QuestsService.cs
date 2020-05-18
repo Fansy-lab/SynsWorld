@@ -62,6 +62,7 @@ public class QuestsService : MonoBehaviour
 
         AddQuestToCompletedQuestsAndRemoveQuestFromUI(quest);
         RemoveFromCurrentQuests(quest);
+        SoundEffectsManager.instance.PlayDoneQuestSound();
 
     }
     public void AbandonQuest(Quest quest)
@@ -90,6 +91,7 @@ public class QuestsService : MonoBehaviour
             Quest newQuest = ScriptableObject.CreateInstance("Quest") as Quest;
             newQuest.Init(questToStart.QuestID, questToStart.KillGoals,questToStart.PickGoals, questToStart.QuestName, questToStart.QuestDescription, questToStart.ExpReward, questToStart.GoldReward, questToStart.ItemReward, questToStart.IsCompleted);
 
+            SoundEffectsManager.instance.PlayNewQuestSound();
 
             AddNewQuest(newQuest);
 

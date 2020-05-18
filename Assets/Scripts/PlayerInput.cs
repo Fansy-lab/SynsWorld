@@ -52,6 +52,7 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             GM.Instance.ToggleQuests();
+    
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -64,6 +65,8 @@ public class PlayerInput : MonoBehaviour
             Dash();
         }
     }
+
+  
 
     private void Dash()
     {

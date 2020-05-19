@@ -20,6 +20,10 @@ public class Skeleton : MonoBehaviour,IEnemy
     public int Experience { get; set; }
     [SerializeField]
     public LootTable MylootTable;
+
+
+    Vector3 previous;
+    float velocity;
     public LootTable lootTable
     {
         get { return MylootTable; }
@@ -36,8 +40,6 @@ public class Skeleton : MonoBehaviour,IEnemy
         currentHealth = _maxHealth;
         hp.SetMaxHealth(_maxHealth);
     }
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

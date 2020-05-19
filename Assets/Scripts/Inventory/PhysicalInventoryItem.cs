@@ -83,7 +83,7 @@ public class PhysicalInventoryItem : MonoBehaviour
                     playerInventory.inventoryItems.Add(inventoryItemInstance);
                     GlobalEvents.PickedItem(inventoryItemInstance);//event happened
 
-                    Debug.Log("Added to inventory: " + guid);
+                    //Debug.Log("Added to inventory: " + guid);
                 }
                 else
                 {

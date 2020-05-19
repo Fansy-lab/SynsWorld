@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3117324114661269900}
   - component: {fileID: 3117324114661269899}
   - component: {fileID: 5849477964063443762}
+  - component: {fileID: 1682331517}
+  - component: {fileID: 1682331518}
   m_Layer: 11
   m_Name: Skeleton2
   m_TagString: Enemy
@@ -99,18 +101,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09967518, y: 0}
+  m_Offset: {x: -0.24066639, y: -0.22155714}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4666667, y: 2.1333334}
+    oldSize: {x: 1.6, y: 2.1333334}
     newSize: {x: 1.40625, y: 1.59375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7605953, y: 1.9615384}
+  m_Size: {x: 0.4786129, y: 1.518424}
   m_EdgeRadius: 0
 --- !u!95 &3117324114661269899
 Animator:
@@ -150,6 +152,48 @@ MonoBehaviour:
   damagePopUp: {fileID: 7679418662773342743, guid: 7fd747da3f2d7484ab4ea141051b5fcf,
     type: 3}
   MylootTable: {fileID: 11400000, guid: 3bf656ac968d34ddab6668e640e8d940, type: 2}
+--- !u!114 &1682331517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117324114661269896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c32f3ae40dc742429c924255a2dc7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3.2
+  nextWayPointDistance: 1
+--- !u!114 &1682331518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117324114661269896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!1001 &1648145152
 PrefabInstance:
   m_ObjectHideFlags: 0

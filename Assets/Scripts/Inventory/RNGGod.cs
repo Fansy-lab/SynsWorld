@@ -10,7 +10,8 @@ public class RNGGod
     public static EquipableWeaponryStats GetRandonWeaponStats()
     {
         EquipableWeaponryStats toReturn = new EquipableWeaponryStats();
-        toReturn.Attack = UnityEngine.Random.Range(5, 15);
+        toReturn.AttackMinDamage = UnityEngine.Random.Range(3, 7);
+        toReturn.AttackMaxDamage = UnityEngine.Random.Range(7, 20);
         toReturn.AttackSpeed = UnityEngine.Random.Range(5, 10);
 
         return toReturn;

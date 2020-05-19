@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class EquipableWeaponryStats 
 {
-    public int Attack;
+    public int AttackMinDamage;
+    public int AttackMaxDamage;
     public int AttackSpeed;
 }

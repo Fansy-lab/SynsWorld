@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="PlayerData",menuName ="Player/PlayerData")]
 public class PlayerData : ScriptableObject
 {
-    public int attack;
-     public int attackSpeed;
+    public int DPS;
+
     public int maxHealth;
     public int armor;
     public int evasion;

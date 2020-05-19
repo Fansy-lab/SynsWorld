@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     bool reachedEndOfPath;
     Animator anim;
     Seeker seeker;
+    public bool dead=false;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -29,7 +30,7 @@ public class EnemyAI : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, target.transform.position);
 
-        if (seeker.IsDone() && target != null && distance>1.5)
+        if (seeker.IsDone() && target != null && distance>1.5 )
             seeker.StartPath(transform.position, target.transform.position, OnPathComplete);
 
 
@@ -68,6 +69,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - (Vector2)transform.position).normalized;
+        if(!dead) //dont move if dead
         transform.Translate(direction * Time.deltaTime * speed);
 
         float distance = Vector2.Distance(transform.position, path.vectorPath[currentWayPoint]);
@@ -75,15 +77,18 @@ public class EnemyAI : MonoBehaviour
         {
             currentWayPoint++;
         }
-
-        if (target.transform.position.x > transform.position.x)
+        if (!dead) //dont rotate if dead
         {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
+            if (target.transform.position.x > transform.position.x)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
 
+            }
         }
+    
     }
 }

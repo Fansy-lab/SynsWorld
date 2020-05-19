@@ -80,7 +80,7 @@ public class InventoryItem : ScriptableObject
             if (itemSustituido.slot == Slot.weapon)
             {
                inventoryItemInstance.Init(null,
-               new EquipableWeaponryStats() {Attack=itemSustituido.equipableWeaponryStats.Attack,AttackSpeed =itemSustituido.equipableWeaponryStats.AttackSpeed }, null, itemSustituido.slot, itemSustituido.itemName, itemSustituido.itemDescription,
+               new EquipableWeaponryStats() {AttackMinDamage=itemSustituido.equipableWeaponryStats.AttackMinDamage,AttackSpeed =itemSustituido.equipableWeaponryStats.AttackSpeed,AttackMaxDamage= itemSustituido.equipableWeaponryStats.AttackMaxDamage }, null, itemSustituido.slot, itemSustituido.itemName, itemSustituido.itemDescription,
                itemSustituido.itemImage, 1, false, true, false,false, itemSustituido.guid);
 
             }
@@ -126,7 +126,7 @@ public class InventoryItem : ScriptableObject
                     }
                     if (entry.Value.equipableWeaponryStats != null)
                     {
-                        totalAttack += entry.Value.equipableWeaponryStats.Attack;
+                        totalAttack += (entry.Value.equipableWeaponryStats.AttackMinDamage + entry.Value.equipableWeaponryStats.AttackMaxDamage)/2;
                         totalAttackSpeed += entry.Value.equipableWeaponryStats.AttackSpeed;
                         
                     }
@@ -135,8 +135,8 @@ public class InventoryItem : ScriptableObject
             }
             playerStats.playerData.armor = totalArmor;
             playerStats.playerData.maxHealth = totalMaxHP +100;
-            playerStats.playerData.attack = totalAttack;
-            playerStats.playerData.attackSpeed = totalAttack;
+            playerStats.playerData.DPS = totalAttack *totalAttackSpeed;
+
             playerStats.playerData.evasion = totalEvasion;
             playerStats.SetMaxHealth();
 
@@ -194,7 +194,8 @@ public class InventoryItem : ScriptableObject
                 inventoryItemInstance.Init(null,
                     new EquipableWeaponryStats()
                 {
-                    Attack = itemToUnEquip.equipableWeaponryStats.Attack,
+                    AttackMinDamage = itemToUnEquip.equipableWeaponryStats.AttackMinDamage,
+                    AttackMaxDamage = itemToUnEquip.equipableWeaponryStats.AttackMaxDamage,
                     AttackSpeed = itemToUnEquip.equipableWeaponryStats.AttackSpeed
 
                 },

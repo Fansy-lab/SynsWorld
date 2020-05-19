@@ -21,9 +21,6 @@ public class Skeleton : MonoBehaviour,IEnemy
     [SerializeField]
     public LootTable MylootTable;
 
-
-    Vector3 previous;
-    float velocity;
     public LootTable lootTable
     {
         get { return MylootTable; }
@@ -53,6 +50,7 @@ public class Skeleton : MonoBehaviour,IEnemy
                 GetComponent<BoxCollider2D>().enabled = false;
                 animator.SetTrigger("death");
                 GlobalEvents.EnemyDied(this);//event happened
+                GetComponent<EnemyAI>().dead = true;
 
                 StartCoroutine(StartDeath());
             }
@@ -60,14 +58,13 @@ public class Skeleton : MonoBehaviour,IEnemy
             {
                 animator.SetTrigger("takeDamage");
 
-
-
             }
         }
     }
 
     IEnumerator StartDeath()
     {
+
         yield return new WaitForSeconds(1f);
         Die();
     }
@@ -122,7 +119,6 @@ public class Skeleton : MonoBehaviour,IEnemy
 
     public void Die()
     {
-
         DropLoot();
         Destroy(gameObject);
     }

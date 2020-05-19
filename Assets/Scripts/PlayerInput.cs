@@ -234,7 +234,18 @@ public class PlayerInput : MonoBehaviour
 
     private int SetDamageAmmount()
     {
-        return UnityEngine.Random.Range(1,3);
+        int attack = GetComponent<PlayerStats>().playerData.DPS;
+        InventoryItem weapon = InventoryManager.instance.CheckIfSlotIsTakenAndReturnItemIfOcupied(InventoryItem.Slot.weapon);
+
+        int minDamage = 0;
+        int maxDamage = 0;
+        if (weapon)
+        {
+           minDamage =  weapon.equipableWeaponryStats.AttackMinDamage;
+           maxDamage = weapon.equipableWeaponryStats.AttackMaxDamage;
+
+        }
+        return UnityEngine.Random.Range(1+ minDamage, 1+ maxDamage);
     }
 
     private void CheckMovement()

@@ -14,7 +14,6 @@ public class InventoryManager : MonoBehaviour
 
     [Header("Player Stats")]
     public TextMeshProUGUI attack;
-    public TextMeshProUGUI attackSpeed;
     public TextMeshProUGUI maxHP;
     public TextMeshProUGUI armor;
     public TextMeshProUGUI evasion;
@@ -91,7 +90,9 @@ public class InventoryManager : MonoBehaviour
             }
             if (newItem.equipableWeaponryStats != null)
             {
-                descriptionText.text += "\r\n  Damage: +" + newItem.equipableWeaponryStats.Attack;
+                descriptionText.text += "\r\n  Min Damage: +" + newItem.equipableWeaponryStats.AttackMinDamage;
+                descriptionText.text += "\r\n  Max Damage: +" + newItem.equipableWeaponryStats.AttackMaxDamage;
+
                 descriptionText.text += "\r\n  Att.Speed: +" + newItem.equipableWeaponryStats.AttackSpeed;
 
 
@@ -190,8 +191,7 @@ public class InventoryManager : MonoBehaviour
         PlayerStats plyerStats = GameObject.FindObjectOfType<PlayerStats>();
         if (plyerStats)
         {
-            attack.text = "Attack: "+ plyerStats.playerData.attack;
-            attackSpeed.text = "Att.Speed: " + plyerStats.playerData.attackSpeed;
+            attack.text = "DPS: "+ plyerStats.playerData.DPS;
             armor.text = "Armor: "+ plyerStats.playerData.armor;
             maxHP.text = "Max HP: "+plyerStats.playerData.maxHealth;
             evasion.text = "Evasion: " +plyerStats.playerData.evasion;
@@ -396,12 +396,11 @@ public class InventoryManager : MonoBehaviour
         {
          
 
-            InventoryItem itemInTheSlot = CheckIfSlotIsTaken(newItem);
+            InventoryItem itemInTheSlot = CheckIfSlotIsTakenAndReturnItemIfOcupied(newItem.slot);
 
             if (itemInTheSlot)
             {
                 useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Replace";
-
                 if (newItem.equipableArmoryStats != null)
                 {
                     int evasionDifference = itemInTheSlot.equipableArmoryStats.EvasionAmmount - newItem.equipableArmoryStats.EvasionAmmount;
@@ -429,19 +428,23 @@ public class InventoryManager : MonoBehaviour
                 }
                 if (newItem.equipableWeaponryStats != null)
                 {
-                    int attack = itemInTheSlot.equipableWeaponryStats.Attack - newItem.equipableWeaponryStats.Attack;
-                    int attackSpeed = itemInTheSlot.equipableWeaponryStats.AttackSpeed - newItem.equipableWeaponryStats.AttackSpeed;
+                    int minAttack = itemInTheSlot.equipableWeaponryStats.AttackMinDamage;
+                    int maxAttack = itemInTheSlot.equipableWeaponryStats.AttackMaxDamage;
+                    int attackSpeed = itemInTheSlot.equipableWeaponryStats.AttackSpeed;
+                    int currentCalculatedDPS = ((minAttack + maxAttack) / 2) * attackSpeed;
+
+                    int newMinAttack = newItem.equipableWeaponryStats.AttackMinDamage;
+                    int newMaxAttack = newItem.equipableWeaponryStats.AttackMaxDamage;
+                    int newAttackSpeed = newItem.equipableWeaponryStats.AttackSpeed;
+                    int newCurrentCalculatedDPS = ((newMinAttack + newMaxAttack) / 2) * newAttackSpeed;
+
                     descriptionText.text = "If equipped:";
+                    int difference = currentCalculatedDPS - newCurrentCalculatedDPS;
 
-                    if (attack <= 0)
-                        descriptionText.text += "\r\n Attack: +" + Mathf.Abs(attack);
+                    if (difference<=0)
+                        descriptionText.text += "\r\n DPS: +" + Mathf.Abs(difference);
                     else
-                        descriptionText.text += "\r\n Attack: -" + attack;
-
-                    if (attackSpeed <= 0)
-                        descriptionText.text += "\r\n Att.Speed: +" + Mathf.Abs(attackSpeed);
-                    else
-                        descriptionText.text += "\r\n Att.Speed: -" + attackSpeed;
+                        descriptionText.text += "\r\n DPS: -" + difference;
 
                 }
             }
@@ -461,9 +464,13 @@ public class InventoryManager : MonoBehaviour
                 }
                 else if(newItem.equipableWeaponryStats != null)
                 {
+
+                    int newMinAttack = newItem.equipableWeaponryStats.AttackMinDamage;
+                    int newMaxAttack = newItem.equipableWeaponryStats.AttackMaxDamage;
+                    int newAttackSpeed = newItem.equipableWeaponryStats.AttackSpeed;
+                    int newCurrentCalculatedDPS = ((newMinAttack + newMaxAttack) / 2) * newAttackSpeed;
                     descriptionText.text = "If equipped:";
-                    descriptionText.text += "\r\n Attack: +" + newItem.equipableWeaponryStats.Attack;
-                    descriptionText.text += "\r\n Att.Speed: +" + newItem.equipableWeaponryStats.AttackSpeed;
+                    descriptionText.text += "\r\n DPS: +" + newCurrentCalculatedDPS;
 
                 }
             }
@@ -473,12 +480,12 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    private InventoryItem CheckIfSlotIsTaken(InventoryItem newItem)
+    public InventoryItem CheckIfSlotIsTakenAndReturnItemIfOcupied(InventoryItem.Slot slot)
     {
         if (playerInventory)
         {
             InventoryItem itemEquiped = null;
-            playerInventory.equipedItems.TryGetValue(newItem.slot, out itemEquiped);
+            playerInventory.equipedItems.TryGetValue(slot, out itemEquiped);
 
 
             if (itemEquiped==null)

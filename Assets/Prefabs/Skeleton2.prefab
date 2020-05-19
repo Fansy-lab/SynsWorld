@@ -124,7 +124,7 @@ Animator:
   m_GameObject: {fileID: 3117324114661269896}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a53076d0ce6143a08d48cad992815f2, type: 2}
+  m_Controller: {fileID: 22100000, guid: 569f64c735b53d84397a697de78ab42e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  _maxHealth: 6
+  _maxHealth: 15
   animator: {fileID: 3117324114661269899}
   hp: {fileID: 2812372576318989015}
   damagePopUp: {fileID: 7679418662773342743, guid: 7fd747da3f2d7484ab4ea141051b5fcf,
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.2
   nextWayPointDistance: 1
+  dead: 0
 --- !u!114 &1682331518
 MonoBehaviour:
   m_ObjectHideFlags: 0

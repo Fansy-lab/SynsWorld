@@ -66,7 +66,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
                     {
                         if (thisItem.equipableArmoryStats != null)
                         {
-                            descriptionToDisplay += "\r\n Armor: +" +
+                            descriptionToDisplay += " Armor: +" +
                                 thisItem.equipableArmoryStats.ArmorAmmount + "\r\n HP: +" +
                                 thisItem.equipableArmoryStats.HealthAmmount + "\r\n Evasion: +" +
                                 thisItem.equipableArmoryStats.EvasionAmmount;
@@ -74,8 +74,10 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
                         }
                         if (thisItem.equipableWeaponryStats != null)
                         {
-                            descriptionToDisplay += "\r\n  Damage: +" + thisItem.equipableWeaponryStats.Attack;
-                            descriptionToDisplay += "\r\n  Att.Speed: +" + thisItem.equipableWeaponryStats.AttackSpeed;
+                            descriptionToDisplay += " Min Damage: +" + thisItem.equipableWeaponryStats.AttackMinDamage;
+                            descriptionToDisplay += "\r\n Max Damage: +" + thisItem.equipableWeaponryStats.AttackMaxDamage;
+
+                            descriptionToDisplay += "\r\n Att.Speed: +" + thisItem.equipableWeaponryStats.AttackSpeed;
 
 
                         }

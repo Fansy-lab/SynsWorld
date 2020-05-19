@@ -11,8 +11,13 @@ public interface IEnemy
     int Experience { get; set; }
     int GoldReward { get; set; }
     LootTable lootTable { get; set; }
+    bool CanBeDamaged { get; set; }
+    bool TakesReducedDamage { get; set; }
     void Die();
     void TakeDamage(int damage);
+    void RegenHealthToMax();
+  
+
  
 
 }

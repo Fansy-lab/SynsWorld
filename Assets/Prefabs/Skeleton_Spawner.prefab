@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0798c11128e90624bb5b5378c58814ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 3117324114661269896, guid: 3a4005b49c14ee44294d3856dd7a7bca,
+  enemyToSpawn: {fileID: 3117324114661269896, guid: a76e709a5fc284c72971bdf3811f4af2,
     type: 3}
   spawnPositions:
   - {fileID: 69708340153861102}
@@ -86,7 +86,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   radius: 3
-  respawnCheck: 2
+  respawnCheck: 25
+  maximumMovementRadiusOfSpawnedEnemies: 5
 --- !u!1 &69708340379680670
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ public class DummyEnemy : MonoBehaviour, IEnemy
     public int Experience { get; set; }
     public int GoldReward { get; set; }
     public LootTable lootTable { get; set; }
+    public bool CanBeDamaged { get; set; }
+    public bool TakesReducedDamage { get; set; }
+
 
     public Animator animator;
     public HealthBar hp;
@@ -61,8 +64,11 @@ public class DummyEnemy : MonoBehaviour, IEnemy
     {
         if (collision.transform.tag == "Projectile")
         {
+            if (!CanBeDamaged) return;
             Projectile projectile = collision.transform.GetComponent<Projectile>();
             int damageAmmount = projectile.damageAmmount;
+            if (TakesReducedDamage)
+                damageAmmount = RNGGod.ReduceDamage(damageAmmount);
             TakeDamage(damageAmmount);
             if (currentHealth <= 0)
             {
@@ -82,4 +88,10 @@ public class DummyEnemy : MonoBehaviour, IEnemy
             }
         }
     }
+    public void RegenHealthToMax()
+    {
+        currentHealth = _maxHealth;
+        hp.SetMaxHealth(_maxHealth);
+    }
+
 }

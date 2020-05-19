@@ -18,8 +18,13 @@ public class Skeleton : MonoBehaviour,IEnemy
     public int MaxHealth { get; set; }
     public int GoldReward { get; set; }
     public int Experience { get; set; }
+    public bool CanBeDamaged { get; set; }
+    public bool TakesReducedDamage { get; set; }
+
+
     [SerializeField]
     public LootTable MylootTable;
+
 
     public LootTable lootTable
     {
@@ -42,8 +47,11 @@ public class Skeleton : MonoBehaviour,IEnemy
     {
         if (collision.transform.tag == "Projectile")
         {
+            if (!CanBeDamaged) return;
             Projectile projectile = collision.transform.GetComponent<Projectile>();
             int damageAmmount = projectile.damageAmmount;
+            if (TakesReducedDamage)
+                damageAmmount = RNGGod.ReduceDamage(damageAmmount);
             TakeDamage(damageAmmount);
             if (currentHealth <= 0)
             {
@@ -129,5 +137,10 @@ public class Skeleton : MonoBehaviour,IEnemy
 
         currentHealth -= damage;
         hp.SetHealth(currentHealth);
+    }
+    public void RegenHealthToMax()
+    {
+        currentHealth = _maxHealth;
+        hp.SetMaxHealth(_maxHealth);
     }
 }

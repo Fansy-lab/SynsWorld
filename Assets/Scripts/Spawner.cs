@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -9,8 +10,10 @@ public class Spawner : MonoBehaviour
     public GameObject enemyToSpawn;
     public Transform[] spawnPositions;
     public LayerMask layerMask;
-    public float radius;
+    public float spawnRadius;
     public float respawnCheck;
+
+    public float maximumMovementRadiusOfSpawnedEnemies;
     void Start()
     {
         InvokeRepeating("CheckIfHasToSpawn",0,respawnCheck);
@@ -24,7 +27,11 @@ public class Spawner : MonoBehaviour
 
     public void CheckIfHasToSpawn()
     {
-       Collider2D[] gOsFound= Physics2D.OverlapCircleAll(transform.position, radius);
+        Collider2D[] gOsFound= Physics2D.OverlapCircleAll(transform.position, spawnRadius);
+
+        gOsFound = gOsFound.Where(val => val.isTrigger == false).ToArray(); //ignore the moveRangeCollider
+
+
         int totalToSpawn = spawnPositions.Length;
 
         if (gOsFound.Length == 0)
@@ -36,6 +43,7 @@ public class Spawner : MonoBehaviour
             
             foreach (var go in gOsFound)
             {
+             
                 if (go.transform.tag == "Enemy")
                 {
                     totalToSpawn--;
@@ -52,26 +60,31 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < enemiesToSpawn; i++)
         {
            // int random = UnityEngine.Random.Range(0, spawnPositions.Length);
-            Vector3 spawnPosition = GetWhereCanSpawn();
-            
-            GameObject enemy = Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity) as GameObject;
+            GameObject spawnPosition = GetWhereCanSpawn();
+
+            enemyToSpawn.SetActive(false);
+            GameObject enemy = Instantiate(enemyToSpawn, spawnPosition.transform.position, Quaternion.identity) as GameObject;
             IEnemy enemyScript = enemy.GetComponent<IEnemy>();
+            enemy.GetComponent<EnemyAI>().SetMaximumMovement(maximumMovementRadiusOfSpawnedEnemies, spawnPosition);
             enemyScript.Name = enemy.name;
+            enemy.SetActive(true);
             
         }
     }
 
-    private Vector3 GetWhereCanSpawn()
+    private GameObject GetWhereCanSpawn()
     {
         foreach (var spawnPoint in spawnPositions)
         {
 
              Collider2D[] gOsFound = Physics2D.OverlapCircleAll(spawnPoint.position, 0.5f, layerMask);
 
-         
+            gOsFound = gOsFound.Where(val => val.isTrigger == false).ToArray(); //ignore the moveRangeCollider
+
+
             if (gOsFound.Length == 0)
             {
-                return spawnPoint.position;
+                return spawnPoint.gameObject;
             }
             else
             {
@@ -83,14 +96,14 @@ public class Spawner : MonoBehaviour
                     }
                     else
                     {
-                        return spawnPoint.position;
+                        return spawnPoint.gameObject;
                     }
                 }
                 
             }
         }
 
-        return spawnPositions[0].position;
+        return spawnPositions[0].gameObject;
         
       
        
@@ -100,13 +113,17 @@ public class Spawner : MonoBehaviour
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(transform.position, spawnRadius);
 
         foreach (var item in spawnPositions)
         {
             Gizmos.DrawWireSphere(item.position, 0.75f);
 
         }
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, maximumMovementRadiusOfSpawnedEnemies);
+
     }
 
 }

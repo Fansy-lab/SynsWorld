@@ -13,13 +13,14 @@ public class Bear : MonoBehaviour,IEnemy
     public GameObject damagePopUp;
 
     public event Action<IEnemy> OnEnemyDeath;
-    public int ID { get; set; }
+    public int ID { get; set; } = 2;
     public string Name { get; set; }
     public int MaxHealth { get; set; }
     public int GoldReward { get; set; }
     public int Experience { get; set; }
     public bool CanBeDamaged { get; set; }
     public bool TakesReducedDamage { get; set; }
+    public Spawner spawner { get; set; }
 
     [SerializeField]
     public LootTable MylootTable;
@@ -31,7 +32,7 @@ public class Bear : MonoBehaviour,IEnemy
     }
 
 
-    void Start()
+    void Awake()
     {
         ID = 2;
         Name = "Bear";
@@ -144,4 +145,5 @@ public class Bear : MonoBehaviour,IEnemy
         currentHealth = _maxHealth;
         hp.SetMaxHealth(_maxHealth);
     }
+  
 }

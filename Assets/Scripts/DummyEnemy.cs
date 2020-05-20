@@ -13,6 +13,7 @@ public class DummyEnemy : MonoBehaviour, IEnemy
     public LootTable lootTable { get; set; }
     public bool CanBeDamaged { get; set; }
     public bool TakesReducedDamage { get; set; }
+    public Spawner spawner { get; set; }
 
 
     public Animator animator;

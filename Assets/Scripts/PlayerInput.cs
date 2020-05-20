@@ -167,14 +167,17 @@ public class PlayerInput : MonoBehaviour
         {
             firePosition.localPosition = new Vector2(0, 0.7f);
             firePosition.localRotation = Quaternion.Euler(0f, 0f, 0f);
-            
-            animator.SetTrigger("attackUp");
+
+            animator.SetTrigger("shooting");
+            animator.SetFloat("ShootDir", 1);
         }
         else if (currentlyLookingAt == lookingAt.left)
         {
             firePosition.localPosition = new Vector2(-0.77f, -0.1f);
             firePosition.localRotation = Quaternion.Euler(0f, 0f, 90f);
-            animator.SetTrigger("attackLeft");
+
+            animator.SetTrigger("shooting");
+            animator.SetFloat("ShootDir", 2);
 
         }
         else if (currentlyLookingAt == lookingAt.right)
@@ -182,7 +185,9 @@ public class PlayerInput : MonoBehaviour
             firePosition.localPosition = new Vector2(0.77f, -0.1f);
             firePosition.localRotation = Quaternion.Euler(0f, 0f, -90f);
 
-            animator.SetTrigger("attackRight");
+
+            animator.SetTrigger("shooting");
+            animator.SetFloat("ShootDir", 3);
 
         }
         else if (currentlyLookingAt == lookingAt.down)
@@ -190,7 +195,8 @@ public class PlayerInput : MonoBehaviour
             firePosition.localPosition = new Vector2(0, -1f);
             firePosition.localRotation = Quaternion.Euler(0f, 0f, 180f);
 
-            animator.SetTrigger("attackDown");
+            animator.SetTrigger("shooting");
+            animator.SetFloat("ShootDir", 0);
         }
         SetArrowDirection();
         Invoke("SpawnArrow",0.3f);
@@ -267,7 +273,7 @@ public class PlayerInput : MonoBehaviour
             interactPoint.transform.localPosition = new Vector2(0.77f, -0.37f);
 
 
-            animator.SetInteger("lookingAt", 3);
+            animator.SetFloat("LookDir", 3f);
             currentlyLookingAt = lookingAt.right;
             lastLookingDirection = Vector2.right;
             
@@ -276,7 +282,7 @@ public class PlayerInput : MonoBehaviour
         {
             interactPoint.transform.localPosition = new Vector2(-0.77f, -0.37f);
 
-            animator.SetInteger("lookingAt", 1);
+            animator.SetFloat("LookDir", 2f);
             currentlyLookingAt = lookingAt.left;
             lastLookingDirection =  Vector2.left;
 
@@ -285,7 +291,7 @@ public class PlayerInput : MonoBehaviour
         {
             interactPoint.transform.localPosition = new Vector2(0, 0.7f);
 
-            animator.SetInteger("lookingAt", 2);
+            animator.SetFloat("LookDir", 1f);
             currentlyLookingAt = lookingAt.up;
             lastLookingDirection = Vector2.up;
 
@@ -295,7 +301,7 @@ public class PlayerInput : MonoBehaviour
             interactPoint.transform.localPosition = new Vector2(0, -1f);
 
 
-            animator.SetInteger("lookingAt", 0);
+            animator.SetFloat("LookDir", 0f);
             currentlyLookingAt = lookingAt.down;
             lastLookingDirection = Vector2.down;
 

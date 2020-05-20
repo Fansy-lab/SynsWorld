@@ -119,10 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c32f3ae40dc742429c924255a2dc7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
   nextWayPointDistance: 1
   dead: 0
-  moveRadiusCollider: {fileID: 0}
 --- !u!114 &1543341476337413146
 MonoBehaviour:
   m_ObjectHideFlags: 0

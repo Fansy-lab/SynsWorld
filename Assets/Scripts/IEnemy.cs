@@ -16,6 +16,7 @@ public interface IEnemy
     void Die();
     void TakeDamage(int damage);
     void RegenHealthToMax();
+    Spawner spawner { get; set; }
   
 
  

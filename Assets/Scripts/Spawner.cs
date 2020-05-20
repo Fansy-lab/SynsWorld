@@ -14,22 +14,22 @@ public class Spawner : MonoBehaviour
     public float respawnCheck;
 
     public float maximumMovementRadiusOfSpawnedEnemies;
+
     void Start()
     {
-        InvokeRepeating("CheckIfHasToSpawn",0,respawnCheck);
+        InvokeRepeating("CheckIfHasToSpawn", 0, respawnCheck);
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
     public void CheckIfHasToSpawn()
     {
-        Collider2D[] gOsFound= Physics2D.OverlapCircleAll(transform.position, spawnRadius);
+        Collider2D[] gOsFound = Physics2D.OverlapCircleAll(transform.position, maximumMovementRadiusOfSpawnedEnemies);
 
-        gOsFound = gOsFound.Where(val => val.isTrigger == false).ToArray(); //ignore the moveRangeCollider
 
 
         int totalToSpawn = spawnPositions.Length;
@@ -40,26 +40,27 @@ public class Spawner : MonoBehaviour
         }
         else
         {
-            
+
             foreach (var go in gOsFound)
             {
-             
-                if (go.transform.tag == "Enemy")
+
+                if (go.GetComponent<IEnemy>() != null && go.GetComponent<IEnemy>().spawner == this)
                 {
                     totalToSpawn--;
                 }
-            }
+                }
             SpawnEnemies(totalToSpawn);
-            
+
         }
 
     }
 
     private void SpawnEnemies(int enemiesToSpawn)
     {
+
         for (int i = 0; i < enemiesToSpawn; i++)
         {
-           // int random = UnityEngine.Random.Range(0, spawnPositions.Length);
+            // int random = UnityEngine.Random.Range(0, spawnPositions.Length);
             GameObject spawnPosition = GetWhereCanSpawn();
 
             enemyToSpawn.SetActive(false);
@@ -67,9 +68,12 @@ public class Spawner : MonoBehaviour
             IEnemy enemyScript = enemy.GetComponent<IEnemy>();
             enemy.GetComponent<EnemyAI>().SetMaximumMovement(maximumMovementRadiusOfSpawnedEnemies, spawnPosition);
             enemyScript.Name = enemy.name;
+            enemyScript.spawner = this;
             enemy.SetActive(true);
-            
+
         }
+
+
     }
 
     private GameObject GetWhereCanSpawn()
@@ -77,9 +81,8 @@ public class Spawner : MonoBehaviour
         foreach (var spawnPoint in spawnPositions)
         {
 
-             Collider2D[] gOsFound = Physics2D.OverlapCircleAll(spawnPoint.position, 0.5f, layerMask);
+            Collider2D[] gOsFound = Physics2D.OverlapCircleAll(spawnPoint.position, 0.5f, layerMask);
 
-            gOsFound = gOsFound.Where(val => val.isTrigger == false).ToArray(); //ignore the moveRangeCollider
 
 
             if (gOsFound.Length == 0)
@@ -99,14 +102,14 @@ public class Spawner : MonoBehaviour
                         return spawnPoint.gameObject;
                     }
                 }
-                
+
             }
         }
 
         return spawnPositions[0].gameObject;
-        
-      
-       
+
+
+
     }
 
     void OnDrawGizmos()

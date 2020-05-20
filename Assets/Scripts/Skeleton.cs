@@ -20,6 +20,8 @@ public class Skeleton : MonoBehaviour,IEnemy
     public int Experience { get; set; }
     public bool CanBeDamaged { get; set; }
     public bool TakesReducedDamage { get; set; }
+    public Spawner spawner { get; set; }
+
 
 
     [SerializeField]

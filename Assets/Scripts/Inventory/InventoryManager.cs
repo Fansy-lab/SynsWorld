@@ -379,6 +379,11 @@ public class InventoryManager : MonoBehaviour
             useButton.SetActive(true);
             destroyButton.SetActive(true);
         }
+        else
+        {
+            useButton.SetActive(false);
+            destroyButton.SetActive(false);
+        }
    
 
         currentItemSelectedInInventory = newItem;

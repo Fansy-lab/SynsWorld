@@ -1,0 +1,16 @@
+Creadits:
+"Copyright © 2011 Varazuvi™ www.varazuvi.com"
+UI:
+blackhammer.co@gmail.com
+Skeleton:
+Jesse Munguia (https://jesse-m.itch.io/)
+Sprite Characters:
+http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/
+ItemIcons:
+https://shikashiassets.itch.io/shikashis-fantasy-icons-pack
+TileSet:
+https://pipoya.itch.io/pipoya-rpg-tileset-32x32
+SoundFxs:
+https://gamesounds.xyz/?dir=Kenney%27s%20Sound%20Pack/RPG%20Sounds/OGG
+Visual Special FXs:
+http://jeanmoreno.com/

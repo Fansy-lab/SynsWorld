@@ -64,9 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Bear.cs" />
+    <Compile Include="Assets\DashBarScript.cs" />
     <Compile Include="Assets\EnemyAI.cs" />
     <Compile Include="Assets\EnterLeave.cs" />
     <Compile Include="Assets\EnterLeaveLocationManager.cs" />
+    <Compile Include="Assets\NewSavePanel.cs" />
     <Compile Include="Assets\Scripts\DamagePopUp.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
@@ -101,6 +103,8 @@
     <Compile Include="Assets\Scripts\Questing\Quest.cs" />
     <Compile Include="Assets\Scripts\Questing\QuestsService.cs" />
     <Compile Include="Assets\Scripts\SelfDestroyAfterSeconds.cs" />
+    <Compile Include="Assets\Scripts\Serialization\SaveData.cs" />
+    <Compile Include="Assets\Scripts\Serialization\SerializationManager.cs" />
     <Compile Include="Assets\Scripts\SettingsManager.cs" />
     <Compile Include="Assets\Scripts\Skeleton.cs" />
     <Compile Include="Assets\Scripts\SoundEffectsManager.cs" />
@@ -163,11 +167,17 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>

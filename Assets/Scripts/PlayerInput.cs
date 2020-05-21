@@ -19,7 +19,7 @@ public class PlayerInput : MonoBehaviour
 
     [SerializeField] GameObject interactPoint;
     [SerializeField] Transform firePosition;
-
+    [SerializeField] DashBarScript dashSlider;
     [SerializeField] GameObject dashEffect;
 
     float lastShot = 0f;
@@ -32,8 +32,19 @@ public class PlayerInput : MonoBehaviour
     Vector2 shootingDirectionAtTheMomentOfShooting;
     Vector2 lastLookingDirection;
 
-    
 
+    private void Start()
+    {
+        dashSlider.SetMaxValue(Convert.ToInt32(dashRate));
+        dashSlider.SetDashBar(dashRate);
+
+
+        lastDashed = dashRate + 1;
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        currentlyLookingAt = lookingAt.down;
+        lastLookingDirection = new Vector2(0, -1);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -114,14 +125,7 @@ public class PlayerInput : MonoBehaviour
     }
   
 
-    private void Start()
-    {
-        lastDashed = dashRate+1;
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        currentlyLookingAt = lookingAt.down;
-        lastLookingDirection= new Vector2(0, -1); 
-    }
+
 
     private void CheckAttack()
     {
@@ -134,7 +138,11 @@ public class PlayerInput : MonoBehaviour
     public void CheckCanDash()
     {
         if (lastDashed < dashRate)
+        {
             lastDashed += Time.deltaTime;
+            dashSlider.SetDashBar(lastDashed);
+
+        }
         if (lastDashed > dashRate)
         {
             canDash = true;

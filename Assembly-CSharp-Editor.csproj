@@ -91,11 +91,17 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>C:/Users/fansy/Documents/UnityProjects/SynsWorld/SynsWorld/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>

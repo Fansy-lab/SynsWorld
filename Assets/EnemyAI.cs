@@ -7,6 +7,9 @@ using System;
 public class EnemyAI : MonoBehaviour
 {
     GameObject target;
+    public GameObject attackPoint;
+    public float attackRange;
+    public LayerMask playerLayer;
     public float speed;
     public float nextWayPointDistance;
     public bool dead = false;
@@ -17,12 +20,14 @@ public class EnemyAI : MonoBehaviour
     Animator anim;
     Seeker seeker;
     float moveRadius;
+    public float attakRate;
+    public float lastAttack = 0f;
     GameObject moveCenter;
 
     bool retreatingToStart = true;
-    bool playerInRange;
+    bool playerInsideMovingRange;
     bool hasReseted = true;
-    bool reachedEndOfPath;
+    bool reachedPlayer;
 
     IEnemy thisEnemy;
 
@@ -44,7 +49,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (hasReseted)
             {
-                playerInRange = true;
+                playerInsideMovingRange = true;
                 target = player;
                 retreatingToStart = false;
                 thisEnemy.CanBeDamaged = true;
@@ -55,7 +60,7 @@ public class EnemyAI : MonoBehaviour
         else
         {
 
-            playerInRange = false;
+            playerInsideMovingRange = false;
             target = moveCenter;
             retreatingToStart = true;
             // thisEnemy.CanBeDamaged = false;
@@ -84,7 +89,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            if (playerInRange)
+            if (playerInsideMovingRange)
             {
                 thisEnemy.TakesReducedDamage = false;
 
@@ -95,14 +100,35 @@ public class EnemyAI : MonoBehaviour
 
         }
 
-
-
+        CheckIfCanAttack();
     }
 
+    private void CheckIfCanAttack()
+    {
 
+        if (lastAttack < attakRate)
+        {
+            lastAttack += Time.deltaTime;
+           
+        }
+        if (lastAttack > attakRate && reachedPlayer)
+        {
 
+            anim.SetTrigger("attack");
+            lastAttack = 0;
 
+        }
+     
+    }
 
+    public void Attack()
+    {
+       Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRange, playerLayer);
+        if (colliders.Length > 0)
+           {
+
+        }
+    }
 
     void OnPathComplete(Path p)
     {
@@ -113,15 +139,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
-    {
-        // Draw a yellow sphere at the transform's position
-        Gizmos.color = Color.red;
 
-        Gizmos.DrawWireSphere(moveCenter.transform.position, moveRadius);
-
-
-    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -138,24 +156,25 @@ public class EnemyAI : MonoBehaviour
         {
             return;
         }
-
-        if (currentWayPoint >= path.vectorPath.Count)
+   
+        if (currentWayPoint >= path.vectorPath.Count && retreatingToStart)//reached home/spawn
         {
             anim.SetBool("walking", false);
+            hasReseted = true;
+            path = null;
+            return;
 
-            reachedEndOfPath = true;
-            if (retreatingToStart)
-            {
-
-                hasReseted = true;
-
-            }
+        } 
+        else if (currentWayPoint >= path.vectorPath.Count && !retreatingToStart )//reached player/target
+        {
+            anim.SetBool("walking", false);
+            reachedPlayer = true;
             return;
         }
         else
         {
             anim.SetBool("walking", true);
-            reachedEndOfPath = false;
+            reachedPlayer = false;
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - (Vector2)transform.position).normalized;
@@ -173,6 +192,7 @@ public class EnemyAI : MonoBehaviour
         {
             currentWayPoint++;
         }
+
         if (!dead) //dont rotate if dead
         {
             if (target.transform.position.x > transform.position.x)
@@ -191,5 +211,18 @@ public class EnemyAI : MonoBehaviour
     {
         moveRadius = maxMoveRadius;
         moveCenter = center;
+    }
+
+    void OnDrawGizmos()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.blue;
+
+        Gizmos.DrawWireSphere(moveCenter.transform.position, moveRadius);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.transform.position, attackRange);
+
+
     }
 }

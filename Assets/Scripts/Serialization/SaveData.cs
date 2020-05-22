@@ -27,6 +27,7 @@ public class SaveData {
 
     public float xPosition;
     public float yPosition;
+    public int scene;
 
     public string saveName;
 

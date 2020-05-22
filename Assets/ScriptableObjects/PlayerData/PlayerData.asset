@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0bef51c193c4ddc959c1f337d2331a, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  DPS: 24
+  DPS: 54
   maxHealth: 112
   armor: 0
   evasion: 0
   currentHealth: 112
-  gold: 122
-  experience: 141
+  gold: 137
+  experience: 163

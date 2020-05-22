@@ -35,7 +35,7 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
         thisEnemy = GetComponent<IEnemy>();
         seeker = GetComponent<Seeker>();
@@ -111,7 +111,7 @@ public class EnemyAI : MonoBehaviour
             lastAttack += Time.deltaTime;
            
         }
-        if (lastAttack > attakRate && reachedPlayer)
+        if (lastAttack > attakRate && reachedPlayer && !dead)
         {
 
             anim.SetTrigger("attack");

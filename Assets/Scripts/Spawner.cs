@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("CheckIfHasToSpawn", 0, respawnCheck);
+        InvokeRepeating("CheckIfHasToSpawn", 2, respawnCheck);
     }
 
     // Update is called once per frame

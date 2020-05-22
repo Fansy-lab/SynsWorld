@@ -18,6 +18,9 @@ public class GM : MonoBehaviour
    [SerializeField] private GameObject settingsUI;
     [SerializeField] private GameObject enterLeaveLocationUI;
 
+     public GameObject Player;
+
+
 
 
     private static GM instance;

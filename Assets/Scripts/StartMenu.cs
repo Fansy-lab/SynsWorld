@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
@@ -11,11 +12,12 @@ public class StartMenu : MonoBehaviour
     public static StartMenu instance;
     private static int m_referenceCount = 0;
 
+    AsyncOperation asyncLoadLevel;
 
     public GameObject newSaveGamePanel;
     public GameObject loadPanel;
     public GameObject loadPanelGrid;
-
+    [SerializeField] CinemachineVirtualCamera cinemachineVirtualCamera;
     public GameObject loadButton;
 
     public string[] saveFiles;
@@ -45,11 +47,12 @@ public class StartMenu : MonoBehaviour
     {
         SaveData.current.xPosition = 0;
         SaveData.current.yPosition = 0;
+        SaveData.current.scene = 1;
         SaveData.current.saveName = nameSave;
         SerializationManager.Save(nameSave, SaveData.current);
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-        gameObject.SetActive(false);
+
+        LoadGame(nameSave);
     }
     public void QuitGame()
     {
@@ -59,9 +62,10 @@ public class StartMenu : MonoBehaviour
     {
         SaveData.current.xPosition = GameObject.Find("Player").GetComponent<Transform>().position.x;
         SaveData.current.yPosition = GameObject.Find("Player").GetComponent<Transform>().position.y;
+        SaveData.current.scene = SceneManager.GetActiveScene().buildIndex; 
         SerializationManager.Save(SaveData.current.saveName, SaveData.current);
     }
-    public void LoadGameClicked()
+    public void LoadGamePanelClicked()
     {
         if(!Directory.Exists(Application.persistentDataPath + "/saves/"))
         {
@@ -76,16 +80,34 @@ public class StartMenu : MonoBehaviour
             string creationDate = info.CreationTime.ToString();
             GameObject gO =  Instantiate(loadButton, loadPanelGrid.transform) as GameObject;
             gO.GetComponentInChildren<TextMeshProUGUI>().text = nombre+"\r\n" +creationDate;
+            gO.GetComponentInChildren<Button>().onClick.AddListener(() => LoadSave(nombre));
+
         }
 
         loadPanel.SetActive(true);
     }
 
-    private static void LoadSave()
+    private  void LoadSave(string load)
     {
-        SaveData.current = (SaveData)SerializationManager.Load(Application.persistentDataPath + "/saves/" + SaveData.current.saveName + ".save");
+        LoadGame(load);
+    }
 
-        GameObject.Find("Player").GetComponent<Transform>().position = new Vector3(SaveData.current.xPosition, SaveData.current.yPosition);
+    private  void LoadGame(string load)
+    {
+        SaveData.current = (SaveData)SerializationManager.Load(Application.persistentDataPath + "/saves/" + load + ".save");
+       
+
+      
+
+
+        SceneManager.LoadScene(SaveData.current.scene);
+
+        if (SceneManager.GetActiveScene().buildIndex != SaveData.current.scene)
+        {
+            StartCoroutine("waitForSceneLoad", SaveData.current.scene);
+        }
+
+
     }
 
     public void Settings()
@@ -94,10 +116,39 @@ public class StartMenu : MonoBehaviour
     }
     public void CloseLoadMenu()
     {
+        CloseLoadMenuAndremoveChildren();
+    }
+
+    private void CloseLoadMenuAndremoveChildren()
+    {
         foreach (Transform child in loadPanelGrid.transform)
         {
             Destroy(child.gameObject);
         }
         loadPanel.SetActive(false);
     }
+    IEnumerator waitForSceneLoad(int sceneNumber)
+    {
+        while (SceneManager.GetActiveScene().buildIndex != sceneNumber)
+        {
+            yield return null;
+        }
+
+        // Do anything after proper scene has been loaded
+        if (SceneManager.GetActiveScene().buildIndex == sceneNumber)
+        {
+            Instantiate(GM.Instance.Player, GM.Instance.Player.transform.position,Quaternion.identity);
+
+            GameObject Player = GameObject.FindGameObjectWithTag("Player");
+            Player.GetComponent<Transform>().position = new Vector3(SaveData.current.xPosition, SaveData.current.yPosition);
+
+            cinemachineVirtualCamera.Follow = Player.transform;
+            CloseLoadMenuAndremoveChildren();
+            gameObject.SetActive(false);
+
+
+        }
+       
+    }
+
 }

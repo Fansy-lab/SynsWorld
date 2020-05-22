@@ -16,7 +16,7 @@ public class PhysicalInventoryItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.transform.tag == "Player")
         {
 
             AddItemToInventory();

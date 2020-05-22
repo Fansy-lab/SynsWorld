@@ -97,15 +97,12 @@ public class StartMenu : MonoBehaviour
         SaveData.current = (SaveData)SerializationManager.Load(Application.persistentDataPath + "/saves/" + load + ".save");
        
 
-      
 
+     
+         SceneManager.LoadScene(SaveData.current.scene);
 
-        SceneManager.LoadScene(SaveData.current.scene);
-
-        if (SceneManager.GetActiveScene().buildIndex != SaveData.current.scene)
-        {
-            StartCoroutine("waitForSceneLoad", SaveData.current.scene);
-        }
+        StartCoroutine("waitForSceneLoad", SaveData.current.scene);
+        
 
 
     }
@@ -129,26 +126,25 @@ public class StartMenu : MonoBehaviour
     }
     IEnumerator waitForSceneLoad(int sceneNumber)
     {
-        while (SceneManager.GetActiveScene().buildIndex != sceneNumber)
-        {
-            yield return null;
-        }
+        yield return SceneManager.LoadSceneAsync(sceneNumber);
 
-        // Do anything after proper scene has been loaded
-        if (SceneManager.GetActiveScene().buildIndex == sceneNumber)
-        {
-            Instantiate(GM.Instance.Player, GM.Instance.Player.transform.position,Quaternion.identity);
+        LoadData();
 
-            GameObject Player = GameObject.FindGameObjectWithTag("Player");
-            Player.GetComponent<Transform>().position = new Vector3(SaveData.current.xPosition, SaveData.current.yPosition);
-
-            cinemachineVirtualCamera.Follow = Player.transform;
-            CloseLoadMenuAndremoveChildren();
-            gameObject.SetActive(false);
-
-
-        }
+           
+        
+     
        
     }
 
+    private void LoadData()
+    {
+        Instantiate(GM.Instance.Player, GM.Instance.Player.transform.position, Quaternion.identity);
+
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        Player.GetComponent<Transform>().position = new Vector3(SaveData.current.xPosition, SaveData.current.yPosition);
+
+        cinemachineVirtualCamera.Follow = Player.transform;
+        CloseLoadMenuAndremoveChildren();
+        gameObject.SetActive(false);
+    }
 }

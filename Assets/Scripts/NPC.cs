@@ -31,7 +31,7 @@ public class NPC : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerInput>() != false)
+        if (collision.GetComponent<PlayerInput>())
         {
             playerInCLOSERange = true;
             Vector2 position = boxCollider.bounds.max;
@@ -41,7 +41,7 @@ public class NPC : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerInput>() != false)
+        if (collision.GetComponent<PlayerInput>())
         {
             playerInCLOSERange = false;
 

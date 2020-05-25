@@ -8,6 +8,7 @@ public class Interactable : MonoBehaviour
   
     [Header("Tile replacement")]
     public Sprite SpriteToReplace;
+    public Sprite SpriteToPlaceOnLeaveTrigger;
     public bool justDestroyTile=false;
     public bool replaceTileWithEmpty = false;
     public bool replaceTile = false;
@@ -16,9 +17,7 @@ public class Interactable : MonoBehaviour
     public bool TriggersDialogueOnLook;
     public bool TriggersDialogueOnClick;
 
-    [Header("Call method in GM")]
-    public string methodToCallInGm;
-    public List<string> parameters;
+ 
     [Header("Quest")]
     public List<Quest> Quests;
     public Quest selectedQuest;
@@ -54,6 +53,10 @@ public class Interactable : MonoBehaviour
         InteractPoint.sittingOverAnotherInteractableObject = false;
         InteractPoint.currentCollision = null;
 
+        if (SpriteToPlaceOnLeaveTrigger)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = SpriteToPlaceOnLeaveTrigger;
+        }
      
     }
 

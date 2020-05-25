@@ -19,37 +19,45 @@ public class PhysicalInventoryItem : MonoBehaviour
         if (other.gameObject.transform.tag == "Player")
         {
 
-            AddItemToInventory();
+            bool addedToInventory = AddItemToInventory();
 
-            Destroy(gameObject);
+            if (addedToInventory)
+                Destroy(gameObject);
 
         }
     }
 
-    
-    void AddItemToInventory()
+
+    bool AddItemToInventory()
     {
         if (playerInventory && thisItem)
         {
 
+
+
             if (thisItem.equipable)
             {
+                if (playerInventory.inventoryItems.Count >= GameObject.FindObjectOfType<PlayerStats>().maxItemsCanHold)
+                {
+                    return false;
+                }
+
                 Guid guid = Guid.NewGuid();
 
                 InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
                 if (thisItem.slot == InventoryItem.Slot.weapon)
                 {
-                    inventoryItemInstance.Init(null,RNGGod.GetRandonWeaponStats(),
+                    inventoryItemInstance.Init(null, RNGGod.GetRandonWeaponStats(),
                        null, thisItem.slot, thisItem.itemName,
                       thisItem.itemDescription, thisItem.itemImage,
-                      1, false, true, false,false, guid);
+                      1, false, true, false, false, guid);
                 }
                 else
                 {
-                    inventoryItemInstance.Init(RNGGod.GetRandomArmoryStats(),null,
+                    inventoryItemInstance.Init(RNGGod.GetRandomArmoryStats(), null,
                     null, thisItem.slot, thisItem.itemName,
                     thisItem.itemDescription, thisItem.itemImage,
-                    1, false, true, false,false, guid);
+                    1, false, true, false, false, guid);
                 }
 
 
@@ -74,12 +82,17 @@ public class PhysicalInventoryItem : MonoBehaviour
 
                     }
                 }
-                if(hasConsumable ==false)
+                if (hasConsumable == false)
                 {
+                    if (playerInventory.inventoryItems.Count >= GameObject.FindObjectOfType<PlayerStats>().maxItemsCanHold)
+                    {
+                        return false;
+                    }
+
                     Guid guid = Guid.NewGuid();
                     InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
-                    inventoryItemInstance.Init(null, null, new UsableStats() { HPRestoreAmmount = 25 }, null,thisItem.itemName,
-                        thisItem.itemDescription, thisItem.itemImage, 1, true, false, false,false, guid);
+                    inventoryItemInstance.Init(null, null, new UsableStats() { HPRestoreAmmount = 25 }, null, thisItem.itemName,
+                        thisItem.itemDescription, thisItem.itemImage, 1, true, false, false, false, guid);
                     playerInventory.inventoryItems.Add(inventoryItemInstance);
                     GlobalEvents.PickedItem(inventoryItemInstance);//event happened
 
@@ -96,19 +109,23 @@ public class PhysicalInventoryItem : MonoBehaviour
             {
                 PlayerStats playerStats = GameObject.FindObjectOfType<PlayerStats>();
                 playerStats.playerData.gold += RNGGod.GetGoldAmmount();
-                #if UNITY_EDITOR
+#if UNITY_EDITOR
                 EditorUtility.SetDirty(playerStats.playerData);
-                #endif
+#endif
                 GlobalEvents.PickedItem(thisItem);//event happened
                 SoundEffectsManager.instance.PlayGoldPickedUpSound();
 
             }
             else if (thisItem.isTrash)
             {
+                if (playerInventory.inventoryItems.Count >= GameObject.FindObjectOfType<PlayerStats>().maxItemsCanHold)
+                {
+                    return false;
+                }
                 Guid guid = Guid.NewGuid();
                 InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
                 inventoryItemInstance.Init(null, null, null, null, thisItem.itemName,
-                    thisItem.itemDescription, thisItem.itemImage, 1,false, false, false, true, guid);
+                    thisItem.itemDescription, thisItem.itemImage, 1, false, false, false, true, guid);
                 playerInventory.inventoryItems.Add(inventoryItemInstance);
                 GlobalEvents.PickedItem(inventoryItemInstance);//event happened
                 SoundEffectsManager.instance.PlayPickedMiscItemSound();
@@ -118,6 +135,7 @@ public class PhysicalInventoryItem : MonoBehaviour
 
             EmoteManager.Instance.DisplayPopUp(thisItem.itemImage);
         }
+        return true;
 
     }
 }

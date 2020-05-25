@@ -23,8 +23,9 @@ public class InventoryManager : MonoBehaviour
     public TextMeshProUGUI levelText;
 
 
-[Header("Inventory Information")]
+    [Header("Inventory Information")]
     public PlayerInventory playerInventory;
+    public PlayerInventory privateChestInventory;
     public ToolTip toolTip;
 
     [SerializeField] private GameObject headSlot;
@@ -40,6 +41,7 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] private GameObject blankInventorySlot;
     [SerializeField] private GameObject inventoryPanel;
+    [SerializeField] private TextMeshProUGUI maxItemsText;
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private GameObject useButton;
     [SerializeField] private GameObject unEquipButton;
@@ -73,11 +75,11 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    internal void SetupDescription(string description,InventoryItem newItem)
+    internal void SetupDescription(string description, InventoryItem newItem)
     {
         descriptionText.text = description;
-       
-       
+
+
         if (newItem.equipable)
         {
             if (newItem.equipableArmoryStats != null)
@@ -97,7 +99,7 @@ public class InventoryManager : MonoBehaviour
 
 
             }
-           
+
 
         }
     }
@@ -124,7 +126,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    internal void SetupUnEquipButton(InventoryItem thisItem,InventorySlot slot)
+    internal void SetupUnEquipButton(InventoryItem thisItem, InventorySlot slot)
     {
         if (thisItem)
         {
@@ -148,8 +150,24 @@ public class InventoryManager : MonoBehaviour
         UpdateGoldUI();
 
         UpdateEquipmentUI();
-      
-      
+
+        UpdateSlotsTaken();
+
+
+
+    }
+
+    private void UpdateSlotsTaken()
+    {
+        PlayerStats plyerStats = GameObject.FindObjectOfType<PlayerStats>();
+        if (plyerStats)
+        {
+            int currentItems = playerInventory.inventoryItems.Count;
+            int maxItems = plyerStats.maxItemsCanHold;
+
+            maxItemsText.text = currentItems + "/" + maxItems;
+        }
+
 
     }
 
@@ -163,9 +181,9 @@ public class InventoryManager : MonoBehaviour
     private void SetExperienceSlider()
     {
         SetLevelText();
-       expSlider.maxValue= LevelSystem.totalExpForTheLevel;
-       expSlider.value = LevelSystem.totalExpForTheLevel - LevelSystem.experienceForNextLevel;
-                
+        expSlider.maxValue = LevelSystem.totalExpForTheLevel;
+        expSlider.value = LevelSystem.totalExpForTheLevel - LevelSystem.experienceForNextLevel;
+
     }
 
     private void SetLevelText()
@@ -191,16 +209,16 @@ public class InventoryManager : MonoBehaviour
         PlayerStats plyerStats = GameObject.FindObjectOfType<PlayerStats>();
         if (plyerStats)
         {
-            attack.text = "DPS: "+ plyerStats.playerData.DPS;
-            armor.text = "Armor: "+ plyerStats.playerData.armor;
-            maxHP.text = "Max HP: "+plyerStats.playerData.maxHealth;
-            evasion.text = "Evasion: " +plyerStats.playerData.evasion;
+            attack.text = "DPS: " + plyerStats.playerData.DPS;
+            armor.text = "Armor: " + plyerStats.playerData.armor;
+            maxHP.text = "Max HP: " + plyerStats.playerData.maxHealth;
+            evasion.text = "Evasion: " + plyerStats.playerData.evasion;
         }
     }
 
     private void UpdateEquipmentUI()
     {
-        InventoryItem head=null;
+        InventoryItem head = null;
         InventoryItem chest = null;
         InventoryItem gloves = null;
         InventoryItem weapon = null;
@@ -208,7 +226,7 @@ public class InventoryManager : MonoBehaviour
         InventoryItem boots = null;
         if (playerInventory.equipedItems.ContainsKey(InventoryItem.Slot.head))
         {
-             head = playerInventory.equipedItems[InventoryItem.Slot.head];
+            head = playerInventory.equipedItems[InventoryItem.Slot.head];
         }
         if (playerInventory.equipedItems.ContainsKey(InventoryItem.Slot.chest))
         {
@@ -240,15 +258,16 @@ public class InventoryManager : MonoBehaviour
         if (head)
         {
 
-            Image headImage =headSlot.transform.GetChild(0).GetComponentInChildren<Image>();
-          
+            Image headImage = headSlot.transform.GetChild(0).GetComponentInChildren<Image>();
+
             headImage.sprite = head.itemImage;
             headImage.color = new Color(255, 255, 255, 255);
 
             InventorySlot slotInPlace = headSlot.GetComponent<InventorySlot>();
             slotInPlace.thisItem = head;
 
-        }else
+        }
+        else
         {
             Image headImage = headSlot.transform.GetChild(0).GetComponentInChildren<Image>();
 
@@ -273,7 +292,7 @@ public class InventoryManager : MonoBehaviour
             chestImage.sprite = null;
             chestImage.color = new Color(0, 0, 0, 0);
         }
-        if(gloves)
+        if (gloves)
         {
 
             Image glovesImage = glovesSlot.transform.GetChild(0).GetComponentInChildren<Image>();
@@ -351,7 +370,7 @@ public class InventoryManager : MonoBehaviour
 
             foreach (var item in playerInventory.inventoryItems.ToList())
             {
-                if( item !=null && item.numberHeld > 0)
+                if (item != null && item.numberHeld > 0)
                 {
                     GameObject temp = Instantiate(blankInventorySlot, inventoryPanel.transform.position, Quaternion.identity);
                     temp.transform.SetParent(inventoryPanel.transform);
@@ -365,9 +384,9 @@ public class InventoryManager : MonoBehaviour
                     playerInventory.inventoryItems.Remove(item);
 
                 }
-            }  
-            
-           
+            }
+
+
         }
     }
 
@@ -384,7 +403,7 @@ public class InventoryManager : MonoBehaviour
             useButton.SetActive(false);
             destroyButton.SetActive(false);
         }
-   
+
 
         currentItemSelectedInInventory = newItem;
         if (newItem.usable)
@@ -399,7 +418,7 @@ public class InventoryManager : MonoBehaviour
         }
         else if (!newItem.usable)
         {
-         
+
 
             InventoryItem itemInTheSlot = CheckIfSlotIsTakenAndReturnItemIfOcupied(newItem.slot);
 
@@ -446,7 +465,7 @@ public class InventoryManager : MonoBehaviour
                     descriptionText.text = "If equipped:";
                     int difference = currentCalculatedDPS - newCurrentCalculatedDPS;
 
-                    if (difference<=0)
+                    if (difference <= 0)
                         descriptionText.text += "\r\n DPS: +" + Mathf.Abs(difference);
                     else
                         descriptionText.text += "\r\n DPS: -" + difference;
@@ -467,7 +486,7 @@ public class InventoryManager : MonoBehaviour
 
 
                 }
-                else if(newItem.equipableWeaponryStats != null)
+                else if (newItem.equipableWeaponryStats != null)
                 {
 
                     int newMinAttack = newItem.equipableWeaponryStats.AttackMinDamage;
@@ -480,7 +499,7 @@ public class InventoryManager : MonoBehaviour
                 }
             }
 
-          
+
 
         }
     }
@@ -493,7 +512,7 @@ public class InventoryManager : MonoBehaviour
             playerInventory.equipedItems.TryGetValue(slot, out itemEquiped);
 
 
-            if (itemEquiped==null)
+            if (itemEquiped == null)
                 return itemEquiped;
             else
                 return itemEquiped;
@@ -514,19 +533,19 @@ public class InventoryManager : MonoBehaviour
     {
         if (currentItemSelectedInEquipment)
         {
-            currentItemSelectedInEquipment.UnEquip(playerInventory,currentItemSelectedInEquipment);
+            currentItemSelectedInEquipment.UnEquip(playerInventory, currentItemSelectedInEquipment);
             UpdateEquipmentUI();
             UpdateInventoryUI();
             slot.thisItem = null;
             foreach (Transform item in inventoryPanel.transform)
             {
-                if(item.name == currentItemSelectedInEquipment.guid.ToString())
+                if (item.name == currentItemSelectedInEquipment.guid.ToString())
                 {
                     item.GetComponent<Animator>().SetTrigger("Pop");
                 }
             }
 
-         
+
 
             unEquipButton.GetComponent<Button>().interactable = false;
             currentItemSelectedInEquipment = null;
@@ -542,7 +561,7 @@ public class InventoryManager : MonoBehaviour
             if (currentItemSelectedInInventory.equipable)
             {
                 currentItemSelectedInInventory.Equip(playerInventory);
-                SetButtonTexts( false);
+                SetButtonTexts(false);
                 CleanDescription();
             }
             else if (currentItemSelectedInInventory.usable)
@@ -572,7 +591,7 @@ public class InventoryManager : MonoBehaviour
             playerInventory.inventoryItems.Remove(currentItemSelectedInInventory);
             UpdateInventoryUI();
 
-            SetButtonTexts( false);
+            SetButtonTexts(false);
             CleanDescription();
         }
     }
@@ -583,8 +602,8 @@ public class InventoryManager : MonoBehaviour
 
     }
 
+ 
 
-    
 
     public void UpdateInventoryUI()
     {
@@ -594,6 +613,8 @@ public class InventoryManager : MonoBehaviour
         MakeInventorySlots();
 
         UpdateGoldUI();
+
+        UpdateSlotsTaken();
 
     }
 }

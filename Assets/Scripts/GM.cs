@@ -14,7 +14,10 @@ public class GM : MonoBehaviour
 
    [SerializeField] private GameObject questsUI;
    [SerializeField] private GameObject inventoryUI;
-   [SerializeField] private GameObject mainMenuUI;
+    [SerializeField] private GameObject PrivateChestInventoryUI;
+    [SerializeField] private GameObject playerStatsUI;
+
+    [SerializeField] private GameObject mainMenuUI;
    [SerializeField] private GameObject settingsUI;
     [SerializeField] private GameObject enterLeaveLocationUI;
 
@@ -90,9 +93,10 @@ public class GM : MonoBehaviour
 
             if (inventoryUI.activeInHierarchy)
             {
-                inventoryUI.SetActive(false);
+                CloseInventoryAndPrivateChest();
                 return;
             }
+
 
             if (settingsUI.activeInHierarchy)
             {
@@ -107,8 +111,25 @@ public class GM : MonoBehaviour
         }
     }
 
+    public void CloseInventoryAndPrivateChest()
+    {
+        ClosePrivateChest();
+        inventoryUI.SetActive(false);
+    }
+
+    private void ClosePrivateChest()
+    {
+        if (PrivateChestInventoryUI.activeInHierarchy)
+        {
+            PrivateChestInventoryUI.SetActive(false);
+
+        }
+    }
+
     internal void ToggleInventoryPanel()
     {
+        playerStatsUI.SetActive(true);
+        PrivateChestInventoryUI.SetActive(false);
         bool a = inventoryUI.activeInHierarchy;
         inventoryUI.SetActive(!a);
     }
@@ -141,7 +162,24 @@ public class GM : MonoBehaviour
         print("hi");
     }
 
+    public void SaveGame()
+    {
+        StartMenu.instance.SaveGame();
+    }
 
+    public void OpenPrivateChestInventory()
+    {
+        
+        TogglePrivateChest();
+    }
+
+    private void TogglePrivateChest()
+    {
+
+        inventoryUI.SetActive(true);
+        playerStatsUI.SetActive(false);
+        PrivateChestInventoryUI.SetActive(true);
+    }
 
     internal void CallMethod(string methodToCallInGm,List<string> parameters)
     {

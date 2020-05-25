@@ -60,8 +60,8 @@ public class StartMenu : MonoBehaviour
     }
     public void SaveGame()
     {
-        SaveData.current.xPosition = GameObject.Find("Player").GetComponent<Transform>().position.x;
-        SaveData.current.yPosition = GameObject.Find("Player").GetComponent<Transform>().position.y;
+        SaveData.current.xPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.x;
+        SaveData.current.yPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.y;
         SaveData.current.scene = SceneManager.GetActiveScene().buildIndex; 
         SerializationManager.Save(SaveData.current.saveName, SaveData.current);
     }
@@ -144,6 +144,8 @@ public class StartMenu : MonoBehaviour
         Player.GetComponent<Transform>().position = new Vector3(SaveData.current.xPosition, SaveData.current.yPosition);
 
         cinemachineVirtualCamera.Follow = Player.transform;
+     
+
         CloseLoadMenuAndremoveChildren();
         gameObject.SetActive(false);
     }

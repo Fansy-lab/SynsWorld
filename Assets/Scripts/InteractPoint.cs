@@ -75,11 +75,7 @@ public class InteractPoint : MonoBehaviour
 
         }
 
-        //check if has to do something
-        if (currentInteractableObjectScript.methodToCallInGm !="")
-        {
-            GM.Instance.CallMethod(currentInteractableObjectScript.methodToCallInGm,currentInteractableObjectScript.parameters);
-        }
+  
 
         if (currentInteractableObjectScript.TriggersDialogueOnClick && currentInteractableObjectScript.alreadyInteracted==false
             && (currentInteractableObjectScript.SimplePopUpTEXT.Length>0 || currentInteractableObjectScript.displayOptions.Count>0))

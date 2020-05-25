@@ -12,7 +12,8 @@ public class PlayerStats : MonoBehaviour
         
     public HealthBar hpBar;
     public bool insideALocation=true;
-    public int maxItemsCanHold =25;
+    public int maxItemsCanHold;
+    public int maxItemsCanHoldInPrivateStash;
     PlayerInput playerInput;
     [SerializeField] GameObject levelUpEffect;
 

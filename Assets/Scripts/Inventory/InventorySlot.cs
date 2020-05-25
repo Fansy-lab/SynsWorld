@@ -41,6 +41,13 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
             thisManager.SetupDifferences(thisItem);
         }
     }
+    public void ClickedOnInPrivateChest()
+    {
+        if (thisItem)
+        {
+            thisManager.SetupToTransferToIventory(thisItem);
+        }
+    }
     public void ClickedOnInEquipment()
     {
         if (thisItem)

@@ -374,6 +374,8 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 91cc776c246ab429aa2b4d13afee01a7, type: 2}
   hpBar: {fileID: 1840891256}
   insideALocation: 1
+  maxItemsCanHold: 25
+  maxItemsCanHoldInPrivateStash: 100
   levelUpEffect: {fileID: 3297441302643732035, guid: 4728fe844c11847cba5d6fd6772893e3,
     type: 3}
 --- !u!114 &2033315203

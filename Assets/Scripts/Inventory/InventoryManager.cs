@@ -41,15 +41,21 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] private GameObject blankInventorySlot;
     [SerializeField] private GameObject inventoryPanel;
+    [SerializeField] private GameObject PrivateChestPanel;
+
     [SerializeField] private TextMeshProUGUI maxItemsText;
+    [SerializeField] private TextMeshProUGUI maxItemsTextPrivateChest;
+
+
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private GameObject useButton;
     [SerializeField] private GameObject unEquipButton;
-
     [SerializeField] private GameObject destroyButton;
+    [SerializeField] private GameObject retrieveButton;
 
     public InventoryItem currentItemSelectedInInventory;
     public InventoryItem currentItemSelectedInEquipment;
+    public InventoryItem currentItemSelectedInPrivateChest;
 
     private void Awake()
     {
@@ -126,6 +132,18 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    internal void SetupToTransferToIventory(InventoryItem thisItem)
+    {
+        if (thisItem)
+        {
+            currentItemSelectedInPrivateChest = thisItem;
+            retrieveButton.GetComponent<Button>().interactable = true;
+            retrieveButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            retrieveButton.GetComponent<Button>().onClick.AddListener(() => RetrieveButtonPressed(thisItem));
+
+        }
+    }
+
     internal void SetupUnEquipButton(InventoryItem thisItem, InventorySlot slot)
     {
         if (thisItem)
@@ -167,8 +185,51 @@ public class InventoryManager : MonoBehaviour
 
             maxItemsText.text = currentItems + "/" + maxItems;
         }
+    }
+    private void UpdateSlotsTakenPrivateStash()
+    {
+        PlayerStats plyerStats = GameObject.FindObjectOfType<PlayerStats>();
+        if (plyerStats)
+        {
+            int currentItems = privateChestInventory.inventoryItems.Where(x=>x != null).Count();
+            int maxItems = plyerStats.maxItemsCanHoldInPrivateStash;
+
+            maxItemsTextPrivateChest.text = currentItems + "/" + maxItems;
+        }
 
 
+    }
+    public bool ThereAreFreeSlotsInInventory()
+    {
+        PlayerStats plyerStats = GameObject.FindObjectOfType<PlayerStats>();
+        if (plyerStats)
+        {
+            int currentItemsInInventory = playerInventory.inventoryItems.Where(x => x != null).Count();
+            int maxItems = plyerStats.maxItemsCanHold;
+
+            if(currentItemsInInventory+1 <= maxItems)
+            {
+                return true;
+            }
+            
+        }
+        return false;
+    }
+    public bool ThereAreFreeSlotsInPrivateChest()
+    {
+        PlayerStats plyerStats = GameObject.FindObjectOfType<PlayerStats>();
+        if (plyerStats)
+        {
+            int currentItemsInPrivateChest = privateChestInventory.inventoryItems.Where(x => x != null).Count();
+            int maxItems = plyerStats.maxItemsCanHoldInPrivateStash;
+
+            if (currentItemsInPrivateChest + 1 <= maxItems)
+            {
+                return true;
+            }
+
+        }
+        return false;
     }
 
     private void UpdateGoldUI()
@@ -213,6 +274,32 @@ public class InventoryManager : MonoBehaviour
             armor.text = "Armor: " + plyerStats.playerData.armor;
             maxHP.text = "Max HP: " + plyerStats.playerData.maxHealth;
             evasion.text = "Evasion: " + plyerStats.playerData.evasion;
+        }
+    }
+    private void UpdatePrivateChestUI()
+    {
+        if (privateChestInventory)
+        {
+
+            foreach (var item in privateChestInventory.inventoryItems.ToList())
+            {
+                if (item != null && item.numberHeld > 0)
+                {
+                    GameObject temp = Instantiate(blankInventorySlot, PrivateChestPanel.transform.position, Quaternion.identity);
+                    temp.transform.SetParent(PrivateChestPanel.transform);
+                    temp.gameObject.name = item.guid.ToString();
+                    InventorySlot newSlot = temp.GetComponent<InventorySlot>();
+                    Button button = temp.GetComponentInChildren<Button>();
+                    button.onClick.AddListener(() => newSlot.ClickedOnInPrivateChest());
+                    newSlot.Setup(item, this);
+
+                }
+                else
+                {
+                    playerInventory.inventoryItems.Remove(item);
+
+                }
+            }
         }
     }
 
@@ -406,9 +493,10 @@ public class InventoryManager : MonoBehaviour
 
 
         currentItemSelectedInInventory = newItem;
+
         if (newItem.usable)
         {
-            useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Use";
+            SetButtonText("Use");
             descriptionText.text = "Restores 25% of Max HP ";
 
         }
@@ -424,7 +512,9 @@ public class InventoryManager : MonoBehaviour
 
             if (itemInTheSlot)
             {
-                useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Replace";
+
+
+                SetButtonText("Replace");
                 if (newItem.equipableArmoryStats != null)
                 {
                     int evasionDifference = itemInTheSlot.equipableArmoryStats.EvasionAmmount - newItem.equipableArmoryStats.EvasionAmmount;
@@ -475,7 +565,7 @@ public class InventoryManager : MonoBehaviour
             else
             {
 
-                useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equip";
+                SetButtonText("Equip");
                 if (newItem.equipableArmoryStats != null)
                 {
                     descriptionText.text = "If equipped:";
@@ -502,6 +592,23 @@ public class InventoryManager : MonoBehaviour
 
 
         }
+
+    }
+
+    private void SetButtonText(string text)
+    {
+
+        if (GM.Instance.PrivateChestInventoryUI.activeInHierarchy)
+        {
+            useButton.GetComponentInChildren<TextMeshProUGUI>().text = "Transfer";
+
+        }
+        else
+        {
+            useButton.GetComponentInChildren<TextMeshProUGUI>().text = text;
+
+        }
+
     }
 
     public InventoryItem CheckIfSlotIsTakenAndReturnItemIfOcupied(InventoryItem.Slot slot)
@@ -527,8 +634,30 @@ public class InventoryManager : MonoBehaviour
             Destroy(inventoryPanel.transform.GetChild(i).gameObject);
         }
     }
+    void ClearPrivateChestInventorySlots()
+    {
+        for (int i = 0; i < PrivateChestPanel.transform.childCount; i++)
+        {
+            Destroy(PrivateChestPanel.transform.GetChild(i).gameObject);
+        }
+    }
 
 
+    public void RetrieveButtonPressed(InventoryItem itemToRetrieve)
+    {
+        if (currentItemSelectedInPrivateChest)
+        {
+            if (ThereAreFreeSlotsInInventory())
+            {
+                currentItemSelectedInPrivateChest.TransferToInventory(playerInventory, privateChestInventory);
+                retrieveButton.GetComponent<Button>().interactable = false;
+                UpdatePrivateChestUI();
+                UpdateInventoryUI();
+            }
+        
+
+        }
+    }
     public void UnEquipButtonPressed(InventorySlot slot)
     {
         if (currentItemSelectedInEquipment)
@@ -558,31 +687,52 @@ public class InventoryManager : MonoBehaviour
         if (currentItemSelectedInInventory)
         {
 
-            if (currentItemSelectedInInventory.equipable)
+            if (GM.Instance.PrivateChestInventoryUI.activeInHierarchy)//chest is open
             {
-                currentItemSelectedInInventory.Equip(playerInventory);
-                SetButtonTexts(false);
-                CleanDescription();
-            }
-            else if (currentItemSelectedInInventory.usable)
-            {
-                currentItemSelectedInInventory.Use(playerInventory);
-
-                if (currentItemSelectedInInventory.numberHeld == 0)
+                //transfer  to private chest
+                if (ThereAreFreeSlotsInPrivateChest())
                 {
+                    currentItemSelectedInInventory.TransferToPrivateChest(playerInventory, privateChestInventory);
+                    SetButtonTexts(false);
+                    CleanDescription();
+                    UpdatePrivateChestUI();
+                }
+                    
+            }
+            else
+            {
+                if (currentItemSelectedInInventory.equipable)
+                {
+                    currentItemSelectedInInventory.Equip(playerInventory);
                     SetButtonTexts(false);
                     CleanDescription();
                 }
+                else if (currentItemSelectedInInventory.usable)
+                {
+                    currentItemSelectedInInventory.Use(playerInventory);
+
+                    if (currentItemSelectedInInventory.numberHeld == 0)
+                    {
+                        SetButtonTexts(false);
+                        CleanDescription();
+                    }
 
 
+                }
             }
+
+
+   
             UpdateInventoryUI();
             UpdateEquipmentUI();
+            
             UpdatePlayerData(null);
 
         }
 
     }
+
+  
 
     public void DestroyButtonPressed()
     {
@@ -602,7 +752,7 @@ public class InventoryManager : MonoBehaviour
 
     }
 
- 
+
 
 
     public void UpdateInventoryUI()
@@ -615,6 +765,15 @@ public class InventoryManager : MonoBehaviour
         UpdateGoldUI();
 
         UpdateSlotsTaken();
+
+
+        if (PrivateChestPanel.activeInHierarchy)
+        {
+            ClearPrivateChestInventorySlots();
+            UpdatePrivateChestUI();
+            UpdateSlotsTakenPrivateStash();
+
+        }
 
     }
 }

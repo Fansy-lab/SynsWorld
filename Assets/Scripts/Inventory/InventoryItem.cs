@@ -64,6 +64,15 @@ public class InventoryItem : ScriptableObject
         }
     }
 
+    public void TransferToPrivateChest(PlayerInventory inventory, PlayerInventory privateChest)
+    {
+        if (thisEvent != null)
+            thisEvent.Invoke();
+
+        privateChest.inventoryItems.Add(this);
+        inventory.inventoryItems.Remove(this);
+    }
+
     public void Equip(PlayerInventory playerInventory)
     {
         if (thisEvent != null)
@@ -226,5 +235,12 @@ public class InventoryItem : ScriptableObject
 
     }
 
-  
+    internal void TransferToInventory(PlayerInventory playerInventory, PlayerInventory privateChestInventory)
+    {
+        if (thisEvent != null)
+            thisEvent.Invoke();
+
+        playerInventory.inventoryItems.Add(this);
+        privateChestInventory.inventoryItems.Remove(this);
+    }
 }

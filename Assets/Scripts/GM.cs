@@ -14,7 +14,7 @@ public class GM : MonoBehaviour
 
    [SerializeField] private GameObject questsUI;
    [SerializeField] private GameObject inventoryUI;
-    [SerializeField] private GameObject PrivateChestInventoryUI;
+    [SerializeField] public GameObject PrivateChestInventoryUI;
     [SerializeField] private GameObject playerStatsUI;
 
     [SerializeField] private GameObject mainMenuUI;

@@ -6,8 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-[CreateAssetMenu(fileName ="New Item",menuName ="Inventory/Items")]
-public class InventoryItem : ScriptableObject
+public class InventoryItem
 {
 
     public enum Slot
@@ -36,34 +35,7 @@ public class InventoryItem : ScriptableObject
 
     public UnityEvent thisEvent;
 
-    public void Init(EquipableArmoryStats armoryStats,EquipableWeaponryStats
-        weaponryStats, UsableStats usableStats,Slot? slot,string itemName,string itemDescription,Sprite itemImage,int numberHeld,
-        bool usable,bool equipable,bool unique,bool isTrash,Guid guid)
-    {
-        this.guid = guid;
-        this.itemDescription = itemDescription;
-        this.itemName = itemName;
-        this.itemImage = itemImage;
-        this.numberHeld = numberHeld;
-        this.usable = usable;
-        this.equipable = equipable;
-        this.unique = unique;
-        this.isTrash = isTrash;
-        if(slot !=null)
-            this.slot = slot.Value;
-        if (armoryStats != null)
-        {
-            equipableArmoryStats = armoryStats;
-        }
-        if (weaponryStats != null)
-        {
-            equipableWeaponryStats = weaponryStats;
-        }
-        if (usable)
-        {
-            this.usableStats = usableStats;
-        }
-    }
+
 
 
 
@@ -75,29 +47,15 @@ public class InventoryItem : ScriptableObject
         int index = playerInventory.inventoryItems.FindIndex(a => a.guid == this.guid);
 
         playerInventory.inventoryItems.Remove(this);
-        if (itemSustituido)
+        if (itemSustituido !=null)
         {
-            InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
-
-
-            if (itemSustituido.slot == Slot.weapon)
-            {
-               inventoryItemInstance.Init(null,
-               new EquipableWeaponryStats() {AttackMinDamage=itemSustituido.equipableWeaponryStats.AttackMinDamage,AttackSpeed =itemSustituido.equipableWeaponryStats.AttackSpeed,AttackMaxDamage= itemSustituido.equipableWeaponryStats.AttackMaxDamage }, null, itemSustituido.slot, itemSustituido.itemName, itemSustituido.itemDescription,
-               itemSustituido.itemImage, 1, false, true, false,false, itemSustituido.guid);
-
-            }
-            else
-            {
-               inventoryItemInstance.Init(new EquipableArmoryStats() { ArmorAmmount = itemSustituido.equipableArmoryStats.ArmorAmmount, HealthAmmount = itemSustituido.equipableArmoryStats.HealthAmmount },
-               null, null, itemSustituido.slot, itemSustituido.itemName, itemSustituido.itemDescription,
-               itemSustituido.itemImage, 1, false, true, false,false, itemSustituido.guid);
-
-            }
 
 
 
-            playerInventory.inventoryItems.Insert(index,inventoryItemInstance);
+
+
+
+            playerInventory.inventoryItems.Insert(index, itemSustituido);
         }
 
         RecalculateStats(playerInventory.equipedItems);
@@ -191,36 +149,10 @@ public class InventoryItem : ScriptableObject
 
         if (playerInventory)
         {
-            InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
-            if (itemToUnEquip.slot == Slot.weapon)
-            {
-                inventoryItemInstance.Init(null,
-                    new EquipableWeaponryStats()
-                {
-                    AttackMinDamage = itemToUnEquip.equipableWeaponryStats.AttackMinDamage,
-                    AttackMaxDamage = itemToUnEquip.equipableWeaponryStats.AttackMaxDamage,
-                    AttackSpeed = itemToUnEquip.equipableWeaponryStats.AttackSpeed
-
-                },
-                null, itemToUnEquip.slot, itemToUnEquip.itemName, itemToUnEquip.itemDescription,
-                  itemToUnEquip.itemImage, 1, false, true, false,false, itemToUnEquip.guid);
-            }
-            else
-            {
-                inventoryItemInstance.Init(new EquipableArmoryStats()
-                {
-                    ArmorAmmount = itemToUnEquip.equipableArmoryStats.ArmorAmmount,
-                    HealthAmmount = itemToUnEquip.equipableArmoryStats.HealthAmmount,
-                    EvasionAmmount = itemToUnEquip.equipableArmoryStats.EvasionAmmount
-
-                },
-                    null, null, itemToUnEquip.slot, itemToUnEquip.itemName, itemToUnEquip.itemDescription,
-                    itemToUnEquip.itemImage, 1, false, true, false,false, itemToUnEquip.guid);
-            }
 
 
 
-            playerInventory.inventoryItems.Add(inventoryItemInstance);
+            playerInventory.inventoryItems.Add(itemToUnEquip);
 
 
         }

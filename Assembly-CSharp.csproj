@@ -70,7 +70,6 @@
     <Compile Include="Assets\EnterLeaveLocationManager.cs" />
     <Compile Include="Assets\NewSavePanel.cs" />
     <Compile Include="Assets\PrivateChest.cs" />
-    <Compile Include="Assets\ScriptableObjects\InventoryStuff\BowExample.cs" />
     <Compile Include="Assets\Scripts\DamagePopUp.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />

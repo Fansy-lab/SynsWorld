@@ -253,7 +253,7 @@ public class PlayerInput : MonoBehaviour
 
         int minDamage = 0;
         int maxDamage = 0;
-        if (weapon)
+        if (weapon != null)
         {
            minDamage =  weapon.equipableWeaponryStats.AttackMinDamage;
            maxDamage = weapon.equipableWeaponryStats.AttackMaxDamage;

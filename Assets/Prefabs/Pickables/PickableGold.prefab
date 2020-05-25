@@ -123,7 +123,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: 667daa8630b054e4dacb1bd5b7ca5b13, type: 2}
-  thisItem: {fileID: 11400000, guid: cdc14746021ed4f3cb70bba456461066, type: 2}
+  thisItem:
+    itemName: Coin
+    itemDescription: GoldCoin
+    itemImage: {fileID: 21300000, guid: 601ee6102f54d41e9908ba8c8ade2173, type: 3}
+    numberHeld: 1
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 0
+    isCurrency: 1
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
+    thisEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1001 &1515481282103209732
 PrefabInstance:
   m_ObjectHideFlags: 0

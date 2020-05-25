@@ -134,7 +134,7 @@ public class InventoryManager : MonoBehaviour
 
     internal void SetupToTransferToIventory(InventoryItem thisItem)
     {
-        if (thisItem)
+        if (thisItem != null)
         {
             currentItemSelectedInPrivateChest = thisItem;
             retrieveButton.GetComponent<Button>().interactable = true;
@@ -146,7 +146,7 @@ public class InventoryManager : MonoBehaviour
 
     internal void SetupUnEquipButton(InventoryItem thisItem, InventorySlot slot)
     {
-        if (thisItem)
+        if (thisItem != null)
         {
             currentItemSelectedInEquipment = thisItem;
             unEquipButton.GetComponent<Button>().interactable = true;
@@ -342,7 +342,7 @@ public class InventoryManager : MonoBehaviour
 
         }
 
-        if (head)
+        if (head != null)
         {
 
             Image headImage = headSlot.transform.GetChild(0).GetComponentInChildren<Image>();
@@ -362,7 +362,7 @@ public class InventoryManager : MonoBehaviour
             headImage.color = new Color(0, 0, 0, 0);
 
         }
-        if (chest)
+        if (chest != null)
         {
 
             Image chestImage = chestSlot.transform.GetChild(0).GetComponentInChildren<Image>();
@@ -379,7 +379,7 @@ public class InventoryManager : MonoBehaviour
             chestImage.sprite = null;
             chestImage.color = new Color(0, 0, 0, 0);
         }
-        if (gloves)
+        if (gloves != null)
         {
 
             Image glovesImage = glovesSlot.transform.GetChild(0).GetComponentInChildren<Image>();
@@ -396,7 +396,7 @@ public class InventoryManager : MonoBehaviour
             glovesImage.sprite = null;
             glovesImage.color = new Color(0, 0, 0, 0);
         }
-        if (weapon)
+        if (weapon != null)
         {
 
             Image weaponImage = weaponSlot.transform.GetChild(0).GetComponentInChildren<Image>();
@@ -413,7 +413,7 @@ public class InventoryManager : MonoBehaviour
             weaponImage.sprite = null;
             weaponImage.color = new Color(0, 0, 0, 0);
         }
-        if (leggings)
+        if (leggings != null)
         {
 
             Image legginsImage = leggingsSlot.transform.GetChild(0).GetComponentInChildren<Image>();
@@ -430,7 +430,7 @@ public class InventoryManager : MonoBehaviour
             leggingsImage.sprite = null;
             leggingsImage.color = new Color(0, 0, 0, 0);
         }
-        if (boots)
+        if (boots != null)
         {
 
             Image bootsImage = bootsSlot.transform.GetChild(0).GetComponentInChildren<Image>();
@@ -510,12 +510,12 @@ public class InventoryManager : MonoBehaviour
 
             InventoryItem itemInTheSlot = CheckIfSlotIsTakenAndReturnItemIfOcupied(newItem.slot);
 
-            if (itemInTheSlot)
+            if (itemInTheSlot != null)
             {
 
 
                 SetButtonText("Replace");
-                if (newItem.equipableArmoryStats != null)
+                if (newItem.slot !=InventoryItem.Slot.weapon)
                 {
                     int evasionDifference = itemInTheSlot.equipableArmoryStats.EvasionAmmount - newItem.equipableArmoryStats.EvasionAmmount;
                     int amorDiference = itemInTheSlot.equipableArmoryStats.ArmorAmmount - newItem.equipableArmoryStats.ArmorAmmount;
@@ -540,7 +540,7 @@ public class InventoryManager : MonoBehaviour
 
 
                 }
-                if (newItem.equipableWeaponryStats != null)
+                else if (newItem.slot == InventoryItem.Slot.weapon)
                 {
                     int minAttack = itemInTheSlot.equipableWeaponryStats.AttackMinDamage;
                     int maxAttack = itemInTheSlot.equipableWeaponryStats.AttackMaxDamage;
@@ -566,7 +566,7 @@ public class InventoryManager : MonoBehaviour
             {
 
                 SetButtonText("Equip");
-                if (newItem.equipableArmoryStats != null)
+                if (newItem.slot != InventoryItem.Slot.weapon)
                 {
                     descriptionText.text = "If equipped:";
                     descriptionText.text += "\r\n Armor: +" + newItem.equipableArmoryStats.ArmorAmmount;
@@ -576,7 +576,7 @@ public class InventoryManager : MonoBehaviour
 
 
                 }
-                else if (newItem.equipableWeaponryStats != null)
+                else if (newItem.slot == InventoryItem.Slot.weapon)
                 {
 
                     int newMinAttack = newItem.equipableWeaponryStats.AttackMinDamage;
@@ -645,7 +645,7 @@ public class InventoryManager : MonoBehaviour
 
     public void RetrieveButtonPressed(InventoryItem itemToRetrieve)
     {
-        if (currentItemSelectedInPrivateChest)
+        if (currentItemSelectedInPrivateChest != null)
         {
             if (ThereAreFreeSlotsInInventory())
             {
@@ -660,7 +660,7 @@ public class InventoryManager : MonoBehaviour
     }
     public void UnEquipButtonPressed(InventorySlot slot)
     {
-        if (currentItemSelectedInEquipment)
+        if (currentItemSelectedInEquipment != null)
         {
             currentItemSelectedInEquipment.UnEquip(playerInventory, currentItemSelectedInEquipment);
             UpdateEquipmentUI();
@@ -684,7 +684,7 @@ public class InventoryManager : MonoBehaviour
 
     public void UseButtonPressed()
     {
-        if (currentItemSelectedInInventory)
+        if (currentItemSelectedInInventory != null)
         {
 
             if (GM.Instance.PrivateChestInventoryUI.activeInHierarchy)//chest is open
@@ -736,7 +736,7 @@ public class InventoryManager : MonoBehaviour
 
     public void DestroyButtonPressed()
     {
-        if (currentItemSelectedInInventory)
+        if (currentItemSelectedInInventory != null)
         {
             playerInventory.inventoryItems.Remove(currentItemSelectedInInventory);
             UpdateInventoryUI();

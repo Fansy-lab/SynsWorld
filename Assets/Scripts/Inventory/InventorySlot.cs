@@ -19,7 +19,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
 
     [SerializeField]private ToolTip toolTip;
 
-    
+
 
     public void Setup(InventoryItem newItem,InventoryManager newManager)
     {
@@ -36,21 +36,21 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
 
     public void ClickedOnInInventory()
     {
-        if (thisItem)
+        if (thisItem !=null)
         {
             thisManager.SetupDifferences(thisItem);
         }
     }
     public void ClickedOnInPrivateChest()
     {
-        if (thisItem)
+        if (thisItem != null)
         {
             thisManager.SetupToTransferToIventory(thisItem);
         }
     }
     public void ClickedOnInEquipment()
     {
-        if (thisItem)
+        if (thisItem != null)
         {
             thisManager.SetupUnEquipButton(thisItem,this);
         }
@@ -60,7 +60,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
     {
         if (toolTip)
         {
-            if (thisItem)
+            if (thisItem != null)
             {
 
 
@@ -71,7 +71,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
 
                     if (thisItem.equipable)
                     {
-                        if (thisItem.equipableArmoryStats != null)
+                        if (thisItem.slot !=InventoryItem.Slot.weapon)
                         {
                             descriptionToDisplay += " Armor: +" +
                                 thisItem.equipableArmoryStats.ArmorAmmount + "\r\n HP: +" +
@@ -79,7 +79,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
                                 thisItem.equipableArmoryStats.EvasionAmmount;
 
                         }
-                        if (thisItem.equipableWeaponryStats != null)
+                        else
                         {
                             descriptionToDisplay += " Min Damage: +" + thisItem.equipableWeaponryStats.AttackMinDamage;
                             descriptionToDisplay += "\r\n Max Damage: +" + thisItem.equipableWeaponryStats.AttackMaxDamage;
@@ -106,7 +106,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
 
             }
         }
-    
+
     }
 
 

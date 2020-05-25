@@ -30,11 +30,8 @@ public class PhysicalInventoryItem : MonoBehaviour
 
     bool AddItemToInventory()
     {
-        if (playerInventory && thisItem)
+        if (playerInventory != null && thisItem != null)
         {
-
-
-
             if (thisItem.equipable)
             {
                 if (playerInventory.inventoryItems.Count >= GameObject.FindObjectOfType<PlayerStats>().maxItemsCanHold)
@@ -44,25 +41,24 @@ public class PhysicalInventoryItem : MonoBehaviour
 
                 Guid guid = Guid.NewGuid();
 
-                InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
                 if (thisItem.slot == InventoryItem.Slot.weapon)
                 {
-                    inventoryItemInstance.Init(null, RNGGod.GetRandonWeaponStats(),
-                       null, thisItem.slot, thisItem.itemName,
-                      thisItem.itemDescription, thisItem.itemImage,
-                      1, false, true, false, false, guid);
+
+
+                    thisItem.equipableWeaponryStats = RNGGod.GetRandonWeaponStats();
+                    thisItem.guid = guid;
                 }
                 else
                 {
-                    inventoryItemInstance.Init(RNGGod.GetRandomArmoryStats(), null,
-                    null, thisItem.slot, thisItem.itemName,
-                    thisItem.itemDescription, thisItem.itemImage,
-                    1, false, true, false, false, guid);
+
+                    thisItem.equipableArmoryStats = RNGGod.GetRandomArmoryStats();
+                    thisItem.guid = guid;
+
                 }
 
 
-                playerInventory.inventoryItems.Add(inventoryItemInstance);
-                GlobalEvents.PickedItem(inventoryItemInstance);//event happened
+                playerInventory.inventoryItems.Add(thisItem);
+                GlobalEvents.PickedItem(thisItem);//event happened
                 SoundEffectsManager.instance.PlayPickedUpItemSound();
 
 
@@ -90,11 +86,10 @@ public class PhysicalInventoryItem : MonoBehaviour
                     }
 
                     Guid guid = Guid.NewGuid();
-                    InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
-                    inventoryItemInstance.Init(null, null, new UsableStats() { HPRestoreAmmount = 25 }, null, thisItem.itemName,
-                        thisItem.itemDescription, thisItem.itemImage, 1, true, false, false, false, guid);
-                    playerInventory.inventoryItems.Add(inventoryItemInstance);
-                    GlobalEvents.PickedItem(inventoryItemInstance);//event happened
+                    thisItem.usableStats = new UsableStats() { HPRestoreAmmount = 25 };
+                    thisItem.guid = guid;
+                    playerInventory.inventoryItems.Add(thisItem);
+                    GlobalEvents.PickedItem(thisItem);//event happened
 
                     //Debug.Log("Added to inventory: " + guid);
                 }
@@ -121,11 +116,10 @@ public class PhysicalInventoryItem : MonoBehaviour
                     return false;
                 }
                 Guid guid = Guid.NewGuid();
-                InventoryItem inventoryItemInstance = ScriptableObject.CreateInstance("InventoryItem") as InventoryItem;
-                inventoryItemInstance.Init(null, null, null, null, thisItem.itemName,
-                    thisItem.itemDescription, thisItem.itemImage, 1, false, false, false, true, guid);
-                playerInventory.inventoryItems.Add(inventoryItemInstance);
-                GlobalEvents.PickedItem(inventoryItemInstance);//event happened
+                thisItem.guid = guid;
+
+                playerInventory.inventoryItems.Add(thisItem);
+                GlobalEvents.PickedItem(thisItem);//event happened
                 SoundEffectsManager.instance.PlayPickedMiscItemSound();
 
             }

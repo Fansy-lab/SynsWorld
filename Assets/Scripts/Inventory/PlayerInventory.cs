@@ -19,7 +19,7 @@ public class PlayerInventory : ScriptableObject
                 InventoryItem equipedHead;
                 equipedItems.TryGetValue(item.slot, out equipedHead);
                 equipedItems[InventoryItem.Slot.head] = item;
-                if (equipedHead)
+                if (equipedHead != null)
                 {
                     return equipedHead;
                 }
@@ -29,7 +29,7 @@ public class PlayerInventory : ScriptableObject
                 InventoryItem equipedChest;
                 equipedItems.TryGetValue(item.slot, out equipedChest);
                 equipedItems[InventoryItem.Slot.chest] = item;
-                if (equipedChest)
+                if (equipedChest != null)
                 {
                     return equipedChest;
 
@@ -40,7 +40,7 @@ public class PlayerInventory : ScriptableObject
                 InventoryItem equipedWeapon;
                 equipedItems.TryGetValue(item.slot, out equipedWeapon);
                 equipedItems[InventoryItem.Slot.weapon] = item;
-                if (equipedWeapon)
+                if (equipedWeapon != null)
                 {
                     return equipedWeapon;
 
@@ -50,7 +50,7 @@ public class PlayerInventory : ScriptableObject
                 InventoryItem equipedGloves;
                 equipedItems.TryGetValue(item.slot, out equipedGloves);
                 equipedItems[InventoryItem.Slot.gloves] = item;
-                if (equipedGloves)
+                if (equipedGloves != null)
                 {
                     return equipedGloves;
 
@@ -60,7 +60,7 @@ public class PlayerInventory : ScriptableObject
                 InventoryItem equippedLeggings;
                 equipedItems.TryGetValue(item.slot, out equippedLeggings);
                 equipedItems[InventoryItem.Slot.leggings] = item;
-                if (equippedLeggings)
+                if (equippedLeggings != null)
                 {
                     return equippedLeggings;
                 }
@@ -69,7 +69,7 @@ public class PlayerInventory : ScriptableObject
                 InventoryItem equippedBoots;
                 equipedItems.TryGetValue(item.slot, out equippedBoots);
                 equipedItems[InventoryItem.Slot.boots] = item;
-                if (equippedBoots)
+                if (equippedBoots != null)
                 {
                     return equippedBoots;
                 }

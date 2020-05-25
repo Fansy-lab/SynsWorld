@@ -124,7 +124,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: 667daa8630b054e4dacb1bd5b7ca5b13, type: 2}
-  thisItem: {fileID: 11400000, guid: 23e987390b0b9834986594b25a1be760, type: 2}
+  thisItem:
+    itemName: Key
+    itemDescription: Chest key
+    itemImage: {fileID: 6848829298122412017, guid: fe8fa90c1d4913141a7504ddfbda4db6,
+      type: 3}
+    numberHeld: 1
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 1
+    isCurrency: 0
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
+    thisEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1001 &1515481282103209732
 PrefabInstance:
   m_ObjectHideFlags: 0

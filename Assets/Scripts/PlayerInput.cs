@@ -63,13 +63,13 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             GM.Instance.ToggleQuests();
-    
+
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
             GM.Instance.ToggleInventoryPanel();
         }
-       
+
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
 
@@ -77,7 +77,7 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-  
+
 
     private void Dash()
     {
@@ -95,7 +95,7 @@ public class PlayerInput : MonoBehaviour
     {
         RaycastHit2D[] cllisions = Physics2D.RaycastAll(transform.position, dir, distance);
 
-    
+
         if (cllisions.Length==1 )//always hits the player
         {
             return true;
@@ -123,7 +123,7 @@ public class PlayerInput : MonoBehaviour
         }
         return false;
     }
-  
+
 
 
 
@@ -161,13 +161,13 @@ public class PlayerInput : MonoBehaviour
         if (lastShot > shootRate)
         {
             canShoot = true;
-          
+
         }
         else
         {
             canShoot = false;
-        } 
-       
+        }
+
     }
     private void Shoot()
     {
@@ -237,7 +237,7 @@ public class PlayerInput : MonoBehaviour
        GameObject arrow = Instantiate(arrowPrefab, firePosition.position, firePosition.rotation) as GameObject;
         arrow.GetComponent<Projectile>().damageAmmount = SetDamageAmmount();
         Rigidbody2D rbArrow= arrow.GetComponent<Rigidbody2D>();
-       
+
         if(shootingDirectionAtTheMomentOfShooting == new Vector2(0, 0))
         {
             shootingDirectionAtTheMomentOfShooting = lastLookingDirection;
@@ -248,7 +248,7 @@ public class PlayerInput : MonoBehaviour
 
     private int SetDamageAmmount()
     {
-        int attack = GetComponent<PlayerStats>().playerData.DPS;
+        int attack = GetComponent<PlayerStats>().DPS;
         InventoryItem weapon = InventoryManager.instance.CheckIfSlotIsTakenAndReturnItemIfOcupied(InventoryItem.Slot.weapon);
 
         int minDamage = 0;
@@ -284,7 +284,7 @@ public class PlayerInput : MonoBehaviour
             animator.SetFloat("LookDir", 3f);
             currentlyLookingAt = lookingAt.right;
             lastLookingDirection = Vector2.right;
-            
+
         }
         if (movement.x < 0)
         {

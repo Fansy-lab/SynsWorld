@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EmoteManager : MonoBehaviour
 {
     private static EmoteManager instance;
     private static int m_referenceCount = 0;
+
     [Header("stuff you should not touch")]
-    [SerializeField] Transform popUpPosition;
-    [SerializeField] Sprite NewQuestSprite;
-    [SerializeField] Sprite CompletedQuestSprite;
-    [SerializeField] GameObject EmotePrefab;
+    [SerializeField] private Transform popUpPosition;
+
+    [SerializeField] private Sprite NewQuestSprite;
+    [SerializeField] private Sprite CompletedQuestSprite;
+    [SerializeField] private GameObject EmotePrefab;
 
     public static EmoteManager Instance
     {
@@ -20,7 +20,6 @@ public class EmoteManager : MonoBehaviour
             return instance;
         }
     }
-    
 
     internal void ShowNewQuestEmote()
     {
@@ -29,11 +28,11 @@ public class EmoteManager : MonoBehaviour
         gOSpawned.transform.parent = gameObject.transform;
     }
 
-    internal string DisplayCloseByPopUp(Sprite popUpToDisplayOverPlayer,GameObject gO)
+    internal string DisplayCloseByPopUp(Sprite popUpToDisplayOverPlayer, GameObject gO)
     {
         EmotePrefab.GetComponentInChildren<SpriteRenderer>().sprite = popUpToDisplayOverPlayer;
-      
-        GameObject gOSpawned = Instantiate(EmotePrefab, gO.transform.position, Quaternion.identity,gO.transform) as GameObject;
+
+        GameObject gOSpawned = Instantiate(EmotePrefab, gO.transform.position, Quaternion.identity, gO.transform) as GameObject;
 
         gOSpawned.GetComponent<Animator>().Play("PopUpStationary");
         gOSpawned.GetComponent<SelfDestroyAfterSeconds>().enabled = false;
@@ -49,7 +48,7 @@ public class EmoteManager : MonoBehaviour
         gOSpawned.transform.parent = gameObject.transform;
     }
 
-    void Awake()
+    private void Awake()
     {
         m_referenceCount++;
         if (m_referenceCount > 1)
@@ -63,19 +62,19 @@ public class EmoteManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         m_referenceCount--;
         if (m_referenceCount == 0)
         {
             instance = null;
         }
-
     }
+
     private void Start()
     {
-
     }
+
     public void DisplayPopUp(Sprite sprite)
     {
         EmotePrefab.GetComponentInChildren<SpriteRenderer>().sprite = sprite;

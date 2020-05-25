@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -45,9 +46,14 @@ public class StartMenu : MonoBehaviour
 
     public void CreateSaveAndStartGame(string nameSave)
     {
-        SaveData.current.xPosition = 0;
-        SaveData.current.yPosition = 0;
-        SaveData.current.scene = 1;
+
+
+
+        var saveGameComponents = new SaveGameComponents(0, 0, 1, null, null, 0, 0);
+
+
+
+        SaveData.current.data = saveGameComponents;
         SaveData.current.saveName = nameSave;
         SerializationManager.Save(nameSave, SaveData.current);
 
@@ -60,14 +66,14 @@ public class StartMenu : MonoBehaviour
     }
     public void SaveGame()
     {
-        SaveData.current.xPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.x;
-        SaveData.current.yPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.y;
-        SaveData.current.scene = SceneManager.GetActiveScene().buildIndex; 
+
+
+        SaveData.current.data = new SaveGameService().GetSaveData();
         SerializationManager.Save(SaveData.current.saveName, SaveData.current);
     }
     public void LoadGamePanelClicked()
     {
-        if(!Directory.Exists(Application.persistentDataPath + "/saves/"))
+        if (!Directory.Exists(Application.persistentDataPath + "/saves/"))
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/saves/");
         }
@@ -78,8 +84,8 @@ public class StartMenu : MonoBehaviour
             string nombre = Path.GetFileNameWithoutExtension(save);
             DirectoryInfo info = new DirectoryInfo(save);
             string creationDate = info.CreationTime.ToString();
-            GameObject gO =  Instantiate(loadButton, loadPanelGrid.transform) as GameObject;
-            gO.GetComponentInChildren<TextMeshProUGUI>().text = nombre+"\r\n" +creationDate;
+            GameObject gO = Instantiate(loadButton, loadPanelGrid.transform) as GameObject;
+            gO.GetComponentInChildren<TextMeshProUGUI>().text = nombre + "\r\n" + creationDate;
             gO.GetComponentInChildren<Button>().onClick.AddListener(() => LoadSave(nombre));
 
         }
@@ -87,22 +93,22 @@ public class StartMenu : MonoBehaviour
         loadPanel.SetActive(true);
     }
 
-    private  void LoadSave(string load)
+    private void LoadSave(string load)
     {
         LoadGame(load);
     }
 
-    private  void LoadGame(string load)
+    private void LoadGame(string load)
     {
         SaveData.current = (SaveData)SerializationManager.Load(Application.persistentDataPath + "/saves/" + load + ".save");
-       
 
 
-     
-         SceneManager.LoadScene(SaveData.current.scene);
 
-        StartCoroutine("waitForSceneLoad", SaveData.current.scene);
-        
+
+        SceneManager.LoadScene(SaveData.current.data._scene);
+
+        StartCoroutine("waitForSceneLoad", SaveData.current.data._scene);
+
 
 
     }
@@ -130,10 +136,10 @@ public class StartMenu : MonoBehaviour
 
         LoadData();
 
-           
-        
-     
-       
+
+
+
+
     }
 
     private void LoadData()
@@ -141,10 +147,10 @@ public class StartMenu : MonoBehaviour
         Instantiate(GM.Instance.Player, GM.Instance.Player.transform.position, Quaternion.identity);
 
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        Player.GetComponent<Transform>().position = new Vector3(SaveData.current.xPosition, SaveData.current.yPosition);
+        Player.GetComponent<Transform>().position = new Vector3(SaveData.current.data._xPosition, SaveData.current.data._yPosition);
 
         cinemachineVirtualCamera.Follow = Player.transform;
-     
+
 
         CloseLoadMenuAndremoveChildren();
         gameObject.SetActive(false);

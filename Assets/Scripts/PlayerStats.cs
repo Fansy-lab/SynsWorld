@@ -8,8 +8,17 @@ public class PlayerStats : MonoBehaviour
 {
     // Start is called before the first frame update
 
-  public PlayerData playerData;
-        
+    public int DPS;
+
+    public int maxHealth;
+    public int armor;
+    public int evasion;
+
+    public int currentHealth;
+
+    public int gold;
+    public int experience;
+
     public HealthBar hpBar;
     public bool insideALocation=true;
     public int maxItemsCanHold;
@@ -23,13 +32,13 @@ public class PlayerStats : MonoBehaviour
         GlobalEvents.OnLevelUp += PlayerLeveledUp;
 
         playerInput = GetComponentInChildren<PlayerInput>();
-        playerData.currentHealth = playerData.maxHealth;
+        currentHealth = maxHealth;
         SetMaxHealth();
     }
 
     public void SetMaxHealth()
     {
-        hpBar.SetMaxHealth(playerData.maxHealth);
+        hpBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -39,13 +48,13 @@ public class PlayerStats : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(10);
-        }   
+        }
     }
 
     public void TakeDamage(int damage)
     {
-        playerData.currentHealth -= damage;
-        hpBar.SetHealth(playerData.currentHealth);
+        currentHealth -= damage;
+        hpBar.SetHealth(currentHealth);
     }
 
     public void EnableShooting()
@@ -59,11 +68,11 @@ public class PlayerStats : MonoBehaviour
     }
     public void DrinkPotion()
     {
-        float hpToRecover = playerData.maxHealth * 0.25f;
-        playerData.currentHealth += Convert.ToInt32(hpToRecover);
-        if (playerData.currentHealth > playerData.maxHealth)
-            playerData.currentHealth = playerData.maxHealth;
-        hpBar.SetHealth(playerData.currentHealth);
+        float hpToRecover = maxHealth * 0.25f;
+        currentHealth += Convert.ToInt32(hpToRecover);
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+        hpBar.SetHealth(currentHealth);
 
     }
     public void PlayerLeveledUp(int? level)
@@ -76,9 +85,7 @@ public class PlayerStats : MonoBehaviour
     public void EnemyDied(IEnemy enemy)
     {
         LevelSystem.AddExp(enemy.Experience);
-        #if UNITY_EDITOR
-        EditorUtility.SetDirty(playerData);
-        #endif
+
 
     }
 }

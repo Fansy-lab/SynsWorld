@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-
+[System.Serializable]
 [CreateAssetMenu(fileName ="New Item",menuName ="Inventory/Items")]
 public class InventoryItem : ScriptableObject
 {
@@ -64,14 +65,7 @@ public class InventoryItem : ScriptableObject
         }
     }
 
-    public void TransferToPrivateChest(PlayerInventory inventory, PlayerInventory privateChest)
-    {
-        if (thisEvent != null)
-            thisEvent.Invoke();
 
-        privateChest.inventoryItems.Add(this);
-        inventory.inventoryItems.Remove(this);
-    }
 
     public void Equip(PlayerInventory playerInventory)
     {
@@ -115,7 +109,7 @@ public class InventoryItem : ScriptableObject
     public static void RecalculateStats(Dictionary<Slot, InventoryItem> equipedItems)
     {
         PlayerStats playerStats = GameObject.FindObjectOfType<PlayerStats>();
-        
+
         if (playerStats)
         {
             int totalAttack = 0;
@@ -137,16 +131,16 @@ public class InventoryItem : ScriptableObject
                     {
                         totalAttack += (entry.Value.equipableWeaponryStats.AttackMinDamage + entry.Value.equipableWeaponryStats.AttackMaxDamage)/2;
                         totalAttackSpeed += entry.Value.equipableWeaponryStats.AttackSpeed;
-                        
+
                     }
 
                 }
             }
-            playerStats.playerData.armor = totalArmor;
-            playerStats.playerData.maxHealth = totalMaxHP +100;
-            playerStats.playerData.DPS = totalAttack *totalAttackSpeed;
+            playerStats.armor = totalArmor;
+            playerStats.maxHealth = totalMaxHP +100;
+            playerStats.DPS = totalAttack *totalAttackSpeed;
 
-            playerStats.playerData.evasion = totalEvasion;
+            playerStats.evasion = totalEvasion;
             playerStats.SetMaxHealth();
 
         }
@@ -162,12 +156,12 @@ public class InventoryItem : ScriptableObject
 
     public void Use(PlayerInventory playerInventory )
     {
-       
-        if (thisEvent !=null)
-            thisEvent.Invoke(); 
 
-   
-        
+        if (thisEvent !=null)
+            thisEvent.Invoke();
+
+
+
 
             Debug.Log("Using Item" +itemName);
             if (itemName.ToLower().Contains("hp"))
@@ -177,8 +171,8 @@ public class InventoryItem : ScriptableObject
             }
             DecreaseAmount(1);
 
-        
-     
+
+
 
     }
 
@@ -228,7 +222,7 @@ public class InventoryItem : ScriptableObject
 
             playerInventory.inventoryItems.Add(inventoryItemInstance);
 
-          
+
         }
         RecalculateStats(playerInventory.equipedItems);
         SoundEffectsManager.instance.PlayUnEquippedItemSound();
@@ -240,7 +234,63 @@ public class InventoryItem : ScriptableObject
         if (thisEvent != null)
             thisEvent.Invoke();
 
-        playerInventory.inventoryItems.Add(this);
-        privateChestInventory.inventoryItems.Remove(this);
+
+
+        if (this.usable)
+        {
+            bool hasUsableItemInventory = false;
+            foreach (var item in playerInventory.inventoryItems.Where(x => x != null))
+            {
+                if (item.itemName == itemName)
+                {
+                    hasUsableItemInventory = true;
+                    item.numberHeld += numberHeld;
+                    privateChestInventory.inventoryItems.Remove(this);
+
+                }
+            }
+            if (hasUsableItemInventory == false)
+            {
+                playerInventory.inventoryItems.Add(this);
+                privateChestInventory.inventoryItems.Remove(this);
+            }
+
+        }
+        else
+        {
+            playerInventory.inventoryItems.Add(this);
+            privateChestInventory.inventoryItems.Remove(this);
+        }
+    }
+    public void TransferToPrivateChest(PlayerInventory inventory, PlayerInventory privateChest)
+    {
+        if (thisEvent != null)
+            thisEvent.Invoke();
+
+        if (this.usable)
+        {
+            bool hasUsableItemInPrivateChest=false;
+            foreach (var item in privateChest.inventoryItems.Where(x=>x!=null))
+            {
+                if (item.itemName == itemName)
+                {
+                    hasUsableItemInPrivateChest = true;
+                    item.numberHeld+=numberHeld;
+                    inventory.inventoryItems.Remove(this);
+
+                }
+            }
+            if (hasUsableItemInPrivateChest==false)
+            {
+                privateChest.inventoryItems.Add(this);
+                inventory.inventoryItems.Remove(this);
+            }
+
+        }
+        else
+        {
+            privateChest.inventoryItems.Add(this);
+            inventory.inventoryItems.Remove(this);
+        }
     }
 }

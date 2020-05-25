@@ -108,10 +108,8 @@ public class PhysicalInventoryItem : MonoBehaviour
             else if (thisItem.isCurrency)
             {
                 PlayerStats playerStats = GameObject.FindObjectOfType<PlayerStats>();
-                playerStats.playerData.gold += RNGGod.GetGoldAmmount();
-#if UNITY_EDITOR
-                EditorUtility.SetDirty(playerStats.playerData);
-#endif
+                playerStats.gold += RNGGod.GetGoldAmmount();
+
                 GlobalEvents.PickedItem(thisItem);//event happened
                 SoundEffectsManager.instance.PlayGoldPickedUpSound();
 

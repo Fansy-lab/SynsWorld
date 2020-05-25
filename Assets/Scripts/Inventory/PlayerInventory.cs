@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory/Player Inventory/PlayerInventory")]
 public class PlayerInventory : ScriptableObject
 {
-    public List<InventoryItem> inventoryItems = new List<InventoryItem>();
+   [SerializeField] public List<InventoryItem> inventoryItems = new List<InventoryItem>();
     public Dictionary<InventoryItem.Slot, InventoryItem> equipedItems = new Dictionary<InventoryItem.Slot, InventoryItem>();
 
 
@@ -22,7 +23,7 @@ public class PlayerInventory : ScriptableObject
                 {
                     return equipedHead;
                 }
-               
+
                 break;
             case InventoryItem.Slot.chest:
                 InventoryItem equipedChest;
@@ -77,6 +78,6 @@ public class PlayerInventory : ScriptableObject
                 break;
         }
         return null;
-  
+
     }
 }

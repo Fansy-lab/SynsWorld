@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [System.Serializable]
@@ -25,9 +26,8 @@ public class SaveData {
         }
     }
 
-    public float xPosition;
-    public float yPosition;
-    public int scene;
+   public SaveGameComponents data;
+
 
     public string saveName;
 

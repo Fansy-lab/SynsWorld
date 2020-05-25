@@ -70,6 +70,7 @@
     <Compile Include="Assets\EnterLeaveLocationManager.cs" />
     <Compile Include="Assets\NewSavePanel.cs" />
     <Compile Include="Assets\PrivateChest.cs" />
+    <Compile Include="Assets\ScriptableObjects\InventoryStuff\BowExample.cs" />
     <Compile Include="Assets\Scripts\DamagePopUp.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
@@ -95,7 +96,6 @@
     <Compile Include="Assets\Scripts\LevelSystem.cs" />
     <Compile Include="Assets\Scripts\Levels.cs" />
     <Compile Include="Assets\Scripts\NPC.cs" />
-    <Compile Include="Assets\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
@@ -103,6 +103,8 @@
     <Compile Include="Assets\Scripts\Questing\PickGoal.cs" />
     <Compile Include="Assets\Scripts\Questing\Quest.cs" />
     <Compile Include="Assets\Scripts\Questing\QuestsService.cs" />
+    <Compile Include="Assets\Scripts\SaveGameComponents.cs" />
+    <Compile Include="Assets\Scripts\SaveGameService.cs" />
     <Compile Include="Assets\Scripts\SelfDestroyAfterSeconds.cs" />
     <Compile Include="Assets\Scripts\Serialization\SaveData.cs" />
     <Compile Include="Assets\Scripts\Serialization\SerializationManager.cs" />

@@ -211,7 +211,7 @@ public class InventoryManager : MonoBehaviour
             {
                 return true;
             }
-            
+
         }
         return false;
     }
@@ -236,7 +236,7 @@ public class InventoryManager : MonoBehaviour
     {
         PlayerStats plyerStats = GameObject.FindObjectOfType<PlayerStats>();
         if (plyerStats)
-            GoldText.text = plyerStats.playerData.gold.ToString();
+            GoldText.text = plyerStats.gold.ToString();
     }
 
     private void SetExperienceSlider()
@@ -270,10 +270,10 @@ public class InventoryManager : MonoBehaviour
         PlayerStats plyerStats = GameObject.FindObjectOfType<PlayerStats>();
         if (plyerStats)
         {
-            attack.text = "DPS: " + plyerStats.playerData.DPS;
-            armor.text = "Armor: " + plyerStats.playerData.armor;
-            maxHP.text = "Max HP: " + plyerStats.playerData.maxHealth;
-            evasion.text = "Evasion: " + plyerStats.playerData.evasion;
+            attack.text = "DPS: " + plyerStats.DPS;
+            armor.text = "Armor: " + plyerStats.armor;
+            maxHP.text = "Max HP: " + plyerStats.maxHealth;
+            evasion.text = "Evasion: " + plyerStats.evasion;
         }
     }
     private void UpdatePrivateChestUI()
@@ -654,7 +654,7 @@ public class InventoryManager : MonoBehaviour
                 UpdatePrivateChestUI();
                 UpdateInventoryUI();
             }
-        
+
 
         }
     }
@@ -697,7 +697,7 @@ public class InventoryManager : MonoBehaviour
                     CleanDescription();
                     UpdatePrivateChestUI();
                 }
-                    
+
             }
             else
             {
@@ -722,17 +722,17 @@ public class InventoryManager : MonoBehaviour
             }
 
 
-   
+
             UpdateInventoryUI();
             UpdateEquipmentUI();
-            
+
             UpdatePlayerData(null);
 
         }
 
     }
 
-  
+
 
     public void DestroyButtonPressed()
     {

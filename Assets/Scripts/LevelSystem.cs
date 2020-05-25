@@ -23,7 +23,7 @@ public class LevelSystem: MonoBehaviour
 
     public static void  AddExp(int AddedExp)
     {
-        playerStats.playerData.experience += AddedExp;
+        playerStats.experience += AddedExp;
 
         if ((experienceForNextLevel - AddedExp)<=0)
         {
@@ -45,7 +45,7 @@ public class LevelSystem: MonoBehaviour
     {
         currentLevel = 1;
         playerStats = GetComponent<PlayerStats>();
-        experience = playerStats.playerData.experience;
+        experience = playerStats.experience;
 
         int totalExpRequired = 0;
 

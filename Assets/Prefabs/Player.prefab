@@ -371,7 +371,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f29415bd811674bb14b177a9053f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 91cc776c246ab429aa2b4d13afee01a7, type: 2}
+  DPS: 0
+  maxHealth: 100
+  armor: 0
+  evasion: 0
+  currentHealth: 0
+  gold: 0
+  experience: 0
   hpBar: {fileID: 1840891256}
   insideALocation: 1
   maxItemsCanHold: 25

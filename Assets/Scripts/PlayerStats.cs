@@ -88,4 +88,12 @@ public class PlayerStats : MonoBehaviour
 
 
     }
+
+    private void OnDestroy()
+    {
+        GlobalEvents.OnEnemyDeath -= EnemyDied;
+        GlobalEvents.OnLevelUp -= PlayerLeveledUp;
+
+    }
+
 }

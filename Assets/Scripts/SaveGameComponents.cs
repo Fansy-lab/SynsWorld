@@ -77,6 +77,29 @@ public class SaveGameComponents
                 usableStats = item.usableStats
             });
         }
+        foreach (var item in equipedItems)
+        {
+            Slot slot = item.Key;
+            InventoryToSave inventorySlot = new InventoryToSave()
+            {
+                slot = item.Value.slot,
+                currencyAmmount = item.Value.currencyAmmount,
+                equipable = item.Value.equipable,
+                equipableArmoryStats = item.Value.equipableArmoryStats,
+                equipableWeaponryStats = item.Value.equipableWeaponryStats,
+                guid = item.Value.guid,
+                isCurrency = item.Value.isCurrency,
+                isTrash = item.Value.isTrash,
+                itemDescription = item.Value.itemDescription,
+                spriteName = item.Value.itemImage.name,
+                itemName = item.Value.itemName,
+                numberHeld = item.Value.numberHeld,
+                unique = item.Value.unique,
+                usable = item.Value.usable,
+                usableStats = item.Value.usableStats
+            };
+            _equipedItems.Add(slot, inventorySlot);
+        }
     }
 }
 
@@ -127,9 +150,67 @@ public class InventoryToSave
                 unique = item.unique,
                 usable = item.usable,
                 usableStats = item.usableStats
-            }); ;
+            });
         }
         return listToReturn;
+    }
+
+    public List<InventoryItem> DeSerializePrivateInventory(List<InventoryToSave> list)
+    {
+        List<InventoryItem> listToReturn = new List<InventoryItem>();
+        foreach (var item in list)
+        {
+            listToReturn.Add(new InventoryItem()
+            {
+
+                currencyAmmount = item.currencyAmmount,
+                equipable = item.equipable,
+                equipableArmoryStats = item.equipableArmoryStats,
+                equipableWeaponryStats = item.equipableWeaponryStats,
+                guid = item.guid,
+                isCurrency = item.isCurrency,
+                isTrash = item.isTrash,
+                itemDescription = item.itemDescription,
+                itemImage = GetSprite(item.spriteName),
+                itemName = item.itemName,
+                numberHeld = item.numberHeld,
+                slot = item.slot,
+                unique = item.unique,
+                usable = item.usable,
+                usableStats = item.usableStats
+            });
+        }
+        return listToReturn;
+    }
+
+    internal Dictionary<Slot, InventoryItem> DeSerializeEquipedItems(Dictionary<Slot, InventoryToSave> equipedItems)
+    {
+        Dictionary<Slot, InventoryItem> toReturn = new Dictionary<Slot, InventoryItem>();
+        foreach (var item in equipedItems)
+        {
+            Slot slot = item.Key;
+            InventoryItem inventorySlot = new InventoryItem()
+            {
+                slot=item.Value.slot,
+                currencyAmmount= item.Value.currencyAmmount,
+                equipable= item.Value.equipable,
+                equipableArmoryStats= item.Value.equipableArmoryStats,
+                equipableWeaponryStats= item.Value.equipableWeaponryStats,
+                guid= item.Value.guid,
+                isCurrency= item.Value.isCurrency,
+                isTrash= item.Value.isTrash,
+                itemDescription= item.Value.itemDescription,
+                itemImage = GetSprite(item.Value.spriteName),
+                itemName = item.Value.itemName,
+                numberHeld = item.Value.numberHeld,
+                unique = item.Value.unique,
+                usable = item.Value.usable,
+                usableStats = item.Value.usableStats
+            };
+            toReturn.Add(slot, inventorySlot);
+        }
+
+        return toReturn;
     }
 
     private Sprite GetSprite(string spriteName)
@@ -144,10 +225,7 @@ public class AtlasLoader
     public Dictionary<string, Sprite> spriteDic = new Dictionary<string, Sprite>();
 
     //Creates new Instance only, Manually call the loadSprite function later on
-    public AtlasLoader()
-    {
 
-    }
 
     //Creates new Instance and Loads the provided sprites
     public AtlasLoader(string spriteBaseName)
@@ -184,9 +262,6 @@ public class AtlasLoader
         return tempSprite;
     }
 
-    //Returns number of sprites in the Atlas
-    public int atlasCount()
-    {
-        return spriteDic.Count;
-    }
+
+
 }

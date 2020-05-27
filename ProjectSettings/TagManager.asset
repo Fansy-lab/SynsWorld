@@ -47,15 +47,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BackGround
-    uniqueID: 4006914483
-    locked: 0
-  - name: NPCs
+  - name: Grass
     uniqueID: 2823278129
     locked: 0
-  - name: OverCharacters
+  - name: Water
+    uniqueID: 4006914483
+    locked: 0
+  - name: Grass Details
     uniqueID: 1022080411
     locked: 0
-  - name: HPBars
+  - name: Path
     uniqueID: 3679803341
+    locked: 0
+  - name: Hard Objects
+    uniqueID: 2540401143
+    locked: 0
+  - name: Player
+    uniqueID: 36602509
+    locked: 0
+  - name: AbovePlayer
+    uniqueID: 3241387735
+    locked: 0
+  - name: AboveAll
+    uniqueID: 3635173659
     locked: 0

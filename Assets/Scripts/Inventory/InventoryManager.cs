@@ -171,6 +171,9 @@ public class InventoryManager : MonoBehaviour
 
         UpdateSlotsTaken();
 
+        ClearPrivateChestInventorySlots();
+        UpdatePrivateChestUI();
+
 
 
     }

@@ -167,8 +167,10 @@ public class GM : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         PlayerStats stats = player.GetComponent<PlayerStats>();
         SaveGameComponents components = new SaveGameComponents(player.transform.position.x, player.transform.position.y,
-            SceneManager.GetActiveScene().buildIndex, InventoryManager.instance.playerInventory.inventoryItems,
-            InventoryManager.instance.playerInventory.equipedItems, InventoryManager.instance.privateChestInventory.inventoryItems,
+            SceneManager.GetActiveScene().buildIndex,
+            InventoryManager.instance.playerInventory.inventoryItems,
+            InventoryManager.instance.playerInventory.equipedItems,
+            InventoryManager.instance.privateChestInventory.inventoryItems,
             stats.gold, stats.experience);
 
         StartMenu.instance.SaveGame(components);

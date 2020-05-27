@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -21,7 +22,7 @@ public class StartMenu : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera cinemachineVirtualCamera;
     public GameObject loadButton;
 
-    public string[] saveFiles;
+    public FileInfo[] saveFiles;
     private void Awake()
     {
         m_referenceCount++;
@@ -37,9 +38,7 @@ public class StartMenu : MonoBehaviour
 
     public void NewGamePressed()
     {
-
         newSaveGamePanel.SetActive(true);
-
     }
 
     public void CreateSaveAndLoadThatNewSave(string nameSave)
@@ -70,13 +69,13 @@ public class StartMenu : MonoBehaviour
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/saves/");
         }
-        saveFiles = Directory.GetFiles(Application.persistentDataPath + "/saves/");
-
+        var dir = new DirectoryInfo(Application.persistentDataPath + "/saves/");
+        saveFiles = dir.GetFiles();
+        saveFiles = saveFiles.OrderByDescending(x => x.LastWriteTime).ToArray();
         foreach (var save in saveFiles)
         {
-            string nombre = Path.GetFileNameWithoutExtension(save);
-            DirectoryInfo info = new DirectoryInfo(save);
-            string creationDate = info.CreationTime.ToString();
+            string nombre = Path.GetFileNameWithoutExtension(save.Name);
+            string creationDate = save.CreationTime.ToString();
             GameObject gO = Instantiate(loadButton, loadPanelGrid.transform) as GameObject;
             gO.GetComponentInChildren<TextMeshProUGUI>().text = nombre + "\r\n" + creationDate;
             gO.GetComponentInChildren<Button>().onClick.AddListener(() => LoadSave(nombre));
@@ -123,10 +122,6 @@ public class StartMenu : MonoBehaviour
 
         UseDataToSetScenario();
 
-
-
-
-
     }
 
     private void UseDataToSetScenario()
@@ -143,10 +138,9 @@ public class StartMenu : MonoBehaviour
         stats.experience = SaveData.current.data._experience;
         levelSystem.CalculateVariables();
         InventoryManager.instance.playerInventory.inventoryItems = new InventoryToSave().DeSerializeInventory(SaveData.current.data._inventory);
-        //InventoryManager.instance.privateChestInventory.inventoryItems = SaveData.current.data._privateChest;
-
+        InventoryManager.instance.privateChestInventory.inventoryItems = new InventoryToSave().DeSerializePrivateInventory(SaveData.current.data._privateChest);
+        InventoryManager.instance.playerInventory.equipedItems = new InventoryToSave().DeSerializeEquipedItems(SaveData.current.data._equipedItems);
         cinemachineVirtualCamera.Follow = Player.transform;
-
 
         CloseLoadMenuAndremoveChildren();
         gameObject.SetActive(false);

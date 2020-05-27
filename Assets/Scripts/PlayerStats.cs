@@ -13,11 +13,11 @@ public class PlayerStats : MonoBehaviour
     public int maxHealth;
     public int armor;
     public int evasion;
-
     public int currentHealth;
-
     public int gold;
     public int experience;
+
+
 
     public HealthBar hpBar;
     public bool insideALocation=true;

@@ -12,7 +12,7 @@ public class NewSavePanel : MonoBehaviour
     public Button buttonSave;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class NewSavePanel : MonoBehaviour
 
     private void SaveAndStartGame()
     {
-        startMenu.CreateSaveAndStartGame(InputField.text);
+        startMenu.CreateSaveAndLoadThatNewSave(InputField.text);
         buttonSave.interactable = true;
         gameObject.SetActive(false);
     }

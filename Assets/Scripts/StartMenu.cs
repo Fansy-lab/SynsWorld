@@ -38,37 +38,30 @@ public class StartMenu : MonoBehaviour
     public void NewGamePressed()
     {
 
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-        //gameObject.SetActive(false);
         newSaveGamePanel.SetActive(true);
-        //buttonsPanel.SetActive(false);
+
     }
 
-    public void CreateSaveAndStartGame(string nameSave)
+    public void CreateSaveAndLoadThatNewSave(string nameSave)
     {
-
-
-
-        var saveGameComponents = new SaveGameComponents(0, 0, 1, null, null, 0, 0);
-
-
+        //set default location of player start
+        var saveGameComponents = new SaveGameComponents(0, 0, 1, new List<InventoryItem>(),new Dictionary<InventoryItem.Slot, InventoryItem>(),new List<InventoryItem>(), 0, 0);
 
         SaveData.current.data = saveGameComponents;
         SaveData.current.saveName = nameSave;
         SerializationManager.Save(nameSave, SaveData.current);
 
 
-        LoadGame(nameSave);
+        LoadSave(nameSave);
     }
     public void QuitGame()
     {
         Application.Quit();
     }
-    public void SaveGame()
+    public void SaveGame(SaveGameComponents data)
     {
 
-
-        SaveData.current.data = new SaveGameService().GetSaveData();
+        SaveData.current.data = data;
         SerializationManager.Save(SaveData.current.saveName, SaveData.current);
     }
     public void LoadGamePanelClicked()
@@ -93,21 +86,15 @@ public class StartMenu : MonoBehaviour
         loadPanel.SetActive(true);
     }
 
-    private void LoadSave(string load)
-    {
-        LoadGame(load);
-    }
 
-    private void LoadGame(string load)
+
+    private void LoadSave(string load)
     {
         SaveData.current = (SaveData)SerializationManager.Load(Application.persistentDataPath + "/saves/" + load + ".save");
 
 
-
-
         SceneManager.LoadScene(SaveData.current.data._scene);
-
-        StartCoroutine("waitForSceneLoad", SaveData.current.data._scene);
+        StartCoroutine("waitForSceneLoad", SaveData.current.data);
 
 
 
@@ -130,11 +117,11 @@ public class StartMenu : MonoBehaviour
         }
         loadPanel.SetActive(false);
     }
-    IEnumerator waitForSceneLoad(int sceneNumber)
+    IEnumerator waitForSceneLoad()
     {
-        yield return SceneManager.LoadSceneAsync(sceneNumber);
+        yield return SceneManager.LoadSceneAsync(SaveData.current.data._scene);
 
-        LoadData();
+        UseDataToSetScenario();
 
 
 
@@ -142,17 +129,33 @@ public class StartMenu : MonoBehaviour
 
     }
 
-    private void LoadData()
+    private void UseDataToSetScenario()
     {
-        Instantiate(GM.Instance.Player, GM.Instance.Player.transform.position, Quaternion.identity);
+        ResetInventories();
 
+        Instantiate(GM.Instance.Player, GM.Instance.Player.transform.position, Quaternion.identity);
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        PlayerStats stats = Player.GetComponent<PlayerStats>();
+        LevelSystem levelSystem = Player.GetComponent<LevelSystem>();
+
         Player.GetComponent<Transform>().position = new Vector3(SaveData.current.data._xPosition, SaveData.current.data._yPosition);
+        stats.gold = SaveData.current.data._gold;
+        stats.experience = SaveData.current.data._experience;
+        levelSystem.CalculateVariables();
+        InventoryManager.instance.playerInventory.inventoryItems = new InventoryToSave().DeSerializeInventory(SaveData.current.data._inventory);
+        //InventoryManager.instance.privateChestInventory.inventoryItems = SaveData.current.data._privateChest;
 
         cinemachineVirtualCamera.Follow = Player.transform;
 
 
         CloseLoadMenuAndremoveChildren();
         gameObject.SetActive(false);
+    }
+
+    private static void ResetInventories()
+    {
+        InventoryManager.instance.playerInventory.equipedItems = new Dictionary<InventoryItem.Slot, InventoryItem>();
+        InventoryManager.instance.playerInventory.inventoryItems = new List<InventoryItem>();
+        InventoryManager.instance.privateChestInventory.inventoryItems = new List<InventoryItem>();
     }
 }

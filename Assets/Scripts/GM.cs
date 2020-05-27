@@ -6,22 +6,22 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class GM : MonoBehaviour
 {
- 
 
 
-   [SerializeField] private GameObject questsUI;
-   [SerializeField] private GameObject inventoryUI;
+
+    [SerializeField] private GameObject questsUI;
+    [SerializeField] private GameObject inventoryUI;
     [SerializeField] public GameObject PrivateChestInventoryUI;
     [SerializeField] private GameObject playerStatsUI;
-
     [SerializeField] private GameObject mainMenuUI;
-   [SerializeField] private GameObject settingsUI;
+    [SerializeField] private GameObject settingsUI;
     [SerializeField] private GameObject enterLeaveLocationUI;
 
-     public GameObject Player;
+    public GameObject Player;
 
 
 
@@ -88,7 +88,7 @@ public class GM : MonoBehaviour
                 questsUI.SetActive(false);
                 return;
             }
-          
+
 
 
             if (inventoryUI.activeInHierarchy)
@@ -103,7 +103,7 @@ public class GM : MonoBehaviour
                 settingsUI.SetActive(false);
                 return;
             }
-    
+
 
 
             bool mainMenuStatus = mainMenuUI.activeSelf;
@@ -136,7 +136,7 @@ public class GM : MonoBehaviour
 
 
 
-   
+
     public void ToggleQuests()
     {
         bool a = questsUI.activeInHierarchy;
@@ -164,12 +164,19 @@ public class GM : MonoBehaviour
 
     public void SaveGame()
     {
-        StartMenu.instance.SaveGame();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerStats stats = player.GetComponent<PlayerStats>();
+        SaveGameComponents components = new SaveGameComponents(player.transform.position.x, player.transform.position.y,
+            SceneManager.GetActiveScene().buildIndex, InventoryManager.instance.playerInventory.inventoryItems,
+            InventoryManager.instance.playerInventory.equipedItems, InventoryManager.instance.privateChestInventory.inventoryItems,
+            stats.gold, stats.experience);
+
+        StartMenu.instance.SaveGame(components);
     }
 
     public void OpenPrivateChestInventory()
     {
-        
+
         TogglePrivateChest();
     }
 
@@ -181,13 +188,13 @@ public class GM : MonoBehaviour
         PrivateChestInventoryUI.SetActive(true);
     }
 
-    internal void CallMethod(string methodToCallInGm,List<string> parameters)
+    internal void CallMethod(string methodToCallInGm, List<string> parameters)
     {
         Type thisType = this.GetType();
         MethodInfo theMethodToCall = thisType.GetMethod(methodToCallInGm);
         object[] objects;
         objects = parameters.Cast<object>().ToArray();
 
-        theMethodToCall.Invoke(this,objects);
+        theMethodToCall.Invoke(this, objects);
     }
 }

@@ -104,11 +104,11 @@ public class Skeleton : MonoBehaviour,IEnemy
                 PhysicalInventoryItem gold = lootTable.LootGold();
                 if (gold != null)
                 {
-                    
+
                         Vector2 position = new Vector2(transform.position.x + (float)(UnityEngine.Random.Range(-0.35f, 0.35f)), transform.position.y + (float)(UnityEngine.Random.Range(-0.35f, 0.35f)));
                         Instantiate(gold.gameObject, position, Quaternion.identity);
-                    
-                  
+
+
                 }
             }
 

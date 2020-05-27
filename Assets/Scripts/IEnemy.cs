@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IEnemy  
+public interface IEnemy
 {
     int ID { get; set; }
     string Name { get; set; }
@@ -17,8 +17,8 @@ public interface IEnemy
     void TakeDamage(int damage);
     void RegenHealthToMax();
     Spawner spawner { get; set; }
-  
 
- 
+
+
 
 }

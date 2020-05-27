@@ -5142,7 +5142,31 @@ MonoBehaviour:
   itemNameText: {fileID: 0}
   itemNumberText: {fileID: 0}
   itemImage: {fileID: 0}
-  thisItem: {fileID: 0}
+  thisItem:
+    itemName: 
+    itemDescription: 
+    itemImage: {fileID: 0}
+    numberHeld: 0
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 0
+    isCurrency: 0
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
+    thisEvent:
+      m_PersistentCalls:
+        m_Calls: []
   thisManager: {fileID: 1334823145}
   toolTip: {fileID: 142283957}
 --- !u!114 &648186699
@@ -5747,7 +5771,31 @@ MonoBehaviour:
   itemNameText: {fileID: 0}
   itemNumberText: {fileID: 0}
   itemImage: {fileID: 0}
-  thisItem: {fileID: 0}
+  thisItem:
+    itemName: 
+    itemDescription: 
+    itemImage: {fileID: 0}
+    numberHeld: 0
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 0
+    isCurrency: 0
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
+    thisEvent:
+      m_PersistentCalls:
+        m_Calls: []
   thisManager: {fileID: 1334823145}
   toolTip: {fileID: 142283957}
 --- !u!114 &720225680
@@ -9817,7 +9865,31 @@ MonoBehaviour:
   itemNameText: {fileID: 0}
   itemNumberText: {fileID: 0}
   itemImage: {fileID: 0}
-  thisItem: {fileID: 0}
+  thisItem:
+    itemName: 
+    itemDescription: 
+    itemImage: {fileID: 0}
+    numberHeld: 0
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 0
+    isCurrency: 0
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
+    thisEvent:
+      m_PersistentCalls:
+        m_Calls: []
   thisManager: {fileID: 1334823145}
   toolTip: {fileID: 142283957}
 --- !u!114 &1234899739
@@ -10530,9 +10602,10 @@ MonoBehaviour:
   evasion: {fileID: 637367221}
   expSlider: {fileID: 97461942}
   levelText: {fileID: 756992506}
-  playerInventory: {fileID: 11400000, guid: 667daa8630b054e4dacb1bd5b7ca5b13, type: 2}
-  privateChestInventory: {fileID: 11400000, guid: b05bb3b8ec1df7648bdccb8b874c4afa,
-    type: 2}
+  playerInventory: {fileID: 7340313816924800189, guid: f56e7dedd15515340b56420b73f1aacb,
+    type: 3}
+  privateChestInventory: {fileID: 8767840063998754042, guid: 93e4f5323efccbc46a936bf62ee7814b,
+    type: 3}
   toolTip: {fileID: 142283957}
   headSlot: {fileID: 1234899736}
   chestSlot: {fileID: 648186696}
@@ -10552,9 +10625,81 @@ MonoBehaviour:
   unEquipButton: {fileID: 2047830417}
   destroyButton: {fileID: 1894239132}
   retrieveButton: {fileID: 735490594}
-  currentItemSelectedInInventory: {fileID: 0}
-  currentItemSelectedInEquipment: {fileID: 0}
-  currentItemSelectedInPrivateChest: {fileID: 0}
+  currentItemSelectedInInventory:
+    itemName: 
+    itemDescription: 
+    itemImage: {fileID: 0}
+    numberHeld: 0
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 0
+    isCurrency: 0
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
+    thisEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  currentItemSelectedInEquipment:
+    itemName: 
+    itemDescription: 
+    itemImage: {fileID: 0}
+    numberHeld: 0
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 0
+    isCurrency: 0
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
+    thisEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  currentItemSelectedInPrivateChest:
+    itemName: 
+    itemDescription: 
+    itemImage: {fileID: 0}
+    numberHeld: 0
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 0
+    isCurrency: 0
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
+    thisEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &1334823146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11411,7 +11556,31 @@ MonoBehaviour:
   itemNameText: {fileID: 0}
   itemNumberText: {fileID: 0}
   itemImage: {fileID: 0}
-  thisItem: {fileID: 0}
+  thisItem:
+    itemName: 
+    itemDescription: 
+    itemImage: {fileID: 0}
+    numberHeld: 0
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 0
+    isCurrency: 0
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
+    thisEvent:
+      m_PersistentCalls:
+        m_Calls: []
   thisManager: {fileID: 1334823145}
   toolTip: {fileID: 142283957}
 --- !u!114 &1414731665
@@ -14258,7 +14427,31 @@ MonoBehaviour:
   itemNameText: {fileID: 0}
   itemNumberText: {fileID: 0}
   itemImage: {fileID: 0}
-  thisItem: {fileID: 0}
+  thisItem:
+    itemName: 
+    itemDescription: 
+    itemImage: {fileID: 0}
+    numberHeld: 0
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 0
+    isCurrency: 0
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
+    thisEvent:
+      m_PersistentCalls:
+        m_Calls: []
   thisManager: {fileID: 1334823145}
   toolTip: {fileID: 142283957}
 --- !u!114 &1701404361
@@ -16124,7 +16317,31 @@ MonoBehaviour:
   itemNameText: {fileID: 0}
   itemNumberText: {fileID: 0}
   itemImage: {fileID: 0}
-  thisItem: {fileID: 0}
+  thisItem:
+    itemName: 
+    itemDescription: 
+    itemImage: {fileID: 0}
+    numberHeld: 0
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 0
+    isCurrency: 0
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
+    thisEvent:
+      m_PersistentCalls:
+        m_Calls: []
   thisManager: {fileID: 1334823145}
   toolTip: {fileID: 142283957}
 --- !u!114 &1983857779

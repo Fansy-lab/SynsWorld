@@ -145,5 +145,5 @@ public class Bear : MonoBehaviour,IEnemy
         currentHealth = _maxHealth;
         hp.SetMaxHealth(_maxHealth);
     }
-  
+
 }

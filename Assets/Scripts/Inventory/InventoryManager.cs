@@ -23,7 +23,7 @@ public class InventoryManager : MonoBehaviour
     public TextMeshProUGUI levelText;
 
 
-    [Header("Inventory Information")]
+
     public PlayerInventory playerInventory;
     public PlayerInventory privateChestInventory;
     public ToolTip toolTip;
@@ -278,7 +278,7 @@ public class InventoryManager : MonoBehaviour
     }
     private void UpdatePrivateChestUI()
     {
-        if (privateChestInventory)
+        if (privateChestInventory !=null)
         {
 
             foreach (var item in privateChestInventory.inventoryItems.ToList())
@@ -452,7 +452,7 @@ public class InventoryManager : MonoBehaviour
 
     public void MakeInventorySlots()
     {
-        if (playerInventory)
+        if (playerInventory != null)
         {
 
             foreach (var item in playerInventory.inventoryItems.ToList())
@@ -613,7 +613,7 @@ public class InventoryManager : MonoBehaviour
 
     public InventoryItem CheckIfSlotIsTakenAndReturnItemIfOcupied(InventoryItem.Slot slot)
     {
-        if (playerInventory)
+        if (playerInventory != null)
         {
             InventoryItem itemEquiped = null;
             playerInventory.equipedItems.TryGetValue(slot, out itemEquiped);

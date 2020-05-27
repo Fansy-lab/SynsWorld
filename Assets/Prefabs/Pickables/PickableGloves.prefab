@@ -123,13 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6351abee1a64fe2a213bd35f28c3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventory: {fileID: 11400000, guid: 667daa8630b054e4dacb1bd5b7ca5b13, type: 2}
   thisItem:
     itemName: Gloves
     itemDescription: Simple gloves
     itemImage: {fileID: 4496002825605101114, guid: fe8fa90c1d4913141a7504ddfbda4db6,
       type: 3}
-    numberHeld: 0
+    numberHeld: 1
     slot: 5
     usable: 0
     equipable: 1

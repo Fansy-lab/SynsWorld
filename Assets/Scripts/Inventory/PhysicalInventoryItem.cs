@@ -6,11 +6,12 @@ using UnityEngine;
 
 public class PhysicalInventoryItem : MonoBehaviour
 {
-    [SerializeField] PlayerInventory playerInventory;
+     PlayerInventory playerInventory;
     [SerializeField] public InventoryItem thisItem;
 
     private void Start()
     {
+        playerInventory = InventoryManager.instance.playerInventory;
         Destroy(gameObject, 30);
     }
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class InventoryItem
@@ -23,38 +24,22 @@ public class InventoryItem
     public bool usable;
     public bool equipable;
     public bool unique;
-
     public bool isTrash;
-
     public bool isCurrency;
     public int currencyAmmount;
-
     public EquipableArmoryStats equipableArmoryStats;
     public EquipableWeaponryStats equipableWeaponryStats;
     public UsableStats usableStats;
 
-    public UnityEvent thisEvent;
-
-
-
-
-
     public void Equip(PlayerInventory playerInventory)
     {
-        if (thisEvent != null)
-            thisEvent.Invoke();
+
         InventoryItem itemSustituido = playerInventory.EquipItem(this);
         int index = playerInventory.inventoryItems.FindIndex(a => a.guid == this.guid);
 
         playerInventory.inventoryItems.Remove(this);
         if (itemSustituido !=null)
         {
-
-
-
-
-
-
             playerInventory.inventoryItems.Insert(index, itemSustituido);
         }
 
@@ -115,8 +100,7 @@ public class InventoryItem
     public void Use(PlayerInventory playerInventory )
     {
 
-        if (thisEvent !=null)
-            thisEvent.Invoke();
+
 
 
 
@@ -147,7 +131,7 @@ public class InventoryItem
     {
         playerInventory.equipedItems[itemToUnEquip.slot] = null;
 
-        if (playerInventory)
+        if (playerInventory != null)
         {
 
 
@@ -163,8 +147,7 @@ public class InventoryItem
 
     internal void TransferToInventory(PlayerInventory playerInventory, PlayerInventory privateChestInventory)
     {
-        if (thisEvent != null)
-            thisEvent.Invoke();
+
 
 
 
@@ -196,8 +179,6 @@ public class InventoryItem
     }
     public void TransferToPrivateChest(PlayerInventory inventory, PlayerInventory privateChest)
     {
-        if (thisEvent != null)
-            thisEvent.Invoke();
 
         if (this.usable)
         {

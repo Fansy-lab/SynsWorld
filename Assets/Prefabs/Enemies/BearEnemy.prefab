@@ -119,9 +119,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c32f3ae40dc742429c924255a2dc7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPoint: {fileID: 0}
+  attackRange: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   speed: 1
   nextWayPointDistance: 1
   dead: 0
+  attakRate: 0
+  lastAttack: 0
 --- !u!114 &1543341476337413146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  _maxHealth: 30
+  _maxHealth: 25
   animator: {fileID: 4479385225269697263}
   hp: {fileID: 3633420905502906803}
   damagePopUp: {fileID: 7679418662773342743, guid: 7fd747da3f2d7484ab4ea141051b5fcf,

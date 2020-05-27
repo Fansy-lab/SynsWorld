@@ -15,11 +15,7 @@ public class LevelSystem: MonoBehaviour
 
     public static PlayerStats playerStats;
 
-    private void Awake()
-    {
-        CalculateVariables();
 
-    }
 
     public static void  AddExp(int AddedExp)
     {
@@ -41,7 +37,7 @@ public class LevelSystem: MonoBehaviour
 
     }
 
-    private void CalculateVariables()
+    public void CalculateVariables()
     {
         currentLevel = 1;
         playerStats = GetComponent<PlayerStats>();

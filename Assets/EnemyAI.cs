@@ -35,8 +35,7 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player"); anim = GetComponent<Animator>();
         thisEnemy = GetComponent<IEnemy>();
         seeker = GetComponent<Seeker>();
         InvokeRepeating("UpdatePath", 0f, 0.25f);
@@ -45,6 +44,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
+        if (player == null) return;
         if (Vector3.Distance(player.transform.position, moveCenter.transform.position) <= moveRadius)
         {
             if (hasReseted)
@@ -109,7 +109,7 @@ public class EnemyAI : MonoBehaviour
         if (lastAttack < attakRate)
         {
             lastAttack += Time.deltaTime;
-           
+
         }
         if (lastAttack > attakRate && reachedPlayer && !dead)
         {
@@ -118,7 +118,7 @@ public class EnemyAI : MonoBehaviour
             lastAttack = 0;
 
         }
-     
+
     }
 
     public void Attack()
@@ -156,7 +156,7 @@ public class EnemyAI : MonoBehaviour
         {
             return;
         }
-   
+
         if (currentWayPoint >= path.vectorPath.Count && retreatingToStart)//reached home/spawn
         {
             anim.SetBool("walking", false);
@@ -164,7 +164,7 @@ public class EnemyAI : MonoBehaviour
             path = null;
             return;
 
-        } 
+        }
         else if (currentWayPoint >= path.vectorPath.Count && !retreatingToStart )//reached player/target
         {
             anim.SetBool("walking", false);

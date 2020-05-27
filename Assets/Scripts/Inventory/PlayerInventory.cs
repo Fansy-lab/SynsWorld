@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-[CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory/Player Inventory/PlayerInventory")]
-public class PlayerInventory : ScriptableObject
+public class PlayerInventory: MonoBehaviour
 {
-   [SerializeField] public List<InventoryItem> inventoryItems = new List<InventoryItem>();
-    public Dictionary<InventoryItem.Slot, InventoryItem> equipedItems = new Dictionary<InventoryItem.Slot, InventoryItem>();
+     public List<InventoryItem> inventoryItems = new List<InventoryItem>();
+     public Dictionary<InventoryItem.Slot, InventoryItem> equipedItems = new Dictionary<InventoryItem.Slot, InventoryItem>();
 
 
     public InventoryItem EquipItem(InventoryItem item)

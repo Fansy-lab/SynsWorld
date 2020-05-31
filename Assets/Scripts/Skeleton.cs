@@ -11,6 +11,8 @@ public class Skeleton : MonoBehaviour,IEnemy
     public Animator animator;
     public HealthBar hp;
     public GameObject damagePopUp;
+    public AudioClip damageSound;
+    public AudioClip missAttackSound;
 
     public event Action<IEnemy> OnEnemyDeath;
     public int ID { get; set; }
@@ -21,7 +23,8 @@ public class Skeleton : MonoBehaviour,IEnemy
     public bool CanBeDamaged { get; set; }
     public bool TakesReducedDamage { get; set; }
     public Spawner spawner { get; set; }
-
+    public AudioClip DoDamageSoundEffect { get; set; }
+    public AudioClip MissAttackSoundEffect { get; set; }
 
 
     [SerializeField]
@@ -40,7 +43,8 @@ public class Skeleton : MonoBehaviour,IEnemy
         Name ="Skeleton";
         GoldReward = 1;
         Experience = 2;
-
+        DoDamageSoundEffect = damageSound;
+        MissAttackSoundEffect = missAttackSound;
         currentHealth = _maxHealth;
         hp.SetMaxHealth(_maxHealth);
     }

@@ -125,7 +125,20 @@ public class EnemyAI : MonoBehaviour
     {
        Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRange, playerLayer);
         if (colliders.Length > 0)
-           {
+        {
+            foreach (var collider in colliders)
+            {
+                if (collider.gameObject.tag == "Player")
+                {
+                    collider.GetComponent<PlayerStats>().TakeDamage(2);
+                    collider.GetComponent<Animator>().SetTrigger("TakeDamage");
+                    SoundEffectsManager.instance.PlaySound(gameObject.GetComponent<IEnemy>().DoDamageSoundEffect);
+                }
+            }
+        }
+        else
+        {
+            SoundEffectsManager.instance.PlaySound(gameObject.GetComponent<IEnemy>().MissAttackSoundEffect);
 
         }
     }

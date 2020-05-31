@@ -16,6 +16,9 @@ public class DummyEnemy : MonoBehaviour, IEnemy
     public Spawner spawner { get; set; }
 
 
+    public AudioClip DoDamageSoundEffect { get; set; }
+    public AudioClip MissAttackSoundEffect { get; set; }
+
     public Animator animator;
     public HealthBar hp;
     public GameObject damagePopUp;
@@ -59,7 +62,7 @@ public class DummyEnemy : MonoBehaviour, IEnemy
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

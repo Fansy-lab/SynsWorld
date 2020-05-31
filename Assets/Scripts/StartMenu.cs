@@ -43,8 +43,9 @@ public class StartMenu : MonoBehaviour
 
     public void CreateSaveAndLoadThatNewSave(string nameSave)
     {
+
         //set default location of player start
-        var saveGameComponents = new SaveGameComponents(0, 0, 1, new List<InventoryItem>(),new Dictionary<InventoryItem.Slot, InventoryItem>(),new List<InventoryItem>(), 0, 0);
+        var saveGameComponents = new SaveGameComponents(-54, 3.6f, 1, new List<InventoryItem>(),new Dictionary<InventoryItem.Slot, InventoryItem>(),new List<InventoryItem>(), 0, 0);
 
         SaveData.current.data = saveGameComponents;
         SaveData.current.saveName = nameSave;
@@ -79,6 +80,7 @@ public class StartMenu : MonoBehaviour
             GameObject gO = Instantiate(loadButton, loadPanelGrid.transform) as GameObject;
             gO.GetComponentInChildren<TextMeshProUGUI>().text = nombre + "\r\n" + creationDate;
             gO.GetComponentInChildren<Button>().onClick.AddListener(() => LoadSave(nombre));
+            gO.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => DeleteSave(save.Name));
 
         }
 
@@ -89,12 +91,16 @@ public class StartMenu : MonoBehaviour
 
     private void LoadSave(string load)
     {
+        TransitionManager.instance.ShowNormalTransition();
+
         SaveData.current = (SaveData)SerializationManager.Load(Application.persistentDataPath + "/saves/" + load + ".save");
 
 
         SceneManager.LoadScene(SaveData.current.data._scene);
+
         StartCoroutine("waitForSceneLoad", SaveData.current.data);
 
+        TransitionManager.instance.EndNormalTransition();
 
 
     }
@@ -151,5 +157,26 @@ public class StartMenu : MonoBehaviour
         InventoryManager.instance.playerInventory.equipedItems = new Dictionary<InventoryItem.Slot, InventoryItem>();
         InventoryManager.instance.playerInventory.inventoryItems = new List<InventoryItem>();
         InventoryManager.instance.privateChestInventory.inventoryItems = new List<InventoryItem>();
+    }
+    public void DeleteSave(string save)
+    {
+        if (Directory.Exists(Application.persistentDataPath + "/saves/"))
+        {
+            try
+            {
+                File.Delete(Application.persistentDataPath + "/saves/"+save);
+
+            }
+            catch (System.Exception)
+            {
+
+
+            }
+            foreach (Transform item in loadPanelGrid.transform)
+            {
+                Destroy(item.gameObject);
+            }
+            LoadGamePanelClicked();
+        }
     }
 }

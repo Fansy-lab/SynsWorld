@@ -17,7 +17,8 @@ public interface IEnemy
     void TakeDamage(int damage);
     void RegenHealthToMax();
     Spawner spawner { get; set; }
-
+    AudioClip DoDamageSoundEffect { get; set; }
+    AudioClip MissAttackSoundEffect { get; set; }
 
 
 

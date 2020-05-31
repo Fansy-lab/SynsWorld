@@ -263,7 +263,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 36602509
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 6216889498668374514, guid: 8716ad602f87e462bb049b16f0833ead,
     type: 3}
@@ -356,8 +356,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008524895, y: -0.16805649}
-  m_Size: {x: 0.6596794, y: 1.0964432}
+  m_Offset: {x: -0.01256907, y: -0.15118122}
+  m_Size: {x: 0.42061496, y: 1.0008183}
   m_Direction: 0
 --- !u!114 &114614893
 MonoBehaviour:
@@ -379,7 +379,7 @@ MonoBehaviour:
   gold: 0
   experience: 0
   hpBar: {fileID: 1840891256}
-  insideALocation: 1
+  insideALocation: 0
   maxItemsCanHold: 25
   maxItemsCanHoldInPrivateStash: 100
   levelUpEffect: {fileID: 3297441302643732035, guid: 4728fe844c11847cba5d6fd6772893e3,

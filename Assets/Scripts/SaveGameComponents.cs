@@ -18,7 +18,12 @@ public class SaveGameComponents
     public int _experience;
 
 
-
+    public static void ResetInventories()
+    {
+        InventoryManager.instance.playerInventory.equipedItems = new Dictionary<InventoryItem.Slot, InventoryItem>();
+        InventoryManager.instance.playerInventory.inventoryItems = new List<InventoryItem>();
+        InventoryManager.instance.privateChestInventory.inventoryItems = new List<InventoryItem>();
+    }
 
     public SaveGameComponents(float xposition,float ypostion,int scene, List<InventoryItem> inventory, Dictionary<InventoryItem.Slot, InventoryItem> equipedItems, List<InventoryItem> privateChest,int gold,int experience)
     {

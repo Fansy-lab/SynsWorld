@@ -122,16 +122,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14942571c661fca4ab2e6d12d4dfafb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    sentences: []
-    name: 
   SpriteToReplace: {fileID: 0}
+  SpriteToPlaceOnLeaveTrigger: {fileID: 0}
   justDestroyTile: 0
   replaceTileWithEmpty: 0
   replaceTile: 0
-  interactableMultipleTimes: 0
   alreadyInteracted: 0
-  ThisInteractableTriggersDialogue: 0
-  methodToCallInGm: StartQuest
-  parameters:
-  - Kill3Skeletons
+  TriggersDialogueOnLook: 1
+  TriggersDialogueOnClick: 0
+  Quests: []
+  selectedQuest: {fileID: 0}
+  popUpToDisplayOverPlayer: {fileID: 0}
+  tileName: 
+  SimplePopUpTEXT: []
+  isNPC: 0
+  displayOptions: []

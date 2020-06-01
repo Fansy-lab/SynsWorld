@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class InteractPoint : MonoBehaviour
 {
     public static bool sittingOverAnotherInteractableObject = false;
-    
+
     public LayerMask interactableLayer;
     public static Interactable currentInteractableObjectScript;
     Tile emptyTile;
@@ -23,16 +24,12 @@ public class InteractPoint : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-             
+
                 CheckInteractableProperties();
 
             }
 
-
         }
-      
-
-
 
     }
 
@@ -41,9 +38,9 @@ public class InteractPoint : MonoBehaviour
 
         if (currentInteractableObjectScript)
         {
-            
 
-            
+
+
             if (currentInteractableObjectScript.alreadyInteracted == false)
             {
                 DoInteractEvents();
@@ -58,13 +55,13 @@ public class InteractPoint : MonoBehaviour
 
     private void DoInteractEvents()
     {
-        
+
 
 
 
         if (currentInteractableObjectScript.replaceTileWithEmpty)
         {
-         
+
             Destroy(currentCollision.gameObject);
         }
 
@@ -75,7 +72,7 @@ public class InteractPoint : MonoBehaviour
 
         }
 
-  
+
 
         if (currentInteractableObjectScript.TriggersDialogueOnClick && currentInteractableObjectScript.alreadyInteracted==false
             && (currentInteractableObjectScript.SimplePopUpTEXT.Length>0 || currentInteractableObjectScript.displayOptions.Count>0))
@@ -88,7 +85,7 @@ public class InteractPoint : MonoBehaviour
             }
             GameObject gODialogue= DialogueManager.instance.InstantiateBubble(targetLocationForDialoguePopUp, new Dialogue() {
                 NPCName=currentInteractableObjectScript.tileName,sentences=currentInteractableObjectScript.SimplePopUpTEXT.ToList(),
-                options=currentInteractableObjectScript.displayOptions});
+                options=currentInteractableObjectScript.displayOptions},currentInteractableObjectScript.isInfoBubble);
             temporaryPopUpText = gODialogue.name;
         }
 
@@ -96,7 +93,7 @@ public class InteractPoint : MonoBehaviour
 
     }
 
-   
+
 
 
 
@@ -110,10 +107,10 @@ public class InteractPoint : MonoBehaviour
         if (touchingInteractable)
         {
 
-         
+
 
             currentInteractableObjectScript = collision.GetComponent<Interactable>();
-          
+
             if (currentInteractableObjectScript != null)
             {
                 currentCollision = collision;
@@ -141,7 +138,7 @@ public class InteractPoint : MonoBehaviour
 
                     Vector2 dialogueLocation = new Vector2(currentInteractableObjectScript.transform.position.x, currentInteractableObjectScript.transform.position.y + 0.5f);
                     GameObject gODialogue = DialogueManager.instance.InstantiateBubble(dialogueLocation,
-                        new Dialogue() { NPCName = currentInteractableObjectScript.tileName, sentences = sentences, Quest = currentInteractableObjectScript.selectedQuest });
+                        new Dialogue() { NPCName = currentInteractableObjectScript.tileName, sentences = sentences, Quest = currentInteractableObjectScript.selectedQuest }, currentInteractableObjectScript.isInfoBubble);
 
                     temporaryPopUpText = gODialogue.name;
 
@@ -160,21 +157,21 @@ public class InteractPoint : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-     
         sittingOverAnotherInteractableObject = false;
         if (currentInteractableObjectScript)
         {
             currentInteractableObjectScript.alreadyInteracted = false;
             currentInteractableObjectScript = null;
-        }
-        if (!String.IsNullOrEmpty(temporaryPopUpText))
-        {
-            Destroy(GameObject.Find(temporaryPopUpText));
-            temporaryPopUpText = "";
+            if (!String.IsNullOrEmpty(temporaryPopUpText))
+            {
+                Destroy(GameObject.Find(temporaryPopUpText));
+                temporaryPopUpText = "";
 
+            }
         }
+
 
     }
 
-   
+
 }

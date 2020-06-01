@@ -32,7 +32,6 @@ public class PlayerInput : MonoBehaviour
     Vector2 shootingDirectionAtTheMomentOfShooting;
     Vector2 lastLookingDirection;
 
-
     private void Start()
     {
         dashSlider.SetMaxValue(Convert.ToInt32(dashRate));
@@ -100,18 +99,14 @@ public class PlayerInput : MonoBehaviour
         {
             return true;
         }
-        if (cllisions.Length > 2)//hits the player,the interactPoint and something else
-        {
-            return false;
-        }
         if (cllisions.Length == 2)//hits the player and something else, might be the interactPoint
         {
-            InteractPoint interactPoint =null;
+            InteractPoint interactPoint = null;
             foreach (var col in cllisions)
             {
-                interactPoint= col.collider.GetComponent<InteractPoint>();
+                interactPoint = col.collider.GetComponent<InteractPoint>();
             }
-            if(interactPoint == null)
+            if (interactPoint == null)
             {
                 return false;
             }
@@ -121,6 +116,11 @@ public class PlayerInput : MonoBehaviour
             }
 
         }
+        if (cllisions.Length > 2)//hits the player,the interactPoint and something else
+        {
+            return false;
+        }
+
         return false;
     }
 

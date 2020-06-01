@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class Interactable : MonoBehaviour
 {
-  
+
     [Header("Tile replacement")]
     public Sprite SpriteToReplace;
     public Sprite SpriteToPlaceOnLeaveTrigger;
@@ -17,7 +17,7 @@ public class Interactable : MonoBehaviour
     public bool TriggersDialogueOnLook;
     public bool TriggersDialogueOnClick;
 
- 
+
     [Header("Quest")]
     public List<Quest> Quests;
     public Quest selectedQuest;
@@ -26,7 +26,7 @@ public class Interactable : MonoBehaviour
 
     [TextArea(3, 5)]
     public string[] SimplePopUpTEXT;
-
+    public bool isInfoBubble=false;
 
 
     public bool isNPC;
@@ -42,7 +42,7 @@ public class Interactable : MonoBehaviour
             InteractPoint.sittingOverAnotherInteractableObject = true;
             InteractPoint.currentCollision = collision;
 
-          
+
 
         }
     }
@@ -57,7 +57,7 @@ public class Interactable : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = SpriteToPlaceOnLeaveTrigger;
         }
-     
+
     }
 
 }

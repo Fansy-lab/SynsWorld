@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class TransitionManager : MonoBehaviour
     public static TransitionManager instance;
     Animator anim;
     private static int m_referenceCount = 0;
+
 
     private void Awake()
     {
@@ -34,10 +36,15 @@ public class TransitionManager : MonoBehaviour
 
     public void ShowNormalTransition()
     {
+
         anim.SetTrigger("Start");
     }
     public void EndNormalTransition()
     {
         anim.SetTrigger("End");
+
+
     }
+
+
 }

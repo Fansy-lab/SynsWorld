@@ -77,7 +77,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void PlayerLeveledUp(int? level)
     {
-       GameObject effect = Instantiate(levelUpEffect, transform.position, Quaternion.identity) as GameObject;
+        GameObject effect = Instantiate(levelUpEffect, transform.position, Quaternion.identity) as GameObject;
         effect.transform.SetParent(gameObject.transform);
 
 

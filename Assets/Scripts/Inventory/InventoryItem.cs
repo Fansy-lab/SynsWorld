@@ -154,6 +154,8 @@ public class InventoryItem
 
         if (this.usable)
         {
+            SoundEffectsManager.instance.PlayPickedMiscItemSound();
+
             bool hasUsableItemInventory = false;
             foreach (var item in playerInventory.inventoryItems.Where(x => x != null))
             {
@@ -174,6 +176,8 @@ public class InventoryItem
         }
         else
         {
+            SoundEffectsManager.instance.PlayPickedUpItemSound();
+
             playerInventory.inventoryItems.Add(this);
             privateChestInventory.inventoryItems.Remove(this);
         }
@@ -183,6 +187,7 @@ public class InventoryItem
 
         if (this.usable)
         {
+            SoundEffectsManager.instance.PlayPickedMiscItemSound();
             bool hasUsableItemInPrivateChest=false;
             foreach (var item in privateChest.inventoryItems.Where(x=>x!=null))
             {
@@ -203,6 +208,7 @@ public class InventoryItem
         }
         else
         {
+            SoundEffectsManager.instance.PlayPickedUpItemSound();
             privateChest.inventoryItems.Add(this);
             inventory.inventoryItems.Remove(this);
         }

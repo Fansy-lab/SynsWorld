@@ -38,6 +38,8 @@ public class StartMenu : MonoBehaviour
 
     public void NewGamePressed()
     {
+        SoundEffectsManager.instance.PlayMenuClickSound();
+
         newSaveGamePanel.SetActive(true);
     }
 
@@ -45,7 +47,7 @@ public class StartMenu : MonoBehaviour
     {
 
         //set default location of player start
-        var saveGameComponents = new SaveGameComponents(-54, 3.6f, 1, new List<InventoryItem>(),new Dictionary<InventoryItem.Slot, InventoryItem>(),new List<InventoryItem>(), 0, 0);
+        var saveGameComponents = new SaveGameComponents(-72,-30, 1, new List<InventoryItem>(),new Dictionary<InventoryItem.Slot, InventoryItem>(),new List<InventoryItem>(), 0, 0);
 
         SaveData.current.data = saveGameComponents;
         SaveData.current.saveName = nameSave;
@@ -66,6 +68,8 @@ public class StartMenu : MonoBehaviour
     }
     public void LoadGamePanelClicked()
     {
+        SoundEffectsManager.instance.PlayMenuClickSound();
+
         if (!Directory.Exists(Application.persistentDataPath + "/saves/"))
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/saves/");
@@ -76,7 +80,7 @@ public class StartMenu : MonoBehaviour
         foreach (var save in saveFiles)
         {
             string nombre = Path.GetFileNameWithoutExtension(save.Name);
-            string creationDate = save.CreationTime.ToString();
+            string creationDate = save.CreationTime.ToString("dd/MM/yy HH:mm");
             GameObject gO = Instantiate(loadButton, loadPanelGrid.transform) as GameObject;
             gO.GetComponentInChildren<TextMeshProUGUI>().text = nombre + "\r\n" + creationDate;
             gO.GetComponentInChildren<Button>().onClick.AddListener(() => LoadSave(nombre));
@@ -91,6 +95,8 @@ public class StartMenu : MonoBehaviour
 
     private void LoadSave(string load)
     {
+        SoundEffectsManager.instance.PlayMenuClickSound();
+
         TransitionManager.instance.ShowNormalTransition();
 
         SaveData.current = (SaveData)SerializationManager.Load(Application.persistentDataPath + "/saves/" + load + ".save");
@@ -107,10 +113,14 @@ public class StartMenu : MonoBehaviour
 
     public void Settings()
     {
+        SoundEffectsManager.instance.PlayMenuClickSound();
+
         GM.Instance.ToggleSettings();
     }
     public void CloseLoadMenu()
     {
+        SoundEffectsManager.instance.PlayMenuClickSound();
+
         CloseLoadMenuAndremoveChildren();
     }
 
@@ -154,9 +164,7 @@ public class StartMenu : MonoBehaviour
 
     private static void ResetInventories()
     {
-        InventoryManager.instance.playerInventory.equipedItems = new Dictionary<InventoryItem.Slot, InventoryItem>();
-        InventoryManager.instance.playerInventory.inventoryItems = new List<InventoryItem>();
-        InventoryManager.instance.privateChestInventory.inventoryItems = new List<InventoryItem>();
+        SaveGameComponents.ResetInventories();
     }
     public void DeleteSave(string save)
     {

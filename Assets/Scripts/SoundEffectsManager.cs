@@ -25,7 +25,7 @@ public class SoundEffectsManager : MonoBehaviour
     public AudioClip closeQuestSound;
     public AudioClip newQuestSound;
     public AudioClip doneQuestSound;
-
+    public AudioClip menuClickSound;
 
     AudioSource source;
 
@@ -44,7 +44,7 @@ public class SoundEffectsManager : MonoBehaviour
     }
     void Start()
     {
-        source = GetComponent<AudioSource>();   
+        source = GetComponent<AudioSource>();
     }
 
 
@@ -117,6 +117,15 @@ public class SoundEffectsManager : MonoBehaviour
         ResetPitch();
         source.PlayOneShot(levelUpSound);
     }
+    public void PlayMenuClickSound()
+    {
+
+        if (!source.isPlaying)
+            source.pitch = RNGGod.GetRandomPitch();
+
+        source.PlayOneShot(menuClickSound);
+        Invoke("ResetPitch", 0.5f);
+    }
     public void PlayDashSound()
     {
         if (!source.isPlaying)
@@ -143,17 +152,17 @@ public class SoundEffectsManager : MonoBehaviour
     }
     public void PlayNewQuestSound()
     {
-  
+
 
         source.PlayOneShot(newQuestSound);
-    
+
     }
     public void PlayDoneQuestSound()
     {
-      
+
 
         source.PlayOneShot(doneQuestSound);
-   
+
     }
     public void PlayLetter()
     {
@@ -163,5 +172,5 @@ public class SoundEffectsManager : MonoBehaviour
         source.PlayOneShot(letterType);
     }
 
- 
+
 }

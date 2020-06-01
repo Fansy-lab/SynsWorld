@@ -66,11 +66,18 @@ public class SettingsManager : MonoBehaviour
         GM.Instance.InitialSetup();
         gameObject.SetActive(false);
 
+        SoundEffectsManager.instance.PlayMenuClickSound();
     }
 
     public void SetVolume(float volume)
     {
-        mixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
+
+        mixer.SetFloat("BGMusic", Mathf.Log10(volume) * 20);
+    }
+    public void SetSFXVolume(float volume)
+    {
+
+        mixer.SetFloat("SoundEffects", Mathf.Log10(volume) * 20);
     }
     public void SetQuality(int qualityIndex)
     {

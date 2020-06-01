@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,9 +8,9 @@ public class Warp : MonoBehaviour
     // Start is called before the first frame update
 
     public Vector2 to;
-    
-    
-  
+
+
+
     void Start()
     {
 
@@ -18,7 +19,7 @@ public class Warp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,12 +28,16 @@ public class Warp : MonoBehaviour
         {
 
 
-            Camera.main.transform.position = collision.transform.position;
 
-
+            TransitionManager.instance.ShowNormalTransition();
             collision.gameObject.transform.position = to; // move the object(player) to the position        }
 
+
+            //  SoundEffectsManager.instance.
+            TransitionManager.instance.EndNormalTransition();
         }
 
+
     }
+
 }

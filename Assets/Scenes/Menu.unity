@@ -10577,6 +10577,8 @@ MonoBehaviour:
   doneQuestSound: {fileID: 8300000, guid: fea31647fbbc4f04aadba740712c6cb4, type: 3}
   menuClickSound: {fileID: 8300000, guid: 91750daa0cc94604895dbe86bcf55e16, type: 3}
   speechBubblePop: {fileID: 8300000, guid: b619c485a00eccd4e873734fd29f4ecd, type: 3}
+  gameSavedSound: {fileID: 8300000, guid: 4bde8ccd56c97644e8e42f065fe7faee, type: 3}
+  footDownSound: {fileID: 8300000, guid: 906b0361033159041928a82da2d60bf4, type: 3}
 --- !u!4 &1257612992
 Transform:
   m_ObjectHideFlags: 0

@@ -27,6 +27,8 @@ public class SoundEffectsManager : MonoBehaviour
     public AudioClip doneQuestSound;
     public AudioClip menuClickSound;
     public AudioClip speechBubblePop;
+    public AudioClip gameSavedSound;
+    public AudioClip footDownSound;
 
     AudioSource source;
 
@@ -165,6 +167,13 @@ public class SoundEffectsManager : MonoBehaviour
         source.PlayOneShot(doneQuestSound);
 
     }
+    public void PlayGameSavedSound()
+    {
+
+
+        source.PlayOneShot(gameSavedSound);
+
+    }
     public void PlayLetter()
     {
         if (!source.isPlaying)
@@ -172,6 +181,7 @@ public class SoundEffectsManager : MonoBehaviour
 
         source.PlayOneShot(letterType);
     }
+
 
     internal void PlaySpeechBubblePop()
     {
@@ -182,5 +192,12 @@ public class SoundEffectsManager : MonoBehaviour
 
         //source.PlayOneShot(speechBubblePop);
         //Invoke("ResetPitch", 0.5f);
+    }
+
+    internal void PlayFootDown()
+    {
+        if (source.clip == footDownSound && source.isPlaying) return;
+            source.PlayOneShot(footDownSound);
+
     }
 }

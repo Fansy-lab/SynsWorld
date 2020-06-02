@@ -194,6 +194,7 @@ public class GM : MonoBehaviour
             stats.gold, stats.experience);
 
         StartMenu.instance.SaveGame(components);
+        SoundEffectsManager.instance.PlayGameSavedSound();
     }
 
     public void OpenPrivateChestInventory()

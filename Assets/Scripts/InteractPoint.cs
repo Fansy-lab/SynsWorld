@@ -57,7 +57,10 @@ public class InteractPoint : MonoBehaviour
     {
 
 
-
+        if (currentInteractableObjectScript.soundEffectOnInteract != null)
+        {
+            SoundEffectsManager.instance.PlaySound(currentInteractableObjectScript.soundEffectOnInteract);
+        }
 
         if (currentInteractableObjectScript.replaceTileWithEmpty)
         {

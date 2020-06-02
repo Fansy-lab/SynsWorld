@@ -324,9 +324,9 @@ MonoBehaviour:
   dashSlider: {fileID: 5442287304780645516}
   dashEffect: {fileID: 4516665165804937639, guid: 322a58b23e15e4cf0a9a63bab835ca57,
     type: 3}
-  worldGridLayer:
+  mask:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 32768
 --- !u!95 &2388800576428419374
 Animator:
   serializedVersion: 3

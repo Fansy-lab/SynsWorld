@@ -92,36 +92,21 @@ public class PlayerInput : MonoBehaviour
     }
     private bool CanDashToLocation(Vector3 dir,float distance)
     {
-        RaycastHit2D[] cllisions = Physics2D.RaycastAll(transform.position, dir, distance);
+        //  RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, dir, distance, ~(LayerMask.GetMask("CantRunOver") | LayerMask.GetMask("WaterTile")));
 
+          RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, dir, distance);
 
-        if (cllisions.Length==1 )//always hits the player
+        foreach (var item in hits)
         {
-            return true;
-        }
-        if (cllisions.Length == 2)//hits the player and something else, might be the interactPoint
-        {
-            InteractPoint interactPoint = null;
-            foreach (var col in cllisions)
+            if (item.collider != null)
             {
-                interactPoint = col.collider.GetComponent<InteractPoint>();
+                if (item.collider.gameObject.layer == LayerMask.NameToLayer("CantRunOver") || item.collider.gameObject.layer == LayerMask.NameToLayer("WaterTile"))
+                {
+                    return false;
+                }
             }
-            if (interactPoint == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-
         }
-        if (cllisions.Length > 2)//hits the player,the interactPoint and something else
-        {
-            return false;
-        }
-
-        return false;
+        return true;
     }
 
 
@@ -319,5 +304,10 @@ public class PlayerInput : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position+movement.normalized * moveSpeed *Time.fixedDeltaTime);
+    }
+
+    public void FootDown()
+    {
+        SoundEffectsManager.instance.PlayFootDown();
     }
 }

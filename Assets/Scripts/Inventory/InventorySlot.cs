@@ -91,15 +91,18 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
 
 
                     }
-                    if (thisItem.slot == InventoryItem.Slot.weapon || thisItem.slot == InventoryItem.Slot.gloves)
-                    {
-                        toolTip.GetComponent<RectTransform>().pivot = new Vector2(0, 0);
-                    }
-                    else
+
+                    if (transform.position.x > Screen.width / 2)
                     {
                         toolTip.GetComponent<RectTransform>().pivot = new Vector2(1, 0);
 
                     }
+                    else
+                    {
+                        toolTip.GetComponent<RectTransform>().pivot = new Vector2(-0.25f, 0);
+                    }
+
+
                     toolTip.ShowTooltip(descriptionToDisplay, transform.position);
 
                 }
@@ -118,4 +121,5 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
 
        // thisManager.CleanDescription();
     }
+
 }

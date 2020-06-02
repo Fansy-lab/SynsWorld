@@ -18,6 +18,8 @@ public class Interactable : MonoBehaviour
     public bool TriggersDialogueOnClick;
 
 
+    public AudioClip soundEffectOnInteract;
+
     [Header("Quest")]
     public List<Quest> Quests;
     public Quest selectedQuest;

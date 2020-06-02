@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\Questing\PickGoal.cs" />
     <Compile Include="Assets\Scripts\Questing\Quest.cs" />
     <Compile Include="Assets\Scripts\Questing\QuestsService.cs" />
+    <Compile Include="Assets\Scripts\Questing\ReachGoal.cs" />
     <Compile Include="Assets\Scripts\SaveGameComponents.cs" />
     <Compile Include="Assets\Scripts\SelfDestroyAfterSeconds.cs" />
     <Compile Include="Assets\Scripts\Serialization\SaveData.cs" />

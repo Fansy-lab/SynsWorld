@@ -19,7 +19,6 @@ public class StartMenu : MonoBehaviour
     public GameObject newSaveGamePanel;
     public GameObject loadPanel;
     public GameObject loadPanelGrid;
-    [SerializeField] CinemachineVirtualCamera cinemachineVirtualCamera;
     public GameObject loadButton;
 
     public FileInfo[] saveFiles;
@@ -144,7 +143,8 @@ public class StartMenu : MonoBehaviour
     {
         ResetInventories();
 
-        Instantiate(GM.Instance.Player, GM.Instance.Player.transform.position, Quaternion.identity);
+        GM.Instance.SpawnNewPlayerToPosition(GM.Instance.Player.transform);
+
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         PlayerStats stats = Player.GetComponent<PlayerStats>();
         LevelSystem levelSystem = Player.GetComponent<LevelSystem>();
@@ -156,8 +156,6 @@ public class StartMenu : MonoBehaviour
         InventoryManager.instance.playerInventory.inventoryItems = new InventoryToSave().DeSerializeInventory(SaveData.current.data._inventory);
         InventoryManager.instance.privateChestInventory.inventoryItems = new InventoryToSave().DeSerializePrivateInventory(SaveData.current.data._privateChest);
         InventoryManager.instance.playerInventory.equipedItems = new InventoryToSave().DeSerializeEquipedItems(SaveData.current.data._equipedItems);
-        cinemachineVirtualCamera.Follow = Player.transform;
-
         CloseLoadMenuAndremoveChildren();
         gameObject.SetActive(false);
     }

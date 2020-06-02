@@ -9,7 +9,6 @@ public interface IEnemy
     string Name { get; set; }
     int MaxHealth { get; set; }
     int Experience { get; set; }
-    int GoldReward { get; set; }
     LootTable lootTable { get; set; }
     bool CanBeDamaged { get; set; }
     bool TakesReducedDamage { get; set; }

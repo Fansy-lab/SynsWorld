@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213f690ab5052442b9847aace40baa75, type: 3}
+  m_Name: ReachTheBlacksmith
+  m_EditorClassIdentifier: 
+  QuestID: 3
+  KillGoals: []
+  PickGoals: []
+  ReachGoals:
+  - {fileID: 7151894633621346502, guid: 27e054630933219459757b7138667937, type: 3}
+  QuestName: Reach the Blacksmith
+  spriteQuestPopUp: {fileID: 0}
+  QuestDescription: For your first mission, as a newly appointed royal servant, you
+    were sent to find the blacksmith at RayanVille and help with what you can.
+  ExpReward: 5
+  GoldReward: 10
+  ItemReward: 
+  IsCompleted: 0
+  StartQuestDialogue: []
+  WhileOnQuestDialogue: []
+  FinishedQuestDialogue: []

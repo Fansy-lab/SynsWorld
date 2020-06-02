@@ -10,6 +10,7 @@ public class GlobalEvents : MonoBehaviour
     public static event Action<PickGoal> OnPickedGoalCompleted;
 
     public static event Action<InventoryItem> OnPickedItem;
+    public static event Action<ReachGoal> OnReachedGoal;
     public static event Action<int> OnGainedExperience;
     public static event Action<int?> OnLevelUp;
 
@@ -27,7 +28,11 @@ public class GlobalEvents : MonoBehaviour
     }
     public static void KillGoalCompleted(KillGoal killGoal)
     {
-        OnKillGoalCompleted?.Invoke(killGoal); 
+        OnKillGoalCompleted?.Invoke(killGoal);
+    }
+    public static void ReachedGoal(ReachGoal reachGoal)
+    {
+        OnReachedGoal?.Invoke(reachGoal);
     }
     public static void LeveledUp(int expForNextLevel)
     {
@@ -37,4 +42,5 @@ public class GlobalEvents : MonoBehaviour
     {
         OnGainedExperience?.Invoke(experienceGained);
     }
+
 }

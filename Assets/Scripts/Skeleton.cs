@@ -18,7 +18,6 @@ public class Skeleton : MonoBehaviour,IEnemy
     public int ID { get; set; }
     public string Name { get; set; }
     public int MaxHealth { get; set; }
-    public int GoldReward { get; set; }
     public int Experience { get; set; }
     public bool CanBeDamaged { get; set; }
     public bool TakesReducedDamage { get; set; }
@@ -41,7 +40,7 @@ public class Skeleton : MonoBehaviour,IEnemy
     {
         ID = 1;
         Name ="Skeleton";
-        GoldReward = 1;
+
         Experience = 2;
         DoDamageSoundEffect = damageSound;
         MissAttackSoundEffect = missAttackSound;

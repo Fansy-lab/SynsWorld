@@ -15,6 +15,8 @@ MonoBehaviour:
   QuestID: 1
   KillGoals:
   - {fileID: 11400000, guid: 476fe8e2b55e54a218212b678abeb147, type: 2}
+  PickGoals: []
+  ReachGoals: []
   QuestName: Kill 3 skeletons
   spriteQuestPopUp: {fileID: 0}
   QuestDescription: Kill the 3 skeletons outside the village
@@ -23,8 +25,9 @@ MonoBehaviour:
   ItemReward: 
   IsCompleted: 0
   StartQuestDialogue:
-  - I need someting done
-  - Kill those 3 stupid skeletons outside. Thanks
+  - Ever since those monsters started appearing, there have been no supplies comming
+    in...
+  - Please, kill the 3 skeletons that are just outside the village.
   WhileOnQuestDialogue:
   - How is the killing going?
   FinishedQuestDialogue:

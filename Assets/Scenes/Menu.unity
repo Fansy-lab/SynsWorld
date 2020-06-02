@@ -7221,7 +7221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -10576,6 +10576,7 @@ MonoBehaviour:
   newQuestSound: {fileID: 8300000, guid: 34c76b119d63f484bb1e21912aca5935, type: 3}
   doneQuestSound: {fileID: 8300000, guid: fea31647fbbc4f04aadba740712c6cb4, type: 3}
   menuClickSound: {fileID: 8300000, guid: 91750daa0cc94604895dbe86bcf55e16, type: 3}
+  speechBubblePop: {fileID: 8300000, guid: b619c485a00eccd4e873734fd29f4ecd, type: 3}
 --- !u!4 &1257612992
 Transform:
   m_ObjectHideFlags: 0
@@ -10739,7 +10740,6 @@ MonoBehaviour:
   newSaveGamePanel: {fileID: 1685596179}
   loadPanel: {fileID: 66841570}
   loadPanelGrid: {fileID: 1702974966}
-  cinemachineVirtualCamera: {fileID: 535338699}
   loadButton: {fileID: 3800832152009618151, guid: 4ed6dc7cdaa1d8443bdc13f581a5fc5c,
     type: 3}
 --- !u!114 &1331396883
@@ -11966,6 +11966,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   completedQuests: []
   currentQuests: []
+  initialQuests:
+  - {fileID: 11400000, guid: 9aff67103e64b6147b91f0237699c5ee, type: 2}
 --- !u!1 &1425438409
 GameObject:
   m_ObjectHideFlags: 0
@@ -13277,7 +13279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

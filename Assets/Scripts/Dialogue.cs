@@ -254,7 +254,9 @@ public class Dialogue : MonoBehaviour
             next.SetActive(false);
         }
 
-      
+
+        //to delete
+
     }
 
     public void DisplayPreviousSentence()
@@ -385,6 +387,10 @@ public class Dialogue : MonoBehaviour
 
     }
 
+    public void PlaySoundWhenFinishedAppearing()
+    {
+        SoundEffectsManager.instance.PlaySpeechBubblePop();
+    }
 
     public void AcceptQuest()
     {

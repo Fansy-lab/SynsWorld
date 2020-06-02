@@ -45,17 +45,33 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(10);
-        }
+
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
         hpBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            PlayerDie();
+        }
     }
+
+    public void PlayerDie()
+    {
+        gold /= 3;
+        LevelSystem.experienceForNextLevel /= 3;
+
+        Destroy(gameObject);
+
+        GM.Instance.RespawnPlayer();
+
+    }
+
+
 
     public void EnableShooting()
     {
@@ -96,4 +112,8 @@ public class PlayerStats : MonoBehaviour
 
     }
 
+    internal void RecalculateMaxHP()
+    {
+        hpBar.RecalculateMaxHP(maxHealth);
+    }
 }

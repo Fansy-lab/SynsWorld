@@ -35,13 +35,22 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player"); anim = GetComponent<Animator>();
+        InvokeRepeating("TryFindPlayer", 0, 2f);
+        anim = GetComponent<Animator>();
         thisEnemy = GetComponent<IEnemy>();
         seeker = GetComponent<Seeker>();
         InvokeRepeating("UpdatePath", 0f, 0.25f);
     }
 
+    public void TryFindPlayer()
+    {
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
 
+        }
+
+    }
     private void Update()
     {
         if (player == null) return;
@@ -71,12 +80,13 @@ public class EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
+
         if (retreatingToStart)
         {
             thisEnemy.TakesReducedDamage = true;
             target = moveCenter;
             float distance = Vector2.Distance(transform.position, target.transform.position);
-            if (seeker.IsDone() && target != null && distance > 1.5)
+            if (seeker.IsDone() && target != null && distance > 1.1)
             {
                 seeker.StartPath(transform.position, target.transform.position, OnPathComplete);
 
@@ -93,9 +103,17 @@ public class EnemyAI : MonoBehaviour
             {
                 thisEnemy.TakesReducedDamage = false;
 
-                float distance = Vector2.Distance(transform.position, target.transform.position);
-                if (seeker.IsDone() && target != null && distance > 1.5)
-                    seeker.StartPath(transform.position, target.transform.position, OnPathComplete);
+                if (target != null)
+                {
+                    float distance = Vector2.Distance(transform.position, target.transform.position);
+                    if (seeker.IsDone() && target != null && distance > 1.5)
+                        seeker.StartPath(transform.position, target.transform.position, OnPathComplete);
+                }
+                else
+                {
+                    retreatingToStart = true;
+                }
+
             }
 
         }
@@ -130,7 +148,7 @@ public class EnemyAI : MonoBehaviour
             {
                 if (collider.gameObject.tag == "Player")
                 {
-                    collider.GetComponent<PlayerStats>().TakeDamage(2);
+                    collider.GetComponent<PlayerStats>().TakeDamage(RNGGod.GetSmallRandomDamage());
                     collider.GetComponent<Animator>().SetTrigger("TakeDamage");
                     SoundEffectsManager.instance.PlaySound(gameObject.GetComponent<IEnemy>().DoDamageSoundEffect);
                 }

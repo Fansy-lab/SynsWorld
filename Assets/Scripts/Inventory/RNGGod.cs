@@ -3,15 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RNGGod 
+public class RNGGod
 {
-   
+
 
     public static EquipableWeaponryStats GetRandonWeaponStats()
     {
         EquipableWeaponryStats toReturn = new EquipableWeaponryStats();
         toReturn.AttackMinDamage = UnityEngine.Random.Range(1, 3);
-        toReturn.AttackMaxDamage = UnityEngine.Random.Range(3, 15);
+        toReturn.AttackMaxDamage = UnityEngine.Random.Range(3, 8);
         toReturn.AttackSpeed = UnityEngine.Random.Range(5, 10);
 
         return toReturn;
@@ -35,7 +35,7 @@ public class RNGGod
 
     internal static float GetRandomPitch()
     {
-        return UnityEngine.Random.Range(0.9f, 1.1f); 
+        return UnityEngine.Random.Range(0.9f, 1.1f);
     }
 
     internal static int ReduceDamage(int damageAmmount)
@@ -47,5 +47,10 @@ public class RNGGod
         }
 
         return damage;
+    }
+
+    internal static int GetSmallRandomDamage()
+    {
+        return UnityEngine.Random.Range(8, 15);
     }
 }

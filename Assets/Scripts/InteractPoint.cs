@@ -126,6 +126,7 @@ public class InteractPoint : MonoBehaviour
                             sentences.Add(item);
                         }
                     }
+
                     else if (currentInteractableObjectScript.Quests.Count == 1)
                     {
                         foreach (var item in currentInteractableObjectScript.Quests[0].StartQuestDialogue)

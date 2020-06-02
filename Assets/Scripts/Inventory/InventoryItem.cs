@@ -85,7 +85,7 @@ public class InventoryItem
             playerStats.DPS = totalAttack *totalAttackSpeed;
 
             playerStats.evasion = totalEvasion;
-            playerStats.SetMaxHealth();
+            playerStats.RecalculateMaxHP();
 
         }
     }

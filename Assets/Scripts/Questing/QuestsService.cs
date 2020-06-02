@@ -9,13 +9,21 @@ public class QuestsService : MonoBehaviour
     public List<Quest> completedQuests;
     public List<Quest> currentQuests;
 
+    public List<Quest> initialQuests;
 
     private PlayerStats playerStats;
 
+    private void Start()
+    {
+        foreach (var item in initialQuests)
+        {
+            StartQuest(item);
+        }
+    }
 
 
 
-    public void AddNewQuest(Quest quest)
+    public void AddNewQuestToUIAndAlertListeners(Quest quest)
     {
 
 
@@ -29,7 +37,7 @@ public class QuestsService : MonoBehaviour
     private void StartQuestListeners(Quest quest)
     {
         currentQuests.Add(quest);
-      
+
         foreach (var goal in quest.KillGoals)
         {
             goal.Init();
@@ -89,11 +97,11 @@ public class QuestsService : MonoBehaviour
         if (questToStart != null)
         {
             Quest newQuest = ScriptableObject.CreateInstance("Quest") as Quest;
-            newQuest.Init(questToStart.QuestID, questToStart.KillGoals,questToStart.PickGoals, questToStart.QuestName, questToStart.QuestDescription, questToStart.ExpReward, questToStart.GoldReward, questToStart.ItemReward, questToStart.IsCompleted);
+            newQuest.Init(questToStart.QuestID, questToStart.KillGoals,questToStart.PickGoals,questToStart.ReachGoals, questToStart.QuestName, questToStart.QuestDescription, questToStart.ExpReward, questToStart.GoldReward, questToStart.ItemReward, questToStart.IsCompleted);
 
             SoundEffectsManager.instance.PlayNewQuestSound();
 
-            AddNewQuest(newQuest);
+            AddNewQuestToUIAndAlertListeners(newQuest);
 
         }
     }

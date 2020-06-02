@@ -26,6 +26,7 @@ public class SoundEffectsManager : MonoBehaviour
     public AudioClip newQuestSound;
     public AudioClip doneQuestSound;
     public AudioClip menuClickSound;
+    public AudioClip speechBubblePop;
 
     AudioSource source;
 
@@ -172,5 +173,14 @@ public class SoundEffectsManager : MonoBehaviour
         source.PlayOneShot(letterType);
     }
 
+    internal void PlaySpeechBubblePop()
+    {
+        //find better sound
 
+        //if (!source.isPlaying)
+        //    source.pitch = RNGGod.GetRandomPitch();
+
+        //source.PlayOneShot(speechBubblePop);
+        //Invoke("ResetPitch", 0.5f);
+    }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,6 +63,25 @@ public class GM : MonoBehaviour
 
     }
 
+    internal void RespawnPlayer()
+    {
+        StartCoroutine(SpawnPlayerNextToChestAfter3Seconds());
+    }
+
+    private IEnumerator SpawnPlayerNextToChestAfter3Seconds()
+    {
+        Transform chestLocation = GameObject.Find("SaveChest").transform;
+        yield return new WaitForSeconds(3);
+        SpawnNewPlayerToPosition(chestLocation);
+
+    }
+
+    public void SpawnNewPlayerToPosition(Transform location)
+    {
+        GameObject newPlayer = Instantiate(Player, location.position, Quaternion.identity) as GameObject;
+        CinemachineVirtualCamera cam = GetComponentInChildren<CinemachineVirtualCamera>();
+        cam.Follow = newPlayer.transform;
+    }
 
     private void Start()
     {

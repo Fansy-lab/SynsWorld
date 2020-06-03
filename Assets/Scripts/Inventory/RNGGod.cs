@@ -51,6 +51,6 @@ public class RNGGod
 
     internal static int GetSmallRandomDamage()
     {
-        return UnityEngine.Random.Range(8, 15);
+        return UnityEngine.Random.Range(5, 10);
     }
 }

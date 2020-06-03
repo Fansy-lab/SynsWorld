@@ -7,11 +7,9 @@ public class Interactable : MonoBehaviour
 {
 
     [Header("Tile replacement")]
-    public Sprite SpriteToReplace;
     public Sprite SpriteToPlaceOnLeaveTrigger;
     public bool justDestroyTile=false;
-    public bool replaceTileWithEmpty = false;
-    public bool replaceTile = false;
+    public GameObject replaceTile;
     [Header("Tile properties")]
     public bool alreadyInteracted = false;
     public bool TriggersDialogueOnLook;
@@ -29,6 +27,10 @@ public class Interactable : MonoBehaviour
     [TextArea(3, 5)]
     public string[] SimplePopUpTEXT;
     public bool isInfoBubble=false;
+
+
+    public string methodToCallInGmOnFirstClick;
+    public List<string> parameters;
 
 
     public bool isNPC;

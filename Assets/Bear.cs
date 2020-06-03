@@ -123,13 +123,8 @@ public class Bear : MonoBehaviour,IEnemy
 
     private void ShowFloatingTextDamage(int damage)
     {
-        Vector3 position = gameObject.transform.position;
-        position.y = gameObject.transform.position.y + 1f;
-        Vector3 randomizeIntesity = new Vector3(0.15f, 0.0f, 0);
-        position += new Vector3(UnityEngine.Random.Range(-randomizeIntesity.x, randomizeIntesity.x), UnityEngine.Random.Range(-randomizeIntesity.y, randomizeIntesity.y), UnityEngine.Random.Range(-randomizeIntesity.z, randomizeIntesity.z));
+        NumberPopUpManager.Instance.DisplayDamageDone(damage.ToString(), transform.position);
 
-        GameObject gO = Instantiate(damagePopUp, position, Quaternion.identity) as GameObject;
-        gO.GetComponentInChildren<DamagePopUp>().damageAmmount = damage;
     }
 
     public void Die()
@@ -140,7 +135,7 @@ public class Bear : MonoBehaviour,IEnemy
 
     public void TakeDamage(int damage)
     {
-        if (damagePopUp) ShowFloatingTextDamage(damage);
+        ShowFloatingTextDamage(damage);
 
         currentHealth -= damage;
         hp.SetHealth(currentHealth);

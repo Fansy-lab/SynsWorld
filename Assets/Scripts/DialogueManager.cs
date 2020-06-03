@@ -61,5 +61,35 @@ public class DialogueManager : MonoBehaviour
     }
 
 
+    public void InstantiateBubbleAtPositionForXTime(Vector3 position, Dialogue dialogueInfo, bool isInfoBubble,float time)
+    {
+        if (isInfoBubble)
+        {
+            bubbleToDisplay.GetComponent<SpriteRenderer>().sprite = infoBubbleSprite;
+        }
+        else
+        {
+            bubbleToDisplay.GetComponent<SpriteRenderer>().sprite = speechBubbleSprite;
+
+        }
+        GameObject go = Instantiate(bubbleToDisplay, new Vector3(position.x, position.y), Quaternion.identity) as GameObject;
+        go.name = Guid.NewGuid().ToString();
+        Dialogue dialogue = go.GetComponent<Dialogue>();
+        dialogue.sentences = dialogueInfo.sentences;
+        dialogue.NPCName = dialogueInfo.NPCName;
+        dialogue.Quest = dialogueInfo.Quest;
+        if (dialogueInfo.options != null)
+        {
+            dialogue.options = dialogueInfo.options;
+        }
+
+
+        dialogue.StartDialogue();
+
+
+        Destroy(go, time);
+
+    }
+
 
 }

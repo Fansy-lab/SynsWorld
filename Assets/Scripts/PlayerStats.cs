@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,15 +26,24 @@ public class PlayerStats : MonoBehaviour
     public int maxItemsCanHoldInPrivateStash;
     PlayerInput playerInput;
     [SerializeField] GameObject levelUpEffect;
+    [SerializeField] GameObject experiencePopUp;
 
     void Start()
     {
         GlobalEvents.OnEnemyDeath += EnemyDied;
         GlobalEvents.OnLevelUp += PlayerLeveledUp;
-
+        GlobalEvents.OnGainedExperience += PlayerGainedExperience;
         playerInput = GetComponentInChildren<PlayerInput>();
         currentHealth = maxHealth;
         SetMaxHealth();
+    }
+
+    private void PlayerGainedExperience(int exp)
+    {
+        Vector3 positionPopUp = gameObject.transform.position;
+        positionPopUp.y += 1;
+        NumberPopUpManager.Instance.DisplayExperienceGained(exp.ToString(), positionPopUp);
+
     }
 
     public void SetMaxHealth()
@@ -51,13 +61,22 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
+        ShowPopUpDamageTaken(damage);
         hpBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
             PlayerDie();
         }
+    }
+
+    private void ShowPopUpDamageTaken(int damage)
+    {
+        Vector3 positionPopUp = gameObject.transform.position;
+        positionPopUp.y += 1;
+        NumberPopUpManager.Instance.DisplayDamageTaken("-" + damage, positionPopUp);
+
+
     }
 
     public void PlayerDie()

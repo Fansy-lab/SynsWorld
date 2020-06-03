@@ -71,7 +71,6 @@
     <Compile Include="Assets\NewSavePanel.cs" />
     <Compile Include="Assets\PrivateChest.cs" />
     <Compile Include="Assets\ResetCinemachineState.cs" />
-    <Compile Include="Assets\Scripts\DamagePopUp.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\DummyEnemy.cs" />
@@ -97,6 +96,7 @@
     <Compile Include="Assets\Scripts\LevelSystem.cs" />
     <Compile Include="Assets\Scripts\Levels.cs" />
     <Compile Include="Assets\Scripts\NPC.cs" />
+    <Compile Include="Assets\Scripts\NumberPopUpManager.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />

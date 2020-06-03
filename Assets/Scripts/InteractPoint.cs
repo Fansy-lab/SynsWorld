@@ -46,8 +46,8 @@ public class InteractPoint : MonoBehaviour
                 DoInteractEvents();
             }
 
-
-            currentInteractableObjectScript.alreadyInteracted = true;
+            if (currentInteractableObjectScript)
+                currentInteractableObjectScript.alreadyInteracted = true;
         }
 
 
@@ -62,19 +62,14 @@ public class InteractPoint : MonoBehaviour
             SoundEffectsManager.instance.PlaySound(currentInteractableObjectScript.soundEffectOnInteract);
         }
 
-        if (currentInteractableObjectScript.replaceTileWithEmpty)
+
+
+
+
+        if (!String.IsNullOrEmpty(currentInteractableObjectScript.methodToCallInGmOnFirstClick))
         {
-
-            Destroy(currentCollision.gameObject);
+            GM.Instance.CallMethod(currentInteractableObjectScript.methodToCallInGmOnFirstClick, currentInteractableObjectScript.parameters);
         }
-
-        else if (currentInteractableObjectScript.replaceTile)
-        {
-            //map.SetTile(currentCell, currentInteractableObjectScript.SpriteToReplace);
-            currentInteractableObjectScript.gameObject.GetComponent<SpriteRenderer>().sprite = currentInteractableObjectScript.SpriteToReplace;
-
-        }
-
 
 
         if (currentInteractableObjectScript.TriggersDialogueOnClick && currentInteractableObjectScript.alreadyInteracted==false
@@ -93,6 +88,24 @@ public class InteractPoint : MonoBehaviour
         }
 
 
+        if (currentInteractableObjectScript.replaceTile != null)
+        {
+            //map.SetTile(currentCell, currentInteractableObjectScript.SpriteToReplace);
+            //currentInteractableObjectScript.gameObject.GetComponent<SpriteRenderer>().sprite = currentInteractableObjectScript.SpriteToReplace;
+
+            Instantiate(currentInteractableObjectScript.replaceTile, currentInteractableObjectScript.gameObject.transform.position, Quaternion.identity);
+            if (currentInteractableObjectScript.SimplePopUpTEXT.Length > 0)
+            {
+                Vector2 targetLocationForDialoguePopUp = currentInteractableObjectScript.gameObject.transform.position;
+
+                DialogueManager.instance.InstantiateBubbleAtPositionForXTime(targetLocationForDialoguePopUp, new Dialogue()
+                {
+                    NPCName = currentInteractableObjectScript.tileName,
+                    sentences = currentInteractableObjectScript.SimplePopUpTEXT.ToList()
+                }, true, 3);
+            }
+            Destroy(currentInteractableObjectScript.gameObject);
+        }
 
     }
 
@@ -161,18 +174,22 @@ public class InteractPoint : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        sittingOverAnotherInteractableObject = false;
-        if (currentInteractableObjectScript)
+        if (collision.transform.gameObject.layer == LayerMask.NameToLayer("interactable"))
         {
-            currentInteractableObjectScript.alreadyInteracted = false;
-            currentInteractableObjectScript = null;
-            if (!String.IsNullOrEmpty(temporaryPopUpText))
+            sittingOverAnotherInteractableObject = false;
+            if (currentInteractableObjectScript)
             {
-                Destroy(GameObject.Find(temporaryPopUpText));
-                temporaryPopUpText = "";
+                currentInteractableObjectScript.alreadyInteracted = false;
+                currentInteractableObjectScript = null;
+                if (!String.IsNullOrEmpty(temporaryPopUpText))
+                {
+                    Destroy(GameObject.Find(temporaryPopUpText));
+                    temporaryPopUpText = "";
 
+                }
             }
         }
+
 
 
     }

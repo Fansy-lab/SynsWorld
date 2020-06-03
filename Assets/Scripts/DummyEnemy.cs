@@ -21,7 +21,6 @@ public class DummyEnemy : MonoBehaviour, IEnemy
 
     public Animator animator;
     public HealthBar hp;
-    public GameObject damagePopUp;
 
     public int currentHealth;
     public int _maxHealth;
@@ -34,19 +33,15 @@ public class DummyEnemy : MonoBehaviour, IEnemy
 
     public void TakeDamage(int damage)
     {
-        if (damagePopUp) ShowFloatingTextDamage(damage);
+        ShowFloatingTextDamage(damage);
 
         currentHealth -= damage;
         hp.SetHealth(currentHealth);
     }
     private void ShowFloatingTextDamage(int damage)
     {
-        Vector3 position = gameObject.transform.position;
-        position.y = gameObject.transform.position.y + 1f;
-        Vector3 randomizeIntesity = new Vector3(0.15f, 0.0f, 0);
-        position += new Vector3(Random.Range(-randomizeIntesity.x, randomizeIntesity.x), Random.Range(-randomizeIntesity.y, randomizeIntesity.y), Random.Range(-randomizeIntesity.z, randomizeIntesity.z));
-        GameObject gO = Instantiate(damagePopUp, position, Quaternion.identity) as GameObject;
-        gO.GetComponentInChildren<DamagePopUp>().damageAmmount = damage;
+        NumberPopUpManager.Instance.DisplayDamageDone(damage.ToString(), transform.position);
+
 
     }
 
@@ -68,7 +63,7 @@ public class DummyEnemy : MonoBehaviour, IEnemy
     {
         if (collision.transform.tag == "Projectile")
         {
-            if (!CanBeDamaged) return;
+
             Projectile projectile = collision.transform.GetComponent<Projectile>();
             int damageAmmount = projectile.damageAmmount;
             if (TakesReducedDamage)

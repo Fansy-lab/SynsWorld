@@ -211,6 +211,17 @@ public class GM : MonoBehaviour
         PrivateChestInventoryUI.SetActive(true);
     }
 
+    public void EnableShootingAndEnableDummies()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+         player.GetComponent<PlayerStats>().EnableShooting();
+        DummyEnemy[] dummies = GameObject.FindObjectsOfType<DummyEnemy>();
+        foreach (var item in dummies)
+        {
+            item.GetComponent<BoxCollider2D>().enabled = true;
+        }
+    }
+
     internal void CallMethod(string methodToCallInGm, List<string> parameters)
     {
         Type thisType = this.GetType();

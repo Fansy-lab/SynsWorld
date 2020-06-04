@@ -56,9 +56,11 @@ MonoBehaviour:
   ItemReward: 
   IsCompleted: 0
   StartQuestDialogue:
-  - Hey! While you are here... I need something done...
+  - Hey! So you are all the help we are getting? Ok then... I need something done...
   - Kill some of these nasty skeletons just outside the village for me could ya?
+  - They've been stopping the only food supply we have from the kingdom and I need
+    them killed.
   WhileOnQuestDialogue:
   - How's the killing goin'?
   FinishedQuestDialogue:
-  - Thanks. Those bastards won't be causing any more trouble.HA!
+  - Thanks. Those bastards won't be causing any more trouble. HA!

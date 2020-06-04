@@ -59,11 +59,11 @@ TagManager:
   - name: Path
     uniqueID: 3679803341
     locked: 0
-  - name: Player
-    uniqueID: 36602509
-    locked: 0
   - name: Hard Objects
     uniqueID: 2540401143
+    locked: 0
+  - name: Player
+    uniqueID: 36602509
     locked: 0
   - name: AbovePlayer
     uniqueID: 3241387735

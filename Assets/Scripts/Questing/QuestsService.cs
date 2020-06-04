@@ -23,11 +23,12 @@ public class QuestsService : MonoBehaviour
 
 
 
-    public void AddNewQuestToUIAndAlertListeners(Quest quest)
+    public void AddNewQuestToUIAndAlertListeners(Quest quest,bool playPopUpAnimation)
     {
 
+        if(playPopUpAnimation)
+            EmoteManager.Instance.ShowNewQuestEmote();
 
-        EmoteManager.Instance.ShowNewQuestEmote();
         UIManager.Instance.AddNewQuestToTheUIList(quest);
 
         StartQuestListeners(quest);
@@ -95,14 +96,14 @@ public class QuestsService : MonoBehaviour
 
     }
 
-    public void StartQuest(Quest questToStart)
+    public void StartQuest(Quest questToStart,bool playPopUpAnimation)
     {
         if (questToStart != null)
         {
 
             SoundEffectsManager.instance.PlayNewQuestSound();
 
-            AddNewQuestToUIAndAlertListeners(questToStart);
+            AddNewQuestToUIAndAlertListeners(questToStart,playPopUpAnimation);
 
         }
     }
@@ -127,9 +128,9 @@ public class QuestsService : MonoBehaviour
 
     internal void LoadQuestLists(List<KillGoalData> killGoalData, List<ReachGoalData> reachGoalData, List<PickGoalData> pickGoalData, List<int> currentQuestIDs, List<int> doneQuestIDs)
     {
-
         foreach (var quest in AllQuests)
         {
+            #region resetKillGoals
             foreach (var killGoal in quest.KillGoals)
             {
                 killGoal.killGoalData.Completed = false;
@@ -145,15 +146,46 @@ public class QuestsService : MonoBehaviour
                 pickGoal.pickGoalData.CurrentAmmount = 0;
 
             }
-
-
+            #endregion
             foreach (var playerCurrentQuest in currentQuestIDs)
             {
                 if(quest.QuestID == playerCurrentQuest)
                 {
-                    StartQuest(quest);
+                    foreach (var killGoal in killGoalData)
+                    {
+                        foreach (var questKillGoal in quest.KillGoals)
+                        {
+                            if (killGoal.idKillGoal == questKillGoal.killGoalData.idKillGoal)
+                            {
+                                questKillGoal.killGoalData = killGoal;
+                            }
+                        }
+                    }
+                    foreach (var reachGoal in reachGoalData)
+                    {
+                        foreach (var questreachGoal in quest.ReachGoals)
+                        {
+                            if (reachGoal.ID == questreachGoal.reachGoalData.ID)
+                            {
+                                questreachGoal.reachGoalData = reachGoal;
+                            }
+                        }
+                    }
+                    foreach (var pickGoal in pickGoalData)
+                    {
+                        foreach (var questPickGoal in quest.PickGoals)
+                        {
+                            if(pickGoal.idPickGoal == questPickGoal.pickGoalData.idPickGoal)
+                            {
+                                questPickGoal.pickGoalData = pickGoal;
+                            }
+                        }
+                    }
+
+                    StartQuest(quest,false);
 
                 }
+
             }
         }
         foreach (var quest in AllQuests)

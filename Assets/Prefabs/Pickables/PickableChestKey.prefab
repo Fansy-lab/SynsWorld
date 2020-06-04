@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1754566153
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 200
   m_Sprite: {fileID: 6848829298122412017, guid: fe8fa90c1d4913141a7504ddfbda4db6,
     type: 3}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisItem:
-    itemName: Key
+    itemName: Bronze key
     itemDescription: Chest key
     itemImage: {fileID: 6848829298122412017, guid: fe8fa90c1d4913141a7504ddfbda4db6,
       type: 3}

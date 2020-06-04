@@ -44,7 +44,11 @@ public class PlayerStats : MonoBehaviour
     {
         Vector3 positionPopUp = gameObject.transform.position;
         positionPopUp.y += 1;
-        NumberPopUpManager.Instance.DisplayExperienceGained(exp.ToString(), positionPopUp);
+        if (exp > 0)
+        {
+            NumberPopUpManager.Instance.DisplayExperienceGained(exp.ToString(), positionPopUp);
+
+        }
 
     }
 

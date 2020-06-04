@@ -12017,6 +12017,8 @@ MonoBehaviour:
   AllQuests:
   - {fileID: 3461967578595749999, guid: 8e394d4ea962beb4fb8c46e16808a6a4, type: 3}
   - {fileID: 3461967578595749999, guid: a8744024a3342b842a694d2bdbc09783, type: 3}
+  - {fileID: 3461967578595749999, guid: 064b7deda82579d4190a0d4852cde675, type: 3}
+  - {fileID: 3461967578595749999, guid: 148ee87791db90345a1985dadd8c211b, type: 3}
   completedQuests: []
   currentQuests: []
   initialQuests:

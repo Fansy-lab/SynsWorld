@@ -262,7 +262,7 @@ public class Dialogue : MonoBehaviour
     public void DisplayPreviousSentence()
     {
         indexOfSentence--;
-        if (indexOfSentence == 0)
+        if (indexOfSentence >= 0)
         {
             if (options.Count == 0)
             {
@@ -302,6 +302,7 @@ public class Dialogue : MonoBehaviour
 
             }
         }
+
 
 
     }
@@ -398,7 +399,7 @@ public class Dialogue : MonoBehaviour
         {
 
 
-            UIManager.Instance.questsService.StartQuest(Quest);
+            UIManager.Instance.questsService.StartQuest(Quest,true);
         }
         Destroy(gameObject);
     }

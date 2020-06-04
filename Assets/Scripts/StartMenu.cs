@@ -48,7 +48,7 @@ public class StartMenu : MonoBehaviour
 
         //set default location of player start
         var saveGameComponents = new SaveGameComponents(-72,-30, 1, new List<InventoryItem>(),new Dictionary<InventoryItem.Slot, InventoryItem>(),new List<InventoryItem>(),
-            0, 0,false,false,GM.Instance.GetCurrentAndDoneKillGoals(),GM.Instance.GetCurrentAndDoneReachGoals(),GM.Instance.GetCurrentAndDonePickGoals(),new List<int>(),new List<int>());
+            0, 0,false,false,new List<KillGoalData>(), new List<ReachGoalData>(),new List<PickGoalData>(),new List<int>(),new List<int>());
 
         SaveData.current.data = saveGameComponents;
         SaveData.current.saveName = nameSave;
@@ -194,7 +194,7 @@ public class StartMenu : MonoBehaviour
         List<int> currentQuestIDs = SaveData.current.data._currentQuestIDs;
         List<int> doneQuestIDs = SaveData.current.data._doneQuestIDs;
 
-        if(currentQuestIDs.Count>0 || doneQuestIDs.Count>0)
+
             UIManager.Instance.questsService.LoadQuestLists(killGoalData, reachGoalData, pickGoalData, currentQuestIDs, doneQuestIDs);
 
     }

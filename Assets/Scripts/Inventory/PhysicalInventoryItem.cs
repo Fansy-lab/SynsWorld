@@ -7,12 +7,13 @@ using UnityEngine;
 public class PhysicalInventoryItem : MonoBehaviour
 {
      PlayerInventory playerInventory;
+    public float destroyAfter=30;
     [SerializeField] public InventoryItem thisItem;
 
     private void Start()
     {
         playerInventory = InventoryManager.instance.playerInventory;
-        Destroy(gameObject, 30);
+        Destroy(gameObject, destroyAfter);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

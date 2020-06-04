@@ -16,8 +16,14 @@ public class SaveGameComponents
     public List<InventoryToSave> _privateChest = new List<InventoryToSave>();
     public int _gold;
     public int _experience;
+    public bool _inside;
+    public bool _learnedToShoot;
+    public List<KillGoalData> _killGoalsData;
+    public List<ReachGoalData> _reachGoalsData;
+    public List<PickGoalData> _pickGoalsData;
 
-
+    public List<int> _doneQuestIDs;
+    public List<int> _currentQuestIDs;
     public static void ResetInventories()
     {
         InventoryManager.instance.playerInventory.equipedItems = new Dictionary<InventoryItem.Slot, InventoryItem>();
@@ -25,13 +31,23 @@ public class SaveGameComponents
         InventoryManager.instance.privateChestInventory.inventoryItems = new List<InventoryItem>();
     }
 
-    public SaveGameComponents(float xposition,float ypostion,int scene, List<InventoryItem> inventory, Dictionary<InventoryItem.Slot, InventoryItem> equipedItems, List<InventoryItem> privateChest,int gold,int experience)
+    public SaveGameComponents(float xposition,float ypostion,int scene, List<InventoryItem> inventory, Dictionary<InventoryItem.Slot, InventoryItem> equipedItems,
+        List<InventoryItem> privateChest,int gold,int experience,bool inside,bool learnedToShoot,List<KillGoalData> killGoals, List<ReachGoalData> reachGoalsData,List<PickGoalData> pickGoalsData,
+        List<int> doneQuestIds, List<int> currentQuestIDs)
     {
         _xPosition = xposition;
         _yPosition = ypostion;
         _scene = scene;
         _gold = gold;
         _experience = experience;
+        _inside = inside;
+        _learnedToShoot = learnedToShoot;
+        _killGoalsData = killGoals;
+        _reachGoalsData = reachGoalsData;
+        _pickGoalsData = pickGoalsData;
+        _doneQuestIDs = doneQuestIds;
+        _currentQuestIDs = currentQuestIDs;
+
         foreach (var item in inventory)
         {
 

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3461967578595749904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3461967578595749998}
+  - component: {fileID: 3461967578595749999}
+  m_Layer: 0
+  m_Name: Quest - Kill10Skeletons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3461967578595749998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461967578595749904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.402695, y: -47.15604, z: -63.30957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3461967578595749999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461967578595749904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213f690ab5052442b9847aace40baa75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestID: 1
+  KillGoals:
+  - {fileID: 4456420889266705350, guid: 58afc27c32686bb4796091a161358297, type: 3}
+  PickGoals: []
+  ReachGoals: []
+  QuestName: Kill some skeletons
+  spriteQuestPopUp: {fileID: 0}
+  QuestDescription: Kill 10 skeletons for the blacksmith
+  ExpReward: 10
+  GoldReward: 25
+  ItemReward: 
+  IsCompleted: 0
+  StartQuestDialogue:
+  - Hey! While you are here... I need something done...
+  - Kill some of these nasty skeletons just outside the village for me could ya?
+  WhileOnQuestDialogue:
+  - How's the killing goin'?
+  FinishedQuestDialogue:
+  - Thanks. Those bastards won't be causing any more trouble.HA!

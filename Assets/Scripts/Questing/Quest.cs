@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="Quest",menuName = "Questing/New Quest")]
-public class Quest : ScriptableObject
+[System.Serializable]
+public class Quest : MonoBehaviour
 {
     public int QuestID;
     public List<KillGoal> KillGoals = new List<KillGoal>();
@@ -30,31 +30,22 @@ public class Quest : ScriptableObject
 
 
 
-    public void Init(int questId, List<KillGoal> killGoals, List<PickGoal> pickGoals,List<ReachGoal> reachGoals, string questName,string questDescription,int expReward,int goldReward,string itemReward,bool isCompleted)
+    public void Init()
     {
-        QuestID = questId;
-        KillGoals = killGoals;
-        PickGoals = pickGoals;
-        QuestName =questName;
-        QuestDescription =questDescription;
-        ReachGoals = reachGoals;
-        ExpReward =expReward;
-        GoldReward =goldReward;
-        ItemReward =itemReward;
-        IsCompleted =isCompleted;
+        //load data for this quest,if no info, its a new quest. set to null all goals and  quest stats, else laod info
+
+        //IsCompleted = false;
+        //KillGoals = new List<KillGoal>();
+        //PickGoals = new List<PickGoal>();
+        //ReachGoals = new List<ReachGoal>();
+
         SubscribeEvents();
 
     }
     private void OnDestroy()
     {
-        if(KillGoals!=null && KillGoals.Count>0)
-            GlobalEvents.OnKillGoalCompleted -= KillGoalCompleted;
 
-        if (PickGoals != null && PickGoals.Count > 0)
-            GlobalEvents.OnPickedGoalCompleted -= PickGoalCompleted;
-
-        if (ReachGoals != null && ReachGoals.Count > 0)
-            GlobalEvents.OnReachedGoal -= ReachedGoalCompleated;
+        UnsubscribeFromEvents();
 
     }
 
@@ -72,7 +63,7 @@ public class Quest : ScriptableObject
         bool isFromThisQuest = false;
         foreach (var goal in KillGoals)
         {
-            if (goal.idKillGoal == completedKillGoal.idKillGoal)
+            if (goal.killGoalData.idKillGoal == completedKillGoal.killGoalData.idKillGoal)
             {
                 isFromThisQuest = true;
                 break;
@@ -83,7 +74,7 @@ public class Quest : ScriptableObject
         {
             foreach (var goal in KillGoals)
             {
-                if (goal.Completed == false)
+                if (goal.killGoalData.Completed == false)
                 {
 
                     return;
@@ -98,10 +89,10 @@ public class Quest : ScriptableObject
         bool isFromThisQuest = false;
         foreach (var goal in ReachGoals)
         {
-            if (goal.ID == goalCompleated.ID)
+            if (goal.reachGoalData.ID == goalCompleated.reachGoalData.ID)
             {
                 isFromThisQuest = true;
-                goal.Completed = true;
+                goal.reachGoalData.Completed = true;
                 break;
             }
         }
@@ -109,7 +100,7 @@ public class Quest : ScriptableObject
         {
             foreach (var goal in ReachGoals)
             {
-                if (goal.Completed == false)
+                if (goal.reachGoalData.Completed == false)
                 {
 
                     return;
@@ -123,7 +114,7 @@ public class Quest : ScriptableObject
         bool isFromThisQuest = false;
         foreach (var goal in PickGoals)
         {
-            if (goal.idPickGoal == goalComplted.idPickGoal)
+            if (goal.pickGoalData.idPickGoal == goalComplted.pickGoalData.idPickGoal)
             {
                 isFromThisQuest = true;
                 break;
@@ -134,7 +125,7 @@ public class Quest : ScriptableObject
         {
             foreach (var goal in PickGoals)
             {
-                if (goal.Completed == false)
+                if (goal.pickGoalData.Completed == false)
                 {
 
                     return;
@@ -163,20 +154,28 @@ public class Quest : ScriptableObject
     private void CompleteQuest(Quest quest)
     {
         quest.IsCompleted = true;
-        #if UNITY_EDITOR
-        EditorUtility.SetDirty(this);
-        #endif
+
         GiveReward(quest);
         UIManager.Instance.questsService.CompletedQuest(quest);
+        UnsubscribeFromEvents();
 
     }
 
+    public void UnsubscribeFromEvents()
+    {
+        GlobalEvents.OnKillGoalCompleted -= KillGoalCompleted;
 
+
+        GlobalEvents.OnPickedGoalCompleted -= PickGoalCompleted;
+
+
+        GlobalEvents.OnReachedGoal -= ReachedGoalCompleated;
+    }
 
     private void GiveReward(Quest quest)
     {
         LevelSystem.AddExp(quest.ExpReward);
-        PlayerStats playerStats = GameObject.FindObjectOfType<PlayerStats>();
+        PlayerStats playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         playerStats.gold += quest.GoldReward;
         EmoteManager.Instance.ShowCompletedQuestEmote();
     }

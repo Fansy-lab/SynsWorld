@@ -1,19 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class ReachGoal : MonoBehaviour
 {
 
-    public int ID;
-    public bool Completed;
+    public ReachGoalData reachGoalData;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "Player")
         {
-            Completed = true;
+            reachGoalData.Completed = true;
             GlobalEvents.ReachedGoal(this);
             Destroy(gameObject);
         }
     }
+
+
 }

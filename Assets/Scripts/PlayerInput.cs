@@ -14,8 +14,7 @@ public class PlayerInput : MonoBehaviour
     public float shootRate;
     public float dashRate;
     public float dashDistance;
-    public bool learnedToShoot = false;
-
+    public PlayerStats stats;
 
     [SerializeField] GameObject interactPoint;
     [SerializeField] Transform firePosition;
@@ -36,7 +35,7 @@ public class PlayerInput : MonoBehaviour
     {
         dashSlider.SetMaxValue(Convert.ToInt32(dashRate));
         dashSlider.SetDashBar(dashRate);
-
+        stats = GetComponent<PlayerStats>();
 
         lastDashed = dashRate + 1;
         animator = GetComponent<Animator>();
@@ -114,7 +113,7 @@ public class PlayerInput : MonoBehaviour
 
     private void CheckAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && learnedToShoot && canShoot )
+        if (Input.GetKeyDown(KeyCode.Space) && stats.learnedToShoot && canShoot )
         {
             Shoot();
         }

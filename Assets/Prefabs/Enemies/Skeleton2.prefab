@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 36602509
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7928858964255100155, guid: 4f3474f03e7dd4319bfa975bd0dbeb10,
     type: 3}
@@ -150,7 +150,7 @@ MonoBehaviour:
   _maxHealth: 10
   animator: {fileID: 3117324114661269899}
   hp: {fileID: 2812372576318989015}
-  damagePopUp: {fileID: 7679418662773342743, guid: 7fd747da3f2d7484ab4ea141051b5fcf,
+  damagePopUp: {fileID: 7679418662773342743, guid: 4b40c13859059304ea71ad1438c644f4,
     type: 3}
   damageSound: {fileID: 8300000, guid: beb8f5deaf84c5442985778551b5f4b3, type: 3}
   missAttackSound: {fileID: 8300000, guid: 65a3259a116b7ee44b920b33d5abc1ea, type: 3}

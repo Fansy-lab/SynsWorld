@@ -21,10 +21,12 @@ public class PlayerStats : MonoBehaviour
 
 
     public HealthBar hpBar;
-    public bool insideALocation=true;
+    public bool learnedToShoot = false;
+
+    [SerializeField]public bool insideALocation=true;
     public int maxItemsCanHold;
     public int maxItemsCanHoldInPrivateStash;
-    PlayerInput playerInput;
+    public PlayerInput playerInput;
     [SerializeField] GameObject levelUpEffect;
     [SerializeField] GameObject experiencePopUp;
 
@@ -94,11 +96,11 @@ public class PlayerStats : MonoBehaviour
 
     public void EnableShooting()
     {
-        playerInput.learnedToShoot = true;
+        learnedToShoot = true;
     }
     public void DisableShooting()
     {
-        playerInput.learnedToShoot = false;
+        learnedToShoot = false;
 
     }
     public void DrinkPotion()
@@ -128,6 +130,7 @@ public class PlayerStats : MonoBehaviour
     {
         GlobalEvents.OnEnemyDeath -= EnemyDied;
         GlobalEvents.OnLevelUp -= PlayerLeveledUp;
+        GlobalEvents.OnGainedExperience -= PlayerGainedExperience;
 
     }
 

@@ -59,6 +59,15 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void RemoveAllQuestScrollsFromUI()
+    {
+        foreach (Transform item in questParentObject)
+        {
+            Destroy(item.gameObject);
+
+        }
+    }
+
     public void AddNewQuestToTheUIList(Quest quest)
     {
         GameObject gO = Instantiate(questUIGameObject, transform.position, transform.rotation);
@@ -97,17 +106,17 @@ public class UIManager : MonoBehaviour
                 child.GetComponentInChildren<TextMeshProUGUI>().text = quest.QuestDescription;
 
             }
-            if(child.name == "QuestProgress")
+            if (child.name == "QuestProgress")
             {
                 child.GetComponentInChildren<TextMeshProUGUI>().text = "";
                 foreach (var goal in quest.KillGoals)
                 {
-                    child.GetComponentInChildren<TextMeshProUGUI>().text +=goal.EnemyName+": " + goal.CurrentAmmount + "/" +goal.RequiredAmmount +"\r\n";
+                    child.GetComponentInChildren<TextMeshProUGUI>().text += goal.killGoalData.EnemyName + ": " + goal.killGoalData.CurrentAmmount + "/" + goal.killGoalData.RequiredAmmount + "\r\n";
 
                 }
                 foreach (var goal in quest.PickGoals)
                 {
-                    child.GetComponentInChildren<TextMeshProUGUI>().text += goal.ItemName + ": " + goal.CurrentAmmount + "/" + goal.RequiredAmmount + "\r\n";
+                    child.GetComponentInChildren<TextMeshProUGUI>().text += goal.pickGoalData.ItemName + ": " + goal.pickGoalData.CurrentAmmount + "/" + goal.pickGoalData.RequiredAmmount + "\r\n";
 
                 }
 
@@ -123,7 +132,7 @@ public class UIManager : MonoBehaviour
                     }
                     if (childCHild.name == "ExpImage")
                     {
-                        childCHild.GetComponentInChildren<TextMeshProUGUI>().text=quest.ExpReward.ToString();
+                        childCHild.GetComponentInChildren<TextMeshProUGUI>().text = quest.ExpReward.ToString();
                     }
                 }
             }
@@ -132,7 +141,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleQuestInfo()
     {
-        bool state =!questInfo.gameObject.activeInHierarchy;
+        bool state = !questInfo.gameObject.activeInHierarchy;
         questInfo.SetActive(state);
 
     }

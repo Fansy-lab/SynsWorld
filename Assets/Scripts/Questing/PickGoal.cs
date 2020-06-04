@@ -1,20 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Quest", menuName = "Questing/New Pick Goal")]
-
-public class PickGoal : ScriptableObject
+[System.Serializable]
+public class PickGoal : MonoBehaviour
 {
-    public int idPickGoal;
-    public string Description;
-    public bool Completed;
-    public int CurrentAmmount;
-    public int RequiredAmmount;
 
-    public int ItemID;
-    public string ItemName;
+    public PickGoalData pickGoalData;
     public void Init()
     {
         GlobalEvents.OnPickedItem += ItemPicked;
@@ -23,18 +17,18 @@ public class PickGoal : ScriptableObject
 
     private void OnDestroy()
     {
-        GlobalEvents.OnPickedItem -= ItemPicked;
 
+        UnsubscribeFromEvents();
     }
 
 
     void ItemPicked(InventoryItem item)
     {
-       if (!Completed)
+       if (!pickGoalData.Completed)
         {
-            if (item.itemName == this.ItemName)
+            if (item.itemName == pickGoalData.ItemName)
             {
-                this.CurrentAmmount++;
+                pickGoalData.CurrentAmmount++;
                 #if UNITY_EDITOR
                 EditorUtility.SetDirty(this);
                 #endif
@@ -45,7 +39,7 @@ public class PickGoal : ScriptableObject
     }
     public void Evaluate()
     {
-        if (CurrentAmmount >= RequiredAmmount)
+        if (pickGoalData.CurrentAmmount >= pickGoalData.RequiredAmmount)
         {
             Complete();
 
@@ -53,9 +47,13 @@ public class PickGoal : ScriptableObject
     }
     public void Complete()
     {
-        Completed = true;
+        pickGoalData.Completed = true;
         GlobalEvents.PickedGoalCompleted(this);
 
     }
 
+    internal void UnsubscribeFromEvents()
+    {
+         GlobalEvents.OnPickedItem -= ItemPicked;
+    }
 }

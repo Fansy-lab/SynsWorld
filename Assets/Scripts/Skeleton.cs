@@ -62,7 +62,7 @@ public class Skeleton : MonoBehaviour,IEnemy
             {
                 GetComponent<BoxCollider2D>().enabled = false;
                 animator.SetTrigger("death");
-                GlobalEvents.EnemyDied(this);//event happened
+                 GlobalEvents.EnemyDied(this);//event happened
                 GetComponent<EnemyAI>().dead = true;
 
                 StartCoroutine(StartDeath());

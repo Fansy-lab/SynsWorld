@@ -3,17 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Quest", menuName = "Questing/New Kill Goal")]
-public class KillGoal:ScriptableObject
+[System.Serializable]
+public class KillGoal: MonoBehaviour
 {
-    public int idKillGoal;
-    public string Description;
-    public bool Completed;
-    public int CurrentAmmount;
-    public int RequiredAmmount;
-
-    public int EnemyID;
-    public string EnemyName;
+    public KillGoalData killGoalData;
 
     public void Init()
     {
@@ -23,29 +16,31 @@ public class KillGoal:ScriptableObject
 
     private void OnDestroy()
     {
-      GlobalEvents.OnEnemyDeath -= EnemyDied;
+        UnsubscribeFromEvents();
+    }
+
+    public void UnsubscribeFromEvents()
+    {
+        GlobalEvents.OnEnemyDeath -= EnemyDied;
 
     }
 
-
     void EnemyDied(IEnemy enemy)
     {
-        if (!Completed)
+        if (!killGoalData.Completed)
         {
-            if (enemy.ID == this.EnemyID)
+            if (enemy.ID == killGoalData.EnemyID)
             {
-                this.CurrentAmmount++;
-                #if UNITY_EDITOR
-                EditorUtility.SetDirty(this);
-                #endif
-                Evaluate(); 
+                killGoalData.CurrentAmmount++;
+
+                Evaluate();
             }
         }
 
     }
     public void Evaluate()
     {
-        if (CurrentAmmount >= RequiredAmmount)
+        if (killGoalData.CurrentAmmount >= killGoalData.RequiredAmmount)
         {
             Complete();
 
@@ -53,9 +48,9 @@ public class KillGoal:ScriptableObject
     }
     public void Complete()
     {
-        Completed = true;
+        killGoalData.Completed = true;
         GlobalEvents.KillGoalCompleted(this);
-        
+
     }
 
 }

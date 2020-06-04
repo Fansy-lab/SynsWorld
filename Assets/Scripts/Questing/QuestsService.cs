@@ -6,6 +6,9 @@ using UnityEngine;
 public class QuestsService : MonoBehaviour
 {
 
+
+    public List<Quest> AllQuests;
+
     public List<Quest> completedQuests;
     public List<Quest> currentQuests;
 
@@ -15,10 +18,7 @@ public class QuestsService : MonoBehaviour
 
     private void Start()
     {
-        foreach (var item in initialQuests)
-        {
-            StartQuest(item);
-        }
+
     }
 
 
@@ -38,6 +38,8 @@ public class QuestsService : MonoBehaviour
     {
         currentQuests.Add(quest);
 
+        quest.Init();
+
         foreach (var goal in quest.KillGoals)
         {
             goal.Init();
@@ -46,6 +48,7 @@ public class QuestsService : MonoBehaviour
         {
             goal.Init();
         }
+
     }
 
     public void EnableShooting()
@@ -96,12 +99,10 @@ public class QuestsService : MonoBehaviour
     {
         if (questToStart != null)
         {
-            Quest newQuest = ScriptableObject.CreateInstance("Quest") as Quest;
-            newQuest.Init(questToStart.QuestID, questToStart.KillGoals,questToStart.PickGoals,questToStart.ReachGoals, questToStart.QuestName, questToStart.QuestDescription, questToStart.ExpReward, questToStart.GoldReward, questToStart.ItemReward, questToStart.IsCompleted);
 
             SoundEffectsManager.instance.PlayNewQuestSound();
 
-            AddNewQuestToUIAndAlertListeners(newQuest);
+            AddNewQuestToUIAndAlertListeners(questToStart);
 
         }
     }
@@ -122,5 +123,48 @@ public class QuestsService : MonoBehaviour
     private void DestroyQuest(Quest quest)
     {
         Destroy(quest);
+    }
+
+    internal void LoadQuestLists(List<KillGoalData> killGoalData, List<ReachGoalData> reachGoalData, List<PickGoalData> pickGoalData, List<int> currentQuestIDs, List<int> doneQuestIDs)
+    {
+
+        foreach (var quest in AllQuests)
+        {
+            foreach (var killGoal in quest.KillGoals)
+            {
+                killGoal.killGoalData.Completed = false;
+                killGoal.killGoalData.CurrentAmmount = 0;
+            }
+            foreach (var reachGoal in quest.ReachGoals)
+            {
+                reachGoal.reachGoalData.Completed = false;
+            }
+            foreach (var pickGoal in quest.PickGoals)
+            {
+                pickGoal.pickGoalData.Completed = false;
+                pickGoal.pickGoalData.CurrentAmmount = 0;
+
+            }
+
+
+            foreach (var playerCurrentQuest in currentQuestIDs)
+            {
+                if(quest.QuestID == playerCurrentQuest)
+                {
+                    StartQuest(quest);
+
+                }
+            }
+        }
+        foreach (var quest in AllQuests)
+        {
+            foreach (var playerDoneQuest in doneQuestIDs)
+            {
+                if (quest.QuestID == playerDoneQuest)
+                {
+                    completedQuests.Add(quest);
+                }
+            }
+        }
     }
 }

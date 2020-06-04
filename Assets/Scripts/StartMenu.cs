@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -46,7 +47,8 @@ public class StartMenu : MonoBehaviour
     {
 
         //set default location of player start
-        var saveGameComponents = new SaveGameComponents(-72,-30, 1, new List<InventoryItem>(),new Dictionary<InventoryItem.Slot, InventoryItem>(),new List<InventoryItem>(), 0, 0);
+        var saveGameComponents = new SaveGameComponents(-72,-30, 1, new List<InventoryItem>(),new Dictionary<InventoryItem.Slot, InventoryItem>(),new List<InventoryItem>(),
+            0, 0,false,false,GM.Instance.GetCurrentAndDoneKillGoals(),GM.Instance.GetCurrentAndDoneReachGoals(),GM.Instance.GetCurrentAndDonePickGoals(),new List<int>(),new List<int>());
 
         SaveData.current.data = saveGameComponents;
         SaveData.current.saveName = nameSave;
@@ -152,13 +154,59 @@ public class StartMenu : MonoBehaviour
         Player.GetComponent<Transform>().position = new Vector3(SaveData.current.data._xPosition, SaveData.current.data._yPosition);
         stats.gold = SaveData.current.data._gold;
         stats.experience = SaveData.current.data._experience;
+        stats.insideALocation = SaveData.current.data._inside;
+        stats.learnedToShoot = SaveData.current.data._learnedToShoot;
         levelSystem.CalculateVariables();
-        InventoryManager.instance.playerInventory.inventoryItems = new InventoryToSave().DeSerializeInventory(SaveData.current.data._inventory);
-        InventoryManager.instance.privateChestInventory.inventoryItems = new InventoryToSave().DeSerializePrivateInventory(SaveData.current.data._privateChest);
-        InventoryManager.instance.playerInventory.equipedItems = new InventoryToSave().DeSerializeEquipedItems(SaveData.current.data._equipedItems);
+        Loadinventories();
+        LoadQuests();
         CloseLoadMenuAndremoveChildren();
         gameObject.SetActive(false);
     }
+
+    private void LoadQuests()
+    {
+        foreach (var item in UIManager.Instance.questsService.currentQuests)
+        {
+            item.UnsubscribeFromEvents();
+        }
+        foreach (var quest in UIManager.Instance.questsService.currentQuests)
+        {
+            foreach (var item in quest.KillGoals)
+            {
+                item.UnsubscribeFromEvents();
+            }
+
+            foreach (var item in quest.PickGoals)
+            {
+                item.UnsubscribeFromEvents();
+            }
+        }
+
+
+        UIManager.Instance.questsService.currentQuests = new List<Quest>();
+        UIManager.Instance.questsService.completedQuests = new List<Quest>();
+
+        UIManager.Instance.RemoveAllQuestScrollsFromUI();
+        List<KillGoalData> killGoalData = SaveData.current.data._killGoalsData;
+        List<ReachGoalData> reachGoalData = SaveData.current.data._reachGoalsData;
+        List<PickGoalData> pickGoalData = SaveData.current.data._pickGoalsData;
+
+        List<int> currentQuestIDs = SaveData.current.data._currentQuestIDs;
+        List<int> doneQuestIDs = SaveData.current.data._doneQuestIDs;
+
+        if(currentQuestIDs.Count>0 || doneQuestIDs.Count>0)
+            UIManager.Instance.questsService.LoadQuestLists(killGoalData, reachGoalData, pickGoalData, currentQuestIDs, doneQuestIDs);
+
+    }
+
+    private static void Loadinventories()
+    {
+        InventoryManager.instance.playerInventory.inventoryItems = new InventoryToSave().DeSerializeInventory(SaveData.current.data._inventory);
+        InventoryManager.instance.privateChestInventory.inventoryItems = new InventoryToSave().DeSerializePrivateInventory(SaveData.current.data._privateChest);
+        InventoryManager.instance.playerInventory.equipedItems = new InventoryToSave().DeSerializeEquipedItems(SaveData.current.data._equipedItems);
+    }
+
+
 
     private static void ResetInventories()
     {

@@ -15,6 +15,7 @@ public class GM : MonoBehaviour
 
 
     [SerializeField] private GameObject questsUI;
+    [SerializeField] private GameObject questsInfoUI;
     [SerializeField] private GameObject inventoryUI;
     [SerializeField] public GameObject PrivateChestInventoryUI;
     [SerializeField] private GameObject playerStatsUI;
@@ -105,6 +106,11 @@ public class GM : MonoBehaviour
         {
             if (questsUI.activeInHierarchy)
             {
+                if (questsInfoUI.activeInHierarchy)
+                {
+                    questsInfoUI.SetActive(false);
+                    return;
+                }
                 questsUI.SetActive(false);
                 return;
             }
@@ -168,6 +174,10 @@ public class GM : MonoBehaviour
         {
             SoundEffectsManager.instance.PlayOpenQuestSound();
         }
+        if (questsInfoUI.activeInHierarchy)
+        {
+            questsInfoUI.SetActive(false);
+        }
         questsUI.SetActive(!a);
     }
     public void ToggleSettings()
@@ -191,10 +201,99 @@ public class GM : MonoBehaviour
             InventoryManager.instance.playerInventory.inventoryItems,
             InventoryManager.instance.playerInventory.equipedItems,
             InventoryManager.instance.privateChestInventory.inventoryItems,
-            stats.gold, stats.experience);
+            stats.gold, stats.experience,stats.insideALocation,stats.learnedToShoot,
+            GetCurrentAndDoneKillGoals(),GetCurrentAndDoneReachGoals(), GetCurrentAndDonePickGoals(),GetDoneQuestIDs(),GetCurrenQuestIDs());
 
         StartMenu.instance.SaveGame(components);
         SoundEffectsManager.instance.PlayGameSavedSound();
+    }
+
+    private List<int> GetCurrenQuestIDs()
+    {
+        List<int> toReturn = new List<int>();
+        List<Quest> completedQuests = UIManager.Instance.questsService.currentQuests;
+        foreach (var item in completedQuests)
+        {
+            toReturn.Add(item.QuestID);
+        }
+        return toReturn;
+    }
+
+    private List<int> GetDoneQuestIDs()
+    {
+        List<int> toReturn = new List<int>();
+        List<Quest> completedQuests = UIManager.Instance.questsService.completedQuests;
+        foreach (var item in completedQuests)
+        {
+            toReturn.Add(item.QuestID);
+        }
+        return toReturn;
+    }
+
+    public List<PickGoalData> GetCurrentAndDonePickGoals()
+    {
+        List<Quest> currentQuests = UIManager.Instance.questsService.currentQuests;
+        List<Quest> completedQuests = UIManager.Instance.questsService.completedQuests;
+        List<PickGoalData> toReturn = new List<PickGoalData>();
+        foreach (var item in currentQuests)
+        {
+            foreach (var killGoal in item.PickGoals)
+            {
+                toReturn.Add(killGoal.pickGoalData);
+            }
+        }
+        foreach (var item in completedQuests)
+        {
+            foreach (var killGoal in item.PickGoals)
+            {
+                toReturn.Add(killGoal.pickGoalData);
+            }
+        }
+        return toReturn;
+    }
+
+    public List<ReachGoalData> GetCurrentAndDoneReachGoals()
+    {
+        List<Quest> currentQuests = UIManager.Instance.questsService.currentQuests;
+        List<Quest> completedQuests = UIManager.Instance.questsService.completedQuests;
+        List<ReachGoalData> toReturn = new List<ReachGoalData>();
+        foreach (var item in currentQuests)
+        {
+            foreach (var killGoal in item.ReachGoals)
+            {
+                toReturn.Add(killGoal.reachGoalData);
+            }
+        }
+        foreach (var item in completedQuests)
+        {
+            foreach (var killGoal in item.ReachGoals)
+            {
+                toReturn.Add(killGoal.reachGoalData);
+            }
+        }
+        return toReturn;
+    }
+
+    public List<KillGoalData> GetCurrentAndDoneKillGoals()
+    {
+        List<Quest> currentQuests= UIManager.Instance.questsService.currentQuests;
+        List<Quest> completedQuests= UIManager.Instance.questsService.completedQuests;
+        List<KillGoalData> toReturn = new List<KillGoalData>();
+        foreach (var item in currentQuests)
+        {
+            foreach (var killGoal in item.KillGoals)
+            {
+                toReturn.Add(killGoal.killGoalData);
+            }
+        }
+        foreach (var item in completedQuests)
+        {
+            foreach (var killGoal in item.KillGoals)
+            {
+                toReturn.Add(killGoal.killGoalData);
+            }
+        }
+        return toReturn;
     }
 
     public void OpenPrivateChestInventory()

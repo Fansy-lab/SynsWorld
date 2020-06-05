@@ -10,6 +10,8 @@ public class Interactable : MonoBehaviour
     public Sprite SpriteToPlaceOnLeaveTrigger;
     public bool justDestroyTile=false;
     public GameObject replaceTile;
+
+    public bool isLoot;
     [Header("Tile properties")]
     public bool alreadyInteracted = false;
     public bool TriggersDialogueOnLook;

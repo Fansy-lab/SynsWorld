@@ -191,7 +191,7 @@ public class PlayerInput : MonoBehaviour
             animator.SetFloat("ShootDir", 0);
         }
         SetArrowDirection();
-        Invoke("SpawnArrow",0.3f);
+     //   Invoke("SpawnArrow",0.3f);
         lastShot = 0;
 
     }
@@ -216,7 +216,7 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    private void SpawnArrow()
+    public void SpawnArrow()
     {
        GameObject arrow = Instantiate(arrowPrefab, firePosition.position, firePosition.rotation) as GameObject;
         arrow.GetComponent<Projectile>().damageAmmount = SetDamageAmmount();

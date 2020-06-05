@@ -122,17 +122,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14942571c661fca4ab2e6d12d4dfafb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - You foud *x*
-    name: ...
-  SpriteToReplace: {fileID: -5576072935136112090, guid: 9ff7056ae2434ca478cc31572c1b60b3,
-    type: 3}
+  SpriteToPlaceOnLeaveTrigger: {fileID: 0}
   justDestroyTile: 0
-  replaceTileWithEmpty: 0
-  replaceTileWith1Tile: 1
-  hasSomeKindOfEvent: 0
-  interactableMultipleTimes: 0
+  replaceTile: {fileID: 1697019400660430790, guid: 5e2db22bb58f33545a9a220ada53131f,
+    type: 3}
+  isLoot: 1
   alreadyInteracted: 0
-  ThisInteractableTriggersDialogue: 1
-  methodToCallInGm: 
+  TriggersDialogueOnLook: 0
+  TriggersDialogueOnClick: 0
+  soundEffectOnInteract: {fileID: 8300000, guid: 5be06a2119f3c304dad3dc5afd99aa96,
+    type: 3}
+  Quests: []
+  selectedQuest: {fileID: 0}
+  popUpToDisplayOverPlayer: {fileID: 0}
+  tileName: 
+  SimplePopUpTEXT: []
+  isInfoBubble: 0
+  methodToCallInGmOnFirstClick: 
+  parameters: []
+  isNPC: 0
+  displayOptions: []

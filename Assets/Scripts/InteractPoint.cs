@@ -87,7 +87,11 @@ public class InteractPoint : MonoBehaviour
             temporaryPopUpText = gODialogue.name;
         }
 
-
+        if (currentInteractableObjectScript.isLoot)
+        {
+            GetLoot();
+            currentInteractableObjectScript.isLoot = false;
+        }
         if (currentInteractableObjectScript.replaceTile != null)
         {
             //map.SetTile(currentCell, currentInteractableObjectScript.SpriteToReplace);
@@ -107,11 +111,14 @@ public class InteractPoint : MonoBehaviour
             Destroy(currentInteractableObjectScript.gameObject);
         }
 
+
+
     }
 
+    private void GetLoot()
+    {
 
-
-
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

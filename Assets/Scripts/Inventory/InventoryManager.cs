@@ -160,6 +160,8 @@ public class InventoryManager : MonoBehaviour
         UpdatePlayerData(null);
 
         SetExperienceSlider();
+        ClearPrivateChestInventorySlots();
+        UpdatePrivateChestUI();
 
         UpdateInventoryUI();
 
@@ -171,8 +173,8 @@ public class InventoryManager : MonoBehaviour
 
         UpdateSlotsTaken();
 
-        ClearPrivateChestInventorySlots();
-        UpdatePrivateChestUI();
+
+
 
 
 
@@ -194,7 +196,7 @@ public class InventoryManager : MonoBehaviour
         PlayerStats plyerStats = GameObject.FindObjectOfType<PlayerStats>();
         if (plyerStats)
         {
-            int currentItems = privateChestInventory.inventoryItems.Where(x=>x != null).Count();
+            int currentItems = privateChestInventory.inventoryItems.Where(x => x != null).Count();
             int maxItems = plyerStats.maxItemsCanHoldInPrivateStash;
 
             maxItemsTextPrivateChest.text = currentItems + "/" + maxItems;
@@ -210,7 +212,7 @@ public class InventoryManager : MonoBehaviour
             int currentItemsInInventory = playerInventory.inventoryItems.Where(x => x != null).Count();
             int maxItems = plyerStats.maxItemsCanHold;
 
-            if(currentItemsInInventory+1 <= maxItems)
+            if (currentItemsInInventory + 1 <= maxItems)
             {
                 return true;
             }
@@ -281,7 +283,7 @@ public class InventoryManager : MonoBehaviour
     }
     private void UpdatePrivateChestUI()
     {
-        if (privateChestInventory !=null)
+        if (privateChestInventory != null)
         {
 
             foreach (var item in privateChestInventory.inventoryItems.ToList())
@@ -293,7 +295,9 @@ public class InventoryManager : MonoBehaviour
                     temp.gameObject.name = item.guid.ToString();
                     InventorySlot newSlot = temp.GetComponent<InventorySlot>();
                     Button button = temp.GetComponentInChildren<Button>();
+                    button.onClick = new Button.ButtonClickedEvent();
                     button.onClick.AddListener(() => newSlot.ClickedOnInPrivateChest());
+
                     newSlot.Setup(item, this);
 
                 }
@@ -483,17 +487,22 @@ public class InventoryManager : MonoBehaviour
     public void SetupDifferences(InventoryItem newItem)
     {
 
-        if (!newItem.isTrash)
-        {
-            useButton.SetActive(true);
-            destroyButton.SetActive(true);
-        }
-        else
-        {
-            useButton.SetActive(false);
-            destroyButton.SetActive(false);
-        }
 
+        useButton.SetActive(true);
+        destroyButton.SetActive(true);
+
+        if (newItem.isTrash)
+        {
+            if (GM.Instance.PrivateChestInventoryUI.activeInHierarchy)
+            {
+                useButton.SetActive(true);
+                SetButtonText("Transfer");
+            }
+            else
+            {
+                useButton.SetActive(false);
+            }
+        }
 
         currentItemSelectedInInventory = newItem;
 
@@ -518,7 +527,7 @@ public class InventoryManager : MonoBehaviour
 
 
                 SetButtonText("Replace");
-                if (newItem.slot !=InventoryItem.Slot.weapon)
+                if (newItem.slot != InventoryItem.Slot.weapon)
                 {
                     int evasionDifference = itemInTheSlot.equipableArmoryStats.EvasionAmmount - newItem.equipableArmoryStats.EvasionAmmount;
                     int amorDiference = itemInTheSlot.equipableArmoryStats.ArmorAmmount - newItem.equipableArmoryStats.ArmorAmmount;

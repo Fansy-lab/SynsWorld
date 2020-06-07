@@ -51,6 +51,16 @@ public class RNGGod
 
     internal static int GetSmallRandomDamage()
     {
-        return UnityEngine.Random.Range(5, 10);
+        return UnityEngine.Random.Range(4, 8);
+    }
+
+    public static int  GetNumberOfItemsToDrop()
+    {
+      return UnityEngine.Random.Range(UnityEngine.Random.Range(1, 2), 3);
+    }
+
+    public static int GetNumberOfGoldec()
+    {
+        return UnityEngine.Random.Range(UnityEngine.Random.Range(1, 2), 6);
     }
 }

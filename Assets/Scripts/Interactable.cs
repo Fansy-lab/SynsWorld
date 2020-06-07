@@ -12,6 +12,9 @@ public class Interactable : MonoBehaviour
     public GameObject replaceTile;
 
     public bool isLoot;
+    public LootTable loot;
+    public PhysicalInventoryItem[] giveFixedItems;
+
     [Header("Tile properties")]
     public bool alreadyInteracted = false;
     public bool TriggersDialogueOnLook;

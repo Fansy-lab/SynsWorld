@@ -12,9 +12,11 @@ public interface IEnemy
     LootTable lootTable { get; set; }
     bool CanBeDamaged { get; set; }
     bool TakesReducedDamage { get; set; }
+    bool playerInAttackRange { get; set; }
     void Die();
     void TakeDamage(int damage);
     void RegenHealthToMax();
+
     Spawner spawner { get; set; }
     AudioClip DoDamageSoundEffect { get; set; }
     AudioClip MissAttackSoundEffect { get; set; }

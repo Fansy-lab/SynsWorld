@@ -99,7 +99,9 @@ public class PlayerInput : MonoBehaviour
         {
             if (item.collider != null)
             {
-                if (item.collider.gameObject.layer == LayerMask.NameToLayer("CantRunOver") || item.collider.gameObject.layer == LayerMask.NameToLayer("WaterTile"))
+                if (item.collider.gameObject.layer == LayerMask.NameToLayer("CantRunOver") ||
+                    item.collider.gameObject.layer == LayerMask.NameToLayer("WaterTile")
+                 )
                 {
                     return false;
                 }

@@ -39,6 +39,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
         if (thisItem.itemName != "")//if is not null
         {
             thisManager.SetupDifferences(thisItem);
+
         }
     }
     public void ClickedOnInPrivateChest()

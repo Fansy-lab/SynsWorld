@@ -48,7 +48,7 @@ MonoBehaviour:
   PickGoals:
   - {fileID: 6469656679697406193, guid: 4580a34f2e0959e478782443a6063295, type: 3}
   ReachGoals: []
-  QuestName: Kito
+  QuestName: Find the bronze key
   spriteQuestPopUp: {fileID: 0}
   QuestDescription: '"If anyone reads this, find my bronze key. I don''t know who
     has it or where it is"'

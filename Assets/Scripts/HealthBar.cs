@@ -27,6 +27,9 @@ public class HealthBar : MonoBehaviour
 
     internal void RecalculateMaxHP(int maxHealth)
     {
+        float percent = slider.value / slider.maxValue;
         slider.maxValue = maxHealth;
+        float newValue = maxHealth * percent;
+        slider.value = newValue;
     }
 }

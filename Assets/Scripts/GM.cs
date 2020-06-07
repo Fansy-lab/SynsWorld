@@ -80,6 +80,8 @@ public class GM : MonoBehaviour
     public void SpawnNewPlayerToPosition(Transform location)
     {
         GameObject newPlayer = Instantiate(Player, location.position, Quaternion.identity) as GameObject;
+        newPlayer.GetComponent<PlayerStats>().learnedToShoot = true;//might change later - to get it from the save
+        newPlayer.GetComponent<PlayerStats>().insideALocation = true;
         CinemachineVirtualCamera cam = GetComponentInChildren<CinemachineVirtualCamera>();
         cam.Follow = newPlayer.transform;
     }
@@ -201,7 +203,7 @@ public class GM : MonoBehaviour
             InventoryManager.instance.playerInventory.inventoryItems,
             InventoryManager.instance.playerInventory.equipedItems,
             InventoryManager.instance.privateChestInventory.inventoryItems,
-            stats.gold, stats.experience,stats.insideALocation,stats.learnedToShoot,
+            stats.gold, stats.experience,true,stats.learnedToShoot,
             GetCurrentAndDoneKillGoals(),GetCurrentAndDoneReachGoals(), GetCurrentAndDonePickGoals(),GetDoneQuestIDs(),GetCurrenQuestIDs());
 
         StartMenu.instance.SaveGame(components);

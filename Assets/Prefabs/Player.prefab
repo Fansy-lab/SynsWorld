@@ -78,7 +78,7 @@ MonoBehaviour:
     type: 3}
   CompletedQuestSprite: {fileID: 7613968077380885141, guid: fe8fa90c1d4913141a7504ddfbda4db6,
     type: 3}
-  EmotePrefab: {fileID: 8493291336677585931, guid: d235250ba98d14f7b8252c2f72f4e1ac,
+  EmotePrefab: {fileID: 2408226555714633841, guid: 15af55f7271163645818d6ae4d2a52e0,
     type: 3}
 --- !u!1 &496467350
 GameObject:
@@ -263,7 +263,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 36602509
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 6216889498668374514, guid: 8716ad602f87e462bb049b16f0833ead,
     type: 3}
@@ -318,7 +318,7 @@ MonoBehaviour:
   shootRate: 0.33
   dashRate: 2
   dashDistance: 2
-  learnedToShoot: 0
+  stats: {fileID: 0}
   interactPoint: {fileID: 496467350}
   firePosition: {fileID: 2388800575328538763}
   dashSlider: {fileID: 5442287304780645516}
@@ -379,9 +379,11 @@ MonoBehaviour:
   gold: 0
   experience: 0
   hpBar: {fileID: 1840891256}
+  learnedToShoot: 0
   insideALocation: 0
   maxItemsCanHold: 25
   maxItemsCanHoldInPrivateStash: 100
+  playerInput: {fileID: 0}
   levelUpEffect: {fileID: 3297441302643732035, guid: 4728fe844c11847cba5d6fd6772893e3,
     type: 3}
   experiencePopUp: {fileID: 7679418662773342743, guid: 4b40c13859059304ea71ad1438c644f4,

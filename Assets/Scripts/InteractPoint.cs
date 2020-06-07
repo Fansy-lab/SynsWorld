@@ -117,7 +117,42 @@ public class InteractPoint : MonoBehaviour
 
     private void GetLoot()
     {
+        int itemsToGet = RNGGod.GetNumberOfItemsToDrop();
+        int numberOfGoldec = RNGGod.GetNumberOfGoldec();
 
+        if (currentInteractableObjectScript.loot != null)
+        {
+            //items loot
+            for (int i = 0; i < itemsToGet; i++)
+            {
+                PhysicalInventoryItem item = currentInteractableObjectScript.loot.LootItem();
+                if (item != null)
+                {
+                    item.AddItemToInventory();
+                }
+            }
+
+            //gold loot
+            for (int i = 0; i < numberOfGoldec; i++)
+            {
+                PhysicalInventoryItem gold = currentInteractableObjectScript.loot.LootGold();
+                if (gold != null)
+                {
+
+                    gold.AddItemToInventory();
+
+                }
+            }
+
+        }
+
+        if(currentInteractableObjectScript.giveFixedItems!=null  && currentInteractableObjectScript.giveFixedItems.Length > 0)
+        {
+            foreach (var item in currentInteractableObjectScript.giveFixedItems)
+            {
+                item.AddItemToInventory();
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

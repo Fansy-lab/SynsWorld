@@ -30,8 +30,10 @@ public class PhysicalInventoryItem : MonoBehaviour
     }
 
 
-    bool AddItemToInventory()
+    public bool AddItemToInventory()
     {
+        playerInventory = InventoryManager.instance.playerInventory;
+
         if (playerInventory != null && thisItem != null)
         {
             if (thisItem.equipable)

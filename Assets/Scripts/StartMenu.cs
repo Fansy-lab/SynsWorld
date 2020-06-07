@@ -165,11 +165,11 @@ public class StartMenu : MonoBehaviour
 
     private void LoadQuests()
     {
-        foreach (var item in UIManager.Instance.questsService.currentQuests)
+        foreach (var item in UIManager.Instance.questsService.AllQuests)
         {
             item.UnsubscribeFromEvents();
         }
-        foreach (var quest in UIManager.Instance.questsService.currentQuests)
+        foreach (var quest in UIManager.Instance.questsService.AllQuests)
         {
             foreach (var item in quest.KillGoals)
             {

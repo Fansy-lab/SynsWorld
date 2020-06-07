@@ -34,7 +34,7 @@ public class EmoteManager : MonoBehaviour
 
         GameObject gOSpawned = Instantiate(EmotePrefab, gO.transform.position, Quaternion.identity, gO.transform) as GameObject;
 
-        gOSpawned.GetComponent<Animator>().Play("PopUpStationary");
+        gOSpawned.GetComponentInChildren<Animator>().Play("PopUpStationary");
         gOSpawned.GetComponent<SelfDestroyAfterSeconds>().enabled = false;
         gOSpawned.name = Guid.NewGuid().ToString();
         return gOSpawned.name;
@@ -77,8 +77,20 @@ public class EmoteManager : MonoBehaviour
 
     public void DisplayPopUp(Sprite sprite)
     {
-        EmotePrefab.GetComponentInChildren<SpriteRenderer>().sprite = sprite;
-        GameObject gOSpawned = Instantiate(EmotePrefab, popUpPosition.position, Quaternion.identity) as GameObject;
-        gOSpawned.transform.parent = gameObject.transform;
+
+        if (gameObject.transform.childCount == 0)
+        {
+            EmotePrefab.GetComponentInChildren<SpriteRenderer>().sprite = sprite;
+            GameObject gOSpawned = Instantiate(EmotePrefab, popUpPosition.position, Quaternion.identity) as GameObject;
+            gOSpawned.transform.parent = gameObject.transform;
+        }
+        else
+        {
+            EmotePrefab.GetComponentInChildren<SpriteRenderer>().sprite = sprite;
+            Vector3 randomPos = new Vector3(popUpPosition.transform.position.x + UnityEngine.Random.Range(-0.45f, 0.45f), popUpPosition.transform.position.y + UnityEngine.Random.Range(-0.45f, 0.45f));
+            GameObject gOSpawned = Instantiate(EmotePrefab, randomPos, Quaternion.identity) as GameObject;
+            gOSpawned.transform.parent = gameObject.transform;
+        }
+
     }
 }

@@ -20,6 +20,7 @@ public class Skeleton : MonoBehaviour,IEnemy
     public int MaxHealth { get; set; }
     public int Experience { get; set; }
     public bool CanBeDamaged { get; set; }
+    public bool  playerInAttackRange { get; set; }
     public bool TakesReducedDamage { get; set; }
     public Spawner spawner { get; set; }
     public AudioClip DoDamageSoundEffect { get; set; }
@@ -85,8 +86,8 @@ public class Skeleton : MonoBehaviour,IEnemy
 
     void DropLoot()
     {
-        int numberOfItemsToDrop = UnityEngine.Random.Range(UnityEngine.Random.Range(1, 2), 3);
-        int numberOfGoldec = UnityEngine.Random.Range(UnityEngine.Random.Range(1, 2), 6);
+        int numberOfItemsToDrop = RNGGod.GetNumberOfItemsToDrop();
+        int numberOfGoldec = RNGGod.GetNumberOfGoldec();
 
         if (lootTable!=null)
         {

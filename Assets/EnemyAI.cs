@@ -29,13 +29,14 @@ public class EnemyAI : MonoBehaviour
     bool hasReseted = true;
     bool reachedPlayer;
 
+
     IEnemy thisEnemy;
 
     GameObject player;
 
     void Start()
     {
-        InvokeRepeating("TryFindPlayer", 0, 2f);
+        //    InvokeRepeating("TryFindPlayer", 0, 2f);
         anim = GetComponent<Animator>();
         thisEnemy = GetComponent<IEnemy>();
         seeker = GetComponent<Seeker>();
@@ -80,7 +81,7 @@ public class EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
-
+        TryFindPlayer();
         if (retreatingToStart)
         {
             thisEnemy.TakesReducedDamage = true;
@@ -95,6 +96,7 @@ public class EnemyAI : MonoBehaviour
             {
                 thisEnemy.RegenHealthToMax();
                 thisEnemy.CanBeDamaged = false;
+                hasReseted = true;
             }
         }
         else
@@ -117,8 +119,28 @@ public class EnemyAI : MonoBehaviour
             }
 
         }
-
+        RotateTowardsPlayer();
         CheckIfCanAttack();
+    }
+
+    private void RotateTowardsPlayer()
+    {
+        if (!dead) //dont rotate if dead
+        {
+            if (target != null)
+            {
+                if (target.transform.position.x > transform.position.x)
+                {
+                    transform.localScale = new Vector3(1, 1, 1);
+                }
+                else
+                {
+                    transform.localScale = new Vector3(-1, 1, 1);
+
+                }
+            }
+        }
+
     }
 
     private void CheckIfCanAttack()
@@ -126,7 +148,7 @@ public class EnemyAI : MonoBehaviour
 
         if (lastAttack < attakRate)
         {
-            lastAttack += Time.deltaTime;
+            lastAttack += Time.fixedDeltaTime;
 
         }
         if (lastAttack > attakRate && reachedPlayer && !dead)
@@ -196,7 +218,7 @@ public class EnemyAI : MonoBehaviour
             return;
 
         }
-        else if (currentWayPoint >= path.vectorPath.Count && !retreatingToStart )//reached player/target
+        else if (currentWayPoint >= path.vectorPath.Count && !retreatingToStart  )//reached player/target
         {
             anim.SetBool("walking", false);
             reachedPlayer = true;
@@ -224,18 +246,7 @@ public class EnemyAI : MonoBehaviour
             currentWayPoint++;
         }
 
-        if (!dead) //dont rotate if dead
-        {
-            if (target.transform.position.x > transform.position.x)
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-            }
-            else
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
 
-            }
-        }
     }
 
     public void SetMaximumMovement(float maxMoveRadius, GameObject center)

@@ -15,6 +15,7 @@ public class DummyEnemy : MonoBehaviour, IEnemy
     public bool TakesReducedDamage { get; set; }
     public Spawner spawner { get; set; }
 
+    public bool playerInAttackRange { get; set; }
 
     public AudioClip DoDamageSoundEffect { get; set; }
     public AudioClip MissAttackSoundEffect { get; set; }
@@ -50,6 +51,7 @@ public class DummyEnemy : MonoBehaviour, IEnemy
     {
         ID = 0;
         Name = "Dummy";
+        Experience = 1;
         currentHealth = _maxHealth;
         hp.SetMaxHealth(_maxHealth);
     }

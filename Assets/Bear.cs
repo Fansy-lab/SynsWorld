@@ -22,8 +22,7 @@ public class Bear : MonoBehaviour,IEnemy
     public bool CanBeDamaged { get; set; }
     public bool TakesReducedDamage { get; set; }
     public Spawner spawner { get; set; }
-
-
+    public bool playerInAttackRange { get; set; }
     public AudioClip DoDamageSoundEffect { get; set; }
     public AudioClip MissAttackSoundEffect { get; set; }
 

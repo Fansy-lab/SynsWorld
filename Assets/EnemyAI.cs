@@ -170,9 +170,27 @@ public class EnemyAI : MonoBehaviour
             {
                 if (collider.gameObject.tag == "Player")
                 {
-                    collider.GetComponent<PlayerStats>().TakeDamage(RNGGod.GetSmallRandomDamage());
-                    collider.GetComponent<Animator>().SetTrigger("TakeDamage");
-                    SoundEffectsManager.instance.PlaySound(gameObject.GetComponent<IEnemy>().DoDamageSoundEffect);
+                    PlayerStats playerStats = collider.GetComponent<PlayerStats>();
+                    bool attackMissed =playerStats.DidTheAttackMiss();
+                    if (attackMissed == false)
+                    {
+                        if (playerStats != null)
+                        {
+                            int damageToDo = playerStats.GetDamageAfterArmorReduction(RNGGod.GetSmallRandomDamage());
+                            playerStats.TakeDamage(damageToDo);
+                            collider.GetComponent<Animator>().SetTrigger("TakeDamage");
+                            SoundEffectsManager.instance.PlaySound(gameObject.GetComponent<IEnemy>().DoDamageSoundEffect);
+                        }
+                    }
+                    else
+                    {
+                        Vector3 position = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y + 1);
+                        NumberPopUpManager.Instance.DisplayEvadeText("Evaded", position);
+                        SoundEffectsManager.instance.PlaySound(gameObject.GetComponent<IEnemy>().MissAttackSoundEffect);
+
+                    }
+
+
                 }
             }
         }

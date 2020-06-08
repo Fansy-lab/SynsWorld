@@ -80,6 +80,8 @@ public class InventoryItem
 
                 }
             }
+
+            playerStats.attackSpeed = totalAttackSpeed/175f;
             playerStats.armor = totalArmor;
             playerStats.maxHealth = totalMaxHP +100;
             playerStats.DPS = totalAttack *totalAttackSpeed;

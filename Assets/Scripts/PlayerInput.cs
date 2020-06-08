@@ -11,7 +11,8 @@ public class PlayerInput : MonoBehaviour
     public float arrowForce = 20f;
     public enum lookingAt{ left,right,up,down,none}
     public lookingAt currentlyLookingAt;
-    public float shootRate;
+    public float shootCD;
+    float nextFireTime = 0f;
     public float dashRate;
     public float dashDistance;
     public PlayerStats stats;
@@ -21,7 +22,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] DashBarScript dashSlider;
     [SerializeField] GameObject dashEffect;
 
-    float lastShot = 0f;
+
     float lastDashed = 0f;
     bool canShoot = true;
     bool canDash = true;
@@ -47,7 +48,7 @@ public class PlayerInput : MonoBehaviour
     void Update()
     {
         CheckCanDash();
-        CheckCanShoot();
+
 
         CheckKeys();
         CheckMovement();
@@ -115,10 +116,16 @@ public class PlayerInput : MonoBehaviour
 
     private void CheckAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && stats.learnedToShoot && canShoot )
+        if (Time.time > nextFireTime)
         {
-            Shoot();
+            if (Input.GetKeyDown(KeyCode.Space) && stats.learnedToShoot && canShoot)
+            {
+                Shoot();
+                 nextFireTime = Time.time + shootCD - stats.attackSpeed;
+                print(shootCD - stats.attackSpeed);
+            }
         }
+
     }
 
     public void CheckCanDash()
@@ -140,21 +147,7 @@ public class PlayerInput : MonoBehaviour
         }
 
     }
-    public void CheckCanShoot()
-    {
-        if(lastShot<shootRate)
-            lastShot += Time.deltaTime;
-        if (lastShot > shootRate)
-        {
-            canShoot = true;
 
-        }
-        else
-        {
-            canShoot = false;
-        }
-
-    }
     private void Shoot()
     {
         if (currentlyLookingAt == lookingAt.up)
@@ -194,7 +187,7 @@ public class PlayerInput : MonoBehaviour
         }
         SetArrowDirection();
      //   Invoke("SpawnArrow",0.3f);
-        lastShot = 0;
+
 
     }
 

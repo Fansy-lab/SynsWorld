@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+
 public class NumberPopUpManager : MonoBehaviour
 {
     private static NumberPopUpManager instance;
@@ -79,6 +81,17 @@ public class NumberPopUpManager : MonoBehaviour
 
         GameObject gO = Instantiate(popUp, position, Quaternion.identity) as GameObject;
         gO.GetComponentInChildren<TextMeshPro>().color = Color.white;
+        gO.GetComponentInChildren<TextMeshPro>().text = textToDisplay;
+        Destroy(gO, 1f);
+    }
+
+    internal void DisplayEvadeText(string textToDisplay, Vector3 position)
+    {
+        Vector3 randomizeIntesity = new Vector3(0.15f, 0.0f, 0);
+        position += new Vector3(UnityEngine.Random.Range(-randomizeIntesity.x, randomizeIntesity.x), UnityEngine.Random.Range(-randomizeIntesity.y, randomizeIntesity.y), UnityEngine.Random.Range(-randomizeIntesity.z, randomizeIntesity.z));
+
+        GameObject gO = Instantiate(popUp, position, Quaternion.identity) as GameObject;
+        gO.GetComponentInChildren<TextMeshPro>().color = new Color(0f,162f,207f);
         gO.GetComponentInChildren<TextMeshPro>().text = textToDisplay;
         Destroy(gO, 1f);
     }

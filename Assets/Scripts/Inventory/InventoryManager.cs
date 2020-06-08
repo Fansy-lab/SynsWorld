@@ -545,9 +545,9 @@ public class InventoryManager : MonoBehaviour
                         descriptionText.text += "\r\n HP: -" + healthDiference;
 
                     if (evasionDifference <= 0)
-                        descriptionText.text += "\r\n Evasion HP: +" + Mathf.Abs(evasionDifference);
+                        descriptionText.text += "\r\n Evasion: +" + Mathf.Abs(evasionDifference);
                     else
-                        descriptionText.text += "\r\n Evasion HP: -" + evasionDifference;
+                        descriptionText.text += "\r\n Evasion: -" + evasionDifference;
 
 
 

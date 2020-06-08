@@ -43,6 +43,32 @@ public class LootTable : ScriptableObject
         return null;
     }
 
+    public PhysicalInventoryItem LootRandomItem()
+    {
+        for (int i = 0; i < loots.Length; i++)
+        {
+            float currentProb = UnityEngine.Random.Range(0.0f, 100f);
+
+            if (currentProb <= loots[i].lootChance)
+            {
+                if (loots[i].thisLoot.thisItem.equipableArmoryStats != null)//its armor
+                {
+                    loots[i].thisLoot.thisItem.equipableArmoryStats = RNGGod.GetRandomArmoryStats();
+
+                    return loots[i].thisLoot;
+
+                }
+                else
+                {
+                    loots[i].thisLoot.thisItem.equipableWeaponryStats = RNGGod.GetRandonWeaponStats();
+                    return loots[i].thisLoot;
+
+                }
+            }
+        }
+        return null;
+    }
+
     internal PhysicalInventoryItem LootGold()
     {
         foreach (var item in loots)
@@ -57,7 +83,7 @@ public class LootTable : ScriptableObject
                 }
 
             }
-           
+
         }
         return null;
     }

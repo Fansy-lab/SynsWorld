@@ -46,8 +46,8 @@ MonoBehaviour:
   pickGoalData:
     idPickGoal: 0
     Description: Find a broze key
-    Completed: 0
-    CurrentAmmount: 0
+    Completed: 1
+    CurrentAmmount: 1
     RequiredAmmount: 1
     ItemID: 0
     ItemName: Bronze key

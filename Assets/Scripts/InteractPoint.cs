@@ -125,10 +125,11 @@ public class InteractPoint : MonoBehaviour
             //items loot
             for (int i = 0; i < itemsToGet; i++)
             {
-                PhysicalInventoryItem item = currentInteractableObjectScript.loot.LootItem();
+                PhysicalInventoryItem item = currentInteractableObjectScript.loot.LootRandomItem();
                 if (item != null)
                 {
-                    item.AddItemToInventory();
+                    Instantiate(item, transform.parent.transform.position, Quaternion.identity);
+
                 }
             }
 

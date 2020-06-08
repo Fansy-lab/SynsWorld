@@ -9,16 +9,20 @@ public class RNGGod
 
     public static EquipableWeaponryStats GetRandonWeaponStats()
     {
+        UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
+
         EquipableWeaponryStats toReturn = new EquipableWeaponryStats();
         toReturn.AttackMinDamage = UnityEngine.Random.Range(1, 3);
         toReturn.AttackMaxDamage = UnityEngine.Random.Range(3, 8);
-        toReturn.AttackSpeed = UnityEngine.Random.Range(5, 10);
+        toReturn.AttackSpeed = UnityEngine.Random.Range(2,8);
 
         return toReturn;
     }
 
     public static EquipableArmoryStats GetRandomArmoryStats()
     {
+        UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
+
         EquipableArmoryStats toReturn = new EquipableArmoryStats();
 
         toReturn.ArmorAmmount = UnityEngine.Random.Range(1, 15);

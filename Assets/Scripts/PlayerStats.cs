@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
 
     public int DPS;
-
+    public float attackSpeed;
     public int maxHealth;
     public int armor;
     public int evasion;
@@ -66,7 +66,11 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+
+        int damageAfterArmorReduction = GetDamageAfterArmorReduction(damage);
+
+
+        currentHealth -= damageAfterArmorReduction;
         ShowPopUpDamageTaken(damage);
         hpBar.SetHealth(currentHealth);
 
@@ -74,6 +78,14 @@ public class PlayerStats : MonoBehaviour
         {
             PlayerDie();
         }
+    }
+
+    public int GetDamageAfterArmorReduction(int damage)
+    {
+
+        float damageCalculated =(float)damage * (100f / (100f + (float)armor));
+
+        return Convert.ToInt32(damageCalculated);
     }
 
     private void ShowPopUpDamageTaken(int damage)
@@ -141,5 +153,15 @@ public class PlayerStats : MonoBehaviour
     internal void RecalculateMaxHP()
     {
         hpBar.RecalculateMaxHP(maxHealth);
+    }
+
+    internal bool DidTheAttackMiss()
+    {
+        var chanceToHit =UnityEngine.Random.Range(0f, 100f);
+        if(chanceToHit>= (float)evasion/3)
+        {
+            return false;
+        }
+        return true;
     }
 }

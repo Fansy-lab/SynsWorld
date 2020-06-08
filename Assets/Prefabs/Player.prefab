@@ -315,7 +315,7 @@ MonoBehaviour:
     type: 3}
   arrowForce: 15
   currentlyLookingAt: 0
-  shootRate: 0.33
+  shootCD: 0.55
   dashRate: 2
   dashDistance: 2
   stats: {fileID: 0}
@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DPS: 0
+  attackSpeed: 0
   maxHealth: 100
   armor: 0
   evasion: 0

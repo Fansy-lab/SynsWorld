@@ -159,8 +159,18 @@ public class StartMenu : MonoBehaviour
         levelSystem.CalculateVariables();
         Loadinventories();
         LoadQuests();
+        LoadNPCs();
         CloseLoadMenuAndremoveChildren();
         gameObject.SetActive(false);
+    }
+
+    private void LoadNPCs()
+    {
+        NPC[] npcs = GameObject.FindObjectsOfType<NPC>();
+        foreach (var item in npcs)
+        {
+            item.UnsubscribFromEvents();
+        }
     }
 
     private void LoadQuests()

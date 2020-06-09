@@ -400,6 +400,7 @@ public class Dialogue : MonoBehaviour
 
 
             UIManager.Instance.questsService.StartQuest(Quest,true);
+            GlobalEvents.AcceptedQuest(Quest);
         }
         Destroy(gameObject);
     }

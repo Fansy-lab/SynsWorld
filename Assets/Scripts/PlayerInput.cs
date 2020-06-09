@@ -122,7 +122,6 @@ public class PlayerInput : MonoBehaviour
             {
                 Shoot();
                  nextFireTime = Time.time + shootCD - stats.attackSpeed;
-                print(shootCD - stats.attackSpeed);
             }
         }
 

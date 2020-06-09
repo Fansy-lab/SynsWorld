@@ -157,6 +157,7 @@ public class Quest : MonoBehaviour
 
         GiveReward(quest);
         UIManager.Instance.questsService.CompletedQuest(quest);
+        GlobalEvents.QuestCompleted(quest);
         UnsubscribeFromEvents();
 
     }

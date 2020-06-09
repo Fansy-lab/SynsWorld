@@ -8,7 +8,8 @@ public class GlobalEvents : MonoBehaviour
     public static event Action<IEnemy> OnEnemyDeath;
     public static event Action<KillGoal> OnKillGoalCompleted;
     public static event Action<PickGoal> OnPickedGoalCompleted;
-
+    public static event Action<Quest> OnAcceptedQuest;
+    public static event Action<Quest> OnQuestCompleted;
     public static event Action<InventoryItem> OnPickedItem;
     public static event Action<ReachGoal> OnReachedGoal;
     public static event Action<int> OnGainedExperience;
@@ -41,6 +42,14 @@ public class GlobalEvents : MonoBehaviour
     public static void GainedExperience(int experienceGained)
     {
         OnGainedExperience?.Invoke(experienceGained);
+    }
+    public static void AcceptedQuest(Quest questAccepted)
+    {
+        OnAcceptedQuest(questAccepted);
+    }
+    public static void QuestCompleted(Quest questCompleted)
+    {
+        OnQuestCompleted(questCompleted);
     }
 
 }

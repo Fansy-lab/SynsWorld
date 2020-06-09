@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4820140451320989913}
   - component: {fileID: 4820140451320990503}
   m_Layer: 10
-  m_Name: RandomCitizen
+  m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,6 +64,7 @@ Transform:
   m_Children:
   - {fileID: 4820140451922135163}
   - {fileID: 90677535}
+  - {fileID: 554247734811727097}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -104,7 +105,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1471689167
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -5261010260359625461, guid: fa9b9031c1af6435fa02c3a1bf4eb27c,
     type: 3}
@@ -130,15 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14942571c661fca4ab2e6d12d4dfafb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpriteToReplace: {fileID: 0}
+  SpriteToPlaceOnLeaveTrigger: {fileID: 0}
   justDestroyTile: 0
-  replaceTileWithEmpty: 0
-  replaceTile: 0
+  replaceTile: {fileID: 0}
+  isLoot: 0
+  loot: {fileID: 0}
+  giveFixedItems: []
   alreadyInteracted: 0
   TriggersDialogueOnLook: 0
   TriggersDialogueOnClick: 1
-  methodToCallInGm: 
-  parameters: []
+  soundEffectOnInteract: {fileID: 0}
   Quests: []
   selectedQuest: {fileID: 0}
   popUpToDisplayOverPlayer: {fileID: 5559745257100799005, guid: fe8fa90c1d4913141a7504ddfbda4db6,
@@ -146,6 +148,9 @@ MonoBehaviour:
   tileName: Ivan
   SimplePopUpTEXT:
   - I like turtles
+  isInfoBubble: 0
+  methodToCallInGmOnFirstClick: 
+  parameters: []
   isNPC: 1
   displayOptions: []
 --- !u!114 &4820140451320989912
@@ -160,6 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6b382a975484e4888cabf1246ebbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasQuestsSprite: {fileID: 21300000, guid: 40fb6d4f36ef63a43ac1474fb528ba69, type: 3}
+  hasOnGoingQuestsSprite: {fileID: 21300000, guid: 69462af1a1911b8458f8e2e285bcb014,
+    type: 3}
+  hasQuestsLocation: {fileID: 9208905031652203593}
   popUpLocation: {fileID: 4820140451922135160}
   popUpDialogueLocation: {fileID: 90677534}
 --- !u!58 &4820140451320989913
@@ -195,7 +204,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
+    oldSize: {x: 1.5609756, y: 1.5609756}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -228,9 +237,39 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4820140451922135160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.393, y: 0.936, z: 0}
+  m_LocalPosition: {x: 0.593, y: 0.692, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4820140451320990501}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9208905031652203593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554247734811727097}
+  m_Layer: 10
+  m_Name: popUpHasQuests
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &554247734811727097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208905031652203593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.756, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4820140451320990501}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

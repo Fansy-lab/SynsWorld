@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -94,7 +95,28 @@ MonoBehaviour:
   itemNameText: {fileID: 255825267630754641}
   itemNumberText: {fileID: 255825267284183548}
   itemImage: {fileID: 255825268666664077}
-  thisItem: {fileID: 0}
+  thisItem:
+    itemName: 
+    itemDescription: 
+    itemImage: {fileID: 0}
+    numberHeld: 0
+    slot: 0
+    usable: 0
+    equipable: 0
+    unique: 0
+    isTrash: 0
+    isCurrency: 0
+    currencyAmmount: 0
+    equipableArmoryStats:
+      ArmorAmmount: 0
+      HealthAmmount: 0
+      EvasionAmmount: 0
+    equipableWeaponryStats:
+      AttackMinDamage: 0
+      AttackMaxDamage: 0
+      AttackSpeed: 0
+    usableStats:
+      HPRestoreAmmount: 0
   thisManager: {fileID: 0}
   toolTip: {fileID: 0}
 --- !u!114 &449706770
@@ -118,9 +140,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+    m_HighlightedColor: {r: 0.9433962, g: 0.9402988, b: 0.50284797, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -230,6 +252,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -386,6 +409,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -542,6 +566,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -7,20 +7,21 @@ public class PrivateChest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerStats>() != null)
         {
-            GM.Instance.CloseInventoryAndPrivateChest();
+            if(GM.Instance.PrivateChestInventoryUI.activeInHierarchy)
+                GM.Instance.CloseInventoryAndPrivateChest();
         }
     }
 }

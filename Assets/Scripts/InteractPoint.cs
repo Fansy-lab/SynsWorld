@@ -35,19 +35,30 @@ public class InteractPoint : MonoBehaviour
 
     private void CheckInteractableProperties()
     {
-
-        if (currentInteractableObjectScript)
+        bool meetsRequirements = false;
+        if (currentInteractableObjectScript.requirementsToComplyInOrderToInteract ==null)
         {
-
-
-
-            if (currentInteractableObjectScript.alreadyInteracted == false)
-            {
-                DoInteractEvents();
-            }
-
+            meetsRequirements = true;
+        }
+        else
+        {
+            meetsRequirements = RequirementsManager.Instance.EvaluateIfMeetsRequirement(currentInteractableObjectScript.requirementsToComplyInOrderToInteract);
+        }
+        if (meetsRequirements)
+        {
             if (currentInteractableObjectScript)
-                currentInteractableObjectScript.alreadyInteracted = true;
+            {
+
+
+
+                if (currentInteractableObjectScript.alreadyInteracted == false)
+                {
+                    DoInteractEvents();
+                }
+
+                if (currentInteractableObjectScript)
+                    currentInteractableObjectScript.alreadyInteracted = true;
+            }
         }
 
 

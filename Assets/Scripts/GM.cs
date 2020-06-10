@@ -314,8 +314,9 @@ public class GM : MonoBehaviour
 
     public void EnableShootingAndEnableDummies()
     {
+
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-         player.GetComponent<PlayerStats>().EnableShooting();
+        player.GetComponent<PlayerStats>().EnableShooting();
         DummyEnemy[] dummies = GameObject.FindObjectsOfType<DummyEnemy>();
         foreach (var item in dummies)
         {

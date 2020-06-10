@@ -28,20 +28,20 @@ public class InventoryManager : MonoBehaviour
     public PlayerInventory privateChestInventory;
     public ToolTip toolTip;
 
-    [SerializeField] private GameObject headSlot;
-    [SerializeField] private GameObject chestSlot;
-    [SerializeField] private GameObject leggingsSlot;
-    [SerializeField] private GameObject weaponSlot;
-    [SerializeField] private GameObject glovesSlot;
-    [SerializeField] private GameObject bootsSlot;
+    [SerializeField] public GameObject headSlot;
+    [SerializeField] public GameObject chestSlot;
+    [SerializeField] public GameObject leggingsSlot;
+    [SerializeField] public GameObject weaponSlot;
+    [SerializeField] public GameObject glovesSlot;
+    [SerializeField] public GameObject bootsSlot;
 
     [SerializeField] private TextMeshProUGUI GoldText;
 
 
 
     [SerializeField] private GameObject blankInventorySlot;
-    [SerializeField] private GameObject inventoryPanel;
-    [SerializeField] private GameObject PrivateChestPanel;
+    [SerializeField] public GameObject inventoryPanel;
+    [SerializeField] public GameObject PrivateChestPanel;
 
     [SerializeField] private TextMeshProUGUI maxItemsText;
     [SerializeField] private TextMeshProUGUI maxItemsTextPrivateChest;
@@ -150,6 +150,7 @@ public class InventoryManager : MonoBehaviour
         {
             currentItemSelectedInEquipment = thisItem;
             unEquipButton.GetComponent<Button>().interactable = true;
+            unEquipButton.GetComponent<Button>().onClick.RemoveAllListeners();
             unEquipButton.GetComponent<Button>().onClick.AddListener(() => UnEquipButtonPressed(slot));
         }
     }
@@ -689,6 +690,7 @@ public class InventoryManager : MonoBehaviour
 
 
             unEquipButton.GetComponent<Button>().interactable = false;
+            InventorySlot.ResetButton(slot.transform);
             currentItemSelectedInEquipment = null;
         }
         UpdatePlayerData(null);

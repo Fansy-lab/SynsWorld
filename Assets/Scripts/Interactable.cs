@@ -34,6 +34,7 @@ public class Interactable : MonoBehaviour
     public bool isInfoBubble=false;
 
 
+    public Requirements requirementsToComplyInOrderToInteract;
     public string methodToCallInGmOnFirstClick;
     public List<string> parameters;
 

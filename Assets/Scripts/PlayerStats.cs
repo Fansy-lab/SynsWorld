@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
 
     public int DPS;
-    public float attackSpeed;
+    public float  attackSpeed;
     public int maxHealth;
     public int armor;
     public int evasion;

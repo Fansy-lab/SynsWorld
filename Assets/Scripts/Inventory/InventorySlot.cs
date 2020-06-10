@@ -36,24 +36,58 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler,IPointerExitHan
 
     public void ClickedOnInInventory()
     {
-        if (thisItem.itemName != "")//if is not null
+        if (thisItem != null && thisItem.itemName != "")//if is not null
         {
             thisManager.SetupDifferences(thisItem);
 
+            foreach (Transform item in thisManager.inventoryPanel.transform)
+            {
+                ResetButton(item);
+            }
+            SelectThisButton();
         }
     }
+
+    public static void ResetButton(Transform item)
+    {
+        Button b = item.GetComponent<Button>();
+        ColorBlock cb = b.colors;
+        cb.normalColor = Color.white;
+        b.colors = cb;
+    }
+
+    private void SelectThisButton()
+    {
+        Button thisBUtton = GetComponent<Button>();
+        ColorBlock selectedColor = thisBUtton.colors;
+        selectedColor.normalColor = Color.grey;
+        thisBUtton.colors = selectedColor;
+    }
+
     public void ClickedOnInPrivateChest()
     {
-        if (thisItem.itemName != "")//if is not null
+        if (thisItem != null && thisItem.itemName != "")//if is not null
         {
             thisManager.SetupToTransferToIventory(thisItem);
+
+
+
         }
     }
     public void ClickedOnInEquipment()
     {
-        if (thisItem.itemName !="")//if is not null
+        if (thisItem!=null &&thisItem.itemName !="")//if is not null
         {
             thisManager.SetupUnEquipButton(thisItem,this);
+
+            ResetButton(thisManager.headSlot.transform);
+            ResetButton(thisManager.chestSlot.transform);
+            ResetButton(thisManager.glovesSlot.transform);
+            ResetButton(thisManager.weaponSlot.transform);
+            ResetButton(thisManager.leggingsSlot.transform);
+            ResetButton(thisManager.bootsSlot.transform);
+
+            SelectThisButton();
         }
     }
 

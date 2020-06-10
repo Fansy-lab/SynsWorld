@@ -33,30 +33,44 @@ public class NPC : MonoBehaviour
     public void PopQuestsExclamation(Quest questAdded)
     {
         if (interactable == null) return;
-        if (interactable.displayOptions.Count > 0)
+
+        bool showYellowExclamation = false;
+
+        int npcQuests = 0;
+        int questsDoneThisNPC = 0;
+        foreach (var item in interactable.displayOptions)
         {
-            foreach (var item in interactable.displayOptions)
+            if (item.quest != null)
             {
-                if (item.quest != null)
+                npcQuests++;
+                if (UIManager.Instance.questsService.currentQuests.Contains(item.quest)==false && UIManager.Instance.questsService.completedQuests.Contains(item.quest)==false)
                 {
-
-                    if (UIManager.Instance.questsService.currentQuests.Contains(item.quest) == true)
-                    {
-                        ShowQuestsGoingOn();
-                    }
-                    else if (UIManager.Instance.questsService.completedQuests.Contains(item.quest) == false)
-                    {
-                        ShowQuestsAvaible();
-                    }
-                    else
-                    {
-                        RemoveQustsPopUp();
-                    }
+                    showYellowExclamation = true;
+                    break;
                 }
-
-
+                if (UIManager.Instance.questsService.completedQuests.Contains(item.quest))
+                {
+                    questsDoneThisNPC++;
+                }
             }
+
         }
+
+        if (showYellowExclamation)
+        {
+             ShowQuestsAvaible();
+
+        }
+        else if (npcQuests == questsDoneThisNPC && npcQuests>0)
+        {
+            RemoveQustsPopUp();
+        }
+        else if(npcQuests>0)
+        {
+            ShowQuestsGoingOn();
+        }
+
+
     }
 
     private void RemoveQustsPopUp()

@@ -781,7 +781,7 @@ public class InventoryManager : MonoBehaviour
         UpdateSlotsTaken();
 
 
-        if (PrivateChestPanel.activeInHierarchy)
+        if (GM.Instance.PrivateChestInventoryUI.activeInHierarchy)
         {
             ClearPrivateChestInventorySlots();
             UpdatePrivateChestUI();

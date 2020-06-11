@@ -11051,6 +11051,7 @@ MonoBehaviour:
     type: 3}
   inventoryPanel: {fileID: 813294948}
   PrivateChestPanel: {fileID: 2018167234}
+  PrivateChestUI: {fileID: 696704734}
   maxItemsText: {fileID: 492721184}
   maxItemsTextPrivateChest: {fileID: 1186336573}
   descriptionText: {fileID: 1629093591}

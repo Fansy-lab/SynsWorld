@@ -356,8 +356,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01256907, y: -0.15118122}
-  m_Size: {x: 0.42061496, y: 1.0008183}
+  m_Offset: {x: -0.01256907, y: -0.06949997}
+  m_Size: {x: 0.42061496, y: 0.83745575}
   m_Direction: 0
 --- !u!114 &114614893
 MonoBehaviour:
@@ -461,6 +461,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -736,6 +737,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

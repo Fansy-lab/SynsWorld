@@ -55,9 +55,9 @@ MonoBehaviour:
   ExpReward: 5
   GoldReward: 10
   ItemReward: 
-  IsCompleted: 0
+  IsCompleted: 1
   StartQuestDialogue:
-  - Yo, I see you need a bow and a quiver...
+  - Yo, I see you need a better bow and a quiver...
   - Get'em from the rack down below and show me what you can do by taking down the
     2 dummies here.
   WhileOnQuestDialogue:

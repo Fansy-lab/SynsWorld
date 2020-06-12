@@ -28,8 +28,6 @@ public class EnemyAI : MonoBehaviour
     bool playerInsideMovingRange;
     bool hasReseted = true;
     bool reachedPlayer;
-
-
     IEnemy thisEnemy;
 
     GameObject player;

@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4479385225269697262
 Transform:
   m_ObjectHideFlags: 0
@@ -175,6 +175,8 @@ MonoBehaviour:
   hp: {fileID: 3633420905502906803}
   damagePopUp: {fileID: 7679418662773342743, guid: 7fd747da3f2d7484ab4ea141051b5fcf,
     type: 3}
+  damageSound: {fileID: 0}
+  missAttackSound: {fileID: 0}
   MylootTable: {fileID: 11400000, guid: 3bf656ac968d34ddab6668e640e8d940, type: 2}
 --- !u!58 &4202795399877313841
 CircleCollider2D:

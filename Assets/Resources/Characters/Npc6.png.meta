@@ -1,0 +1,6533 @@
+fileFormatVersion: 2
+guid: 278fa502c3d798f43a5ed54569580117
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9185397852184772472
+    second: Rowan_0
+  - first:
+      213: -3966931196583433128
+    second: Rowan_1
+  - first:
+      213: 3279665258264527547
+    second: Rowan_2
+  - first:
+      213: 2325857568734575551
+    second: Rowan_3
+  - first:
+      213: 6404192183971334591
+    second: Rowan_4
+  - first:
+      213: -5600730156144462449
+    second: Rowan_5
+  - first:
+      213: -7633774331560357253
+    second: Rowan_6
+  - first:
+      213: 1143362969301834971
+    second: Rowan_7
+  - first:
+      213: 1582651513884960275
+    second: Rowan_8
+  - first:
+      213: 3668469394701944520
+    second: Rowan_9
+  - first:
+      213: 4055812308720207244
+    second: Rowan_10
+  - first:
+      213: -1396470253286230408
+    second: Rowan_11
+  - first:
+      213: 3113374918556272266
+    second: Rowan_12
+  - first:
+      213: -4168819000013262046
+    second: Rowan_13
+  - first:
+      213: -3019242402053446591
+    second: Rowan_14
+  - first:
+      213: -4696129099012039558
+    second: Rowan_15
+  - first:
+      213: -843632970336471073
+    second: Rowan_16
+  - first:
+      213: -5860315832859883416
+    second: Rowan_17
+  - first:
+      213: -7317160036109699678
+    second: Rowan_18
+  - first:
+      213: 1816166097174815762
+    second: Rowan_19
+  - first:
+      213: -2606545037045363521
+    second: Rowan_20
+  - first:
+      213: 6371175612037442210
+    second: Rowan_21
+  - first:
+      213: 8815381535986106036
+    second: Rowan_22
+  - first:
+      213: -8253047105858557423
+    second: Rowan_23
+  - first:
+      213: 3467054283961899320
+    second: Rowan_24
+  - first:
+      213: -3907123204328871048
+    second: Rowan_25
+  - first:
+      213: 1352353379609692084
+    second: Rowan_26
+  - first:
+      213: -1271274890383774695
+    second: Rowan_27
+  - first:
+      213: 3614498346761722645
+    second: Rowan_28
+  - first:
+      213: -8033519849588141894
+    second: Rowan_29
+  - first:
+      213: -595181225456755469
+    second: Rowan_30
+  - first:
+      213: -1383422346181194053
+    second: Rowan_31
+  - first:
+      213: 8665129294442603110
+    second: Rowan_32
+  - first:
+      213: 7908496370254042163
+    second: Rowan_33
+  - first:
+      213: 2018922476763495109
+    second: Rowan_34
+  - first:
+      213: -1675225064680307304
+    second: Rowan_35
+  - first:
+      213: -3501728349013071477
+    second: Rowan_36
+  - first:
+      213: -994216600430213537
+    second: Rowan_37
+  - first:
+      213: 6483998954270395383
+    second: Rowan_38
+  - first:
+      213: -5016358196572308318
+    second: Rowan_39
+  - first:
+      213: -1184142614207734554
+    second: Rowan_40
+  - first:
+      213: 6107929942838867383
+    second: Rowan_41
+  - first:
+      213: -3101072840570137855
+    second: Rowan_42
+  - first:
+      213: -1975788739980424230
+    second: Rowan_43
+  - first:
+      213: 980593645763542261
+    second: Rowan_44
+  - first:
+      213: -5059999150675440130
+    second: Rowan_45
+  - first:
+      213: -4557115275517956353
+    second: Rowan_46
+  - first:
+      213: -6809330173649741785
+    second: Rowan_47
+  - first:
+      213: -4950432157941950337
+    second: Rowan_48
+  - first:
+      213: 4886694285033719379
+    second: Rowan_49
+  - first:
+      213: 5096568552289597614
+    second: Rowan_50
+  - first:
+      213: -358301188233402786
+    second: Rowan_51
+  - first:
+      213: 4248250286210578804
+    second: Rowan_52
+  - first:
+      213: -5459887015294165581
+    second: Rowan_53
+  - first:
+      213: -5887612457342461551
+    second: Rowan_54
+  - first:
+      213: 1500532938968669427
+    second: Rowan_55
+  - first:
+      213: 3164818143566741466
+    second: Rowan_56
+  - first:
+      213: 3233720325362827927
+    second: Rowan_57
+  - first:
+      213: 4775012379561739753
+    second: Rowan_58
+  - first:
+      213: -2133704612568375741
+    second: Rowan_59
+  - first:
+      213: 7304989603853017333
+    second: Rowan_60
+  - first:
+      213: 4829655617987038149
+    second: Rowan_61
+  - first:
+      213: -6319225944017853565
+    second: Rowan_62
+  - first:
+      213: 7737019126232207403
+    second: Rowan_63
+  - first:
+      213: 7413799891189130811
+    second: Rowan_64
+  - first:
+      213: -6375122071632639878
+    second: Rowan_65
+  - first:
+      213: 7038555115956640981
+    second: Rowan_66
+  - first:
+      213: 6981066095823893220
+    second: Rowan_67
+  - first:
+      213: -5842731154221560523
+    second: Rowan_68
+  - first:
+      213: 8804421589910009351
+    second: Rowan_69
+  - first:
+      213: -5561505360824843666
+    second: Rowan_70
+  - first:
+      213: -1864961939802769537
+    second: Rowan_71
+  - first:
+      213: 3586528208703399670
+    second: Rowan_72
+  - first:
+      213: 4972983608051752794
+    second: Rowan_73
+  - first:
+      213: -4391211403614311147
+    second: Rowan_74
+  - first:
+      213: 8494630804945715189
+    second: Rowan_75
+  - first:
+      213: 4357315104354788599
+    second: Rowan_76
+  - first:
+      213: -4405914872006767231
+    second: Rowan_77
+  - first:
+      213: -3444131244766966977
+    second: Rowan_78
+  - first:
+      213: -3968782132780248038
+    second: Rowan_79
+  - first:
+      213: -7939675152089138123
+    second: Rowan_80
+  - first:
+      213: 2390708804529128099
+    second: Rowan_81
+  - first:
+      213: -4618180581402568039
+    second: Rowan_82
+  - first:
+      213: 3812724982474567592
+    second: Rowan_83
+  - first:
+      213: -4642035872188020107
+    second: Rowan_84
+  - first:
+      213: 354928122197661884
+    second: Rowan_85
+  - first:
+      213: 6978192832287535459
+    second: Rowan_86
+  - first:
+      213: 7828687525928073249
+    second: Rowan_87
+  - first:
+      213: -5769827438542193044
+    second: Rowan_88
+  - first:
+      213: 7817909327122948842
+    second: Rowan_89
+  - first:
+      213: -2642725330335798942
+    second: Rowan_90
+  - first:
+      213: 7838750019063473575
+    second: Rowan_91
+  - first:
+      213: -1522040315035033926
+    second: Rowan_92
+  - first:
+      213: 5921612250075626701
+    second: Rowan_93
+  - first:
+      213: -8385786410188838868
+    second: Rowan_94
+  - first:
+      213: -8657758628407622379
+    second: Rowan_95
+  - first:
+      213: 1886272019551933638
+    second: Rowan_96
+  - first:
+      213: -8398163151383178641
+    second: Rowan_97
+  - first:
+      213: -344806943648911609
+    second: Rowan_98
+  - first:
+      213: 1291144044166096186
+    second: Rowan_99
+  - first:
+      213: -289134992023641364
+    second: Rowan_100
+  - first:
+      213: 9120208352859489827
+    second: Rowan_101
+  - first:
+      213: 2998224051613304900
+    second: Rowan_102
+  - first:
+      213: 7734506048522413078
+    second: Rowan_103
+  - first:
+      213: 3228025563595208731
+    second: Rowan_104
+  - first:
+      213: 296337200190035823
+    second: Rowan_105
+  - first:
+      213: -231992590622057603
+    second: Rowan_106
+  - first:
+      213: -1027897811619126013
+    second: Rowan_107
+  - first:
+      213: 5373721262924385908
+    second: Rowan_108
+  - first:
+      213: -6361569382519750709
+    second: Rowan_109
+  - first:
+      213: -8815893311263644154
+    second: Rowan_110
+  - first:
+      213: -1648391901185008400
+    second: Rowan_111
+  - first:
+      213: -6651427916971872698
+    second: Rowan_112
+  - first:
+      213: -1118787130020843588
+    second: Rowan_113
+  - first:
+      213: 3120939730112378053
+    second: Rowan_114
+  - first:
+      213: 4751010182112958040
+    second: Rowan_115
+  - first:
+      213: -6448264223098139103
+    second: Rowan_116
+  - first:
+      213: -798982046232662227
+    second: Rowan_117
+  - first:
+      213: 756964606026238741
+    second: Rowan_118
+  - first:
+      213: -7650074101844827172
+    second: Rowan_119
+  - first:
+      213: -2028410931046660348
+    second: Rowan_120
+  - first:
+      213: -4329877775055667431
+    second: Rowan_121
+  - first:
+      213: -3608707988083647286
+    second: Rowan_122
+  - first:
+      213: -3274075064198279571
+    second: Rowan_123
+  - first:
+      213: 7466795645693884540
+    second: Rowan_124
+  - first:
+      213: 4764280549579426677
+    second: Rowan_125
+  - first:
+      213: -3190783911665198121
+    second: Rowan_126
+  - first:
+      213: -8993094643647407830
+    second: Rowan_127
+  - first:
+      213: 1406605478891759459
+    second: Rowan_128
+  - first:
+      213: 3275791193208143428
+    second: Rowan_129
+  - first:
+      213: 8726730466466876665
+    second: Rowan_130
+  - first:
+      213: -4542865051596302607
+    second: Rowan_131
+  - first:
+      213: 6333271257860627276
+    second: Rowan_132
+  - first:
+      213: 1091873589218193393
+    second: Rowan_133
+  - first:
+      213: -7620130361612922542
+    second: Rowan_134
+  - first:
+      213: 2274485874159048753
+    second: Rowan_135
+  - first:
+      213: -9135869922695411901
+    second: Rowan_136
+  - first:
+      213: 6558678195189541647
+    second: Rowan_137
+  - first:
+      213: -1013119776883877839
+    second: Rowan_138
+  - first:
+      213: 4346910143205205093
+    second: Rowan_139
+  - first:
+      213: -1015045865869145718
+    second: Rowan_140
+  - first:
+      213: -920089680488486103
+    second: Rowan_141
+  - first:
+      213: -5632696095277837747
+    second: Rowan_142
+  - first:
+      213: 8820222625312968295
+    second: Rowan_143
+  - first:
+      213: 6310411094286417990
+    second: Rowan_144
+  - first:
+      213: 2568274520771378390
+    second: Rowan_145
+  - first:
+      213: -8669958554875768044
+    second: Rowan_146
+  - first:
+      213: 4917936375162048949
+    second: Rowan_147
+  - first:
+      213: 68435384214816477
+    second: Rowan_148
+  - first:
+      213: -1811822210870425967
+    second: Rowan_149
+  - first:
+      213: 6790676085514543060
+    second: Rowan_150
+  - first:
+      213: -567127223892443476
+    second: Rowan_151
+  - first:
+      213: -2032945607601804677
+    second: Rowan_152
+  - first:
+      213: -3061139184562826866
+    second: Rowan_153
+  - first:
+      213: 629822280681990783
+    second: Rowan_154
+  - first:
+      213: 7034684570669152490
+    second: Rowan_155
+  - first:
+      213: -3206054500242243670
+    second: Rowan_156
+  - first:
+      213: -1589734851234880078
+    second: Rowan_157
+  - first:
+      213: -7890019510810028771
+    second: Rowan_158
+  - first:
+      213: -8044783341492798214
+    second: Rowan_159
+  - first:
+      213: 6387948968542754038
+    second: Rowan_160
+  - first:
+      213: -4505563114615222338
+    second: Rowan_161
+  - first:
+      213: -8556170358056774225
+    second: Rowan_162
+  - first:
+      213: -360092248911321
+    second: Rowan_163
+  - first:
+      213: 1533490379509983154
+    second: Rowan_164
+  - first:
+      213: -6271538204814529001
+    second: Rowan_165
+  - first:
+      213: -145116005274190543
+    second: Rowan_166
+  - first:
+      213: 5400096859852143104
+    second: Rowan_167
+  - first:
+      213: 5556246912117812683
+    second: Rowan_168
+  - first:
+      213: 3673736852823509712
+    second: Rowan_169
+  - first:
+      213: -8157740347487336261
+    second: Rowan_170
+  - first:
+      213: -6410617634282223535
+    second: Rowan_171
+  - first:
+      213: -5113137948137566215
+    second: Rowan_172
+  - first:
+      213: -2910354510305168762
+    second: Rowan_173
+  - first:
+      213: -8266252344064447060
+    second: Rowan_174
+  - first:
+      213: -4688272953786856502
+    second: Rowan_175
+  - first:
+      213: -8826875600688807074
+    second: Rowan_176
+  - first:
+      213: 5216966196460483820
+    second: Rowan_177
+  - first:
+      213: 6522296733138508933
+    second: Rowan_178
+  - first:
+      213: -6677948744956900868
+    second: Rowan_179
+  - first:
+      213: 838994490098335484
+    second: Rowan_180
+  - first:
+      213: -1451437251989697825
+    second: Rowan_181
+  - first:
+      213: 8411504261855388057
+    second: Rowan_182
+  - first:
+      213: 4762885706655841389
+    second: Rowan_183
+  - first:
+      213: 1639549590410869782
+    second: Rowan_184
+  - first:
+      213: -1816677819841811669
+    second: Rowan_185
+  - first:
+      213: -5573276798350017075
+    second: Rowan_186
+  - first:
+      213: -6353358478515413758
+    second: Rowan_187
+  - first:
+      213: -7263182892138655715
+    second: Rowan_188
+  - first:
+      213: -3113994918616286902
+    second: Rowan_189
+  - first:
+      213: -414430377597758641
+    second: Rowan_190
+  - first:
+      213: 1027159818804957857
+    second: Rowan_191
+  - first:
+      213: -7663730034531526733
+    second: Rowan_192
+  - first:
+      213: 5117140141049970747
+    second: Rowan_193
+  - first:
+      213: -1497639368941476674
+    second: Rowan_194
+  - first:
+      213: -259637214508023301
+    second: Rowan_195
+  - first:
+      213: 400244517819456552
+    second: Rowan_196
+  - first:
+      213: -7457689531096469604
+    second: Rowan_197
+  - first:
+      213: 3226496139024789119
+    second: Rowan_198
+  - first:
+      213: -3597699563307240832
+    second: Rowan_199
+  - first:
+      213: -3838941131421601875
+    second: Rowan_200
+  - first:
+      213: -608905632535865487
+    second: Rowan_201
+  - first:
+      213: -3972548424399489930
+    second: Rowan_202
+  - first:
+      213: 5652980636579030697
+    second: Rowan_203
+  - first:
+      213: 6711106501782489493
+    second: Rowan_204
+  - first:
+      213: -4129599818128705949
+    second: Rowan_205
+  - first:
+      213: 6124153046662298541
+    second: Rowan_206
+  - first:
+      213: -6218552959279755822
+    second: Rowan_207
+  - first:
+      213: 9078475730299090611
+    second: Rowan_208
+  - first:
+      213: 4328379292749438882
+    second: Rowan_209
+  - first:
+      213: 3695087797036543772
+    second: Rowan_210
+  - first:
+      213: 5477440774138666640
+    second: Rowan_211
+  - first:
+      213: -5420479074136041274
+    second: Rowan_212
+  - first:
+      213: 1235218608419972755
+    second: Rowan_213
+  - first:
+      213: -6668399972614947377
+    second: Rowan_214
+  - first:
+      213: -963857676372016113
+    second: Rowan_215
+  - first:
+      213: -2717393578948736494
+    second: Rowan_216
+  - first:
+      213: 1474483256335624620
+    second: Rowan_217
+  - first:
+      213: -5524645678514559375
+    second: Rowan_218
+  - first:
+      213: -3186618825324524141
+    second: Rowan_219
+  - first:
+      213: 7517722425585650716
+    second: Rowan_220
+  - first:
+      213: 618448685936122843
+    second: Rowan_221
+  - first:
+      213: -2940511380482059298
+    second: Rowan_222
+  - first:
+      213: -3921658741564541529
+    second: Rowan_223
+  - first:
+      213: -7699448601965825561
+    second: Rowan_224
+  - first:
+      213: -122494482403385403
+    second: Rowan_225
+  - first:
+      213: -5981578576542999299
+    second: Rowan_226
+  - first:
+      213: 4038856082603920664
+    second: Rowan_227
+  - first:
+      213: -2846106313188881793
+    second: Rowan_228
+  - first:
+      213: -571449591634118401
+    second: Rowan_229
+  - first:
+      213: -7189119828569608417
+    second: Rowan_230
+  - first:
+      213: -733360744851373387
+    second: Rowan_231
+  - first:
+      213: 2887633205026607657
+    second: Rowan_232
+  - first:
+      213: 8597664430841458476
+    second: Rowan_233
+  - first:
+      213: -1623402839255899401
+    second: Rowan_234
+  - first:
+      213: 3964227444353762019
+    second: Rowan_235
+  - first:
+      213: 8781526675412962719
+    second: Rowan_236
+  - first:
+      213: -1005104990883982790
+    second: Rowan_237
+  - first:
+      213: -8443378905343545103
+    second: Rowan_238
+  - first:
+      213: -7151077673483466633
+    second: Rowan_239
+  - first:
+      213: -1097596681542341746
+    second: Rowan_240
+  - first:
+      213: -4102460847310448831
+    second: Rowan_241
+  - first:
+      213: -2875078310104585706
+    second: Rowan_242
+  - first:
+      213: -1050050538721308247
+    second: Rowan_243
+  - first:
+      213: 4911042284243806066
+    second: Rowan_244
+  - first:
+      213: 7731104185426252937
+    second: Rowan_245
+  - first:
+      213: 290669667812604433
+    second: Rowan_246
+  - first:
+      213: -7529884826933565120
+    second: Rowan_247
+  - first:
+      213: 5486711337399911299
+    second: Rowan_248
+  - first:
+      213: 1744110349611803024
+    second: Rowan_249
+  - first:
+      213: 5443364984757019529
+    second: Rowan_250
+  - first:
+      213: -3858635753980116760
+    second: Rowan_251
+  - first:
+      213: -868816712213996942
+    second: Rowan_252
+  - first:
+      213: -5853608912736094659
+    second: Rowan_253
+  - first:
+      213: 251763418336642663
+    second: Rowan_254
+  - first:
+      213: 1191252927170164998
+    second: Rowan_255
+  - first:
+      213: 844546256619229879
+    second: Rowan_256
+  - first:
+      213: 5927287574689200693
+    second: Rowan_257
+  - first:
+      213: 2150786188924934725
+    second: Rowan_258
+  - first:
+      213: -6747989779260563230
+    second: Rowan_259
+  - first:
+      213: -9059333199101763415
+    second: Rowan_260
+  - first:
+      213: -6693267085874319996
+    second: Rowan_261
+  - first:
+      213: 6813661090892204393
+    second: Rowan_262
+  - first:
+      213: -5955316390427072722
+    second: Rowan_263
+  - first:
+      213: 3352094442795759623
+    second: Rowan_264
+  - first:
+      213: -767551363230882852
+    second: Rowan_265
+  - first:
+      213: -7450089296370431082
+    second: Rowan_266
+  - first:
+      213: -1783075544546159963
+    second: Rowan_267
+  - first:
+      213: 2839967093029441457
+    second: Rowan_268
+  - first:
+      213: -1244805835341235393
+    second: Rowan_269
+  - first:
+      213: -5479277807056694069
+    second: Rowan_270
+  - first:
+      213: -8565597895005765195
+    second: Rowan_271
+  - first:
+      213: 4004519121993326064
+    second: Rowan_272
+  - first:
+      213: 6997731141542758977
+    second: Rowan_273
+  - first:
+      213: 8402507519930600313
+    second: Rowan_274
+  - first:
+      213: -4545885319176233687
+    second: Rowan_275
+  - first:
+      213: 1821684326398718982
+    second: Rowan_276
+  - first:
+      213: -7412645100853622302
+    second: Rowan_277
+  - first:
+      213: 2180409657595045276
+    second: Rowan_278
+  - first:
+      213: 1989514939066520477
+    second: Rowan_279
+  - first:
+      213: 1205630821422957674
+    second: Rowan_280
+  - first:
+      213: -8990730517824191844
+    second: Rowan_281
+  - first:
+      213: 2925101328577849562
+    second: Rowan_282
+  - first:
+      213: -2223485465408338914
+    second: Rowan_283
+  - first:
+      213: -5516684364131949380
+    second: Rowan_284
+  - first:
+      213: 8067889660255429982
+    second: Rowan_285
+  - first:
+      213: 1828014725610376006
+    second: Rowan_286
+  - first:
+      213: -8691374463690436935
+    second: Rowan_287
+  - first:
+      213: -9157705225674220718
+    second: Rowan_288
+  - first:
+      213: -909724883475965969
+    second: Rowan_289
+  - first:
+      213: -5087053207731038121
+    second: Rowan_290
+  - first:
+      213: -8636519375515059748
+    second: Rowan_291
+  - first:
+      213: -1556818355976197384
+    second: Rowan_292
+  - first:
+      213: 8123747603805570006
+    second: Rowan_293
+  - first:
+      213: 8064789050811181864
+    second: Rowan_294
+  - first:
+      213: -5428168007613530698
+    second: Rowan_295
+  - first:
+      213: -6342647220577917278
+    second: Rowan_296
+  - first:
+      213: 3350830175084165568
+    second: Rowan_297
+  - first:
+      213: -2748091042342244033
+    second: Rowan_298
+  - first:
+      213: -1542632669250238241
+    second: Rowan_299
+  - first:
+      213: -2094345665351722956
+    second: Rowan_300
+  - first:
+      213: 5860113003115569656
+    second: Rowan_301
+  - first:
+      213: 1109595866234765299
+    second: Rowan_302
+  - first:
+      213: -3330292987608208881
+    second: Rowan_303
+  - first:
+      213: 5243288967202937187
+    second: Rowan_304
+  - first:
+      213: 8963568813382438333
+    second: Rowan_305
+  - first:
+      213: 8710572879775865441
+    second: Rowan_306
+  - first:
+      213: -561829877883750735
+    second: Rowan_307
+  - first:
+      213: 4345058268446728191
+    second: Rowan_308
+  - first:
+      213: -1669404778246551127
+    second: Rowan_309
+  - first:
+      213: -9137965674934764615
+    second: Rowan_310
+  - first:
+      213: -1165832270239916939
+    second: Rowan_311
+  - first:
+      213: -8768869599591394882
+    second: Rowan_312
+  - first:
+      213: 3017365955719889620
+    second: Rowan_313
+  - first:
+      213: -8467597874740597401
+    second: Rowan_314
+  - first:
+      213: 4424233803919690919
+    second: Rowan_315
+  - first:
+      213: -3540499275630915187
+    second: Rowan_316
+  - first:
+      213: -7744890676748465076
+    second: Rowan_317
+  - first:
+      213: -5925729656360172685
+    second: Rowan_318
+  - first:
+      213: 2423496852293117863
+    second: Rowan_319
+  - first:
+      213: 2406600238900899034
+    second: Rowan_320
+  - first:
+      213: 3269819661446504760
+    second: Rowan_321
+  - first:
+      213: 8441180381170549965
+    second: Rowan_322
+  - first:
+      213: 8289882582640891120
+    second: Rowan_323
+  - first:
+      213: -4305035646799096908
+    second: Rowan_324
+  - first:
+      213: 4829932179537106545
+    second: Rowan_325
+  - first:
+      213: -4180387000486696266
+    second: Rowan_326
+  - first:
+      213: -1585226819374324440
+    second: Rowan_327
+  - first:
+      213: -3684879041491725616
+    second: Rowan_328
+  - first:
+      213: 750229138887193037
+    second: Rowan_329
+  - first:
+      213: 4528988005203251084
+    second: Rowan_330
+  - first:
+      213: -6363041788805826146
+    second: Rowan_331
+  - first:
+      213: 3042331914402800289
+    second: Rowan_332
+  - first:
+      213: 267971468695300177
+    second: Rowan_333
+  - first:
+      213: 2234596188398796400
+    second: Rowan_334
+  - first:
+      213: 6175866621709974886
+    second: Rowan_335
+  - first:
+      213: -6587725408293079786
+    second: Rowan_336
+  - first:
+      213: -1919059012451856993
+    second: Rowan_337
+  - first:
+      213: 6092862018366929892
+    second: Rowan_338
+  - first:
+      213: -3381721765222013781
+    second: Rowan_339
+  - first:
+      213: 6003416470111974246
+    second: Rowan_340
+  - first:
+      213: -337105845440419605
+    second: Rowan_341
+  - first:
+      213: 7442567970043851210
+    second: Rowan_342
+  - first:
+      213: -6650897869427686708
+    second: Rowan_343
+  - first:
+      213: -7399083028983767982
+    second: Rowan_344
+  - first:
+      213: -2458826997578160426
+    second: Rowan_345
+  - first:
+      213: -525508027307290693
+    second: Rowan_346
+  - first:
+      213: 3101993514188009363
+    second: Rowan_347
+  - first:
+      213: 5141943148141729678
+    second: Rowan_348
+  - first:
+      213: -889863779175163934
+    second: Rowan_349
+  - first:
+      213: 1513172307056455308
+    second: Rowan_350
+  - first:
+      213: -1649563175525856467
+    second: Rowan_351
+  - first:
+      213: -6270631916308491351
+    second: Rowan_352
+  - first:
+      213: 6238503659397370889
+    second: Rowan_353
+  - first:
+      213: -4292068270636053945
+    second: Rowan_354
+  - first:
+      213: 3273573534202011671
+    second: Rowan_355
+  - first:
+      213: 6045718728089367850
+    second: Rowan_356
+  - first:
+      213: -4138653423232856491
+    second: Rowan_357
+  - first:
+      213: 1523771809428780220
+    second: Rowan_358
+  - first:
+      213: -4624764317785916521
+    second: Rowan_359
+  - first:
+      213: -7314103089574397050
+    second: Rowan_360
+  - first:
+      213: 5905651083924221676
+    second: Rowan_361
+  - first:
+      213: -1668029270338016280
+    second: Rowan_362
+  - first:
+      213: -4610169604326187884
+    second: Rowan_363
+  - first:
+      213: 1378079309732472993
+    second: Rowan_364
+  - first:
+      213: 9031517310996692513
+    second: Rowan_365
+  - first:
+      213: 6999498968692622300
+    second: Rowan_366
+  - first:
+      213: -2169541996388127102
+    second: Rowan_367
+  - first:
+      213: 5300394701782657959
+    second: Rowan_368
+  - first:
+      213: 598266431854036182
+    second: Rowan_369
+  - first:
+      213: -4393201281070192749
+    second: Rowan_370
+  - first:
+      213: -5145297011902681735
+    second: Rowan_371
+  - first:
+      213: 8542806631067786082
+    second: Rowan_372
+  - first:
+      213: 4423279691794824899
+    second: Rowan_373
+  - first:
+      213: 1665694067048739967
+    second: Rowan_374
+  - first:
+      213: 1533332700788263768
+    second: Rowan_375
+  - first:
+      213: 8704346263621006328
+    second: Rowan_376
+  - first:
+      213: 2085662515207913168
+    second: Rowan_377
+  - first:
+      213: -9093874871185322846
+    second: Rowan_378
+  - first:
+      213: 3569132360118769720
+    second: Rowan_379
+  - first:
+      213: -3010970577386860675
+    second: Rowan_380
+  - first:
+      213: -5668239199701131781
+    second: Rowan_381
+  - first:
+      213: 5099220749322008656
+    second: Rowan_382
+  - first:
+      213: 153433018910561450
+    second: Rowan_383
+  - first:
+      213: 4755906560831830249
+    second: Rowan_384
+  - first:
+      213: 361951784783792833
+    second: Rowan_385
+  - first:
+      213: -6457215158209391390
+    second: Rowan_386
+  - first:
+      213: -8335480383413314434
+    second: Rowan_387
+  - first:
+      213: -8381169349513785930
+    second: Rowan_388
+  - first:
+      213: 8333930536215930291
+    second: Rowan_389
+  - first:
+      213: -6484268478082587260
+    second: Rowan_390
+  - first:
+      213: -652159297905944079
+    second: Rowan_391
+  - first:
+      213: 1047346302089828443
+    second: Rowan_392
+  - first:
+      213: 8103277303114131299
+    second: Rowan_393
+  - first:
+      213: -1881940002699529913
+    second: Rowan_394
+  - first:
+      213: 5402870520395841013
+    second: Rowan_395
+  - first:
+      213: -1482898454360134739
+    second: Rowan_396
+  - first:
+      213: 989626603114811981
+    second: Rowan_397
+  - first:
+      213: -5238075697151006280
+    second: Rowan_398
+  - first:
+      213: -2656092760981022590
+    second: Rowan_399
+  - first:
+      213: 7019812242964094407
+    second: Rowan_400
+  - first:
+      213: 5907727387857499667
+    second: Rowan_401
+  - first:
+      213: 646302104456060771
+    second: Rowan_402
+  - first:
+      213: 1385997921915840912
+    second: Rowan_403
+  - first:
+      213: 8898386474148433323
+    second: Rowan_404
+  - first:
+      213: -2536142981552600140
+    second: Rowan_405
+  - first:
+      213: -5293798531840622898
+    second: Rowan_406
+  - first:
+      213: -3519478545781811836
+    second: Rowan_407
+  - first:
+      213: -4028874651981710895
+    second: Rowan_408
+  - first:
+      213: 4181310662566700670
+    second: Rowan_409
+  - first:
+      213: -3889008569854224855
+    second: Rowan_410
+  - first:
+      213: 7274599714321046284
+    second: Rowan_411
+  - first:
+      213: -6669647975062060116
+    second: Rowan_412
+  - first:
+      213: -7273842089969621137
+    second: Rowan_413
+  - first:
+      213: 3302431752205700741
+    second: Rowan_414
+  - first:
+      213: -6841169585866779945
+    second: Rowan_415
+  - first:
+      213: 528757514842468480
+    second: Rowan_416
+  - first:
+      213: -4205079686994019178
+    second: Rowan_417
+  - first:
+      213: -9148024389224065398
+    second: Rowan_418
+  - first:
+      213: -6339460606770508615
+    second: Rowan_419
+  - first:
+      213: -6347480210146840193
+    second: Rowan_420
+  - first:
+      213: -4496688753781477601
+    second: Rowan_421
+  - first:
+      213: 7494880192170246194
+    second: Rowan_422
+  - first:
+      213: 6678351055496309838
+    second: Rowan_423
+  - first:
+      213: 3376108785859634415
+    second: Rowan_424
+  - first:
+      213: -3224258362970181463
+    second: Rowan_425
+  - first:
+      213: 6675844047722303467
+    second: Rowan_426
+  - first:
+      213: -5099828214333895037
+    second: Rowan_427
+  - first:
+      213: 7183534167265547956
+    second: Rowan_428
+  - first:
+      213: -2878204565712489453
+    second: Rowan_429
+  - first:
+      213: -6019692550707805571
+    second: Rowan_430
+  - first:
+      213: -5767382087134663176
+    second: Rowan_431
+  - first:
+      213: 7627439121072299890
+    second: Rowan_432
+  - first:
+      213: 2861513093314261666
+    second: Rowan_433
+  - first:
+      213: 352503326799046373
+    second: Rowan_434
+  - first:
+      213: -1177611166109202772
+    second: Rowan_435
+  - first:
+      213: 9011884237810815073
+    second: Rowan_436
+  - first:
+      213: -8722928658796573980
+    second: Rowan_437
+  - first:
+      213: -4444115614802229833
+    second: Rowan_438
+  - first:
+      213: -6228685454070023729
+    second: Rowan_439
+  - first:
+      213: 5577868903486668012
+    second: Rowan_440
+  - first:
+      213: -8276573150971963598
+    second: Rowan_441
+  - first:
+      213: 1407221583356401199
+    second: Rowan_442
+  - first:
+      213: -1294089093750816335
+    second: Rowan_443
+  - first:
+      213: -3717133577495612779
+    second: Rowan_444
+  - first:
+      213: -7643085790188430535
+    second: Rowan_445
+  - first:
+      213: -7647737266310199394
+    second: Rowan_446
+  - first:
+      213: -286607754950381415
+    second: Rowan_447
+  - first:
+      213: -1585973197688832077
+    second: Rowan_448
+  - first:
+      213: 1124311215120900715
+    second: Rowan_449
+  - first:
+      213: -4363242638181462387
+    second: Rowan_450
+  - first:
+      213: -8552483635781337072
+    second: Rowan_451
+  - first:
+      213: 807280305219577765
+    second: Rowan_452
+  - first:
+      213: 8049471124129536938
+    second: Rowan_453
+  - first:
+      213: -4369037492871610190
+    second: Rowan_454
+  - first:
+      213: -5707401734822915625
+    second: Rowan_455
+  - first:
+      213: 4121283530577370102
+    second: Rowan_456
+  - first:
+      213: 7081670708010820569
+    second: Rowan_457
+  - first:
+      213: 2905880926061240668
+    second: Rowan_458
+  - first:
+      213: 702117847207919444
+    second: Rowan_459
+  - first:
+      213: -6516640734592181828
+    second: Rowan_460
+  - first:
+      213: -232735291911982097
+    second: Rowan_461
+  - first:
+      213: 710524287403574483
+    second: Rowan_462
+  - first:
+      213: 1500440285315094426
+    second: Rowan_463
+  - first:
+      213: 6206132069365212991
+    second: Rowan_464
+  - first:
+      213: 8206812283301435788
+    second: Rowan_465
+  - first:
+      213: -6168196971634058893
+    second: Rowan_466
+  - first:
+      213: -5318771351488421439
+    second: Rowan_467
+  - first:
+      213: 2774379023522633490
+    second: Rowan_468
+  - first:
+      213: 7544737051038110562
+    second: Rowan_469
+  - first:
+      213: -7622357047106403521
+    second: Rowan_470
+  - first:
+      213: -6736598335072985676
+    second: Rowan_471
+  - first:
+      213: 906899377599678024
+    second: Rowan_472
+  - first:
+      213: -3051201866351414751
+    second: Rowan_473
+  - first:
+      213: -3271625089005138055
+    second: Rowan_474
+  - first:
+      213: -6579445668721377278
+    second: Rowan_475
+  - first:
+      213: 3873688258646799706
+    second: Rowan_476
+  - first:
+      213: -1732060656870762772
+    second: Rowan_477
+  - first:
+      213: -8524032873192765425
+    second: Rowan_478
+  - first:
+      213: -2255525870364851443
+    second: Rowan_479
+  - first:
+      213: 2985413892084300585
+    second: Rowan_480
+  - first:
+      213: 4575534714175208107
+    second: Rowan_481
+  - first:
+      213: 7415509021308205227
+    second: Rowan_482
+  - first:
+      213: 4111526393733682314
+    second: Rowan_483
+  - first:
+      213: -8384260045893115120
+    second: Rowan_484
+  - first:
+      213: 4941338568248124450
+    second: Rowan_485
+  - first:
+      213: 2490828044968430017
+    second: Rowan_486
+  - first:
+      213: 1085733983016427683
+    second: Rowan_487
+  - first:
+      213: -7543021378704219737
+    second: Rowan_488
+  - first:
+      213: 7946443401871517018
+    second: Rowan_489
+  - first:
+      213: 2799598984047156454
+    second: Rowan_490
+  - first:
+      213: -4833066088033112862
+    second: Rowan_491
+  - first:
+      213: -5981414551080391393
+    second: Rowan_492
+  - first:
+      213: 7652665351693321317
+    second: Rowan_493
+  - first:
+      213: -7451349246772477763
+    second: Rowan_494
+  - first:
+      213: -7671412488402471933
+    second: Rowan_495
+  - first:
+      213: -1440296487111689327
+    second: Rowan_496
+  - first:
+      213: 9220929662181189633
+    second: Rowan_497
+  - first:
+      213: 5707030897904584951
+    second: Rowan_498
+  - first:
+      213: 1703806146492133393
+    second: Rowan_499
+  - first:
+      213: 2580755894887464245
+    second: Rowan_500
+  - first:
+      213: 7409978374182788255
+    second: Rowan_501
+  - first:
+      213: -1934023848574907064
+    second: Rowan_502
+  - first:
+      213: 2572597114791963960
+    second: Rowan_503
+  - first:
+      213: -1457682290565755541
+    second: Rowan_504
+  - first:
+      213: -387364374807159256
+    second: Rowan_505
+  - first:
+      213: -1477000499817788146
+    second: Rowan_506
+  - first:
+      213: 1545741931392946533
+    second: Rowan_507
+  - first:
+      213: -4919904577409814455
+    second: Rowan_508
+  - first:
+      213: 1488932410971202586
+    second: Rowan_509
+  - first:
+      213: 2861936184630534985
+    second: Rowan_510
+  - first:
+      213: 8001236988567397294
+    second: Rowan_511
+  - first:
+      213: 8704262896800015983
+    second: Rowan_512
+  - first:
+      213: 3144915601447417483
+    second: Rowan_513
+  - first:
+      213: 5098756354399985001
+    second: Rowan_514
+  - first:
+      213: 6877546946375632513
+    second: Rowan_515
+  - first:
+      213: 425520514653219639
+    second: Rowan_516
+  - first:
+      213: -1161122134347620161
+    second: Rowan_517
+  - first:
+      213: -6263645897386420166
+    second: Rowan_518
+  - first:
+      213: -3167901748114947626
+    second: Rowan_519
+  - first:
+      213: 7988924795614967030
+    second: Rowan_520
+  - first:
+      213: 2265288128573061818
+    second: Rowan_521
+  - first:
+      213: -136969322883151879
+    second: Rowan_522
+  - first:
+      213: 5245691917655785049
+    second: Rowan_523
+  - first:
+      213: -3496573072036468978
+    second: Rowan_524
+  - first:
+      213: -7114839601314356759
+    second: Rowan_525
+  - first:
+      213: -9059695531187204124
+    second: Rowan_526
+  - first:
+      213: -6418390261167132289
+    second: Rowan_527
+  - first:
+      213: 6697802269154500629
+    second: Rowan_528
+  - first:
+      213: 5005633221646159504
+    second: Rowan_529
+  - first:
+      213: -669461156758972098
+    second: Rowan_530
+  - first:
+      213: -6788141629266888606
+    second: Rowan_531
+  - first:
+      213: -2271405113156006369
+    second: Rowan_532
+  - first:
+      213: 2230040848529565686
+    second: Rowan_533
+  - first:
+      213: 2206094601277181918
+    second: Rowan_534
+  - first:
+      213: -2309895317883244170
+    second: Rowan_535
+  - first:
+      213: 3583405376629587413
+    second: Rowan_536
+  - first:
+      213: 3939416677587061155
+    second: Rowan_537
+  - first:
+      213: 988566119738492482
+    second: Rowan_538
+  - first:
+      213: 4835063927535320044
+    second: Rowan_539
+  - first:
+      213: -2792097758207270636
+    second: Rowan_540
+  - first:
+      213: -4703177501854660403
+    second: Rowan_541
+  - first:
+      213: 1568339377573540712
+    second: Rowan_542
+  - first:
+      213: 6742745733530158458
+    second: Rowan_543
+  - first:
+      213: -2326766909870618219
+    second: Rowan_544
+  - first:
+      213: 570203129018480403
+    second: Rowan_545
+  - first:
+      213: 6171580785697963760
+    second: Rowan_546
+  - first:
+      213: 1413115554260018713
+    second: Rowan_547
+  - first:
+      213: -9206401219081713052
+    second: Rowan_548
+  - first:
+      213: 4728746676603682226
+    second: Rowan_549
+  - first:
+      213: 8223586549069523700
+    second: Rowan_550
+  - first:
+      213: -1318015690394406123
+    second: Rowan_551
+  - first:
+      213: 7633517088206631918
+    second: Rowan_552
+  - first:
+      213: -8075240718644749310
+    second: Rowan_553
+  - first:
+      213: 897918271460721373
+    second: Rowan_554
+  - first:
+      213: 538276943522247192
+    second: Rowan_555
+  - first:
+      213: -2457441272785185766
+    second: Rowan_556
+  - first:
+      213: -2757315616370888034
+    second: Rowan_557
+  - first:
+      213: 8500793742973435735
+    second: Rowan_558
+  - first:
+      213: 8473404690509544088
+    second: Rowan_559
+  - first:
+      213: 2258879643575110136
+    second: Rowan_560
+  - first:
+      213: -5117826905869896304
+    second: Rowan_561
+  - first:
+      213: 8163104909569709025
+    second: Rowan_562
+  - first:
+      213: -1806190066692136454
+    second: Rowan_563
+  - first:
+      213: 6757966249302350615
+    second: Rowan_564
+  - first:
+      213: 4790825849422421659
+    second: Rowan_565
+  - first:
+      213: 7996361813873902575
+    second: Rowan_566
+  - first:
+      213: 8825481956137100412
+    second: Rowan_567
+  - first:
+      213: 3028314129648346309
+    second: Rowan_568
+  - first:
+      213: 4067795341465255718
+    second: Rowan_569
+  - first:
+      213: 273831495836362080
+    second: Rowan_570
+  - first:
+      213: 1506103926586329730
+    second: Rowan_571
+  - first:
+      213: -4090104948971718924
+    second: Rowan_572
+  - first:
+      213: 8855888365588376805
+    second: Rowan_573
+  - first:
+      213: -5863609890954733734
+    second: Rowan_574
+  - first:
+      213: -6096535135535643058
+    second: Rowan_575
+  - first:
+      213: 5953952836867158213
+    second: Rowan_576
+  - first:
+      213: 4356137749209867612
+    second: Rowan_577
+  - first:
+      213: 8189904237242146718
+    second: Rowan_578
+  - first:
+      213: 8430470672236011161
+    second: Rowan_579
+  - first:
+      213: 76617285282104841
+    second: Rowan_580
+  - first:
+      213: 3724380337675881597
+    second: Rowan_581
+  - first:
+      213: 8581433175221527381
+    second: Rowan_582
+  - first:
+      213: -3984725946602859342
+    second: Rowan_583
+  - first:
+      213: -6264013094487534761
+    second: Rowan_584
+  - first:
+      213: -1765098036843450799
+    second: Rowan_585
+  - first:
+      213: 1841985681464369194
+    second: Rowan_586
+  - first:
+      213: 6085384024769586444
+    second: Rowan_587
+  - first:
+      213: -2051306488681260115
+    second: Rowan_588
+  - first:
+      213: 6044775791797147629
+    second: Rowan_589
+  - first:
+      213: -8108455332311103092
+    second: Rowan_590
+  - first:
+      213: 5196392933316938641
+    second: Rowan_591
+  - first:
+      213: -724942374106589286
+    second: Rowan_592
+  - first:
+      213: -8912523183029730909
+    second: Rowan_593
+  - first:
+      213: -8160420520356733036
+    second: Rowan_594
+  - first:
+      213: -2151330664105103992
+    second: Rowan_595
+  - first:
+      213: 7419005896225188555
+    second: Rowan_596
+  - first:
+      213: 5319066839031968517
+    second: Rowan_597
+  - first:
+      213: -4036520117364241819
+    second: Rowan_598
+  - first:
+      213: 3880990556283961602
+    second: Rowan_599
+  - first:
+      213: -7131614545849422264
+    second: Rowan_600
+  - first:
+      213: 5842319749137785261
+    second: Rowan_601
+  - first:
+      213: 8257766785317295612
+    second: Rowan_602
+  - first:
+      213: -5660478677310130924
+    second: Rowan_603
+  - first:
+      213: 3688661024353875414
+    second: Rowan_604
+  - first:
+      213: 4777310018797212357
+    second: Rowan_605
+  - first:
+      213: 9179801574746765512
+    second: Rowan_606
+  - first:
+      213: -43861558510885281
+    second: Rowan_607
+  - first:
+      213: -5891157085028992833
+    second: Rowan_608
+  - first:
+      213: 1325794787082930382
+    second: Rowan_609
+  - first:
+      213: -6279831693134473351
+    second: Rowan_610
+  - first:
+      213: -1501437039690331389
+    second: Rowan_611
+  - first:
+      213: 3713927848403911543
+    second: Rowan_612
+  - first:
+      213: -2045382950948080183
+    second: Rowan_613
+  - first:
+      213: -200452185265312096
+    second: Rowan_614
+  - first:
+      213: -4477995036929054187
+    second: Rowan_615
+  - first:
+      213: -7127165031975881462
+    second: Rowan_616
+  - first:
+      213: -6784020493087148847
+    second: Rowan_617
+  - first:
+      213: -8830838044465271603
+    second: Rowan_618
+  - first:
+      213: 8315034019566266959
+    second: Rowan_619
+  - first:
+      213: -7221814188379528430
+    second: Rowan_620
+  - first:
+      213: 8464972163308866321
+    second: Rowan_621
+  - first:
+      213: -7746015157655586955
+    second: Rowan_622
+  - first:
+      213: -8014574679957424924
+    second: Rowan_623
+  - first:
+      213: -1225356459089059189
+    second: Rowan_624
+  - first:
+      213: 4581988223562829970
+    second: Rowan_625
+  - first:
+      213: -2504878156394714105
+    second: Rowan_626
+  - first:
+      213: -7796736522367467944
+    second: Rowan_627
+  - first:
+      213: -6623316738631571143
+    second: Rowan_628
+  - first:
+      213: -4087659468397934548
+    second: Rowan_629
+  - first:
+      213: 7767501492289032540
+    second: Rowan_630
+  - first:
+      213: -8180137776967712303
+    second: Rowan_631
+  - first:
+      213: -4419833538611878915
+    second: Rowan_632
+  - first:
+      213: -4459632660859952459
+    second: Rowan_633
+  - first:
+      213: 8774472579220784087
+    second: Rowan_634
+  - first:
+      213: -6789923755782382969
+    second: Rowan_635
+  - first:
+      213: 7755452084460191172
+    second: Rowan_636
+  - first:
+      213: -4033497334997467705
+    second: Rowan_637
+  - first:
+      213: -2750459505182275571
+    second: Rowan_638
+  - first:
+      213: 8116804991686651802
+    second: Rowan_639
+  - first:
+      213: 4533290867585325434
+    second: Rowan_640
+  - first:
+      213: 9220495658536057292
+    second: Rowan_641
+  - first:
+      213: 1174055606485114900
+    second: Rowan_642
+  - first:
+      213: 1298793475729957754
+    second: Rowan_643
+  - first:
+      213: -6703445691450466382
+    second: Rowan_644
+  - first:
+      213: -7148561480862337093
+    second: Rowan_645
+  - first:
+      213: 3921083903722981101
+    second: Rowan_646
+  - first:
+      213: 6266512426933384981
+    second: Rowan_647
+  - first:
+      213: -7681078960428943202
+    second: Rowan_648
+  - first:
+      213: 7485969867016200526
+    second: Rowan_649
+  - first:
+      213: 5571877211071364338
+    second: Rowan_650
+  - first:
+      213: -8003592110330299118
+    second: Rowan_651
+  - first:
+      213: -17120291305232978
+    second: Rowan_652
+  - first:
+      213: -4229728605377028726
+    second: Rowan_653
+  - first:
+      213: 4185893204588022899
+    second: Rowan_654
+  - first:
+      213: 6312568030371244401
+    second: Rowan_655
+  - first:
+      213: 491934041670716723
+    second: Rowan_656
+  - first:
+      213: 5596873673034748914
+    second: Rowan_657
+  - first:
+      213: -4970233518391149149
+    second: Rowan_658
+  - first:
+      213: -3520637772782663324
+    second: Rowan_659
+  - first:
+      213: 1727175639123666287
+    second: Rowan_660
+  - first:
+      213: 307735227708293684
+    second: Rowan_661
+  - first:
+      213: 8984295776733952889
+    second: Rowan_662
+  - first:
+      213: 6491301208480804361
+    second: Rowan_663
+  - first:
+      213: -6714462336445265448
+    second: Rowan_664
+  - first:
+      213: 5399730156782690992
+    second: Rowan_665
+  - first:
+      213: -2606856303782046041
+    second: Rowan_666
+  - first:
+      213: 542998482545104720
+    second: Rowan_667
+  - first:
+      213: -8847834594715246488
+    second: Rowan_668
+  - first:
+      213: -3652430775062020899
+    second: Rowan_669
+  - first:
+      213: 8344139157596518001
+    second: Rowan_670
+  - first:
+      213: 149332914195942596
+    second: Rowan_671
+  - first:
+      213: -3611920724604686527
+    second: Rowan_672
+  - first:
+      213: -7399042673906496280
+    second: Rowan_673
+  - first:
+      213: 5011793864092304239
+    second: Rowan_674
+  - first:
+      213: 3778293664312444525
+    second: Rowan_675
+  - first:
+      213: -1553044308451365695
+    second: Rowan_676
+  - first:
+      213: 6826437214428964371
+    second: Rowan_677
+  - first:
+      213: 1943120565520453092
+    second: Rowan_678
+  - first:
+      213: -405833989390852369
+    second: Rowan_679
+  - first:
+      213: -6551196078573347284
+    second: Rowan_680
+  - first:
+      213: -2341905793319093016
+    second: Rowan_681
+  - first:
+      213: 717837501445829290
+    second: Rowan_682
+  - first:
+      213: 3731677701245725189
+    second: Rowan_683
+  - first:
+      213: 2477382082516537054
+    second: Rowan_684
+  - first:
+      213: 2025905119960118239
+    second: Rowan_685
+  - first:
+      213: 1152065733964904720
+    second: Rowan_686
+  - first:
+      213: -3990686353864293863
+    second: Rowan_687
+  - first:
+      213: 4098657484919746446
+    second: Rowan_688
+  - first:
+      213: -3517397574515965709
+    second: Rowan_689
+  - first:
+      213: -8833829438283912663
+    second: Rowan_690
+  - first:
+      213: 8528581439762199896
+    second: Rowan_691
+  - first:
+      213: -6845426450479536780
+    second: Rowan_692
+  - first:
+      213: 559409127953441289
+    second: Rowan_693
+  - first:
+      213: 3143144554870789402
+    second: Rowan_694
+  - first:
+      213: 7476940902311053204
+    second: Rowan_695
+  - first:
+      213: 6312918111582870710
+    second: Rowan_696
+  - first:
+      213: 6940313043272812666
+    second: Rowan_697
+  - first:
+      213: -246670725054193038
+    second: Rowan_698
+  - first:
+      213: 8896312857681168666
+    second: Rowan_699
+  - first:
+      213: -1870593833532258375
+    second: Rowan_700
+  - first:
+      213: -8603767611483636994
+    second: Rowan_701
+  - first:
+      213: 7053204325451328768
+    second: Rowan_702
+  - first:
+      213: 2971169866002130941
+    second: Rowan_703
+  - first:
+      213: -1660326023377487231
+    second: Rowan_704
+  - first:
+      213: 3831479795977215771
+    second: Rowan_705
+  - first:
+      213: 1901723475362600740
+    second: Rowan_706
+  - first:
+      213: -1633445295855390336
+    second: Rowan_707
+  - first:
+      213: -8361211451830668272
+    second: Rowan_708
+  - first:
+      213: -7920751822896415049
+    second: Rowan_709
+  - first:
+      213: -6816701748480652687
+    second: Rowan_710
+  - first:
+      213: 155529385129523553
+    second: Npc6_0
+  - first:
+      213: 7952995896635696509
+    second: Npc6_1
+  - first:
+      213: -6242308897525808295
+    second: Npc6_2
+  - first:
+      213: 2879206786574595821
+    second: Npc6_3
+  - first:
+      213: -5901205362357428350
+    second: Npc6_4
+  - first:
+      213: 4389644597551552963
+    second: Npc6_5
+  - first:
+      213: 7330824522766257711
+    second: Npc6_6
+  - first:
+      213: 655926699884120237
+    second: Npc6_7
+  - first:
+      213: -235491761956330109
+    second: Npc6_8
+  - first:
+      213: -3719747513859065704
+    second: Npc6_9
+  - first:
+      213: -2309714183129970487
+    second: Npc6_10
+  - first:
+      213: -3507269634080995888
+    second: Npc6_11
+  - first:
+      213: -6658441922589738143
+    second: Npc6_12
+  - first:
+      213: -3720593073821819557
+    second: Npc6_13
+  - first:
+      213: -1544439082916635902
+    second: Npc6_14
+  - first:
+      213: -6940019208601410562
+    second: Npc6_15
+  - first:
+      213: -4421457336079596199
+    second: Npc6_16
+  - first:
+      213: 5053510511573526772
+    second: Npc6_17
+  - first:
+      213: 6939933445983890921
+    second: Npc6_18
+  - first:
+      213: 3459852818215344113
+    second: Npc6_19
+  - first:
+      213: 6042818854535056307
+    second: Npc6_20
+  - first:
+      213: 6580841066541017622
+    second: Npc6_21
+  - first:
+      213: -7395505739750552783
+    second: Npc6_22
+  - first:
+      213: 5104781466476809016
+    second: Npc6_23
+  - first:
+      213: 8327311592085451796
+    second: Npc6_24
+  - first:
+      213: -5446726222668973044
+    second: Npc6_25
+  - first:
+      213: 3968116314135783591
+    second: Npc6_26
+  - first:
+      213: -6521194414978687181
+    second: Npc6_27
+  - first:
+      213: -6637832437764797841
+    second: Npc6_28
+  - first:
+      213: -8815712478156199146
+    second: Npc6_29
+  - first:
+      213: -1748412043718095774
+    second: Npc6_30
+  - first:
+      213: 3105495177476876576
+    second: Npc6_31
+  - first:
+      213: -6401646847291982667
+    second: Npc6_32
+  - first:
+      213: -1462561486257565075
+    second: Npc6_33
+  - first:
+      213: -8240937013060256971
+    second: Npc6_34
+  - first:
+      213: 4574947682982734708
+    second: Npc6_35
+  - first:
+      213: -554508171522431150
+    second: Npc6_36
+  - first:
+      213: 409656300890582558
+    second: Npc6_37
+  - first:
+      213: -2408769242390302451
+    second: Npc6_38
+  - first:
+      213: -4845885318026753386
+    second: Npc6_39
+  - first:
+      213: 3941837408220454277
+    second: Npc6_40
+  - first:
+      213: -4252337988938494849
+    second: Npc6_41
+  - first:
+      213: 6903627180778645499
+    second: Npc6_42
+  - first:
+      213: -2845267455687538246
+    second: Npc6_43
+  - first:
+      213: 2191163602858978032
+    second: Npc6_44
+  - first:
+      213: -3708779288779871910
+    second: Npc6_45
+  - first:
+      213: 387117037045938344
+    second: Npc6_46
+  - first:
+      213: 1040765371344492935
+    second: Npc6_47
+  - first:
+      213: -7091644196650604978
+    second: Npc6_48
+  - first:
+      213: 5222972002005399116
+    second: Npc6_49
+  - first:
+      213: -2883351517750551145
+    second: Npc6_50
+  - first:
+      213: -3262358947589480992
+    second: Npc6_51
+  - first:
+      213: -1325106680840465179
+    second: Npc6_52
+  - first:
+      213: 6092239179421901936
+    second: Npc6_53
+  - first:
+      213: 1451714920124215749
+    second: Npc6_54
+  - first:
+      213: -2826752027209693002
+    second: Npc6_55
+  - first:
+      213: 8408800370139213718
+    second: Npc6_56
+  - first:
+      213: 8371719729916706673
+    second: Npc6_57
+  - first:
+      213: 4162767754099633814
+    second: Npc6_58
+  - first:
+      213: -4849198955660163101
+    second: Npc6_59
+  - first:
+      213: 7577050294600729067
+    second: Npc6_60
+  - first:
+      213: 3797587223639506826
+    second: Npc6_61
+  - first:
+      213: 1201847628460267259
+    second: Npc6_62
+  - first:
+      213: -7688657526084558655
+    second: Npc6_63
+  - first:
+      213: 4529520580533000033
+    second: Npc6_64
+  - first:
+      213: 5190416370097788271
+    second: Npc6_65
+  - first:
+      213: 4665513401518852723
+    second: Npc6_66
+  - first:
+      213: 238902344557096128
+    second: Npc6_67
+  - first:
+      213: -2214161415041247408
+    second: Npc6_68
+  - first:
+      213: 8387096879380580144
+    second: Npc6_69
+  - first:
+      213: -8988912108439225420
+    second: Npc6_70
+  - first:
+      213: -540759008341061233
+    second: Npc6_71
+  - first:
+      213: -8443878208396470195
+    second: Npc6_72
+  - first:
+      213: 6617289157676959581
+    second: Npc6_73
+  - first:
+      213: 7105050132555165725
+    second: Npc6_74
+  - first:
+      213: -5992966981152043841
+    second: Npc6_75
+  - first:
+      213: 1834337409880435088
+    second: Npc6_76
+  - first:
+      213: 7436044257084513388
+    second: Npc6_77
+  - first:
+      213: 4366175899538236641
+    second: Npc6_78
+  - first:
+      213: 4176460175808494731
+    second: Npc6_79
+  - first:
+      213: 6521843545857718977
+    second: Npc6_80
+  - first:
+      213: -6753752829974937404
+    second: Npc6_81
+  - first:
+      213: 5082076944682684800
+    second: Npc6_82
+  - first:
+      213: -8027154094871049368
+    second: Npc6_83
+  - first:
+      213: -2267627739473677632
+    second: Npc6_84
+  - first:
+      213: 27223957361127332
+    second: Npc6_85
+  - first:
+      213: -1919586672778614089
+    second: Npc6_86
+  - first:
+      213: 674705631197527604
+    second: Npc6_87
+  - first:
+      213: 2619878735802490058
+    second: Npc6_88
+  - first:
+      213: 8118394186116942156
+    second: Npc6_89
+  - first:
+      213: -1908976049802758443
+    second: Npc6_90
+  - first:
+      213: 360453625439376254
+    second: Npc6_91
+  - first:
+      213: -8620783673746623120
+    second: Npc6_92
+  - first:
+      213: -3330559250469618579
+    second: Npc6_93
+  - first:
+      213: 7825252235871014290
+    second: Npc6_94
+  - first:
+      213: 6870573838763220151
+    second: Npc6_95
+  - first:
+      213: 8209884230260437909
+    second: Npc6_96
+  - first:
+      213: 4780567045964752145
+    second: Npc6_97
+  - first:
+      213: -8200617016266232826
+    second: Npc6_98
+  - first:
+      213: -4500997784491853856
+    second: Npc6_99
+  - first:
+      213: -2783612004278175272
+    second: Npc6_100
+  - first:
+      213: -2914498845598488708
+    second: Npc6_101
+  - first:
+      213: -2717940240766675031
+    second: Npc6_102
+  - first:
+      213: 1692905047905795809
+    second: Npc6_103
+  - first:
+      213: 2828942547153934745
+    second: Npc6_104
+  - first:
+      213: -4149320008388633751
+    second: Npc6_105
+  - first:
+      213: -143054105056307418
+    second: Npc6_106
+  - first:
+      213: 4297361035956168258
+    second: Npc6_107
+  - first:
+      213: 1577727788800724827
+    second: Npc6_108
+  - first:
+      213: -2324946343112588512
+    second: Npc6_109
+  - first:
+      213: 15060467403506951
+    second: Npc6_110
+  - first:
+      213: -2732968768394980723
+    second: Npc6_111
+  - first:
+      213: 3294723702376560134
+    second: Npc6_112
+  - first:
+      213: 9032427796987987619
+    second: Npc6_113
+  - first:
+      213: -8178165793970031083
+    second: Npc6_114
+  - first:
+      213: 7355297827817395744
+    second: Npc6_115
+  - first:
+      213: 2651486087873880831
+    second: Npc6_116
+  - first:
+      213: 5923662295028318537
+    second: Npc6_117
+  - first:
+      213: -438138539076833698
+    second: Npc6_118
+  - first:
+      213: -3879051522068173075
+    second: Npc6_119
+  - first:
+      213: -1492152314214750744
+    second: Npc6_120
+  - first:
+      213: -8902109289529064839
+    second: Npc6_121
+  - first:
+      213: 8109608296053483418
+    second: Npc6_122
+  - first:
+      213: 2097013262146487671
+    second: Npc6_123
+  - first:
+      213: 6948481494158036215
+    second: Npc6_124
+  - first:
+      213: -3428088574290798947
+    second: Npc6_125
+  - first:
+      213: 220561739040492012
+    second: Npc6_126
+  - first:
+      213: -8017246912033681453
+    second: Npc6_127
+  - first:
+      213: -6071191924068192508
+    second: Npc6_128
+  - first:
+      213: -3017691900690643117
+    second: Npc6_129
+  - first:
+      213: 8990149128188706491
+    second: Npc6_130
+  - first:
+      213: -542718679372932107
+    second: Npc6_131
+  - first:
+      213: -3052106283613289462
+    second: Npc6_132
+  - first:
+      213: -1809981005316061530
+    second: Npc6_133
+  - first:
+      213: 5024250158444020843
+    second: Npc6_134
+  - first:
+      213: 4804294981858557962
+    second: Npc6_135
+  - first:
+      213: 8650066309860084217
+    second: Npc6_136
+  - first:
+      213: 9104825235312623029
+    second: Npc6_137
+  - first:
+      213: 3334389017944194385
+    second: Npc6_138
+  - first:
+      213: 2216033105002771217
+    second: Npc6_139
+  - first:
+      213: 88012683921615532
+    second: Npc6_140
+  - first:
+      213: 3410066564819344731
+    second: Npc6_141
+  - first:
+      213: 5159312736826191653
+    second: Npc6_142
+  - first:
+      213: -2542801231965968799
+    second: Npc6_143
+  - first:
+      213: -5499052932916904671
+    second: Npc6_144
+  - first:
+      213: -4195157059860584441
+    second: Npc6_145
+  - first:
+      213: -3687835115806899129
+    second: Npc6_146
+  - first:
+      213: -6652940810394952157
+    second: Npc6_147
+  - first:
+      213: -4379883229703219637
+    second: Npc6_148
+  - first:
+      213: -5242681486202944220
+    second: Npc6_149
+  - first:
+      213: 5644294223529415338
+    second: Npc6_150
+  - first:
+      213: 8051678349605300702
+    second: Npc6_151
+  - first:
+      213: 9131698893062837329
+    second: Npc6_152
+  - first:
+      213: -8520338237784917606
+    second: Npc6_153
+  - first:
+      213: 3498056109638841868
+    second: Npc6_154
+  - first:
+      213: 6890504027223932992
+    second: Npc6_155
+  - first:
+      213: -1801089961315345188
+    second: Npc6_156
+  - first:
+      213: 1469568246092884117
+    second: Npc6_157
+  - first:
+      213: -3225755850656860820
+    second: Npc6_158
+  - first:
+      213: -7177097555308992099
+    second: Npc6_159
+  - first:
+      213: 3644112942425640214
+    second: Npc6_160
+  - first:
+      213: -5819097303081648058
+    second: Npc6_161
+  - first:
+      213: 758179402925365602
+    second: Npc6_162
+  - first:
+      213: 365872914603633503
+    second: Npc6_163
+  - first:
+      213: -1222304222730575549
+    second: Npc6_164
+  - first:
+      213: 7492156878829642942
+    second: Npc6_165
+  - first:
+      213: -4903539907833124244
+    second: Npc6_166
+  - first:
+      213: 7304922030858377166
+    second: Npc6_167
+  - first:
+      213: 4961088305256205686
+    second: Npc6_168
+  - first:
+      213: -5038698721051884816
+    second: Npc6_169
+  - first:
+      213: -7965803308177979721
+    second: Npc6_170
+  - first:
+      213: -5304963647388414795
+    second: Npc6_171
+  - first:
+      213: 4673966864513734805
+    second: Npc6_172
+  - first:
+      213: -2856081401803173742
+    second: Npc6_173
+  - first:
+      213: -1136544146573207704
+    second: Npc6_174
+  - first:
+      213: 2973332747988962099
+    second: Npc6_175
+  - first:
+      213: 2429977329559741792
+    second: Npc6_176
+  - first:
+      213: -6580601083802066359
+    second: Npc6_177
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 44
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Npc6_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169b7c8d62d882200800000000000000
+      internalID: 155529385129523553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d752c1791a7be5e60800000000000000
+      internalID: 7952995896635696509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953c6b0812dde59a0800000000000000
+      internalID: -6242308897525808295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de63ca4515ff4f720800000000000000
+      internalID: 2879206786574595821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f1e062df4ba1ea0800000000000000
+      internalID: -5901205362357428350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c9d54f01862bec30800000000000000
+      internalID: 4389644597551552963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1280
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e843620125cb560800000000000000
+      internalID: 7330824522766257711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da88949bbd15a1900800000000000000
+      internalID: 655926699884120237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385ef0d7d7d5bbcf0800000000000000
+      internalID: -235491761956330109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898b94e185dc06cc0800000000000000
+      internalID: -3719747513859065704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c84bd5103f32ffd0800000000000000
+      internalID: -2309714183129970487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d58611a9dca35fc0800000000000000
+      internalID: -3507269634080995888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_12
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16b387e69567893a0800000000000000
+      internalID: -6658441922589738143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1216
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d5219df4ccd5cc0800000000000000
+      internalID: -3720593073821819557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b168d36dc019ae0800000000000000
+      internalID: -1544439082916635902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3ece0bc4910bf90800000000000000
+      internalID: -6940019208601410562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9554e6d8af3d3a2c0800000000000000
+      internalID: -4421457336079596199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_17
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8ea0f190da12640800000000000000
+      internalID: 5053510511573526772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ede8b423b89f4060800000000000000
+      internalID: 6939933445983890921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_19
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f71cdc9ecdd30030800000000000000
+      internalID: 3459852818215344113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_20
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1152
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb48926bb76cd350800000000000000
+      internalID: 6042818854535056307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61aea7e4518d35b50800000000000000
+      internalID: 6580841066541017622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b4ec776b2ed5990800000000000000
+      internalID: -7395505739750552783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_23
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b095d82b3d7d640800000000000000
+      internalID: 5104781466476809016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 414fe34e5cd809370800000000000000
+      internalID: 8327311592085451796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_25
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0cb205cb575964b0800000000000000
+      internalID: -5446726222668973044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_26
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8ee7383c4911730800000000000000
+      internalID: 3968116314135783591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f1fe7fa301085a0800000000000000
+      internalID: -6521194414978687181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ac67c019ea1e3a0800000000000000
+      internalID: -6637832437764797841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_29
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b6581753c48a580800000000000000
+      internalID: -8815712478156199146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_30
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c0b2d72846cb7e0800000000000000
+      internalID: -1748412043718095774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_31
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029a239096fe81b20800000000000000
+      internalID: 3105495177476876576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_32
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc79a91c18c827a0800000000000000
+      internalID: -6401646847291982667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_33
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1024
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d625375c310f3bbe0800000000000000
+      internalID: -1462561486257565075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_34
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bbc20f27f42ad80800000000000000
+      internalID: -8240937013060256971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_35
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1024
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47bae26bdaa7d7f30800000000000000
+      internalID: 4574947682982734708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257aa5381cdfd48f0800000000000000
+      internalID: -554508171522431150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_37
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e65963c346fa500800000000000000
+      internalID: 409656300890582558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d017071e225529ed0800000000000000
+      internalID: -2408769242390302451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_39
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a0cb45af4ffbcb0800000000000000
+      internalID: -4845885318026753386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_40
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d935fec3834b630800000000000000
+      internalID: 3941837408220454277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_41
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c0c600129acf4c0800000000000000
+      internalID: -4252337988938494849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_42
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7ea0c085c9ecf50800000000000000
+      internalID: 6903627180778645499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_43
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 960
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9c3cce2549388d0800000000000000
+      internalID: -2845267455687538246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0faac2100b3986e10800000000000000
+      internalID: 2191163602858978032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_45
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5923f503e4c78cc0800000000000000
+      internalID: -3708779288779871910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8ff97e4e05f5500800000000000000
+      internalID: 387117037045938344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_47
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789148d479a817e00800000000000000
+      internalID: 1040765371344492935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_48
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e462e212d2b659d90800000000000000
+      internalID: -7091644196650604978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_49
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46b7530d59bb7840800000000000000
+      internalID: 5222972002005399116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_50
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d15ed32174cf7d0800000000000000
+      internalID: -2883351517750551145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_51
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 896
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed9c1762d5c9b2d0800000000000000
+      internalID: -3262358947589480992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e4d1079e764c9de0800000000000000
+      internalID: -1325106680840465179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_53
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074e820714bfb8450800000000000000
+      internalID: 6092239179421901936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_54
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c173214707852410800000000000000
+      internalID: 1451714920124215749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_55
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b80d0e020c55c8d0800000000000000
+      internalID: -2826752027209693002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_56
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f2259826f02b470800000000000000
+      internalID: 8408800370139213718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_57
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f70d43db25e2470800000000000000
+      internalID: 8371719729916706673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_58
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e2f81973f15c930800000000000000
+      internalID: 4162767754099633814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_59
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 832
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e74ea2fd3f24bcb0800000000000000
+      internalID: -4849198955660163101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be102f61917172960800000000000000
+      internalID: 7577050294600729067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_61
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f389c957db3b430800000000000000
+      internalID: 3797587223639506826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_62
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf61588ec02dda010800000000000000
+      internalID: 1201847628460267259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_63
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0a81e57b66c4590800000000000000
+      internalID: -7688657526084558655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_64
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1679d7538f61cde30800000000000000
+      internalID: 4529520580533000033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_65
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f651d084030180840800000000000000
+      internalID: 5190416370097788271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_66
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a0b5048bb3fb040800000000000000
+      internalID: 4665513401518852723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_67
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc6557aa60c05300800000000000000
+      internalID: 238902344557096128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_68
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05717159ce7b541e0800000000000000
+      internalID: -2214161415041247408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_69
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0374440dc24f46470800000000000000
+      internalID: 8387096879380580144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_70
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bbb54b0018f04380800000000000000
+      internalID: -8988912108439225420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_71
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f811db60c86de78f0800000000000000
+      internalID: -540759008341061233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_72
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48ddddc18151da80800000000000000
+      internalID: -8443878208396470195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_73
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d570163dd6555db50800000000000000
+      internalID: 6617289157676959581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_74
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10fa4e83753a9260800000000000000
+      internalID: 7105050132555165725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_75
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc89c16844b4dca0800000000000000
+      internalID: -5992966981152043841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_76
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0992222d720e47910800000000000000
+      internalID: 1834337409880435088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_77
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c1b9d9ad2223760800000000000000
+      internalID: 7436044257084513388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e429def8d5c79c30800000000000000
+      internalID: 4366175899538236641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_79
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c71ade664c5f930800000000000000
+      internalID: 4176460175808494731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_80
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1caf587962e328a50800000000000000
+      internalID: 6521843545857718977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_81
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c00e848599d542a0800000000000000
+      internalID: -6753752829974937404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_82
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08193012e0a278640800000000000000
+      internalID: 5082076944682684800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_83
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b83e161e1d99090800000000000000
+      internalID: -8027154094871049368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_84
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c279d9d594c780e0800000000000000
+      internalID: -2267627739473677632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_85
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4afe3e38b08b06000800000000000000
+      internalID: 27223957361127332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_86
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bae47d67124c55e0800000000000000
+      internalID: -1919586672778614089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_87
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43efb7362390d5900800000000000000
+      internalID: 674705631197527604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_88
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc5b1a54ddab5420800000000000000
+      internalID: 2619878735802490058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_89
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49c81acf745aa070800000000000000
+      internalID: 8118394186116942156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_90
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d637ca9564f185e0800000000000000
+      internalID: -1908976049802758443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_91
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73d05e99a6900500800000000000000
+      internalID: 360453625439376254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_92
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07578d07ce2dc5880800000000000000
+      internalID: -8620783673746623120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_93
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cfd5cf10a77c1d0800000000000000
+      internalID: -3330559250469618579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_94
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d4ce4d271e89c60800000000000000
+      internalID: 7825252235871014290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_95
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bcd296218e295f50800000000000000
+      internalID: 6870573838763220151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59331c7a53e5fe170800000000000000
+      internalID: 8209884230260437909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_97
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115eaa7566cf75240800000000000000
+      internalID: 4780567045964752145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_98
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c6d6eb54e813e80800000000000000
+      internalID: -8200617016266232826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_99
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7fa80cc5e3981c0800000000000000
+      internalID: -4500997784491853856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_100
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d97c7c51af9e59d0800000000000000
+      internalID: -2783612004278175272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_101
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c77e0d9ddbe9d87d0800000000000000
+      internalID: -2914498845598488708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a7dc5450cfe74ad0800000000000000
+      internalID: -2717940240766675031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_103
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eef3e2fb286e7710800000000000000
+      internalID: 1692905047905795809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_104
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999591d124c624720800000000000000
+      internalID: 2828942547153934745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_105
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b1398bf67aa66c0800000000000000
+      internalID: -4149320008388633751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_106
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6271574ac05c30ef0800000000000000
+      internalID: -143054105056307418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_107
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246a5c3081b43ab30800000000000000
+      internalID: 4297361035956168258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5fcab3901735e510800000000000000
+      internalID: 1577727788800724827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_109
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0234ee87e912cbfd0800000000000000
+      internalID: -2324946343112588512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_110
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705ccb15a61853000800000000000000
+      internalID: 15060467403506951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_111
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d829491926b821ad0800000000000000
+      internalID: -2732968768394980723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_112
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606f63940c539bd20800000000000000
+      internalID: 3294723702376560134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_113
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a645dab931a95d70800000000000000
+      internalID: 9032427796987987619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_114
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5167a284a81518e80800000000000000
+      internalID: -8178165793970031083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_115
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02612448764431660800000000000000
+      internalID: 7355297827817395744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_116
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2ec9a7c88fbc420800000000000000
+      internalID: 2651486087873880831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_117
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941c980f873153250800000000000000
+      internalID: 5923662295028318537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_118
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5eaaefe15b6be9f0800000000000000
+      internalID: -438138539076833698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_119
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee20b95137da2ac0800000000000000
+      internalID: -3879051522068173075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e5e370406fca4be0800000000000000
+      internalID: -1492152314214750744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_121
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9724aed34ca557480800000000000000
+      internalID: -8902109289529064839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_122
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9724d957cd1b8070800000000000000
+      internalID: 8109608296053483418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_123
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775468393761a1d10800000000000000
+      internalID: 2097013262146487671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_124
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc4aa3ba17fd6060800000000000000
+      internalID: 6948481494158036215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_125
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9652deba9bfc60d0800000000000000
+      internalID: -3428088574290798947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_126
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce90d8aabb79f0300800000000000000
+      internalID: 220561739040492012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_127
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df82a329640db090800000000000000
+      internalID: -8017246912033681453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_128
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40fe1b29c1bcebba0800000000000000
+      internalID: -6071191924068192508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_129
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357c2c964310f16d0800000000000000
+      internalID: -3017691900690643117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_130
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbeb97f000d63cc70800000000000000
+      internalID: 8990149128188706491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_131
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fbd10f8c30e778f0800000000000000
+      internalID: -542718679372932107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_132
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a040e7c718db4a5d0800000000000000
+      internalID: -3052106283613289462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_133
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a68ee78dd7a1e6e0800000000000000
+      internalID: -1809981005316061530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_134
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6481c446e8b9b540800000000000000
+      internalID: 5024250158444020843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_135
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a000fdde4d84ca240800000000000000
+      internalID: 4804294981858557962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_136
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9c8c29a753b0870800000000000000
+      internalID: 8650066309860084217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_137
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd32d4ef46da5e70800000000000000
+      internalID: 9104825235312623029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_138
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15df68d3521264e20800000000000000
+      internalID: 3334389017944194385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_139
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11332323e5ee0ce10800000000000000
+      internalID: 2216033105002771217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_140
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa60e8d11fa83100800000000000000
+      internalID: 88012683921615532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_141
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d5e70397df25f20800000000000000
+      internalID: 3410066564819344731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_142
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f6ca3599f899740800000000000000
+      internalID: 5159312736826191653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_143
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1662e3a70c726bcd0800000000000000
+      internalID: -2542801231965968799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_144
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12dfa642e707fa3b0800000000000000
+      internalID: -5499052932916904671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_145
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708a90681eec7c5c0800000000000000
+      internalID: -4195157059860584441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_146
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7444e1c408d22dcc0800000000000000
+      internalID: -3687835115806899129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_147
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e95bce4910ca3a0800000000000000
+      internalID: -6652940810394952157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_148
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4659df78678733c0800000000000000
+      internalID: -4379883229703219637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_149
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4254b5817f04e37b0800000000000000
+      internalID: -5242681486202944220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_150
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2924901bf845e40800000000000000
+      internalID: 5644294223529415338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_151
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed96de1acce4dbf60800000000000000
+      internalID: 8051678349605300702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_152
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15496dce2cf4abe70800000000000000
+      internalID: 9131698893062837329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_153
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99f6a2f38da1c980800000000000000
+      internalID: -8520338237784917606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_154
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06786b8f779b8030800000000000000
+      internalID: 3498056109638841868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_155
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040c412c7ecff9f50800000000000000
+      internalID: 6890504027223932992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_156
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdcd647093e3107e0800000000000000
+      internalID: -1801089961315345188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_157
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5986f81a884f46410800000000000000
+      internalID: 1469568246092884117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_158
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65b5750520db33d0800000000000000
+      internalID: -3225755850656860820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_159
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99ab71acc3d56c90800000000000000
+      internalID: -7177097555308992099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_160
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d0faee96d729230800000000000000
+      internalID: 3644112942425640214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_161
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 640826075d96e3fa0800000000000000
+      internalID: -5819097303081648058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_162
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26952636628958a00800000000000000
+      internalID: 758179402925365602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_163
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5be2e33a77d31500800000000000000
+      internalID: 365872914603633503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_164
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3412fa419c0890fe0800000000000000
+      internalID: -1222304222730575549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_165
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4e3247cfc79f760800000000000000
+      internalID: 7492156878829642942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_166
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6aa7a31f6023fbb0800000000000000
+      internalID: -4903539907833124244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_167
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec71d3942eb406560800000000000000
+      internalID: 7304922030858377166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_168
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d0426578359d440800000000000000
+      internalID: 4961088305256205686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_169
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2cc799532f21ab0800000000000000
+      internalID: -5038698721051884816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_170
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b68b698818c37190800000000000000
+      internalID: -7965803308177979721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_171
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc8d0b6babf066b0800000000000000
+      internalID: -5304963647388414795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_172
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598994b79144dd040800000000000000
+      internalID: 4673966864513734805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_173
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2901ce3e8192d58d0800000000000000
+      internalID: -2856081401803173742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_174
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86754ffce1f2a30f0800000000000000
+      internalID: -1136544146573207704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_175
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b0be28166634920800000000000000
+      internalID: 2973332747988962099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_176
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06529a4b18309b120800000000000000
+      internalID: 2429977329559741792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Npc6_177
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9426d670e220da4a0800000000000000
+      internalID: -6580601083802066359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

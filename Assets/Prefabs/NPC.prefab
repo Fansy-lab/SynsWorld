@@ -30,6 +30,36 @@ Transform:
   m_Father: {fileID: 4820140451320990501}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1706099966369097704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6509034960138986403}
+  m_Layer: 10
+  m_Name: MoveLocations
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6509034960138986403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706099966369097704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4820140451320990501}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4820140451320990498
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +74,10 @@ GameObject:
   - component: {fileID: 4820140451320989912}
   - component: {fileID: 4820140451320989913}
   - component: {fileID: 4820140451320990503}
+  - component: {fileID: 4115483892460565158}
+  - component: {fileID: 7722790667022916360}
+  - component: {fileID: 7496740569520226476}
+  - component: {fileID: 3907913019205429202}
   m_Layer: 10
   m_Name: NPC
   m_TagString: Untagged
@@ -65,6 +99,7 @@ Transform:
   - {fileID: 4820140451922135163}
   - {fileID: 90677535}
   - {fileID: 554247734811727097}
+  - {fileID: 6509034960138986403}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -116,7 +151,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &4820140451320990500
@@ -149,6 +184,7 @@ MonoBehaviour:
   SimplePopUpTEXT:
   - I like turtles
   isInfoBubble: 0
+  requirementsToComplyInOrderToInteract: {fileID: 0}
   methodToCallInGmOnFirstClick: 
   parameters: []
   isNPC: 1
@@ -204,7 +240,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5609756, y: 1.5609756}
+    oldSize: {x: 1.4545455, y: 1.4545455}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -213,6 +249,82 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.650177, y: 1.3556268}
   m_EdgeRadius: 0
+--- !u!114 &4115483892460565158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4820140451320990498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &7722790667022916360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4820140451320990498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3215fe36fa86b40b1d2ce3a1c1f4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextWaypointDistance: 0.8
+  moveLocationsParent: {fileID: 1706099966369097704}
+  speed: 1
+  playerInRange: 0
+--- !u!95 &7496740569520226476
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4820140451320990498}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32179592664af5c4b9736c3d7c1e7fc0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3907913019205429202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4820140451320990498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96974102224089048ac59eb169c6bd35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteSheetName: Npc1
 --- !u!1 &4820140451922135160
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class NPC : MonoBehaviour
     [SerializeField] Sprite hasOnGoingQuestsSprite;
     [SerializeField] GameObject hasQuestsLocation;
     BoxCollider2D boxCollider;
+    NPC_AI npcAI;
     public GameObject popUpLocation;
     public GameObject popUpDialogueLocation;
 
@@ -23,7 +24,12 @@ public class NPC : MonoBehaviour
 
     void Start()
     {
+
         interactable = GetComponent<Interactable>();
+        if (interactable.isNPC)
+        {
+            npcAI = GetComponent<NPC_AI>();
+        }
         boxCollider = GetComponent<BoxCollider2D>();
         GlobalEvents.OnAcceptedQuest += PopQuestsExclamation;
         GlobalEvents.OnQuestCompleted += PopQuestsExclamation;
@@ -43,7 +49,7 @@ public class NPC : MonoBehaviour
             if (item.quest != null)
             {
                 npcQuests++;
-                if (UIManager.Instance.questsService.currentQuests.Contains(item.quest)==false && UIManager.Instance.questsService.completedQuests.Contains(item.quest)==false)
+                if (UIManager.Instance.questsService.currentQuests.Contains(item.quest) == false && UIManager.Instance.questsService.completedQuests.Contains(item.quest) == false)
                 {
                     showYellowExclamation = true;
                     break;
@@ -58,14 +64,14 @@ public class NPC : MonoBehaviour
 
         if (showYellowExclamation)
         {
-             ShowQuestsAvaible();
+            ShowQuestsAvaible();
 
         }
-        else if (npcQuests == questsDoneThisNPC && npcQuests>0)
+        else if (npcQuests == questsDoneThisNPC && npcQuests > 0)
         {
             RemoveQustsPopUp();
         }
-        else if(npcQuests>0)
+        else if (npcQuests > 0)
         {
             ShowQuestsGoingOn();
         }
@@ -115,6 +121,12 @@ public class NPC : MonoBehaviour
         {
             playerInCLOSERange = true;
             popUpOverPlayerNameToDestroy = EmoteManager.Instance.DisplayCloseByPopUp(interactable.popUpToDisplayOverPlayer, popUpLocation);
+            if (npcAI != null)
+            {
+                npcAI.playerInRange = true;
+                npcAI.anim.SetBool("Move", false);
+                npcAI.LookAtPlayer(collision);
+            }
 
         }
     }
@@ -123,8 +135,13 @@ public class NPC : MonoBehaviour
         if (collision.GetComponent<PlayerInput>())
         {
             playerInCLOSERange = false;
-
             RemoveSmallPopUp();
+
+            if (npcAI != null)
+            {
+                npcAI.playerInRange = false;
+
+            }
 
         }
     }

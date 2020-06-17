@@ -72,6 +72,7 @@
     <Compile Include="Assets\NPC_AI.cs" />
     <Compile Include="Assets\NewSavePanel.cs" />
     <Compile Include="Assets\PrivateChest.cs" />
+    <Compile Include="Assets\ReSkinAnimation.cs" />
     <Compile Include="Assets\RequirementsManager.cs" />
     <Compile Include="Assets\ResetCinemachineState.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />

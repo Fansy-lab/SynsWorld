@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class NPC_AI : MonoBehaviour
 {
     Seeker seeker;
@@ -15,6 +16,7 @@ public class NPC_AI : MonoBehaviour
     public float nextWaypointDistance = 0.8f;
     public GameObject moveLocationsParent;
     List<Vector3> definitiveMoveLcoations = new List<Vector3>();
+    List<MovePoint> movePoints = new List<MovePoint>();
     public float speed;
     bool reachedEndOfPath = false;
     bool relaxTimeFinished = true;
@@ -23,15 +25,17 @@ public class NPC_AI : MonoBehaviour
     public float minWaitTime;
     public float maxWaitTIme;
 
+    MovePoint.relaxingLookingDirection nextLookingDirection;
 
     void Start()
     {
-
+        anim = GetComponent<Animator>();
         moveIndex = 0;
         foreach (Transform item in moveLocationsParent.transform)
         {
             npcMoves = true;
             definitiveMoveLcoations.Add(new Vector3(item.position.x, item.position.y, 1));
+            movePoints.Add(item.gameObject.GetComponent<MovePoint>());
         }
 
 
@@ -66,7 +70,7 @@ public class NPC_AI : MonoBehaviour
             {
 
 
-                GetNewMoveIndex();
+                GetNewMovePoint();
 
 
                 reachedEndOfPath = true;
@@ -109,12 +113,14 @@ public class NPC_AI : MonoBehaviour
     {
         relaxTimeFinished = false;
         anim.SetBool("Move", false);
-
+        anim.SetFloat("lookDir",(float)nextLookingDirection);
         yield return new WaitForSeconds(UnityEngine.Random.Range(minWaitTime, maxWaitTIme));
+        nextLookingDirection = movePoints[moveIndex].lookDirDuringRelaxTime;
+
         relaxTimeFinished = true;
     }
 
-    public void GetNewMoveIndex()
+    public void GetNewMovePoint()
     {
 
         int newIndex = UnityEngine.Random.Range(0, definitiveMoveLcoations.Count);

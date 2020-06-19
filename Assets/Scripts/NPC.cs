@@ -124,6 +124,7 @@ public class NPC : MonoBehaviour
             if (npcAI != null)
             {
                 npcAI.playerInRange = true;
+                if(npcAI.anim!=null)
                 npcAI.anim.SetBool("Move", false);
                 npcAI.LookAtPlayer(collision);
             }

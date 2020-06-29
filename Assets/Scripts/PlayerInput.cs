@@ -9,7 +9,7 @@ public class PlayerInput : MonoBehaviour
     public float moveSpeed = 5f;
     public GameObject arrowPrefab;
     public float arrowForce = 20f;
-    public enum lookingAt{ left,right,up,down,none}
+    public enum lookingAt { left, right, up, down, none }
     public lookingAt currentlyLookingAt;
     public float shootCD;
     float nextFireTime = 0f;
@@ -18,7 +18,7 @@ public class PlayerInput : MonoBehaviour
     public PlayerStats stats;
 
     [SerializeField] GameObject interactPoint;
-    [SerializeField] Transform firePosition;
+    [SerializeField] Transform[] firePositions;
     [SerializeField] DashBarScript dashSlider;
     [SerializeField] GameObject dashEffect;
 
@@ -32,8 +32,13 @@ public class PlayerInput : MonoBehaviour
     Vector2 shootingDirectionAtTheMomentOfShooting;
     Vector2 lastLookingDirection;
 
+    public Transform middleFirePosition;
+    public bool ShootOneSimpleArrow;
+
     private void Start()
     {
+
+
         dashSlider.SetMaxValue(Convert.ToInt32(dashRate));
         dashSlider.SetDashBar(dashRate);
         stats = GetComponent<PlayerStats>();
@@ -80,7 +85,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Dash()
     {
-        bool canDashToLocation = CanDashToLocation(new Vector3(lastLookingDirection.x, lastLookingDirection.y, 0),dashDistance);
+        bool canDashToLocation = CanDashToLocation(new Vector3(lastLookingDirection.x, lastLookingDirection.y, 0), dashDistance);
         if (canDashToLocation)
         {
             Instantiate(dashEffect, transform.position, Quaternion.identity);
@@ -90,11 +95,11 @@ public class PlayerInput : MonoBehaviour
             SoundEffectsManager.instance.PlayDashSound();
         }
     }
-    private bool CanDashToLocation(Vector3 dir,float distance)
+    private bool CanDashToLocation(Vector3 dir, float distance)
     {
         //  RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, dir, distance, ~(LayerMask.GetMask("CantRunOver") | LayerMask.GetMask("WaterTile")));
 
-          RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, dir, distance);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, dir, distance);
 
         foreach (var item in hits)
         {
@@ -121,7 +126,7 @@ public class PlayerInput : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && stats.learnedToShoot && canShoot)
             {
                 Shoot();
-                 nextFireTime = Time.time + shootCD - stats.attackSpeed;
+                nextFireTime = Time.time + shootCD - stats.attackSpeed;
             }
         }
 
@@ -149,18 +154,23 @@ public class PlayerInput : MonoBehaviour
 
     private void Shoot()
     {
+        StartShootAnimation(middleFirePosition);
+    }
+
+    private void StartShootAnimation(Transform position)
+    {
         if (currentlyLookingAt == lookingAt.up)
         {
-            firePosition.localPosition = new Vector2(0, 0.7f);
-            firePosition.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            position.parent.localPosition = new Vector2(0, 0.7f);
+            position.parent.localRotation = Quaternion.Euler(0f, 0f, 0f);
 
             animator.SetTrigger("shooting");
             animator.SetFloat("ShootDir", 1);
         }
         else if (currentlyLookingAt == lookingAt.left)
         {
-            firePosition.localPosition = new Vector2(-0.77f, -0.1f);
-            firePosition.localRotation = Quaternion.Euler(0f, 0f, 90f);
+            position.parent.localPosition = new Vector2(-0.77f, -0.1f);
+            position.parent.localRotation = Quaternion.Euler(0f, 0f, 90f);
 
             animator.SetTrigger("shooting");
             animator.SetFloat("ShootDir", 2);
@@ -168,8 +178,8 @@ public class PlayerInput : MonoBehaviour
         }
         else if (currentlyLookingAt == lookingAt.right)
         {
-            firePosition.localPosition = new Vector2(0.77f, -0.1f);
-            firePosition.localRotation = Quaternion.Euler(0f, 0f, -90f);
+            position.parent.localPosition = new Vector2(0.77f, -0.1f);
+            position.parent.localRotation = Quaternion.Euler(0f, 0f, -90f);
 
 
             animator.SetTrigger("shooting");
@@ -178,21 +188,18 @@ public class PlayerInput : MonoBehaviour
         }
         else if (currentlyLookingAt == lookingAt.down)
         {
-            firePosition.localPosition = new Vector2(0, -1f);
-            firePosition.localRotation = Quaternion.Euler(0f, 0f, 180f);
+            position.parent.localPosition = new Vector2(0, -1f);
+            position.parent.localRotation = Quaternion.Euler(0f, 0f, 180f);
 
             animator.SetTrigger("shooting");
             animator.SetFloat("ShootDir", 0);
         }
         SetArrowDirection();
-     //   Invoke("SpawnArrow",0.3f);
-
-
     }
 
     private void SetArrowDirection()
     {
-        if(currentlyLookingAt == lookingAt.down)
+        if (currentlyLookingAt == lookingAt.down)
         {
             shootingDirectionAtTheMomentOfShooting = new Vector2(0, -1);
         }
@@ -212,11 +219,27 @@ public class PlayerInput : MonoBehaviour
 
     public void SpawnArrow()
     {
-       GameObject arrow = Instantiate(arrowPrefab, firePosition.position, firePosition.rotation) as GameObject;
-        arrow.GetComponent<Projectile>().damageAmmount = SetDamageAmmount();
-        Rigidbody2D rbArrow= arrow.GetComponent<Rigidbody2D>();
+        if (ShootOneSimpleArrow)
+        {
+            InstantiateArrow(middleFirePosition);
+        }
+        else
+        {
+            foreach (var item in firePositions)
+            {
+                InstantiateArrow(item);
+            }
+        }
 
-        if(shootingDirectionAtTheMomentOfShooting == new Vector2(0, 0))
+    }
+
+    private void InstantiateArrow(Transform position)
+    {
+        GameObject arrow = Instantiate(arrowPrefab, position.position, position.rotation) as GameObject;
+        arrow.GetComponent<Projectile>().damageAmmount = SetDamageAmmount();
+        Rigidbody2D rbArrow = arrow.GetComponent<Rigidbody2D>();
+
+        if (shootingDirectionAtTheMomentOfShooting == new Vector2(0, 0))
         {
             shootingDirectionAtTheMomentOfShooting = lastLookingDirection;
         }
@@ -233,11 +256,11 @@ public class PlayerInput : MonoBehaviour
         int maxDamage = 0;
         if (weapon != null)
         {
-           minDamage =  weapon.equipableWeaponryStats.AttackMinDamage;
-           maxDamage = weapon.equipableWeaponryStats.AttackMaxDamage;
+            minDamage = weapon.equipableWeaponryStats.AttackMinDamage;
+            maxDamage = weapon.equipableWeaponryStats.AttackMaxDamage;
 
         }
-        return UnityEngine.Random.Range(1+ minDamage, 1+ maxDamage);
+        return UnityEngine.Random.Range(1 + minDamage, 1 + maxDamage);
     }
 
     private void CheckMovement()
@@ -270,7 +293,7 @@ public class PlayerInput : MonoBehaviour
 
             animator.SetFloat("LookDir", 2f);
             currentlyLookingAt = lookingAt.left;
-            lastLookingDirection =  Vector2.left;
+            lastLookingDirection = Vector2.left;
 
         }
         if (movement.y > 0.01)
@@ -282,7 +305,7 @@ public class PlayerInput : MonoBehaviour
             lastLookingDirection = Vector2.up;
 
         }
-        if (movement.y<0)
+        if (movement.y < 0)
         {
             interactPoint.transform.localPosition = new Vector2(0, -1f);
 
@@ -296,7 +319,7 @@ public class PlayerInput : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position+movement.normalized * moveSpeed *Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
     public void FootDown()

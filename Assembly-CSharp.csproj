@@ -69,6 +69,7 @@
     <Compile Include="Assets\EnemyAI.cs" />
     <Compile Include="Assets\EnterLeave.cs" />
     <Compile Include="Assets\EnterLeaveLocationManager.cs" />
+    <Compile Include="Assets\LearnSkillButton.cs" />
     <Compile Include="Assets\MovePoint.cs" />
     <Compile Include="Assets\NPC_AI.cs" />
     <Compile Include="Assets\NewSavePanel.cs" />
@@ -126,6 +127,8 @@
     <Compile Include="Assets\Scripts\ToolTip.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\Warp.cs" />
+    <Compile Include="Assets\SkillSlot.cs" />
+    <Compile Include="Assets\SkillsManager.cs" />
     <Compile Include="Assets\SpecialEffects\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\SpecialEffects\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\SpecialEffects\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />

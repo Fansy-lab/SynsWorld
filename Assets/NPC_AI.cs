@@ -100,6 +100,16 @@ public class NPC_AI : MonoBehaviour
         {
 
             anim.SetBool("Move", true);
+            if (movePoints[moveIndex].randomLookLocationDuringRelaxTime)
+            {
+                nextLookingDirection = (MovePoint.relaxingLookingDirection)UnityEngine.Random.Range(0,4);
+
+            }
+            else
+            {
+                nextLookingDirection = movePoints[moveIndex].lookDirDuringRelaxTime;
+
+            }
             transform.Translate(direction * Time.deltaTime * speed);
             anim.SetFloat("Vertical", direction2.y);
             anim.SetFloat("Horizontal", direction2.x);
@@ -115,7 +125,7 @@ public class NPC_AI : MonoBehaviour
         anim.SetBool("Move", false);
         anim.SetFloat("lookDir",(float)nextLookingDirection);
         yield return new WaitForSeconds(UnityEngine.Random.Range(minWaitTime, maxWaitTIme));
-        nextLookingDirection = movePoints[moveIndex].lookDirDuringRelaxTime;
+
 
         relaxTimeFinished = true;
     }

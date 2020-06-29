@@ -21,6 +21,7 @@ public class GM : MonoBehaviour
     [SerializeField] private GameObject playerStatsUI;
     [SerializeField] private GameObject mainMenuUI;
     [SerializeField] private GameObject settingsUI;
+    [SerializeField] private GameObject skillBarUI;
     [SerializeField] private GameObject enterLeaveLocationUI;
 
     public GameObject Player;
@@ -98,6 +99,7 @@ public class GM : MonoBehaviour
         inventoryUI.SetActive(false);
         questsUI.SetActive(false);
         settingsUI.SetActive(false);
+        skillBarUI.SetActive(true);
 
         enterLeaveLocationUI.SetActive(true);
     }

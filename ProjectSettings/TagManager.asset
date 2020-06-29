@@ -53,11 +53,11 @@ TagManager:
   - name: Water
     uniqueID: 4006914483
     locked: 0
-  - name: Grass Details
-    uniqueID: 1022080411
-    locked: 0
   - name: Path
     uniqueID: 3679803341
+    locked: 0
+  - name: Grass Details
+    uniqueID: 1022080411
     locked: 0
   - name: Hard Objects
     uniqueID: 2540401143

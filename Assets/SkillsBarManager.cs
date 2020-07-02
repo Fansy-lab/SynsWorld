@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillsManager : MonoBehaviour
+public class SkillsBarManager : MonoBehaviour
 {
-    private static SkillsManager instance;
+    private static SkillsBarManager instance;
     private static int m_referenceCount = 0;
 
-    public static SkillsManager Instance
+    public static SkillsBarManager Instance
     {
         get
         {

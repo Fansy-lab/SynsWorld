@@ -73,6 +73,10 @@ public class PlayerInput : MonoBehaviour
         {
             GM.Instance.ToggleInventoryPanel();
         }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GM.Instance.ToggleSkillTree();
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {

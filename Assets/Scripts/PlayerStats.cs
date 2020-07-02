@@ -18,6 +18,7 @@ public class PlayerStats : MonoBehaviour
     public int gold;
     public int experience;
 
+    public int skillPointsToSpend=10;
 
 
     public HealthBar hpBar;
@@ -130,6 +131,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void PlayerLeveledUp(int? level)
     {
+        skillPointsToSpend++;
         GameObject effect = Instantiate(levelUpEffect, transform.position, Quaternion.identity) as GameObject;
         effect.transform.SetParent(gameObject.transform);
 

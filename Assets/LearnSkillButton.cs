@@ -7,6 +7,7 @@ public class LearnSkillButton : MonoBehaviour
 {
     // Start is called before the first frame update
     public TextMeshProUGUI numberText;
+    PlayerStats playerStats;
     int currentLevelOfSkill = 0;
     void Start()
     {
@@ -19,9 +20,24 @@ public class LearnSkillButton : MonoBehaviour
 
     }
 
+
     public void LevelUpSkill()
     {
-        currentLevelOfSkill += 1;
-        numberText.text = currentLevelOfSkill+"";
+        if(playerStats == null)
+        {
+            playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        }
+
+        if (playerStats)
+        {
+            if (playerStats.skillPointsToSpend > 0)
+            {
+                currentLevelOfSkill += 1;
+                numberText.text = currentLevelOfSkill + "";
+                playerStats.skillPointsToSpend--;
+            }
+        }
+
+
     }
 }
